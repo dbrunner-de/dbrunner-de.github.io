@@ -7,12 +7,12 @@ sharing: true
 footer: true
 ---
 
-Dies ist mein kleines Blog. Ich zeichen hierfür auch presserechtlich verantwortlich.
-Ich bin erreichbar:
+Dies ist mein kleines Blog. Ich zeichne hierfür auch presserechtlich verantwortlich.
+Ich bin wie folgt erreichbar:
 
 Daniel Brunner  
 Calvinstraße 19  
-DE-35037 Marburg  
+35037 Marburg  
 Deutschland  
 E-Mail: webmaster[at]dbrunner[dot]de  
 Telefon: +49 6461 92870  
