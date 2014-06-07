@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Homepage | Textstückchen]]></title>
+  <link href="http://dbrunner-de.github.io/blog/categories/homepage/atom.xml" rel="self"/>
+  <link href="http://dbrunner-de.github.io/"/>
+  <updated>2014-06-07T08:25:34+00:00</updated>
+  <id>http://dbrunner-de.github.io/</id>
+  <author>
+    <name><![CDATA[Daniel Brunner]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Ein Relaunch]]></title>
+    <link href="http://dbrunner-de.github.io/blog/2014/06/06/ein-relaunch/"/>
+    <updated>2014-06-06T15:48:31+00:00</updated>
+    <id>http://dbrunner-de.github.io/blog/2014/06/06/ein-relaunch</id>
+    <content type="html"><![CDATA[<p>Ich denke, mir geht es wie vielen: Nach einer gewissen Zeit, in der
+das bisherige Blog, die bisherige Web-Seite nicht gepflegt wird,
+steht irgendwann ein Neubeginn an, dann gleich mit einem &ldquo;Relaunch&rdquo;
+und vielen neuen und guten Vorsätzen.</p>
+
+<p>Ich bin zwar nach wie vor ein großer Freund und Nutzer von Org-Mode, aber
+für das Führen eines Blogs erschien mir der Ablauf doch immer recht
+umständlich. Ich habe mir daher einmal Octopress angeschaut (vor allem,
+da die Blog-Funktion von Org-Mode, die ich nutzte, auch mit Jekyll
+arbeitete) und finde das eigentlich ganz hübsch. Einzig so ein wenig
+&ldquo;eindeutschen&rdquo; sollte ich es noch. Außerdem ist das Umleiten von der
+bisherigen Domain hierher noch ein wenig kaputt; mein bisheriger
+Hoster lässt mich das nicht so schön mit CNAME-Einträgen gestalten, wie
+das eigentlich gedacht ist.</p>
+
+<p>Nun also ein Relaunch, aber ohne große Vorsätze. Es wird hier also
+nur selten und nur wenig zu lesen geben.</p>
+]]></content>
+  </entry>
+  
+</feed>
