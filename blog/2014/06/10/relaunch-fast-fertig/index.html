@@ -5,12 +5,13 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Impressum - Textstückchen</title>
+  <title>Relaunch Fast Fertig - Textstückchen</title>
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="Impressum Jun 6th, 2014 Dies ist mein kleines Blog. Ich zeichne hierfür auch presserechtlich verantwortlich.
-Ich bin wie folgt erreichbar: Daniel &hellip;">
+  <meta name="description" content="So, nach einigem Gefummel mit Ruby und Octopress und den
+Weiterleitungsmöglichkeiten meines Hosters ist die Sache wohl bald so
+am laufen, wie ich mir &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -19,7 +20,7 @@ Ich bin wie folgt erreichbar: Daniel &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://dbrunner-de.github.io/impressum">
+  <link rel="canonical" href="http://dbrunner-de.github.io/blog/2014/06/10/relaunch-fast-fertig">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Textstückchen" type="application/atom+xml">
@@ -66,53 +67,15 @@ Ich bin wie folgt erreichbar: Daniel &hellip;">
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Impressum</h1>
-    <p class="meta">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-06T16:31:00+00:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time></p>
-  </header>
-  
-  <p>Dies ist mein kleines Blog. Ich zeichne hierfür auch presserechtlich verantwortlich.
-Ich bin wie folgt erreichbar:</p>
-
-<p>Daniel Brunner<br/>
-Calvinstraße 19<br/>
-35037 Marburg<br/>
-Deutschland<br/>
-E-Mail: webmaster[at]dbrunner[dot]de<br/>
-Telefon: +49 6461 92870<br/>
-Telefax: +49 6461 928740</p>
-
-<p>Sämtliche von mir erstellten Texte und Bilder sind durch das deutsche Urheberrecht
-geschützt. Ich habe mir noch keine passende CC-Lizenz herausgesucht. Wenn Sie also
-irgendwas, sei es Text oder Bild, verwenden wollen, schicken Sie mir doch bitte
-eine Nachricht.</p>
-
-<p>Ein Wort zum Datenschutz: Diese Homepage ist mit <a href="http://octopress.org">Octopress</a>
-erstellt, also sind
-das im Wesentlichen nur statische Inhalte. Ich hoste diese bei <a href="https://Github.com">Github</a>.
-Ich selbst erhebe und verarbeite keine Daten über Ihren Besuch auf dieser Seite.</p>
-
-<p>Und ein Link zu meinem <a href="http://www.disclaimer.de/disclaimer.htm">Haftungsaussschluss</a>.</p>
-
-  
-    <footer>
+    
+      <h1 class="entry-title">Relaunch Fast Fertig</h1>
+    
+    
       <p class="meta">
         
-        
 
 
 
@@ -124,19 +87,83 @@ Ich selbst erhebe und verarbeite keine Daten über Ihren Besuch auf dieser Seite
   
 
 
-<time datetime="2014-06-06T16:31:00+00:00" pubdate data-updated="true">Jun 6<span>th</span>, 2014</time>
+<time datetime="2014-06-10T09:20:03+00:00" pubdate data-updated="true">Jun 10<span>th</span>, 2014</time>
         
       </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>So, nach einigem Gefummel mit Ruby und Octopress und den
+Weiterleitungsmöglichkeiten meines Hosters ist die Sache wohl bald so
+am laufen, wie ich mir das vorstelle. Es fehlt noch ein wenig das
+Eindeutschen der Octopress-Texte und vielleicht so eine
+Kategorien-Liste rechts.</p>
+
+<p>Ansonsten habe ich, um der &ldquo;Gem-Hölle&rdquo; zu entgehen, das Octopress in
+einen Docker-Container gepackt; hier ist ein
+<a href="http://blog.krrrcks.net/blog/2014/06/10/unicode-support-for-octopress/">Link</a>
+zu dem verwendeten <code>Dockerfile</code>. Ich habe es dann auch so gemacht,
+dass ich das <code>/opt/octopress</code>-Verzeichnis auf den Host-Rechner
+verschoben habe und in den Container als <em>Volume</em> hineinpacke. So kann
+ich auf dem Host-Rechner ganz bequem mit dem Emacs die Files editieren
+und verwende den Container nur noch für die Erstellung, das &ldquo;Preview&rdquo;
+und für das Hochladen.</p>
+
+<p>Die &ldquo;preview&rdquo;-Funktion ist übrigens ein wirklich nettes Features: Die
+kann man derart nutzen, dass ein Webserver den aktuellen Stand lokal
+ausliefert. Dabei beobachtet der Dienst, ob sich Dateien ändern und
+erstellt unmittelbar wieder die HTML-Seiten. So kann man bequem im
+Editor das Markdown bearbeiten und im Browser daneben das fertige
+Ergebnis beurteilen.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
       
-        <div class="sharing">
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Daniel Brunner</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-06-10T09:20:03+00:00" pubdate data-updated="true">Jun 10<span>th</span>, 2014</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/homepage/'>homepage</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
   
   
   
 </div>
 
+    
+    <p class="meta">
       
-    </footer>
-  
+        <a class="basic-alignment left" href="/blog/2014/06/06/archiv-mit-der-alten-homepage/" title="Previous Post: Archiv mit der alten Homepage">&laquo; Archiv mit der alten Homepage</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
 </div>
