@@ -3,7 +3,7 @@ layout: post
 title: "Ein Relaunch"
 date: 2014-06-06 15:48:31 +0000
 comments: true
-categories: homepage
+categories: Homepage
 ---
 
 Ich denke, mir geht es wie vielen: Nach einer gewissen Zeit, in der

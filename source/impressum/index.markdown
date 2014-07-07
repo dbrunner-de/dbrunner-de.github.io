@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "impressum"
+title: "Impressum"
 date: 2014-06-23 22:45
 comments: true
 sharing: true
@@ -26,10 +26,9 @@ eine Nachricht.
 *Ein Wort zum Datenschutz:* Diese Homepage ist mit
 [Octopress](http://octopress.org) erstellt, also sind das im
 Wesentlichen nur statische Inhalte. Diese Seite wird von
-[Github](https://github.com) über deren [Github
-Pages](https://pages.github.com)-Projekt gehostet.  Ich selbst erhebe
+[Github](https://github.com) über deren [Github Pages](https://pages.github.com)-Projekt gehostet.  Ich selbst erhebe
 und verarbeite keine Daten über Ihren Besuch auf dieser Seite. Für das
-Archiv der alten Homepage, zu finden über die Domain
+Archiv der alten Homepage (die weiterhin bei Strato gehostet wird), zu finden über die Domain
 http://archive.dbrunner.de, gilt das dort unter
 [Kontakt/Impressum](http://archive.dbrunner.de/kontakt.html) Gesagte.
 

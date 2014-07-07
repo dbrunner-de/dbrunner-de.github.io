@@ -3,7 +3,7 @@ layout: post
 title: "Archiv mit der alten Homepage"
 date: 2014-06-06 17:05:45 +0000
 comments: true
-categories: homepage
+categories: Homepage
 ---
 
 Meine alten Homepages kann man immer noch finden:

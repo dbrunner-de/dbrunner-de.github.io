@@ -26,4 +26,10 @@ Arbeit aufgenommen.
 * Wohnungsmärkte
 * Genossenschaften
 
+## Interessen Technik
 
+* Linux, Container-Virtualisierung mit OpenVZ, Docker
+* TeX/LaTeX 
+* Common Lisp 
+* Gnu Emacs, Org-mode
+* R, ggplot2 
