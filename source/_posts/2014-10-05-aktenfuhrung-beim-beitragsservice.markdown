@@ -85,7 +85,7 @@ Eingeständnis:
 
 Wie kann dies sein? Es handelt sich doch um eine Verwaltung? Die
 sollte doch ihre Aktenführung in Ordnung halten können. In meiner
-E-Mail vom **28. Juli 2014** erlöse ich den Beitragsservice und teile
+E-Mail vom **28. Juli 2014** erlöste ich den Beitragsservice und teilte
 ihnen die Beitragsnummer mit. Allerdings nicht ohne noch ein wenig
 meine Besorgnis über die Aktenführung zum Ausdruck zu bringen:
 
