@@ -8,9 +8,7 @@ footer: true
 ---
 
 Die ist eine Aufstellung meiner Publikationen, Vorträge,
-Projekte. *Diese Aufstellung ist derzeit (5. Oktober 2014) noch nicht
-aktuell.*
-
+Projekte. 
 
 ## Wissenschaftliche Beiträge
 
@@ -23,6 +21,13 @@ Cooperatives and Strategic Alliances, Heidelberg, Springer, 2008,
 S. 47-62.
 
 ### Beiträge in Sammelbänden
+
+  - (mit Christian Jablonski), Konnexion im E-Commerce: Problemfelder
+    und Lösungsansätze anhand eines internetgestützen
+    B2B-Bestellsystems, in: Barton, Thomas et al., Herausforderungen
+    an die Wirtschaftsinformatik: Integration und Konnexion,
+    Tagungsband zur 26. AKWI-Jahrestagung, News \& Media, Berlin,
+    2012, S. 164-176, [Link zum kompletten Tagungsband](http://www.akwi.de/AKWI_Tagungsband2013.pdf).
 
   - (mit Tim Voigt), Die Interaktion von Genossenschaften und ihren
     Mitgliedern im Wettbewerb: Eine evolutionsökonomische Analyse, in:
@@ -56,6 +61,54 @@ S. 47-62.
     Sigma, Berlin, 2004, 265 S., besprochen in: Zeitschrift für
     öffentliche und gemeinwirtschaftliche Unternehmen, Band 27, Heft
     4, 2004, S. 417-419, [PDF](http://archive.dbrunner.de/pub/koenig-pu01.pdf).
+
+### Arbeitspapiere 
+
+  - (zusammen mit Marietta Haffner), German tenant cooperatives and
+    secure occupancy, Konferenzpapier für die [ENHR Conference
+    2012](http://www.ccnorway.no/enhr2012/), Housing: Local Welfare
+    and Local Markets in a Globalised World, 24. bis 27. Juni 2012,
+    Lillehammer, Norwegen.  
+
+  - (zusammen mit Tim Voigt), Die Interaktion von Genossenschaften und
+    ihren Mitgliedern im Wettbewerb: eine evolutionsökonomische
+    Analyse, [PDF (ca. 667 KB)](http://archive.dbrunner.de/pub/B_BrunnerVoigt_wp.pdf), in: Brazda, J., Kühl, R., Rößl, D. (Hrsg.), Beiträge zur genossenschaftswissenschaftlichen
+    Forschung: Proceedings der XIII. Nachwuchswissenschaftler Tagung
+    der Arbeitsgemeinschaft genossenschaftswissenschaftlicher
+    Institute (AGI) e.V., 18./19. März 2008 in Wien, RiCC Working
+    Paper 2008/1, S. 155-171, [PDF (ca. 410 KB)](http://www.wu-wien.ac.at/ricc/agi_nachwuchswissenschaftler_tagung2008/proceedings.pdf).
+
+  - (zusammen mit Tim Voigt), Entrepreneurial Decision-making in
+    Cooperative Organizations - Theoretical Implications of a Case
+    Study Research, 11. Juni 2007, [PDF (ca. 155 KB)](http://www.univie.ac.at/EMNET/2007/papers/Brunner&Voigt.pdf), Revision 1
+    vom 23. November 2007, geänderter Titel: Innovation processes in
+    Cooperative Organizations: Results from a Case Study Research,
+    [PDF (ca. 222 KB)](http://archive.dbrunner.de/pub/emnetpaper-re01.pdf).
+
+  - (zusammen mit Tim Voigt), Management of Market Knowledge in
+    Networks, August 2007, [PDF (ca. 190 KB)](http://archive.dbrunner.de/pub/isbe2007paper.pdf).
+
+  - (zusammen mit Tim Voigt), Unternehmerische Entscheidungen im
+    Innovationskontext genossenschaftlicher Organisationen: Eine
+    fallstudienbasierte Analyse, 23. April 2007, [PDF (ca. 288 KB)](http://www.dbrunner.de/pub/fallstudie-baeko.pdf).
+
+  - Genossenschaftliches Unternehmertum als geteiltes Unternehmertum,
+    Arbeitspapier vorbereitet für das Kolloquium "Elemente von
+    Strategiekonzepten der Zukunftssicherung genossenschaftlicher
+    Kooperation", 25. bis 27. November 2005 in Marburg, 
+    [Download 1. Überarbeitung (PDF)](http://archive.dbrunner.de/pub/brunner_unternehmer-re01.pdf), [Download Ursprungsfassung (PDF)](http://archive.dbrunner.de/pub/brunner_unternehmer.pdf). 
+
+  - (mit Stephan Hagenbusch), Development of Institutions in the Early
+    Modern Period, Arbeitspapier vorbereitet für den I. International
+    Workshop for Young Evolutionary Economists at Buchenbach
+    2005, 4. bis 8. Oktober 2005 in Buchenbach, [PDF](http://www.dbrunner.de/pub/brunner_hagenbusch.pdf).
+
+### Unveröffentlichte Arbeitspapiere
+
+Some considerations about the reconstruction process in Eastern
+Germany, Arbeitspapier vorbereitet für die ENHR International New
+Housing Researchers Conference, Cambridge, England, 30. Juni
+bis 2. Juli 2004, mimeo.
 
 ## Beiträge zur Politikberatung
 
@@ -110,49 +163,13 @@ oder Download in [deutscher](http://archive.dbrunner.de/pub/KommWohnZiBru-de.pdf
   - Genossenschaften zwischen Wettbewerb und Konzentration,
     Genossenschafts-Kurier, 4/01, S. 48.
 
-## Unveröffentlichte Arbeitspapiere
-
-Some considerations about the reconstruction process in Eastern
-Germany, Arbeitspapier vorbereitet für die ENHR International New
-Housing Researchers Conference, Cambridge, England, 30. Juni
-bis 2. Juli 2004, mimeo.
-
-## Alte Arbeitspapiere 
-
-  - (zusammen mit Tim Voigt), Die Interaktion von Genossenschaften und
-    ihren Mitgliedern im Wettbewerb: eine evolutionsökonomische
-    Analyse, [PDF (ca. 667 KB)](http://archive.dbrunner.de/pub/B_BrunnerVoigt_wp.pdf), in: Brazda, J., Kühl, R., Rößl, D. (Hrsg.), Beiträge zur genossenschaftswissenschaftlichen
-    Forschung: Proceedings der XIII. Nachwuchswissenschaftler Tagung
-    der Arbeitsgemeinschaft genossenschaftswissenschaftlicher
-    Institute (AGI) e.V., 18./19. März 2008 in Wien, RiCC Working
-    Paper 2008/1, S. 155-171, [PDF (ca. 410 KB)](http://www.wu-wien.ac.at/ricc/agi_nachwuchswissenschaftler_tagung2008/proceedings.pdf).
-
-  - (zusammen mit Tim Voigt), Entrepreneurial Decision-making in
-    Cooperative Organizations - Theoretical Implications of a Case
-    Study Research, 11. Juni 2007, [PDF (ca. 155 KB)](http://www.univie.ac.at/EMNET/2007/papers/Brunner&Voigt.pdf), Revision 1
-    vom 23. November 2007, geänderter Titel: Innovation processes in
-    Cooperative Organizations: Results from a Case Study Research,
-    [PDF (ca. 222 KB)](http://archive.dbrunner.de/pub/emnetpaper-re01.pdf).
-
-  - (zusammen mit Tim Voigt), Management of Market Knowledge in
-    Networks, August 2007, [PDF (ca. 190 KB)](http://archive.dbrunner.de/pub/isbe2007paper.pdf).
-
-  - (zusammen mit Tim Voigt), Unternehmerische Entscheidungen im
-    Innovationskontext genossenschaftlicher Organisationen: Eine
-    fallstudienbasierte Analyse, 23. April 2007, [PDF (ca. 288 KB)](http://www.dbrunner.de/pub/fallstudie-baeko.pdf).
-
-  - Genossenschaftliches Unternehmertum als geteiltes Unternehmertum,
-    Arbeitspapier vorbereitet für das Kolloquium "Elemente von
-    Strategiekonzepten der Zukunftssicherung genossenschaftlicher
-    Kooperation", 25. bis 27. November 2005 in Marburg, 
-    [Download 1. Überarbeitung (PDF)](http://archive.dbrunner.de/pub/brunner_unternehmer-re01.pdf), [Download Ursprungsfassung (PDF)](http://archive.dbrunner.de/pub/brunner_unternehmer.pdf). 
-
-  - (mit Stephan Hagenbusch), Development of Institutions in the Early
-    Modern Period, Arbeitspapier vorbereitet für den I. International
-    Workshop for Young Evolutionary Economists at Buchenbach
-    2005, 4. bis 8. Oktober 2005 in Buchenbach, [PDF](http://www.dbrunner.de/pub/brunner_hagenbusch.pdf).
-
 ## Vorträge 
+
+ - (zusammen mit Christian Jablonski) Vortrag und Diskussion zum
+   obigen Beitrag "Konnexion im E-Commerce: Problemfelder und
+   Lösungsansätze anhand eines internetgestützten
+   B2B-Bestellsystems", 26. AKWI-Jahrestagung, 16. September 2013, Technische Hochschule
+   Mittelhessen, Gießen und Friedberg.
 
  - (zusammen mit Tim Voigt) "Diffussionsprozesse bei
    zwischenbetrieblicher Kooperation - Ein erweitertes
@@ -258,5 +275,3 @@ bis 2. Juli 2004, mimeo.
   Wohnungsgenossenschaften](http://www.bbsr.bund.de/cln_016/nn_22318/sid_B6698C9B019485A1246446254C9C5CD5/nsc_true/BBSR/DE/FP/ReFo/Wohnungswesen/ExpertenkommissionWohnungsgenossenschaften/01__Start.html)
   des Bundesministeriums für Verkehr, Bau und Wohnungswesen von August
   2002 bis März 2004.
-
-
