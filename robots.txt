@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
+Disallow: /images/
 
 Sitemap: http://dbrunner-de.github.io/sitemap.xml 
