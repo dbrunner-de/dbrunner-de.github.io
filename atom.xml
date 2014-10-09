@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Textstückchen]]></title>
-  <link href="http://dbrunner-de.github.io/atom.xml" rel="self"/>
-  <link href="http://dbrunner-de.github.io/"/>
-  <updated>2014-10-09T13:59:07+00:00</updated>
-  <id>http://dbrunner-de.github.io/</id>
+  <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
+  <link href="http://www.dbrunner.de/"/>
+  <updated>2014-10-09T14:05:56+00:00</updated>
+  <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Aktenführung beim Beitragsservice]]></title>
-    <link href="http://dbrunner-de.github.io/blog/2014/10/05/aktenfuhrung-beim-beitragsservice/"/>
+    <link href="http://www.dbrunner.de/blog/2014/10/05/aktenfuhrung-beim-beitragsservice/"/>
     <updated>2014-10-05T10:45:13+00:00</updated>
-    <id>http://dbrunner-de.github.io/blog/2014/10/05/aktenfuhrung-beim-beitragsservice</id>
+    <id>http://www.dbrunner.de/blog/2014/10/05/aktenfuhrung-beim-beitragsservice</id>
     <content type="html"><![CDATA[<p>Im Jahr 2012 habe ich mich rechtmäßig (was allerdings auch etwas
 Überzeugungsarbeit kostete) von der damaligen GEZ abgemeldet und die
 neue Beitragsnummer mitgeteilt, über die meine damalige Rundfunkgebühr
@@ -128,9 +128,9 @@ Schmerzen verursacht hat, habe ich es dabei bewenden lassen.</p>
   
   <entry>
     <title type="html"><![CDATA[Relaunch fast fertig]]></title>
-    <link href="http://dbrunner-de.github.io/blog/2014/06/10/relaunch-fast-fertig/"/>
+    <link href="http://www.dbrunner.de/blog/2014/06/10/relaunch-fast-fertig/"/>
     <updated>2014-06-10T09:20:03+00:00</updated>
-    <id>http://dbrunner-de.github.io/blog/2014/06/10/relaunch-fast-fertig</id>
+    <id>http://www.dbrunner.de/blog/2014/06/10/relaunch-fast-fertig</id>
     <content type="html"><![CDATA[<p>So, nach einigem Gefummel mit Ruby und Octopress und den
 Weiterleitungsmöglichkeiten meines Hosters ist die Sache wohl bald so
 am laufen, wie ich mir das vorstelle. Es fehlt noch ein wenig das
@@ -158,9 +158,9 @@ Ergebnis beurteilen.</p>
   
   <entry>
     <title type="html"><![CDATA[Archiv mit der alten Homepage]]></title>
-    <link href="http://dbrunner-de.github.io/blog/2014/06/06/archiv-mit-der-alten-homepage/"/>
+    <link href="http://www.dbrunner.de/blog/2014/06/06/archiv-mit-der-alten-homepage/"/>
     <updated>2014-06-06T17:05:45+00:00</updated>
-    <id>http://dbrunner-de.github.io/blog/2014/06/06/archiv-mit-der-alten-homepage</id>
+    <id>http://www.dbrunner.de/blog/2014/06/06/archiv-mit-der-alten-homepage</id>
     <content type="html"><![CDATA[<p>Meine alten Homepages kann man immer noch finden:</p>
 
 <ul>
@@ -174,9 +174,9 @@ Ergebnis beurteilen.</p>
   
   <entry>
     <title type="html"><![CDATA[Ein Relaunch]]></title>
-    <link href="http://dbrunner-de.github.io/blog/2014/06/06/ein-relaunch/"/>
+    <link href="http://www.dbrunner.de/blog/2014/06/06/ein-relaunch/"/>
     <updated>2014-06-06T15:48:31+00:00</updated>
-    <id>http://dbrunner-de.github.io/blog/2014/06/06/ein-relaunch</id>
+    <id>http://www.dbrunner.de/blog/2014/06/06/ein-relaunch</id>
     <content type="html"><![CDATA[<p>Ich denke, mir geht es wie vielen: Nach einer gewissen Zeit, in der
 das bisherige Blog, die bisherige Web-Seite nicht gepflegt wird,
 steht irgendwann ein Neubeginn an, dann gleich mit einem &ldquo;Relaunch&rdquo;
