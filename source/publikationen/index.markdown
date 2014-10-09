@@ -27,7 +27,7 @@ S. 47-62.
     B2B-Bestellsystems, in: Barton, Thomas et al., Herausforderungen
     an die Wirtschaftsinformatik: Integration und Konnexion,
     Tagungsband zur 26. AKWI-Jahrestagung, News \& Media, Berlin,
-    2012, S. 164-176, [Link zum kompletten Tagungsband](http://www.akwi.de/AKWI_Tagungsband2013.pdf).
+    2013, S. 164-176, [PDF]({{ root.url }}/assets/JablonskiBrunner2013.pdf), [Link zum kompletten Tagungsband](http://www.akwi.de/AKWI_Tagungsband2013.pdf).
 
   - (mit Tim Voigt), Die Interaktion von Genossenschaften und ihren
     Mitgliedern im Wettbewerb: Eine evolutionsökonomische Analyse, in:
