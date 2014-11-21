@@ -73,8 +73,7 @@ Das war es dann wieder, das Bundesministerium verfiel erneut in
 Stille. Seit dem sind zwei Wochen vergangen.
 
 Da mich der Entwurf wirklich interessierte, habe ich einmal einen
-Interessenverband angeschrieben und nach ca. einer Stunde den
-Referentenentwurf erhielt ich den Entwurf.
+Interessenverband angeschrieben und nach ca. einer Stunde erhielt ich den Entwurf.
 
 Ich stelle mir da ja schon einige Fragen: Was ist eigentlich so
 schwer daran, einen Referentenentwurf, den man ohnehin breit hat
