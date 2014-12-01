@@ -95,3 +95,7 @@ diskutiert werden. Ich halte das auch grundsätzlich für sinnvoll. Ich
 habe aber bisher noch nicht ein solches "Mauern" erlebt. Bisher
 erhielt ich dort, wo ich angefragt hatte, immer ohne Schwierigkeiten
 Auskunft. 
+
+**Update (01. Dezember 2014):** Zwischenzeitlich habe ich den
+  Referentenentwurf für jedermann zum Download bei der taz gefunden:
+  [PDF](http://taz.de/static/pdf/ReferentenentwurfTarifeinheit.pdf)
