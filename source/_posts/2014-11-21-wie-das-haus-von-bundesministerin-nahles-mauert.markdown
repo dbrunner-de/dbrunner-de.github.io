@@ -99,3 +99,15 @@ Auskunft.
 **Update (01. Dezember 2014):** Zwischenzeitlich habe ich den
   Referentenentwurf für jedermann zum Download bei der taz gefunden:
   [PDF](http://taz.de/static/pdf/ReferentenentwurfTarifeinheit.pdf)
+
+**Update (13. Dezember 2014):** Am 11. Dezember 2014 hat das
+  Bundeskabinett den Gesetzentwurf zur Tarifeinheit
+  [beschlossen](http://www.bundesregierung.de/Content/DE/Kabinettssitzung/2014/12/2014-12-11-kabinett.html?nn=434518),
+  er findet sich nun
+  [auf der](http://www.bmas.de/DE/Service/Presse/Pressemitteilungen/Tarifeinheit-staerkt-sozialpartnerschaft.html?nn=31846)
+  Homepage des Bundesministeriums für
+  Arbeit und Soziales:
+  [PDF](http://www.bmas.de/SharedDocs/Downloads/DE/Thema-Arbeitsrecht/entwurf-gesetz-tarifeinheit.pdf?__blob=publicationFile)
+  Wenig erstaunlicherweise habe ich auf meine Anfrage vom 29. Oktober
+  2014 außer den oben dargestellten Nachrichten des
+  "Kommunikationscenters" nichts gehört. 
