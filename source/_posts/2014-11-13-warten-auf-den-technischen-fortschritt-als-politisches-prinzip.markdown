@@ -3,7 +3,7 @@ layout: post
 title: "Warten auf den technischen Fortschritt als politisches Prinzip?"
 date: 2014-11-13 09:53:28 +0000
 comments: true
-categories: 
+categories: Politik
 ---
 
 Am 12. November 2014 sendete der

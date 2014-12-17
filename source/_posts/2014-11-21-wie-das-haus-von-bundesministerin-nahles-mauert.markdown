@@ -3,7 +3,7 @@ layout: post
 title: "Wie das Haus von Bundesministerin Nahles mauert"
 date: 2014-11-21 10:39:08 +0000
 comments: true
-categories: 
+categories: Politik, Behörden
 ---
 
 Ein Gesetzesvorhaben der großen Koalition ist eine Regelung zur
