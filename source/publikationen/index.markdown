@@ -27,7 +27,7 @@ S. 47-62.
     B2B-Bestellsystems, in: Barton, Thomas et al., Herausforderungen
     an die Wirtschaftsinformatik: Integration und Konnexion,
     Tagungsband zur 26. AKWI-Jahrestagung, News \& Media, Berlin,
-    2013, S. 164-176, [PDF]({{ root.url }}/assets/JablonskiBrunner2013.pdf), [Link zum kompletten Tagungsband](http://www.akwi.de/AKWI_Tagungsband2013.pdf).
+    2013, S. 164-176, [PDF]({{ root.url }}/pub/JablonskiBrunner2013.pdf), [Link zum kompletten Tagungsband](http://www.akwi.de/AKWI_Tagungsband2013.pdf).
 
   - (mit Tim Voigt), Die Interaktion von Genossenschaften und ihren
     Mitgliedern im Wettbewerb: Eine evolutionsökonomische Analyse, in:
@@ -60,7 +60,7 @@ S. 47-62.
     Berliner Schriften zur Kooperationsforschung, Bd. 8, Edition
     Sigma, Berlin, 2004, 265 S., besprochen in: Zeitschrift für
     öffentliche und gemeinwirtschaftliche Unternehmen, Band 27, Heft
-    4, 2004, S. 417-419, [PDF](http://archive.dbrunner.de/pub/koenig-pu01.pdf).
+    4, 2004, S. 417-419, [PDF](/pub/koenig-pu01.pdf).
 
 ### Arbeitspapiere, Poster und ähnliches 
 
@@ -69,11 +69,11 @@ S. 47-62.
     and Local Markets in a Globalised World, 24. bis 27. Juni 2012,
     Lillehammer, Norwegen.  
 
-  - (zusammen mit Tim Voigt, Anne Piper und Axel Freier), Mitgliederstruktur und kooperative Diffusionsprozesse im Agribusiness, Poster für die 50. Jahrestagung der GEWISOLA, Möglichkeiten und Grenzen der wissenschaftlichen Politikanalyse, 29. September bis 1. Oktober 2010, Braunschweig, PDF [auf der Seite des Johann Heinrich von Thünen-Instituts](http://www.ti.bund.de/fileadmin/dam_uploads/Institute/LR/lr_de/lr_de_gewisola2010/lr_de_beitraege/P3_4.pdf) und [hier]({{ root.url }}/assets/poster-gewisola-2010.pdf). 
+  - (zusammen mit Tim Voigt, Anne Piper und Axel Freier), Mitgliederstruktur und kooperative Diffusionsprozesse im Agribusiness, Poster für die 50. Jahrestagung der GEWISOLA, Möglichkeiten und Grenzen der wissenschaftlichen Politikanalyse, 29. September bis 1. Oktober 2010, Braunschweig, PDF [auf der Seite des Johann Heinrich von Thünen-Instituts](http://www.ti.bund.de/fileadmin/dam_uploads/Institute/LR/lr_de/lr_de_gewisola2010/lr_de_beitraege/P3_4.pdf) und [hier]({{ root.url }}/pub/poster-gewisola-2010.pdf). 
 
   - (zusammen mit Tim Voigt), Die Interaktion von Genossenschaften und
     ihren Mitgliedern im Wettbewerb: eine evolutionsökonomische
-    Analyse, [PDF (ca. 667 KB)](http://archive.dbrunner.de/pub/B_BrunnerVoigt_wp.pdf), in: Brazda, J., Kühl, R., Rößl, D. (Hrsg.), Beiträge zur genossenschaftswissenschaftlichen
+    Analyse, [PDF (ca. 667 KB)](/pub/B_BrunnerVoigt_wp.pdf), in: Brazda, J., Kühl, R., Rößl, D. (Hrsg.), Beiträge zur genossenschaftswissenschaftlichen
     Forschung: Proceedings der XIII. Nachwuchswissenschaftler Tagung
     der Arbeitsgemeinschaft genossenschaftswissenschaftlicher
     Institute (AGI) e.V., 18./19. März 2008 in Wien, RiCC Working
@@ -84,25 +84,25 @@ S. 47-62.
     Study Research, 11. Juni 2007, [PDF (ca. 155 KB)](http://www.univie.ac.at/EMNET/2007/papers/Brunner&Voigt.pdf), Revision 1
     vom 23. November 2007, geänderter Titel: Innovation processes in
     Cooperative Organizations: Results from a Case Study Research,
-    [PDF (ca. 222 KB)](http://archive.dbrunner.de/pub/emnetpaper-re01.pdf).
+    [PDF (ca. 222 KB)](/pub/emnetpaper-re01.pdf).
 
   - (zusammen mit Tim Voigt), Management of Market Knowledge in
-    Networks, August 2007, [PDF (ca. 190 KB)](http://archive.dbrunner.de/pub/isbe2007paper.pdf).
+    Networks, August 2007, [PDF (ca. 190 KB)](/pub/isbe2007paper.pdf).
 
   - (zusammen mit Tim Voigt), Unternehmerische Entscheidungen im
     Innovationskontext genossenschaftlicher Organisationen: Eine
-    fallstudienbasierte Analyse, 23. April 2007, [PDF (ca. 288 KB)](http://www.dbrunner.de/pub/fallstudie-baeko.pdf).
+    fallstudienbasierte Analyse, 23. April 2007, [PDF (ca. 288 KB)](/pub/fallstudie-baeko.pdf).
 
   - Genossenschaftliches Unternehmertum als geteiltes Unternehmertum,
     Arbeitspapier vorbereitet für das Kolloquium "Elemente von
     Strategiekonzepten der Zukunftssicherung genossenschaftlicher
     Kooperation", 25. bis 27. November 2005 in Marburg, 
-    [Download 1. Überarbeitung (PDF)](http://archive.dbrunner.de/pub/brunner_unternehmer-re01.pdf), [Download Ursprungsfassung (PDF)](http://archive.dbrunner.de/pub/brunner_unternehmer.pdf). 
+    [Download 1. Überarbeitung (PDF)](/pub/brunner_unternehmer-re01.pdf), [Download Ursprungsfassung (PDF)](/pub/brunner_unternehmer.pdf). 
 
   - (mit Stephan Hagenbusch), Development of Institutions in the Early
     Modern Period, Arbeitspapier vorbereitet für den I. International
     Workshop for Young Evolutionary Economists at Buchenbach
-    2005, 4. bis 8. Oktober 2005 in Buchenbach, [PDF](http://www.dbrunner.de/pub/brunner_hagenbusch.pdf).
+    2005, 4. bis 8. Oktober 2005 in Buchenbach, [PDF](/pub/brunner_hagenbusch.pdf).
 
 ### Unveröffentlichte Arbeitspapiere
 
@@ -118,7 +118,7 @@ kommunalen Wohnungswirtschaft in Ostdeutschland, Deutsch-Ukrainisches
 Projekt Regierungsberatung zu Fragen der Reform der Regionalpolitik in
 der Ukraine (GTZ/BMZ), Mai 2006. Das Arbeitspapier ist in deutscher
 und ukrainischer Sprache erhältlich unter regpol@thales-is.kiev.ua
-oder Download in [deutscher](http://archive.dbrunner.de/pub/KommWohnZiBru-de.pdf) oder [ukrainischer](http://www.dbrunner.de/pub/KommWohnZiBru-ua.pdf) Sprache.
+oder Download in [deutscher](/pub/KommWohnZiBru-de.pdf) oder [ukrainischer](/pub/KommWohnZiBru-ua.pdf) Sprache.
 
 ## Andere Veröffentlichungen
 
@@ -133,7 +133,7 @@ oder Download in [deutscher](http://archive.dbrunner.de/pub/KommWohnZiBru-de.pdf
     3/04, 2004, S. 50.
 
   - Expert commission on the future of housing co-operatives in
-    Germany, [Poster](http://archive.dbrunner.de/pub/poster-igt.pdf) präsentiert an der Internationalen
+    Germany, [Poster](/pub/poster-igt.pdf) präsentiert an der Internationalen
     Genossenschaftswissenschaftlichen Tagung (International
     Cooperatives Forum) 2004, 7. bis 9. September 2004, Münster.
 
@@ -155,11 +155,11 @@ oder Download in [deutscher](http://archive.dbrunner.de/pub/KommWohnZiBru-de.pdf
     Genossenschafts-Kurier, 1/03, 2003, S. 31-32.
 
   - (mit Volker Beuthien), Haben Wohnungsgenossenschaften eine
-    Zukunft?, Die Wohnungswirtschaft, Nr. 6, 2002, S. 14-19, [PDF](http://archive.dbrunner.de/pub/dw-zukunft-pu01.pdf).
+    Zukunft?, Die Wohnungswirtschaft, Nr. 6, 2002, S. 14-19, [PDF](/pub/dw-zukunft-pu01.pdf).
 
   - Wohnungsgenossenschaften und Bürgergesellschaft: Ein Standpunkt
     zur aktuellen politischen Diskussion, vdw intern: Zeitschrift von
-    VdW südwest/PdW südwest, Juli-August 2002, S. 12-13, [PDF](http://archive.dbrunner.de/pub/vdwintern-pu01.pdf).
+    VdW südwest/PdW südwest, Juli-August 2002, S. 12-13, [PDF](/pub/vdwintern-pu01.pdf).
 
   - Genossenschaften zwischen Wettbewerb und Konzentration,
     Genossenschafts-Kurier, 4/01, S. 48.
@@ -190,20 +190,20 @@ oder Download in [deutscher](http://archive.dbrunner.de/pub/KommWohnZiBru-de.pdf
  - (zusammen mit Tim Voigt) "Management of Market Knowledge in
    Networks", 30th Institute for Small Business & Entrepreneurship
    Conference, 7. bis 9. November 2007, Glasgow, Schottland.  _Vortragsmaterialien_:
-   [Folien als PDF (ca. 120 KB)](http://archive.dbrunner.de/pub/2007-11-09-folien.pdf), 
-   [Thesenpapier als PDF (ca. 93 KB)](http://archive.dbrunner.de/pub/2007-11-09-handzettel.pdf).
+   [Folien als PDF (ca. 120 KB)](/pub/2007-11-09-folien.pdf), 
+   [Thesenpapier als PDF (ca. 93 KB)](/pub/2007-11-09-handzettel.pdf).
 
  - (zusammen mit Tim Voigt) "Entrepreneurial Decision-making in
    Cooperative Organizations - Theoretical Implications of a Case
    Study Research", [3rd International Conference on Economics and
    Management of Networks, EMNet 2007](http://emnet.univie.ac.at/emnet-2007), 28. bis 30. Juni
-   2007, Rotterdam, Niederlande. _Vortragsmaterialien_: [Folien als PDF (ca. 7,9 MB)](http://archive.dbrunner.de/pub/2007-06-30-folien.pdf), [Thesenpapier als PDF (ca. 100 KB)](http://archive.dbrunner.de/pub/2007-06-30-thesen.pdf).
+   2007, Rotterdam, Niederlande. _Vortragsmaterialien_: [Folien als PDF (ca. 7,9 MB)](/pub/2007-06-30-folien.pdf), [Thesenpapier als PDF (ca. 100 KB)](/pub/2007-06-30-thesen.pdf).
 
  - (zusammen mit Tim Voigt) "Unternehmerische Impulse und
    Wissenskommunikation in Genossenschaften - Design und Ergebnisse
    einer Fallstudie",
    [XII. AGI-Nachwuchswissenschaftler-Tagung](http://www.agi-genoforschung.de), 21. April 2007,
-   Rendsburg. _Vortragsmaterialien_: [Folien als PDF (ca. 8,1 MB)](http://archive.dbrunner.de/pub/2007-04-21-folien.pdf), [Thesenpapier als PDF (ca. 300 KB)](http://archive.dbrunner.de/pub/2007-04-21-thesen.pdf).
+   Rendsburg. _Vortragsmaterialien_: [Folien als PDF (ca. 8,1 MB)](/pub/2007-04-21-folien.pdf), [Thesenpapier als PDF (ca. 300 KB)](/pub/2007-04-21-thesen.pdf).
 
  - (zusammen mit Horst Zimmermann) "Erfahrungen mit der Transformation
    der kommunalen Wohnungswirtschaft in Ostdeutschland", Runder Tisch
@@ -216,7 +216,7 @@ oder Download in [deutscher](http://archive.dbrunner.de/pub/KommWohnZiBru-de.pdf
    Frühen Neuzeit: Eine evolutionsökonomische Analyse der Markt- und
    Zunftordnungen der Stadt Darmstadt", Doktorandenseminar des
    Fachbereichs Wirtschaftswissenschaften der Philipps-Universität
-   Marburg, 21. Dezember 2005, Marburg. _Vortragsmaterialien_: [Folien als PDF (ca. 1,5 MB)](http://www.dbrunner.de/pub/2005-12-21-folien.pdf), [Handzettel als PostScript (ca. 116 KB)](http://www.dbrunner.de/pub/2005-12-21-handzettel.ps).
+   Marburg, 21. Dezember 2005, Marburg. _Vortragsmaterialien_: [Folien als PDF (ca. 1,5 MB)](/pub/2005-12-21-folien.pdf), [Handzettel als PostScript (ca. 116 KB)](/pub/2005-12-21-handzettel.ps).
 
  - "Genossenschaftliches Unternehmertum als geteiltes Unternehmertum",
    Kolloquium "Elemente von Strategiekonzepten der Zukunftssicherung
@@ -260,7 +260,7 @@ oder Download in [deutscher](http://archive.dbrunner.de/pub/KommWohnZiBru-de.pdf
   Praxisleitfaden kann über die Homepage des
   [BBSR](http://www.bbsr.bund.de/cln_016/nn_21272/BBSR/DE/Veroeffentlichungen/BMVBS/Forschungen/2007/Heft126Leitfaden__DL,templateId=raw,property=publicationFile.pdf/Heft126Leitfaden_DL.pdf)
   oder
-  [hier](http://archive.dbrunner.de/pub/PraxisleitfadenDachgenossenschaften.pdf)
+  [hier](/pub/PraxisleitfadenDachgenossenschaften.pdf)
   als PDF-Datei heruntergeladen werden.
 
 - *IfG Marburg:* Mitarbeit am [ExWost-Projekt: Modelle

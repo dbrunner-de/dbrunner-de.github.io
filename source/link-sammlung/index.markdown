@@ -56,4 +56,4 @@ haben.
 
 Ich habe da im Jahr 2009 einmal eine Glosse zu Bankbilanzen
 geschrieben. Hier ist das
-[PDF](http://archive.dbrunner.de/pub/bankbilanz.pdf) dazu.
+[PDF](/pub/bankbilanz.pdf) dazu.
