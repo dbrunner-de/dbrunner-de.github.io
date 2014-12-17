@@ -1,6 +1,10 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://www.dbrunner.de/blog/2009/03/05/bankbilanz/</loc>
+        <lastmod>2014-12-17T20:47:40+00:00</lastmod>
+    </url>
+    <url>
         <loc>http://www.dbrunner.de/blog/2010/02/15/beschleunigung-als-soziales-phnomen/</loc>
         <lastmod>2014-12-17T16:11:35+00:00</lastmod>
     </url>
@@ -188,11 +192,11 @@
     </url>
     <url>
         <loc>http://www.dbrunner.de/publikationen/</loc>
-        <lastmod>2014-10-09T16:27:09+00:00</lastmod>
+        <lastmod>2014-12-17T20:53:14+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.dbrunner.de/blog/archives/</loc>
-        <lastmod>2014-12-17T19:33:10+00:00</lastmod>
+        <lastmod>2014-12-17T20:47:40+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.dbrunner.de/impressum/</loc>
@@ -204,7 +208,7 @@
     </url>
     <url>
         <loc>http://www.dbrunner.de/link-sammlung/</loc>
-        <lastmod>2014-12-17T18:13:12+00:00</lastmod>
+        <lastmod>2014-12-17T20:45:13+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.dbrunner.de/robots.txt</loc>
@@ -212,6 +216,6 @@
     </url>
     <url>
         <loc>http://www.dbrunner.de/</loc>
-        <lastmod>2014-12-17T19:33:10+00:00</lastmod>
+        <lastmod>2014-12-17T20:47:40+00:00</lastmod>
     </url>
 </urlset>
