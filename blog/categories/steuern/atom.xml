@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Steuern | Textstückchen]]></title>
+  <link href="http://www.dbrunner.de/blog/categories/steuern/atom.xml" rel="self"/>
+  <link href="http://www.dbrunner.de/"/>
+  <updated>2014-12-17T19:02:39+00:00</updated>
+  <id>http://www.dbrunner.de/</id>
+  <author>
+    <name><![CDATA[Daniel Brunner]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Steuerliche Behandlung von Popcorn]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/11/28/steuerliche-behandlung-von-popcorn/"/>
+    <updated>2011-11-28T12:06:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/11/28/steuerliche-behandlung-von-popcorn</id>
+    <content type="html"><![CDATA[<p>Laut Bundesfinanzhof macht es für die Umsatzsteuer ja einen Unterschied,
+ob man eine Currywurst im Sitzen oder im Stehen am Kiosk einnimmt (siehe
+zum Beispiel
+<a href="http://www.handelsblatt.com/unternehmen/handel-dienstleister/7-prozent-im-stehen-19-prozent-im-sitzen-/4534688.html">Handelsblatt</a>).</p>
+
+<p>Gerade lese ich im Steuerrundbrief meines Steuerberaters zur Frage,
+welcher Steuersatz für Nachos und Popcorn im Kino anzusetzen ist:</p>
+
+<blockquote><p>&ldquo;Der Bundesfinanzhof hat nun entschieden, dass es sich auch beim
+Verkauf von Popcorn und Nachos in einem Kino um die Abgabe von
+Standardspeisen handelt. Allein der Umstand, dass Tische und Stühle im
+Foyer auch zum Verzehr der Speisen genutzt werden können, führt nicht
+dazu, dass es sich insgesamt um eine Dienstleistung (Umsatzsteuersatz
+19%) handelt. Dies wäre nur der Fall, wenn das Mobiliar ausschließlich
+dazu bestimmt ist, den Verzehr der Lebensmittel zu erleichtern.&rdquo;</p></blockquote>
+
+<p>Mal ganz knapp resümierend: Das ist doch alles völlig grotesk!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Schwarz-gelber Subventionsabbau]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/11/07/schwarz-gelber-subventionsabbau/"/>
+    <updated>2011-11-07T00:00:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/11/07/schwarz-gelber-subventionsabbau</id>
+    <content type="html"><![CDATA[<p><em>Kleine Vorbemerkung:</em> Im vergangenen Jahr hatte ich mich mehr zufällig
+als absichtlich mit dem Biersteuergesetz
+<a href="http://www.dbrunner.de/blog/2010/07/02/vorsicht-vor-den-marginalien-bei-steuervereinfachung-und-subventionsabbau.html">beschäftigt</a>.
+Es ging hauptsächlich um die Rechtfertigung für die Steuerbefreiung des
+Haustrunks im Rahmen der Subventionsberichterstattung der
+Bundesregierung. Diese findet sich seit 1918 in den Regelungen zur
+Biersteuer und da es sich um eine &ldquo;Marginalie&rdquo; handele, sei keine
+Evaluierung und auch kein Abbau vorgesehen, darüberhinaus bestehen die
+Gründe für die Einführung (welche waren das noch mal?) weiterhin fort.</p>
+
+<p>Zum 1.7. diesen Jahres trat eine Erweiterung der
+Umsatzsteuerschuldnerschaft auf steuerpflichtige Lieferungen von
+Mobilfunkgeräten und integrierten Schaltkreisen ab einer
+Bemessungsgrundlage von 5.000 EUR in Kraft. Dies wollte ich im Original
+nachlesen.</p>
+
+<p>Also greife ich zur <a href="http://dipbt.bundestag.de/dip21/btd/17/051/1705127.pdf">Bundestagsdrucksache 17/5127</a>, in der
+sich der zugehörige Gesetzentwurf befand. Dabei handelt es sich aber um
+einen Gesetzentwurf zur Änderung von Verbrauchssteuergesetzen. Irgendwie
+ging es um sprachliche und sonstige der Rechtsklarheit dienende
+Veränderungen (Umstellung von Steuerentlastungen auf Steuerbefreiungen
+und so etwas, soweit ich das verstanden habe). Also nichts, was
+irgendwie mit Mobilfunk oder integrierten Schaltkreisen zu tun hätte.</p>
+
+<p>Die Veränderung der Umsatzsteuerschuldnerschaft wurde, warum auch immer,
+vom Finanzausschuss des Deutschen Bundestages während der Beratungen
+noch in dieses Gesetz
+<a href="http://dipbt.bundestag.de/dip21/btd/17/055/1705510.pdf">eingeschoben</a>.
+Diese Huckepackgesetzgebund empfinde ich ja schon immer als etwas
+merkwürdig.</p>
+
+<p>Aber, so denke ich, wenn ich das schon mal in der Hand habe, dann schaue
+ich doch einfach einmal nach, ob denn nun wenigstens ein bisschen
+Subventionsabbau um sich gegriffen hat. Das Ergebnis ist wenig
+überraschend: Im <a href="http://www.gesetze-im-internet.de/bierstg_2009/BJNR190800009.html">§ 23 des Biersteuergesetzes</a>
+findet sich nach wie vor die Steuerbefreiung für den Haustrunk. Na, das
+war ja nach Bekunden der Bundesregierung ohnehin nur eine Marginalie,
+woher soll da die Kraft für eine Änderung kommen?</p>
+
+<p><em>Kurzer Nachtrag:</em> Der Gesetzentwurf zur Regelung der Verbrauchsteuern
+war wohl fraktionsübergreifend gewollt. Jedoch sehr fein folgende
+Anmerkung im Bericht (Bt-Dr. 17/5510, Seite 4):</p>
+
+<blockquote><p>&ldquo;Die <strong>Fraktion der SPD</strong> hat angeregt, zu einem späteren Zeitpunkt
+grundsätzlich darüber zu beraten, warum Schnupftabak kein
+Tabakerzeugnis im Sinne des Tabaksteuergesetzes sei.&rdquo;</p></blockquote>
+
+<p>Irgendwie erinnert mich das sehr an <a href="http://www.youtube.com/watch?v=EGAEHoMMJgc">dies</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

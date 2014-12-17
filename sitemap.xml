@@ -1,6 +1,160 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
+        <loc>http://www.dbrunner.de/blog/2010/02/15/beschleunigung-als-soziales-phnomen/</loc>
+        <lastmod>2014-12-17T16:11:35+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2010/03/04/cebit-/</loc>
+        <lastmod>2014-12-17T16:10:19+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/03/07/kuler-eine-web-anwendung-zum-farben-abmischen-von-adobe/
+        </loc>
+        <lastmod>2014-12-17T16:11:58+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/03/21/eine-verschwurbelte-stellenausschreibung/
+        </loc>
+        <lastmod>2014-12-17T16:47:33+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2010/03/22/das-restaurant-si-an-in-berlin/</loc>
+        <lastmod>2014-12-17T16:14:23+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/03/27/ein-beispiel-fr-verschwurbelte-texte-aus-dem-koalitionsvertrag/
+        </loc>
+        <lastmod>2014-12-17T16:16:07+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2010/04/01/nderungen-beim-datenschutzhinweis/</loc>
+        <lastmod>2014-12-17T16:16:48+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/06/11/ein-blick-auf-das-neue-mueseum-maxxi-in-rom/
+        </loc>
+        <lastmod>2014-12-17T16:29:16+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2010/06/13/verrechnen-leicht-gemacht/</loc>
+        <lastmod>2014-12-17T16:31:45+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/06/22/einmaligkeit-und-alternativlosigkeit-als-politische-kategorien/
+        </loc>
+        <lastmod>2014-12-17T16:32:33+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/06/27/die-vatikanischen-museen-und-eine-kleine-berraschung/
+        </loc>
+        <lastmod>2014-12-17T16:33:51+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2010/07/02/code-snippets-not-working-at-the-moment/</loc>
+        <lastmod>2014-12-17T16:34:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/07/02/vorsicht-vor-den-marginalien-bei-steuervereinfachung-und-subventionsabbau/
+        </loc>
+        <lastmod>2014-12-17T16:42:26+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/07/09/kurze-anmerkung-zum-mehr-brutto-vom-netto/
+        </loc>
+        <lastmod>2014-12-17T16:44:06+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/07/22/zur-diskussion-um-stndige-und-nicht-stndige-mitglieder-im-un-sicherheitsrat/
+        </loc>
+        <lastmod>2014-12-17T16:45:09+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2010/07/25/der-e-postbrief-ein-selbstversuch/</loc>
+        <lastmod>2014-12-17T16:46:32+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2010/07/26/nachtrag-i-zum-e-postbrief/</loc>
+        <lastmod>2014-12-17T16:46:48+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2010/07/30/missbrauchsgebhr-beim-bundesverfassungsgericht/
+        </loc>
+        <lastmod>2014-12-17T16:47:42+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2010/08/04/zur-loveparade-berichterstattung/</loc>
+        <lastmod>2014-12-17T16:48:26+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2010/12/08/selbstausknfte-bei-unternehmen/</loc>
+        <lastmod>2014-12-17T16:48:59+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2011/06/30/constanze-kurzfrank-rieger-die-datenfresser/
+        </loc>
+        <lastmod>2014-12-17T15:27:20+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2011/10/15/umbau-der-webseite-und-des-blogs/</loc>
+        <lastmod>2014-12-17T15:29:51+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2011/10/16/programm-bibliotheken-und-verschiedene-versionsstnde/
+        </loc>
+        <lastmod>2014-12-17T15:32:42+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2011/10/20/eu-will-lnderrtings-verbieten/</loc>
+        <lastmod>2014-12-17T15:33:27+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2011/11/02/referendum-in-griechenland/</loc>
+        <lastmod>2014-12-17T15:34:04+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2011/11/07/schwarz-gelber-subventionsabbau/</loc>
+        <lastmod>2014-12-17T15:38:01+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2011/11/27/bilanzfehler-oder-nicht-bilanzfehler/</loc>
+        <lastmod>2014-12-17T15:37:41+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2011/11/28/steuerliche-behandlung-von-popcorn/</loc>
+        <lastmod>2014-12-17T15:38:28+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2011/12/16/wir-testen-stress/</loc>
+        <lastmod>2014-12-17T15:21:39+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2012/01/10/zu-den-negativen-zinsen/</loc>
+        <lastmod>2014-12-17T15:21:45+00:00</lastmod>
+    </url>
+    <url>
+        <loc>
+            http://www.dbrunner.de/blog/2012/01/17/zu-den-rating-agenturen-und-ihren-ratings/
+        </loc>
+        <lastmod>2014-12-17T16:21:27+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2012/02/28/giekanne-oder-nicht/</loc>
+        <lastmod>2014-12-17T15:21:57+00:00</lastmod>
+    </url>
+    <url>
         <loc>http://www.dbrunner.de/blog/2014/06/06/ein-relaunch/</loc>
         <lastmod>2014-07-07T12:59:38+00:00</lastmod>
     </url>
@@ -14,19 +168,23 @@
     </url>
     <url>
         <loc>http://www.dbrunner.de/blog/2014/10/05/aktenfuhrung-beim-beitragsservice/</loc>
-        <lastmod>2014-10-05T11:18:44+00:00</lastmod>
+        <lastmod>2014-12-17T15:22:08+00:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dbrunner.de/blog/2014/11/13/warten-auf-den-technischen-fortschritt-als-politisches-prinzip/
         </loc>
-        <lastmod>2014-11-13T10:29:21+00:00</lastmod>
+        <lastmod>2014-12-17T15:22:15+00:00</lastmod>
     </url>
     <url>
         <loc>
             http://www.dbrunner.de/blog/2014/11/21/wie-das-haus-von-bundesministerin-nahles-mauert/
         </loc>
-        <lastmod>2014-12-13T10:22:47+00:00</lastmod>
+        <lastmod>2014-12-17T15:22:31+00:00</lastmod>
+    </url>
+    <url>
+        <loc>http://www.dbrunner.de/blog/2014/12/17/migration/</loc>
+        <lastmod>2014-12-17T18:20:51+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.dbrunner.de/publikationen/</loc>
@@ -34,7 +192,7 @@
     </url>
     <url>
         <loc>http://www.dbrunner.de/blog/archives/</loc>
-        <lastmod>2014-12-13T10:22:47+00:00</lastmod>
+        <lastmod>2014-12-17T18:20:51+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.dbrunner.de/impressum/</loc>
@@ -42,11 +200,11 @@
     </url>
     <url>
         <loc>http://www.dbrunner.de/ueber/</loc>
-        <lastmod>2014-07-07T13:03:41+00:00</lastmod>
+        <lastmod>2014-12-17T18:05:26+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.dbrunner.de/link-sammlung/</loc>
-        <lastmod>2014-10-05T14:20:04+00:00</lastmod>
+        <lastmod>2014-12-17T18:13:12+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.dbrunner.de/robots.txt</loc>
@@ -54,6 +212,6 @@
     </url>
     <url>
         <loc>http://www.dbrunner.de/</loc>
-        <lastmod>2014-12-13T10:22:47+00:00</lastmod>
+        <lastmod>2014-12-17T18:20:51+00:00</lastmod>
     </url>
 </urlset>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ausgehen | Textstückchen]]></title>
+  <link href="http://www.dbrunner.de/blog/categories/ausgehen/atom.xml" rel="self"/>
+  <link href="http://www.dbrunner.de/"/>
+  <updated>2014-12-17T19:02:39+00:00</updated>
+  <id>http://www.dbrunner.de/</id>
+  <author>
+    <name><![CDATA[Daniel Brunner]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Das Restaurant Si An in Berlin]]></title>
+    <link href="http://www.dbrunner.de/blog/2010/03/22/das-restaurant-si-an-in-berlin/"/>
+    <updated>2010-03-22T17:36:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2010/03/22/das-restaurant-si-an-in-berlin</id>
+    <content type="html"><![CDATA[<p>Nun schon zum wiederholten mal hat es mich in Berlin im Stadtteil
+Prenzlauer Berg in das <a href="http://www.sian-berlin.de">Si An</a> in Berlin
+verschlagen. In einem kleinen, liebevoll (man beachte auch die
+Dekoration vor dem Lokal am Bürgersteig) eingerichteten Lokal erwartet
+den Gast feine vietnamesische Küche. Es gibt zwar eine Karte, aber es
+empfiehlt sich, eine der Tagesempfehlungen auszuwählen. Die Speisen
+zeichnen sich durch sehr feinsinnig abgestimmte Geschmack und
+Gewürzauswahl aus. Ein Platz zum Wohlfühlen und Weiterempfehlen.</p>
+
+<p>Si An<br/>
+Rykestraße 36, 10405 Berlin<br/>
+ <a href="http://www.sian-berlin.de">http://www.sian-berlin.de</a></p>
+]]></content>
+  </entry>
+  
+</feed>

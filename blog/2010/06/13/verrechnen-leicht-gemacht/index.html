@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Verrechnen leicht gemacht - Textstückchen</title>
+  <meta name="author" content="Daniel Brunner">
+
+  
+  <meta name="description" content="Folgende Ereignisse finde ich ja sehr erhellend: Telepolis
+berichtete von einer Studie
+(Pollet und Nettle, 2009), in der anhand von Daten aus dem & &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.dbrunner.de/blog/2010/06/13/verrechnen-leicht-gemacht">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Textstückchen" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Textstückchen</a></h1>
+  
+    <h2>Ganz kleine Textstückchen zu Allerlei.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:www.dbrunner.de" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/publikationen/">Publikationen/Vorträge/Projekte</a></li>
+  <li><a href="/blog/archives">Archiv</a></li>
+  <li><a href="/impressum/">Impressum</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Verrechnen leicht gemacht</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-13T15:10:00+00:00" pubdate data-updated="true">Jun 13<span>th</span>, 2010</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Folgende Ereignisse finde ich ja sehr erhellend: Telepolis
+<a href="http://www.heise.de/tp/blogs/3/121897">berichtete</a> von einer Studie
+(Pollet und Nettle, 2009), in der anhand von Daten aus dem &ldquo;Chinese
+Health and Family Life Survey&rdquo; der Schluss gezogen wurde, dass die Zahl
+der Orgasmen einer Frau mit dem Einkommen des Partners ansteige:</p>
+
+<blockquote><p>&ldquo;In a large representative sample of the Chinese population, we found
+evidence that women&rsquo;s self-reported orgasm frequency increases with
+the income of their partner.&rdquo; (Pollet und Nettle, 2009, S. 149)</p></blockquote>
+
+<p>Etwas später <a href="http://www.heise.de/tp/blogs/3/147390">berichtete</a>
+Telepolis, dass dem wohl doch nicht so sei. Was war passiert? Die
+Forscher Esther Herberich und Torsten Hothorn haben die Analysen mit den
+frei verfügbaren Daten nachgerechnet und erhielten andere Ergebnisse
+(Herberich et al., 2010). Ursache war, dass der in der von Pollet und
+Nettle (2009) verwendeten Software (SPSS 15.0) der Algorithmus zur
+Auswahl des besten Modells (verwendet wurde ein <em>ordinal regression
+model</em>) einen Fehler aufwies: Die Kriterien zur Modellauswahl (Akaike
+Information Criteion (AIC) und Bayesian Information Criterion (BIC))
+wurden in der Standardeinstellung der Modellauswahl falsch berechnet, so
+dass die Kriterien eigentlich nicht verglichen werden konnten. In der
+Folge kam es zu einer verkehrten Modellauswahl für das beste Modell.
+Herberich et al. berechneten die Analysen mit
+<a href="http://www.r-project.org">R</a> neu und kamen zu anderen Ergebnissen: So
+konnte das Modell durch die Aufnahme weiterer Variablen verbessert
+werden; und zwar derart, dass der Einfluss des Einkommens letztendlich
+nicht mehr signifikant war. In der Korrektur ihres Beitrages fassen
+Pollet und Nettle (2010) dies wie folgt zusammen:</p>
+
+<blockquote><p>The association in the CHFLS (Chinese Health and Family Life Survey,
+D.B.) data between partner wealth and self-reported orgasm frequency
+ist best explained by the fact that women with higher-income partners
+are healthier, happier, younger, and more educated than women with
+lower-income partners. The data do not support a direct effect of
+partner income on self-reported orgasm frequency, once other variables
+have been controlled for.&ldquo; (Pollet und Nettle, 2010, S. 149)</p></blockquote>
+
+<p>Zusammengefasst: (1) Erst durch das Bereitstellen der Daten konnte ein
+anderes Forscherteam die Anwendung der Methode prüfen und stieß auf die
+oben skizzierten Merkwürdigkeiten. Somit war es möglich, nach den
+Ursachen für die falsche Modellauswahl zu suchen. (2) Es zeigt sich,
+dass eine geschlossene, proprietäre Implementierung so ihre Tücken hat;
+wenn eine Gemeinschaft gegenseitig Kontrolle über Implementierungen von
+Modellen übt und sie verbessert, kann auch hier wieder ein System der
+gegenseitige Kontrolle wirksam werden, was zu einer höheren Qualität
+führen kann.</p>
+
+<p>Literatur:</p>
+
+<ul>
+<li><em>Pollet, T. und Nettle, D.</em> (2009), Partner Wealth predicts
+self-reported orgasm frequency in a sample of Chinese women, Evolution
+and Human Behavior, Volume 30, S. 146-151.</li>
+<li><em>Herberich, E., Hothorn, T., Nettle, D. und Pollet, T.</em> (2010), A
+re-evalutation of the statistical model in Pollet and Nettle 2009,
+Evolution and Human Behavior, Volume 31, S. 150-151 (sowie der Online
+Appendix).</li>
+<li><em>Pollet, T. und Nettle, D.</em> (2010), Correction to Pollet and Nettle (2009): &ldquo;Partner wealth predicts self-reported orgasm frequency in a sample of Chinese women&rdquo;, Evolution and Human Behavior, Volume 31, S. 149.</li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Daniel Brunner</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-13T15:10:00+00:00" pubdate data-updated="true">Jun 13<span>th</span>, 2010</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/it/'>IT,</a>, <a class='category' href='/blog/categories/r/'>R</a>, <a class='category' href='/blog/categories/statistik/'>Statistik,</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2010/06/11/ein-blick-auf-das-neue-mueseum-maxxi-in-rom/" title="Previous Post: Ein Blick auf das neue Mueseum MAXXI in Rom">&laquo; Ein Blick auf das neue Mueseum MAXXI in Rom</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2010/06/22/einmaligkeit-und-alternativlosigkeit-als-politische-kategorien/" title="Next Post: Einmaligkeit und Alternativlosigkeit als politische Kategorien">Einmaligkeit und Alternativlosigkeit als politische Kategorien &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1><a href="/ueber/">Über mich</a></h1>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/17/migration/">Migration alter Blog-Einträge</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/21/wie-das-haus-von-bundesministerin-nahles-mauert/">Wie das Haus von Bundesministerin Nahles mauert</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/13/warten-auf-den-technischen-fortschritt-als-politisches-prinzip/">Warten auf den technischen Fortschritt als politisches Prinzip?</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/10/05/aktenfuhrung-beim-beitragsservice/">Aktenführung beim Beitragsservice</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/10/relaunch-fast-fertig/">Relaunch fast fertig</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Daniel Brunner -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2014-12-13T10:23:08+00:00</updated>
+  <updated>2014-12-17T19:02:39+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Migration alter Blog-Einträge]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/12/17/migration/"/>
+    <updated>2014-12-17T18:11:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/12/17/migration</id>
+    <content type="html"><![CDATA[<p>Es kamen lange Winterabende und ich habe die alten Blog-Einträge von
+der mittels Org-Mode erstellten Seite hier nach Octorpress
+migriert. Im Archiv sind diese zu finden und die Links etc. sollten
+nun auch passend mit migriert worden sein.</p>
+
+<p>Bei der Konvertierung habe ich ein Programm kennengelernt, das mir
+sehr geholfen hat: <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>. Das
+ist ein Konverter, der Text- und Markupdateien hin und her
+konvertieren kann. Dabei beherrscht er eine ganze Reihe von
+Formaten. Insbesondere kann er das Org-Mode-Format (das ich für viele
+Dinge verwende) ebenso wie LaTeX und Markdown (daneben aber auch noch
+eine Legion von Formaten).</p>
+
+<p>Da mein Hauptdateiformat ohnehin &ldquo;Textdateien&rdquo; sind (&ldquo;Never trust a
+file that isn&rsquo;t ASCII&rdquo;) ist das sehr praktisch, um zwischen
+verschiedenen Markup-Formaten hin und her zu springen.</p>
+
+<p>Für die Migration meine Blog-Einträge lief dies wie folgt: Ich hatte
+die in der alten Homepage mit Org-Mode und Org-Jekyll erstellt. Dabei
+hatte das Org-Jekyll-Modul entsprechende HTML-Dateien mit einem
+YAML-Header erzeugt. Mittels Pandoc konnte ich die nun wieder nach
+Markdown konvertieren, habe die YAML-Header ein wenig angepasst,
+Kategorien aktualisiert und noch mal das Markup zwecks Zeilenumbrüche,
+Fußnoten und Links geprüft und leicht angepasst. Insgesamt sehr
+schnell bewältigbar.</p>
+
+<p>Dieser ganze Zoo rund um Markdown und andere ähnliche Formate ist zwar
+manchmal ein bisschen unübersichtlich, aber mir gefällt das sehr gut,
+dass man mit wenig Markup schön Textdateien strukturieren kann und
+dann mit Pandoc auch gut hin und her konvertieren kann.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Wie das Haus von Bundesministerin Nahles mauert]]></title>
@@ -381,6 +419,639 @@ das eigentlich gedacht ist.</p>
 
 <p>Nun also ein Relaunch, aber ohne große Vorsätze. Es wird hier also
 nur selten und nur wenig zu lesen geben.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gießkanne oder nicht?]]></title>
+    <link href="http://www.dbrunner.de/blog/2012/02/28/giekanne-oder-nicht/"/>
+    <updated>2012-02-28T11:06:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2012/02/28/giekanne-oder-nicht</id>
+    <content type="html"><![CDATA[<p>Zu dem wohl bisher nicht veröffentlichten Gutachten einiger
+Wirtschaftsforschungsinstitute zur Förderung der Neuen Länder wurde
+heute morgen im Deutschlandfunk der Wirtschaftsminister von Thüringen,
+Matthias Machnig
+<a href="http://www.dradio.de/dlf/sendungen/interview_dlf/1688517/">interviewt.</a></p>
+
+<p>Er sagt dort zum Plädoyer eine Förderung nach dem Gießkannenprinzip
+einzustellen:</p>
+
+<blockquote><p>&ldquo;Alle Jahre wieder kommen solche Thesen auf, sie haben mit der
+Realität nichts zu tun, weil die Behauptung, man würde mit der
+Gießkanne Fördermittel verteilen, das ist lange vorbei.&rdquo;</p></blockquote>
+
+<p>Nun kenne ich nicht die ganzen Programme, die dort etabliert sind und
+ich weiß auch nicht, wie die jeweiligen Programme in Thüringen vor Ort
+umgesetzt werden. Ich gehe aber einmal davon aus, dass sich
+zwischenzeitlich eine irgendwie geartete &ldquo;Priorisierung&rdquo; etabliert hat.</p>
+
+<p>Ich möchte jedoch auf ein grundsätzliches Problem aufmerksam machen: Im
+Bereich der Städtebauförderung (hier ist beispielsweise über das
+Programm &ldquo;Stadtumbau Ost&rdquo; auch eine spezifische regionale Förderung
+durchgeführt und etabliert worden) stellt sich regelmäßig die Frage, wie
+die Mittel der Programme auf die Länder zu verteilen sind. So hat sich
+die Bauministerkonferenz in einer Arbeitsgruppe darüber Gedanken gemacht
+und ihre bisherige Verteilung im Sinne einer &ldquo;problemorientierten&rdquo;
+Verteilung
+<a href="http://www.bauministerkonferenz.de/IndexSearch.aspx?method=get&amp;File=b8a84yy3y8b984808abb4yb8y9ya8ayyb9y884b94ya2a0a14949a4a1484b80b8y0ldc20mg52lp02ypzlmnx5wd0">im Jahr 2008</a>
+fortentwickelt. Hier sind 70% der Mittel nach Bevölkerung zu verteilen
+und die restlichen Prozente nach Bevölkerungsverlusten,
+Arbeitslosigkeit, Ausländeranteil, überdurchschnittlichem
+Bevölkerungsanteil über 65 Jahre.</p>
+
+<p>So. Und nun schauen wir einmal in die
+<a href="http://www.brd.nrw.de/planen_bauen/staedtebaufoerderung/pdf/Verwaltungsvereinbarung_StBauF_2011__Bund-L__nder_.pdf">Verwaltungsvereinbarung Städtebauförderung 2011</a>
+und sehen diesen oder einen sehr ähnlichen Schlüssel für alle
+Teilprogramme: 70% der Mittel nach Bevölkerung, der Rest nach anderen
+Indikatoren.</p>
+
+<p>Nun frage ich mich: Was ist denn eine Verteilung nach Bevölkerung
+anderes als die oben beschriebene Gießkanne? Es müsste doch ein
+Zusammenhang zwischen Bevölkerung und dem jeweils zu behebenden Problem
+des Teilprogramms herzustellen sein. Der Nachweis wäre, insbesondere für
+den Wohnungsleerstand im Programm Stadtumbau Ost, ja erst noch zu
+erbringen. Bei einem Gespräch mit einem mit der Materie befassten habe
+ich vor Jahren einmal zu hören bekommen: Etwas anderes als nach
+Bevölkerung ist politisch gar nicht umsetzbar aber es ist natürlich im
+Grunde die Verteilung mit der Gießkanne und nicht nach dem Bedarf.</p>
+
+<p>(Dieser Artikel hat einen <a href="http://www.blablameter.de">Blablameter-Wert</a>
+von 0.32.)</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Zu den Rating-Agenturen und ihren Ratings]]></title>
+    <link href="http://www.dbrunner.de/blog/2012/01/17/zu-den-rating-agenturen-und-ihren-ratings/"/>
+    <updated>2012-01-17T12:24:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2012/01/17/zu-den-rating-agenturen-und-ihren-ratings</id>
+    <content type="html"><![CDATA[<p>Frankreich verlor die Bestnote und sofort nehmen einige erneut die
+Rating-Agenturen in das Blickfeld (siehe bspw. den Bericht in der
+<a href="http://www.sueddeutsche.de/wirtschaft/abwertung-von-efsf-und-euro-laendern-koalition-will-europaeischen-rivalen-fuer-us-rating-agenturen-1.1259582">Süddeutschen</a>).
+Hierzu ist auch der kleine Blick von <a href="http://krugman.blogs.nytimes.com/2012/01/14/sp-on-europe/">Paul Krugman</a> auf
+die Begründung von Standard &amp; Poor&rsquo;s sehr interessant.</p>
+
+<p>Zur gleichen Zeit, in der in den Medien und auf der Straße die Schulden-
+und Euro-Krise diskutiert wird, nimmt ein weiterer Diskussionsstrang an
+Fahrt auf: Nutzen Volkswirte eigentlich die richtigen Ansätze und
+Modelle für ihre Theorien? So beispielsweise in den
+<a href="http://www.vdi-nachrichten.com/Technik-Gesellschaft/Monokultur-Denkens-hemmt-Fortschritt">VDI-Nachrichten</a> oder auch mit Hinblick auf die Fragen von Studierenden nach alternativen Modellen beim
+<a href="http://www.spiegel.de/unispiegel/studium/0,1518,803953,00.html">Spiegel</a>.</p>
+
+<p>Beide Entwicklungen hängen meines Erachtens an einer Stelle zusammen,
+dazu möchte ich allerdings ein wenig ausholen:</p>
+
+<ol>
+<li>Seit einiger Zeit (bestimmt gut 10-15 Jahre) hat sich in der Sicht
+auf die Unternehmensfinanzierung ein Wandel vollzogen. War gerade in
+Deutschland in früherer Zeit das Hausbankenprinzip vorherrschend,
+also Kreditbeziehungen zwischen Kreditnehmer und Bank, so hat sich
+dies in den letzten Jahren (auch regulatorisch erkennbar bspw. an
+Basel II) gewandelt zu einer stärker kapitalmarktorientierten Sicht
+auf die Finanzierung. In der soll gleichsam der Kapitalmarkt für die
+rechte Allokation des Finanzkapitals sorgen und sich die Unternehmen
+gemäß ihren Aussichten und Ideen um dieses Kapital bewerben. Damit
+verändert sich allerdings der Aufgabenbereich der Bank. War die
+Hausbank als Gläubiger früher selbst daran interessiert, dass sie
+mit Informationen über ihre Kreditnehmer versorgt wird, so schwindet
+dies Interesse, wenn sie lediglich für das Platzieren einer Anleihe
+oder den Zugang zum Kapitalmarkt benötigt wird. Eine solchermaßen
+tätige Bank wird ja nicht selbst zum Gläubiger, sondern verdient ihr
+Geld am Zusammenbringen von Investoren und kapitalsuchenden
+Unternehmen. Damit die Investoren jedoch eine Möglichkeit erhalten,
+die Unternehmen zu beurteilen, müssen sie sich, da ihnen die
+Einsichtsmöglichkeiten wie bei einer Hausbank früher verwehrt sind,
+auf den Ratschlag eines externen Dritten verlassen, dem externen
+Rating durch eine Rating-Agentur. <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
+<li>Wären alle Randbedingungen (wie Nachfrage, Produktionsbedingen etc.)
+eines Marktes oder einer Volkswirtschaft bekannt, so verbliebe im
+Prinzip ein reines Allokationsproblem zwischen Anbietern und
+Nachfragern. Dies könnte im Extremfall auch ein Computerprogramm
+erledigen. Nun ist es in der Realität aber so, dass viele Dinge
+völlig unklar und unbekannt sind und darüberhinaus auch die Zukunft
+für die Akteure reichlich ungewiss ist. Tätigwerden an einem Markt
+bedeutet dann, die eigenen Schlüsse aus dem für einen selbst
+verfügbaren Datenmaterial zu ziehen und etwas auszuprobieren. In der
+Folge lässt sich erkennen, ob diese Initiative von Erfolg gekrönt
+wurde oder nicht und entsprechend neue Ideen und Initiativen daraus
+ableiten. Zugleich lassen sich Vorstöße von Wettbewerbern beobachten
+und ggf. nachmachen, also imitieren. Der Wettbewerb ist also nicht
+statisch, sondern besteht aus einer Vielzahl von vorstoßenden und
+nachstoßenden Akten. Damit wird unmittelbar klar, dass der Wettbwerb
+in einem solchen Markt von einer gewissen Heterogenität geprägt sein
+wird: Es wird initiative Unternehmen geben, die mit neuen Produkten
+oder Produktionsverfahren experimentieren, es wird eher reagierende
+Unternehmer geben, die beobachten und abwarten, sich eher auf bisher
+Bewährtes konzentrieren und ggf. einfach etwas imitieren.</li>
+<li>Wendet man diese Überlegung nun auf die Finanzierung von Unternehmen
+an, so kann man die Frage aufwerfen, warum man in Europa die eigenen
+Strukturen des Hausbankenprinzips auf Kosten der
+Kapitalmarktorientierung zurückgedrängt hat. Wäre es nicht im Sinne
+der Heterogenität sinnvoll, ein alternatives Konzept am Markt zu
+testen? Hier deutet sich schon ein erster Zusammenhang zur
+Theoriebildung in der Volkswirtschaftslehre an. Im Zuge der
+Verhandlungen über Basel II ist es schlicht nicht gelungen, sich mit
+eigenen theoretischen Vorstellungen gegenüber einem stärker am
+Kapitalmarkt orientierten Modell durchzusetzen. <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></li>
+<li>Wer sind nun diese Rating-Agenturen? Es fällt auf, dass es in Bezug
+auf die großen Schuldner nur einige wenige Agenturen gibt. In Bezug
+auf die Staatsschuldenkrise werden hier häufig Standard &amp; Poor&rsquo;s,
+Fitch, Moody&rsquo;s genannt. Deren Ratings haben mit Sicherheit einen
+sehr großen Einfluss. Klar jedoch ist, dass diese Agenturen
+natürlich nur mit dem Blick durch ihre eigene theoretische Brille zu
+ihren Einschätzungen kommen können. Und diese ist wahrscheinlich
+(man mag mich da gerne korrigieren, ich habe es nicht geprüft) von
+der US-amerikanischem Mainstream-Ökonomie beeinflusst. <sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>
+Es wundert daher nicht, dass die Einschätzungen der Rating-Agenturen
+sich in einer gewissen Weise gleichen oder gleichen Ansätzen folgen.
+Auch hier die Frage: Fördert Gleichförmigkeit im Denken und in den
+Ansätzen den Wettbewerb? Sollten nicht alternative Rating-Konzepte
+am Markt getestet werden?</li>
+<li>Und hier schließt sich der Kreis von den Rating-Agenturen hin zur
+Frage, wie Volkswirtschaftslehre überhaupt gelehrt wird. Märkte,
+aber auch Wissenschaftssysteme, die von Gleichförmigkeit geprägt
+sind, können alternative und unterschiedliche Hypothesen nicht
+prüfen. Der Wettbewerb auf Märkten, der Wettbewerb um die besten
+Theorien der Wirtschaftswissenschaften, benötigt eine gewisse
+Heterogenität. Es wird daher spannend zu sehen sein, ob sich aus der
+momentanen Krise alternative Konzepte entwickeln und ob sie sich an
+ihren jeweiligen Märkten bewähren können.</li>
+</ol>
+
+
+<p>(Dieser Artikel hat einen <a href="http://www.blablameter.de">Blablameter-Wert</a>
+von 0.22.)</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Ich will nun hier nicht in die Diskussion einsteigen, ob das eine oder das andere System besser ist, dazu gäbe es sicherlich eine Menge zu sagen, aber das soll hier nicht der Punkt sein.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Dass man sich nun über die Folgen wundert, ist folglich völlig unverständlich, siehe bspw. mein Blogpost zum Vorhaben der EU, den Rating-Agenturen unter bestimmten Bedingungen die Publikation von Länderratings zu untersagen: <a href="http://www.dbrunner.de/blog/2011/10/20/eu-will-lnderrtings-verbieten/">Link zum Blog-Post</a><a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+<li id="fn:3">
+<p>Einigen der Schimpftiraden über die deutschen Ökonomen kann ich allerdings nicht so recht folgen. So wurde den Ökonomen in Deutschland über viele Jahre vorgehalten, sie seien international wissenschaftlich nicht &ldquo;anschlussfähig&rdquo;, publizierten zuwenig in den großen Journalen. Nun sind diese, wie man leicht prüfen kann, in der Regel US-amerikanische oder britische Zeitschriften. Will man dort landen, muss man sich ein Stück weit natürlich auf die Weltsicht des Mainstreams einstellen. Es gibt Ausnahmen, zugegeben. Aber grob skizziert lande ich mit einem Standardthema und einer Mainstream-Methodik eher im American Economic Journal als mit etwas sehr Ausgefallenem und Unüblichen.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Zu den negativen Zinsen]]></title>
+    <link href="http://www.dbrunner.de/blog/2012/01/10/zu-den-negativen-zinsen/"/>
+    <updated>2012-01-10T19:03:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2012/01/10/zu-den-negativen-zinsen</id>
+    <content type="html"><![CDATA[<p>Verschiedene Zeitungen berichteten, es habe nun bei einer aktuellen
+Refinanzierungsrunde Deutschlands negative &ldquo;Zinsen&rdquo; gegeben. Wie kann
+das passieren?</p>
+
+<p>Bei der Ausgabe einer Anleihe überlegt sich der ausgebende Staat einen
+Nominalzins, den er für die Anleihe zahlen würde. Ein Nominalsatz von
+1,00% würde bei einer Anleihe von 100 EUR dem Zeichner oder Inhaber der
+Anleihe eine jährliche Zinszahlung von 1,00 EUR bringen. Diesen Wert
+nennt man auch den Kupon einer Anleihe, da dafür früher tatsächlich
+Stücke eines speziellen Bogens als Kupon abgeschnitten werden mussten
+und gegen diesen Kupon dann die Zahlung erfolgt.</p>
+
+<p>Nun geht der ausgebende Staat an den Markt und schaut für eine solche
+Anleihe, ob die ihm jemand abkaufen würde. Er sagt also: &ldquo;Ich will 100
+EUR und zahle dafür nominal 1,00% im Jahr.&rdquo;</p>
+
+<p>Wenn er nun ein schlechter Schuldner ist, kann es sein, dass er die
+Anleihe dann nur für 90 los wird. Dann ist der Nominalzins immer noch
+1,00%, da der Inhaber der Anleihe aber 1,00 EUR für 90 EUR bekommt,
+steigt die Rendite, zugleich muss die ausgebende Stelle am Ende der
+Laufzeit die 100 EUR zurückzahlen. Umgekehrt kann es auch sein, dass
+Leute 110 EUR für die Anleihe bieten, sie bekommen dann am Ende nur 100
+EUR zurück und erhalten auch nur eine Zinszahlung von 1,00 EUR pro Jahr
+für die angelegten 110 EUR, was dann eine niedrigere Rendite als 1,00%
+ergibt.</p>
+
+<p>Oder um es noch einfacher zu machen, nehmen wir nun noch an, dass die
+Anleihe bereits nach einem Jahr zurückgezahlt wird:</p>
+
+<p>Wird sie zu 100 verkauft, so ist die Rendite einfach 1%, bei Kurs 101
+ist die Rendite 0% (man bekommt am Ende des Jahres ja die 100 plus 1%
+Kupon, also 101 wieder, das ist also genau das, was man bei der Ausgabe
+gezahlt hat), bei Kurs 102 ist die Rendite dann -1%.</p>
+
+<p>Zusammengefasst, die Rendite sinkt, wenn der Kurs ansteigt und
+umgekehrt. Sie kann auch in der Konstellation negativ werden, wenn
+beispielsweise ein kleiner Kupon mit einem hohen Kurs einhergeht.</p>
+
+<p>Bei neuen Anleihen schätzt der ausgebende Staat in der Regel vorher ab,
+wo die Rendite wohl liegen wird und ruft ein Volumen und einen Kupon
+auf. Bei der Schuldenverwaltung in Deutschland liegt man mit dieser
+Abschätzung zumeist recht gut, so dass die Rendite oft sehr nah beim
+Kupon zu liegen kommt. Das ist bei anderen Ländern in jüngster
+Vergangenheit auch schon mal gerne schief gegangen.</p>
+
+<p>Bei den in der Presse dargestellten kurzfristigen Titeln handelte es
+sich um sogenannte unverzinsliche Schatzanweisungen. Diese funktionieren
+nun anders, denn sie haben gar keinen Kupon (sog. Nullkuponanleihen oder
+Zerobonds). Das bedeutet, wenn der Ausgabepreis unter 100 liegt, ergibt
+sich eine positive Rendite (der häufigste Fall), bei der gestrigen
+Auktion lag der Kurs über 100, damit wurde die Rendite negativ.
+Genaugenommen gab es also gar keine &ldquo;negative Zinsen&rdquo;, sondern eine
+&ldquo;negative Rendite&rdquo;</p>
+
+<p>Die aktuellen Informationen zu den Auktionsergebnissen kann man
+<a href="http://www.deutsche-finanzagentur.de/fileadmin/Material_Deutsche_Finanzagentur/PDF/Aktuelle_Informationen/Auktionsergebnisse.pdf">hier</a>
+einsehen.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Wir testen Stress]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/12/16/wir-testen-stress/"/>
+    <updated>2011-12-16T12:13:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/12/16/wir-testen-stress</id>
+    <content type="html"><![CDATA[<p>Wie heute <a href="http://www.gfds.de/presse/pressemitteilungen/161211-wort-des-jahres-2011">bekannt</a> wurde, hat die Gesellschaft für Deutsche Sprache in
+diesem Jahr das Wort &ldquo;Stresstest&rdquo; zum Wort des Jahres gewählt.</p>
+
+<p>Bei der Gelegenheit erinnerte ich mich an folgenden kurzen Kontakt mit
+der GfdS aus dem Jahr 2003:</p>
+
+<p>In der Hitliste der Wörter des Jahres 2003 fand sich unter anderem der
+Begriff Steuerbegünstigungsabbaugesetz. Ich wies die Gesellschaft darauf
+hin, dass es ein solches Gesetz nicht gebe, sondern dass es sich wohl um
+das von der Bundesregierung eingebrachte Steuervergünstigungsabbaugesetz
+(StVergAbG) (zugeleitet dem Deutschen Bundestag mit Bundestagsdrucksache
+15/287) handeln müsse. Auf diesen Hinweis antwortete die Gesellschaft
+für Deutsche Sprache wie folgt:</p>
+
+<blockquote><p>Als Ergebnis der Belegsammlung und einiger Umfragen und Preisaufgaben
+lagen uns im geschilderten Fall beide Varianten vor: der Name des
+Gesetzes Steuervergünstigungsabbaugesetz und die &ndash; wohl eher im
+Alltagsdeutsch übliche Form Steuerbegünstigungsabbaugesetz. Letzteres
+scheint unseren Einsendern näher zu sein, was sprachliche Gründe haben
+kann: jmdn. begünstigen vs. etw. vergünstigen (veraltet)&ndash; (…) Aus
+diesem Grunde entschied sich die Kommission für diese Variante.</p></blockquote>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Steuerliche Behandlung von Popcorn]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/11/28/steuerliche-behandlung-von-popcorn/"/>
+    <updated>2011-11-28T12:06:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/11/28/steuerliche-behandlung-von-popcorn</id>
+    <content type="html"><![CDATA[<p>Laut Bundesfinanzhof macht es für die Umsatzsteuer ja einen Unterschied,
+ob man eine Currywurst im Sitzen oder im Stehen am Kiosk einnimmt (siehe
+zum Beispiel
+<a href="http://www.handelsblatt.com/unternehmen/handel-dienstleister/7-prozent-im-stehen-19-prozent-im-sitzen-/4534688.html">Handelsblatt</a>).</p>
+
+<p>Gerade lese ich im Steuerrundbrief meines Steuerberaters zur Frage,
+welcher Steuersatz für Nachos und Popcorn im Kino anzusetzen ist:</p>
+
+<blockquote><p>&ldquo;Der Bundesfinanzhof hat nun entschieden, dass es sich auch beim
+Verkauf von Popcorn und Nachos in einem Kino um die Abgabe von
+Standardspeisen handelt. Allein der Umstand, dass Tische und Stühle im
+Foyer auch zum Verzehr der Speisen genutzt werden können, führt nicht
+dazu, dass es sich insgesamt um eine Dienstleistung (Umsatzsteuersatz
+19%) handelt. Dies wäre nur der Fall, wenn das Mobiliar ausschließlich
+dazu bestimmt ist, den Verzehr der Lebensmittel zu erleichtern.&rdquo;</p></blockquote>
+
+<p>Mal ganz knapp resümierend: Das ist doch alles völlig grotesk!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Bilanzfehler oder nicht Bilanzfehler]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/11/27/bilanzfehler-oder-nicht-bilanzfehler/"/>
+    <updated>2011-11-27T10:58:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/11/27/bilanzfehler-oder-nicht-bilanzfehler</id>
+    <content type="html"><![CDATA[<p>Der medialen Aufmerksamkeit (zum Beispiel bei der
+<a href="http://www.zeit.de/wirtschaft/2011-10/hre-bad-bank-2">ZEIT</a>) um einen
+vermeintlichen Rechen- oder Bilanzierungsfehler bei der Bad Bank der
+Hypo Real Estate mit dem zauberhaften Namen &ldquo;FMS
+Wertmanagement <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> stand ich schon immer etwas skeptisch
+gegenüber.</p>
+
+<p>Nach einem Gespräch mit einem Bekannten mit Branchenkenntnis scheint die
+neuere Darstellung in der
+<a href="http://www.zeit.de/2011/47/HRE-Bilanzfehler">ZEIT</a> der Wirklichkeit am
+nächsten zu kommen (von der dort unterstellten Absicht vielleicht einmal
+abgesehen).</p>
+
+<p>Sehr stark vereinfacht ist wohl Folgendes passiert: Geht eine Bank
+Geschäfte und Gegengeschäfte mit einer anderen Bank ein, so schließen
+die Banken untereinander in der Regel sogenannte
+<a href="http://de.wikipedia.org/wiki/Netting_(Finanzen">Netting-Vereinbarungen</a>).
+Diese stellen sicher, dass im Insolvenzfall des Geschäftspartners nur
+der Saldo bestimmter Geschäfte wirksam wird. Im anderen Fall würden die
+Forderungen in die Insolvenzmasse fließen und die Verbindlichkeiten
+müssten weiter bedient werden. Dies würde ein sehr hohes Risiko
+bedeuten, und um dies zu reduzieren schließen Banken untereinander
+Netting-Vereinbarungen ab. Die Saldierung im Insolvenzfall ist an einen
+Reihe von Bedingungen geknüpft wie gleichartiges Geschäft, gleiche
+Währung, gleicher Geschäftspartner etc. Für die Bilanzierung dieser
+Geschäfte hat die Bank nach dem deutschen Bilanzierungsrecht des
+Handelsgesetzbuches nun zwei Möglichkeiten: (1) Grundsätzlich sind
+Forderungen und Verbindlichkeiten getrennt auszuweisen; (2) die Bank
+<em>darf</em> allerdings bestimmte &ldquo;Pakete&rdquo; saldiert ausweisen.</p>
+
+<p>Folglich war die erste FMS Wertmanagement-Bilanz richtig und die zweite
+wohl ebenso. Denn es bestand ein Bilanzierungswahlrecht hinsichtlich der
+Saldierung der Positionen. <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
+
+<p>Die ganze Aufregung ist nun eigentlich nur dem Umstand geschuldet, dass
+für den deutschen Schuldenstand aus der FMS Wertmanagement-Bilanz nur
+die Passivpositionen an die EU gemeldet werden. Dies ergibt natürlich
+(Netting hin oder Netting her) ein krudes Bild, da in einer Bankbilanz
+den Passivpositionen natürlich auch immer Aktivpositionen
+gegenüberstehen. Das reine Melden von Passivgeschäften wird also bei
+einer Bankbilanz immer ein schiefes Bild auf den Schuldenstand der
+Bundesrepublik Deutschland werfen. Oder anders herum: Die Integration
+von Bankbilanzen in das Rechnungswesen öffentlicher Haushalte ist
+schwierig bis unmöglich.</p>
+<div class="footnotes">
+<hr/>
+<ol>
+<li id="fn:1">
+<p>Beim <a href="http://neusprech.org/fms-wertmanagement/">Neusprech-Blog</a> gibt es zum Namen eine schöne Analyse.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
+<li id="fn:2">
+<p>Auf Feinheiten wie Bilanzkontinuität und die Erläuterung der Ansätze im Anhang gehe ich hier aus Vereinfachungsgründen nicht ein.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
+</ol>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Schwarz-gelber Subventionsabbau]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/11/07/schwarz-gelber-subventionsabbau/"/>
+    <updated>2011-11-07T00:00:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/11/07/schwarz-gelber-subventionsabbau</id>
+    <content type="html"><![CDATA[<p><em>Kleine Vorbemerkung:</em> Im vergangenen Jahr hatte ich mich mehr zufällig
+als absichtlich mit dem Biersteuergesetz
+<a href="http://www.dbrunner.de/blog/2010/07/02/vorsicht-vor-den-marginalien-bei-steuervereinfachung-und-subventionsabbau.html">beschäftigt</a>.
+Es ging hauptsächlich um die Rechtfertigung für die Steuerbefreiung des
+Haustrunks im Rahmen der Subventionsberichterstattung der
+Bundesregierung. Diese findet sich seit 1918 in den Regelungen zur
+Biersteuer und da es sich um eine &ldquo;Marginalie&rdquo; handele, sei keine
+Evaluierung und auch kein Abbau vorgesehen, darüberhinaus bestehen die
+Gründe für die Einführung (welche waren das noch mal?) weiterhin fort.</p>
+
+<p>Zum 1.7. diesen Jahres trat eine Erweiterung der
+Umsatzsteuerschuldnerschaft auf steuerpflichtige Lieferungen von
+Mobilfunkgeräten und integrierten Schaltkreisen ab einer
+Bemessungsgrundlage von 5.000 EUR in Kraft. Dies wollte ich im Original
+nachlesen.</p>
+
+<p>Also greife ich zur <a href="http://dipbt.bundestag.de/dip21/btd/17/051/1705127.pdf">Bundestagsdrucksache 17/5127</a>, in der
+sich der zugehörige Gesetzentwurf befand. Dabei handelt es sich aber um
+einen Gesetzentwurf zur Änderung von Verbrauchssteuergesetzen. Irgendwie
+ging es um sprachliche und sonstige der Rechtsklarheit dienende
+Veränderungen (Umstellung von Steuerentlastungen auf Steuerbefreiungen
+und so etwas, soweit ich das verstanden habe). Also nichts, was
+irgendwie mit Mobilfunk oder integrierten Schaltkreisen zu tun hätte.</p>
+
+<p>Die Veränderung der Umsatzsteuerschuldnerschaft wurde, warum auch immer,
+vom Finanzausschuss des Deutschen Bundestages während der Beratungen
+noch in dieses Gesetz
+<a href="http://dipbt.bundestag.de/dip21/btd/17/055/1705510.pdf">eingeschoben</a>.
+Diese Huckepackgesetzgebund empfinde ich ja schon immer als etwas
+merkwürdig.</p>
+
+<p>Aber, so denke ich, wenn ich das schon mal in der Hand habe, dann schaue
+ich doch einfach einmal nach, ob denn nun wenigstens ein bisschen
+Subventionsabbau um sich gegriffen hat. Das Ergebnis ist wenig
+überraschend: Im <a href="http://www.gesetze-im-internet.de/bierstg_2009/BJNR190800009.html">§ 23 des Biersteuergesetzes</a>
+findet sich nach wie vor die Steuerbefreiung für den Haustrunk. Na, das
+war ja nach Bekunden der Bundesregierung ohnehin nur eine Marginalie,
+woher soll da die Kraft für eine Änderung kommen?</p>
+
+<p><em>Kurzer Nachtrag:</em> Der Gesetzentwurf zur Regelung der Verbrauchsteuern
+war wohl fraktionsübergreifend gewollt. Jedoch sehr fein folgende
+Anmerkung im Bericht (Bt-Dr. 17/5510, Seite 4):</p>
+
+<blockquote><p>&ldquo;Die <strong>Fraktion der SPD</strong> hat angeregt, zu einem späteren Zeitpunkt
+grundsätzlich darüber zu beraten, warum Schnupftabak kein
+Tabakerzeugnis im Sinne des Tabaksteuergesetzes sei.&rdquo;</p></blockquote>
+
+<p>Irgendwie erinnert mich das sehr an <a href="http://www.youtube.com/watch?v=EGAEHoMMJgc">dies</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Referendum in Griechenland]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/11/02/referendum-in-griechenland/"/>
+    <updated>2011-11-02T11:21:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/11/02/referendum-in-griechenland</id>
+    <content type="html"><![CDATA[<p>Der griechische Ministerpräsident hat angekündigt, dass er das
+griechische Volk in einem Referendum über die Sparanstrengungen zur
+Bewältigung der griechischen Staatsschuldenkrise abstimmen lassen
+möchte. In der Folge gerät die europäische Politik und die Finanzmärkte
+in helle Aufregung und ein weiterer Krisengipfel jagt den bereits hinter
+uns liegenden.</p>
+
+<p>Warum eigentlich diese Aufregung? Zum Ausgangspunkt der aktuellen Krise
+befand sich Griechenland kurz zusammengefasst in folgender Situation:
+Die Schulden des Landes standen in einem nicht mehr vertretbaren
+Verhältnis zur Leistungsfähigkeit des Landes, der Schuldendienst schien
+auf absehbare Zeit nicht mehr leistbar. Zugleich war das institutionelle
+Gefüge verkrustet und benötigte dringend Reformen.</p>
+
+<p>Nachdem aufgrund der Mitgliedschaft im Euro-Raum eine Anpassung über den
+Wechselkurs nicht in Frage kam, gab es im Grunde zwei Alternativen: (1)
+Sofort und unmittelbar den Schuldendienst einzuschränken und sich mit
+den staatlichen und privaten Gläubigern zu einigen. Dabei wurde
+wahrscheinlich diese Alternative angesichts des Beispiels Argentinien
+als wenig attraktiv angesehen. (2) Gemeinsam mit den europäischen
+Partnern Reformen anzugehen.</p>
+
+<p>Reformen bedeuten dabei, wie auch beobachtbar, einen massiven Sparkurs,
+der sich letztlich bei den Einkommen der Bürger niederschlägt. Dieser
+Kurs würde zu sozialen Spannungen bis hin zu sozialen Verwerfungen
+führen.</p>
+
+<p>Nun mag man sich die Entscheidungssituation wie folgt vorstellen: Mit
+der Einbindung der europäischen Partner über das Vehikel EFSF (soweit
+ich das verstanden habe) kommen diese selbst in einem &ldquo;Insolvenzfall&rdquo;
+Griechenlands nicht mehr so leicht aus ihrer Hilfe heraus, mit den
+eingeleiteten Sparreformen können als sinnvoll erachtete Reformen
+angestoßen werden, für die sich in normalen Situationen ggf. gar keine
+Mehrheit finden ließe. Und falls sämtliche Bemühungen nicht ausreichen
+oder die sozialen und politischen Spannungen zu groß werden, kann man
+immer noch die Hände heben und sagen: &ldquo;Wir haben alles versucht, wir
+können nicht mehr.&rdquo;</p>
+
+<p>Die Variante (2) erscheint für mich aus Sicht der griechischen Regierung
+als die deutlich bessere Alternative und dann ist das Verhalten
+Papandreous meines Erachtens doch nur folgerichtig.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[EU will Länderrätings verbieten]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/10/20/eu-will-lnderrtings-verbieten/"/>
+    <updated>2011-10-20T17:56:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/10/20/eu-will-lnderrtings-verbieten</id>
+    <content type="html"><![CDATA[<p>Da lese ich gerade <a href="http://www.ftd.de/politik/europa/:umstrittene-bewertungen-eu-will-laenderratings-verbieten/60118331.html">in der FTD</a>,
+dass die EU überlegt, Ratingagenturen zu verbieten, Urteile über
+kriselnde EU-Länder zu veröffentlichen. Ist das überhaupt die richtige
+Fragestellung?</p>
+
+<p>So richtig klar ist mir das nämlich nicht: Haben nicht die gleichen
+Politiker immer auf eine stärkere Kapitalmarktorientierung gedrängt?
+Haben wir mit Basel II und anderen Maßnahmen nicht die
+kapitalmarktorientierten Eigenkapitalunterlegungsvorschriften erhalten?
+Ausgehend vom Rating eines Schulderns sollte doch das notwendige
+Eigenkapital bestimmt und in der Folge der Kredit passend bepreist
+werden. Mit dem Effekt, dass dem kriselnden Häuslebauer die Banken mit
+Verstärkung von Sicherheiten um die Ecke kommen, mit dem Effekt, dass
+dem kriselnden Mittelständler die Banken die Zinsen nach oben anpassen
+und mehr Sicherheiten verlangen. Wenn nun Staaten kriseln, dann soll
+noch nicht mal der von der Politik vorgesehene Mittler, die
+Ratingagenturen, ihre Zweifel an der Rückzahlungsfähigkeit äußern
+dürfen?</p>
+
+<p>Wie kann man die Finanzmärkte in einer bestimmten Weise regulieren und
+dann über das eigentlich gewollte Ergebnis erstaunt sein?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Programm-Bibliotheken und verschiedene Versionsstände]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/10/16/programm-bibliotheken-und-verschiedene-versionsstnde/"/>
+    <updated>2011-10-16T00:00:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/10/16/programm-bibliotheken-und-verschiedene-versionsstnde</id>
+    <content type="html"><![CDATA[<p>Ich bin ein sehr intensiver Nutzer von
+<a href="http://www.orgmode.org">Org-Mode</a>, einem speziellen Modul/Modus für den
+Emacs-Editor (ich habe hier auf meiner Homepage auch einmal mit einer
+kleinen <a href="http://archive.dbrunner.de/it/org-mode.html">Seite</a> dazu begonnen). Nun ja, was soll man
+sagen: Bei Emacs wird eine recht alte Version mitgeliefert. Ich wollte
+dann mal auch wegen einiger Funktionen die neueste nutzen. Also via
+<code>git</code> heruntergeladen und eingebunden und Peng, irgendwas funktioniert
+natürlich nicht mehr: Ich benötige pratisch täglich den Export von
+Org-Mode-Dateien nach <code>LaTeX</code>, der wollte aber nicht mehr. Nun kann ich
+zwar Lisp, aber das Emacs Lisp ist doch etwas speziell und die
+Debug-Möglichkeiten sind etwas … nun ja, altbacken. Kurzum: Das macht
+überhaupt keinen Spaß. Im Endeffekt habe ich dann herausgefunden, dass
+unter bestimmten Umständen Teile des alten, bei Emacs mitgelieferten
+Codes nachgeladen wird anstelle der neuen Distribution. Diese
+bescheidene Art von Emacs mit Modulen und Paketen umzugehen ist wirklich
+erschreckend. Was dafür wiederum total toll war: In der von mir
+verwendeten Org-Mode-Version war wohl ein Fehler, das ganze Ding über
+die Mailingliste geschickt und innert einem halben Tag war der Fehler
+von anderen Nutzern und von Carsten Dominik auch gleich gefixt.
+Grandiose Antwortzeit!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Umbau der Webseite und des Blogs]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/10/15/umbau-der-webseite-und-des-blogs/"/>
+    <updated>2011-10-15T00:00:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/10/15/umbau-der-webseite-und-des-blogs</id>
+    <content type="html"><![CDATA[<p>Manchmal muss man am blutigen Ende ein wenig leiden. Jedenfalls
+funktionierte mein schönes Setup mit Org-Mode und einem kleinen Werkzeug
+für die Blog-Einträge und den Atom-Feed nicht mehr. Ich habe versucht,
+mich in den zehntausenden Zeilen Emacs-Lisp-Code von Org-Mode zurecht zu
+finden, habe es dann aber aufgegeben. Im Nachgang hatte ich dann keine
+große Lust mehr auf Fehlerkorrekturen und Herumgebastel und der
+Blog-Teil blieb eine Weile liegen.</p>
+
+<p>Insbesondere habe ich mich nicht so richtig für eine Variante auf Basis
+von <a href="https://github.com/mojombo/jekyll/wiki">Jekyll</a> begeistern können:
+Neues Stück Software, das kaputt gehen kann und basiert dann auch noch
+auf einem Haufen Bibliotheken und Ruby und damit habe ich es bisher doch
+noch nicht so recht.</p>
+
+<p>Wieder gingen Monate ins Land und dann habe ich im Sommer 2011 mal damit
+ein wenig herumexperimentiert und das funktioniert eigentlich ganz
+brauchbar. Beim Update auf die Version 7.7 von Org-Mode brach dann auch
+wieder einmal alles auseinander. Das Leben am blutigen Ende hat eben
+auch so seine Tücken.</p>
+
+<p>Einzig, den Atom-Feed, den habe ich bisher noch nicht wiederbeleben
+können, dafür gibt es unter <a href="blog/feed.xml">einen RSS-Feed</a>.</p>
+
+<p><strong>Update:</strong> Und die Links zu den Bildern hier im Blog scheinen auch noch
+nicht so richtig zu tun; da muss ich auch noch einmal ran.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Constanze Kurz/Frank Rieger, Die Datenfresser]]></title>
+    <link href="http://www.dbrunner.de/blog/2011/06/30/constanze-kurzfrank-rieger-die-datenfresser/"/>
+    <updated>2011-06-30T13:00:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2011/06/30/constanze-kurzfrank-rieger-die-datenfresser</id>
+    <content type="html"><![CDATA[<p>Nun, ich habe das Buch von Constanze Kurz und Frank Rieger, Die
+Datenfresser, gelesen. Hier eine sehr kurze Besprechung:</p>
+
+<p>Die beiden Autoren wollen erklären, &ldquo;wie Internetfirmen und Staat sich
+unsere persönlichen Daten einverbleiben und wie wir die Kontrolle
+darüber zurückerlangen.&rdquo; Thematisch werden automatisierte Datenanalysen,
+der Wert der Nutzerdaten, die ökonomischen Mechanismen hinter sozialen
+Netzwerken und den Daten der Nutzer und einige Aspekte des staatlichen
+Einsatzes zur Datenanalyse vorgestellt und diskutiert.</p>
+
+<p>Als wichtige Botschaft wird dem Leser mitgegeben, dass seine Daten für
+Unternehmen einen Wert darstellen und dass Angebote im Netz dazu dienen,
+diese Daten zu erlangen und zu monetarisieren; also Vorsicht vor
+Kostenlos-Angeboten, denn im Kern zahlt man auch für ein kostenloses
+Angebot, im Zweifel mit seinen Daten. Eine andere Kernbotschaft läuft
+darauf hinaus, dass Daten auch missbraucht werden können, sei es von
+staatlicher Stelle oder von zwielichtigen Zeitgenossen.</p>
+
+<p>Das Bändchen mit 272 Seiten ist kurzweilig geschrieben, wechselt
+zwischen tatsächlichen Begebenheiten, Sachbuchdarstellung, fiktiven
+Geschichten und netzpolitischen und gesellschaftspolitischen Erwägungen
+geschickt hin und her. Der leichte und nicht in technische Details
+verliebte Sprachstil sowie die Art, wie technische Probleme dargestellt
+werden, macht es sicherlich auch einem Laien einfach, den Themen zu
+folgen und etwas hinter die Geschäftspraktiken und die Techniken zu
+sehen.</p>
+
+<p>Das Buch leidet an mancher Stelle etwas, da die Kraft des Arguments
+nicht so richtig einschlagen mag. Beispiele sind insbesondere die Frage,
+wie man sich denn nun gegen die Datenfresser wehrt oder die
+Argumentation gegen die &ldquo;Wer nichts zu verbergen hat…&rdquo;-Ideologie. Das
+wirkt an der einen oder anderen Stelle zwar bemüht, aber nicht so
+kraftvoll, wie man sich das erhofft hat. Insbesondere ein schlüssiges
+Gegenkonzept hätte noch etwas breiter und prominenter ausgearbeitet
+werden können.</p>
+
+<p>Auch werden zum Teil Gefahren und Befürchtungen recht abstrakt
+beschrieben, manchmal auch mit Hinweis, so etwas sei schon vorgekommen,
+aber man hätte es dann an der einen oder anderen Stelle doch gerne
+genauer gewusst.</p>
+
+<p>Eher ein Buch zum Verschenken an Leute, die noch nicht so firm im Netz
+sind.</p>
+
+<p><a href="http://www.fischerverlage.de/buch/Die_Datenfresser/9783100485182">Constanze Kurz/Frank Rieger, Die Datenfresser, 272 Seiten, S. Fischer Verlag, 16,95 EUR.</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Selbstauskünfte bei Unternehmen]]></title>
+    <link href="http://www.dbrunner.de/blog/2010/12/08/selbstausknfte-bei-unternehmen/"/>
+    <updated>2010-12-08T00:00:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2010/12/08/selbstausknfte-bei-unternehmen</id>
+    <content type="html"><![CDATA[<p>Nach dem geltenden <a href="http://bundesrecht.juris.de/bdsg_1990/__34.html">Paragraphen 34 des
+Bundesdatenschutzgesetztes</a>
+steht einem als &ldquo;Betroffener&rdquo; einmal jährlich eine Auskunft über die bei
+&ldquo;verarbeitenden Stellen&rdquo; gespeicherten Daten und Übermittlungen zu.
+Ebenso muss der Score-Wert für irgendwelche Bonitätseinstufungen
+mitgeteilt werden. So aus dem Kopf fielen mir einige Unternehmen ein und
+ich hatte mir vorgenommen, dort einmal vorstellig zu werden. Jedoch gibt
+es unter <a href="http://www.selbstauskunft.net">http://www.selbstauskunft.net</a> einen kostenlosen
+Internetdienst, der diese Anfragen per Telefax an bekannte Unternehmen
+sendet. Also flugs die Daten eingetragen, einen geschwärzten Scan meines
+Personalausweises hinzugefügt und die Fax-Maschine von
+www.selbstauskunft.net angeworfen. Und siehe da, schon ab dem zweiten
+Tag kommen die ersten Rückmeldungen mit Auskünften. Sehr erhellend, was
+man dort weiß bzw. was man alles nicht weiß. Man kann dort auch die
+Antwortzeit hinterlegen, so dass die Statistiken zum Antwortverhalten
+der Unternehmen befüttert werden. Und man kann abschließend, so die
+Homepage, auch alle Daten wieder löschen.</p>
+
+<p>Wer also einmal diese Selbstauskünfte bei Schufa und anderen einholen
+möchte, der sollte auf die Homepage von <a href="http://www.selbstauskunft.net">http://www.selbstauskunft.net</a>
+einmal einen Blick werden; denn so ist das Stellen der Anfrage sehr
+komfortabel.</p>
 ]]></content>
   </entry>
   

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Medien | Textstückchen]]></title>
+  <link href="http://www.dbrunner.de/blog/categories/medien/atom.xml" rel="self"/>
+  <link href="http://www.dbrunner.de/"/>
+  <updated>2014-12-17T19:02:39+00:00</updated>
+  <id>http://www.dbrunner.de/</id>
+  <author>
+    <name><![CDATA[Daniel Brunner]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Zur Loveparade-Berichterstattung]]></title>
+    <link href="http://www.dbrunner.de/blog/2010/08/04/zur-loveparade-berichterstattung/"/>
+    <updated>2010-08-04T09:11:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2010/08/04/zur-loveparade-berichterstattung</id>
+    <content type="html"><![CDATA[<p>Ich habe im Online-Angebot der <a href="http://www.faz.net">FAZ</a> einen
+interessanten Artikel von <a href="http://www.stefan-niggemeier.de">Stefan
+Niggemeier</a> zum Umgang der Medien mit
+dem Unglück während der Loveparade in Duisburg gefunden: <a href="http://tinyurl.com/38qx8o5">&ldquo;Ein einziger
+Blick in die Zukunft hätte doch gezeigt&hellip;&rdquo;</a>
+Er kritisiert darin, dass viele Medien hinterher mit einer
+Selbstgefälligkeit schrieben, dass es ja für jeden Laien erkennbar zur
+Katastrophe kommen musste, im Vorhinein dieselben Medien diese aber
+nicht erkennen konnten.</p>
+]]></content>
+  </entry>
+  
+</feed>
