@@ -2,7 +2,7 @@
 title: "Verrechnen leicht gemacht"
 layout: post
 date: 2010-06-13 15:10
-categories: Statistik, IT, R
+categories: [Statistik, IT, R]
 ---
 
 Folgende Ereignisse finde ich ja sehr erhellend: Telepolis

@@ -2,7 +2,7 @@
 title: "Programm-Bibliotheken und verschiedene Versionsstände"
 layout: post
 date: 2011-10-16
-categories: Homepage, Org-Mode, IT
+categories: [Homepage, Org-Mode, IT]
 ---
 
 Ich bin ein sehr intensiver Nutzer von

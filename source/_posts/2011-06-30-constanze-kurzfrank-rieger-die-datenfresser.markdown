@@ -2,7 +2,7 @@
 title: "Constanze Kurz/Frank Rieger, Die Datenfresser"
 layout: post
 date: <2011-06-30 13:00
-categories: Bücher, IT
+categories: [Bücher, IT]
 ---
 
 Nun, ich habe das Buch von Constanze Kurz und Frank Rieger, Die

@@ -2,7 +2,7 @@
 title: "Code snippets not working at the moment"
 layout: post
 date: 2010-07-02
-categories: Homepage, IT
+categories: [Homepage, IT]
 ---
 
 Two of my [code snippets](http://archive.dbrunner.de/it/org-mode.html) for org-mode are not working

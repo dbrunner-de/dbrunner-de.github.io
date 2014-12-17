@@ -2,7 +2,7 @@
 title: "Schwarz-gelber Subventionsabbau"
 layout: post
 date: 2011-11-07
-categories: Politik, Steuern
+categories: [Politik, Steuern]
 ---
 
 *Kleine Vorbemerkung:* Im vergangenen Jahr hatte ich mich mehr zufällig

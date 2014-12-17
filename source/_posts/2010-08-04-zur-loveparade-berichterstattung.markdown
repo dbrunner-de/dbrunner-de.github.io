@@ -2,7 +2,7 @@
 title: "Zur Loveparade-Berichterstattung"
 layout: post
 date: 2010-08-04 09:11
-categories: Allerlei, Medien 
+categories: [Allerlei, Medien]
 ---
 
 Ich habe im Online-Angebot der [FAZ](http://www.faz.net) einen
