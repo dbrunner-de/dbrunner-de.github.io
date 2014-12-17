@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Bücher, | Textstückchen]]></title>
+  <title><![CDATA[Category: Bücher | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/bucher/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2014-12-17T19:27:16+00:00</updated>
+  <updated>2014-12-17T19:31:53+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
