@@ -33,3 +33,12 @@ Arbeit aufgenommen.
 * Common Lisp 
 * Gnu Emacs, Org-mode
 * R, ggplot2 
+
+## Zu meinen bisherigen Homepages und Beiträgen
+
+Hier habe ich noch einige Links zu den Inhalten meiner früheren
+Homepages gesammelt: 
+
+* [Links alter Beiträge (2010-2012)](/link-sammlung/)
+* [Alte Homepage (2010-2012)](http://archive.dbrunner.de)
+* [Alte Homepage (2005-2009)](http://archive.dbrunner.de/old/main.html) 

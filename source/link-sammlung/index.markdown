@@ -11,8 +11,11 @@ Nachdem einige der Links zu Beiträgen meiner alten Org-Mode-Seite
 nicht richtig funktionieren bzw. schwer zu finden sind, habe ich die
 hier noch einmal zusammengestellt. Um von dort wieder zur aktuellen
 Seite zurückzukommen, müssen Sie die Zurück-Funktion des Browsers
-verwenden. (Vielleicht integriere ich die Texte irgendwann auch mal
-hier im Octopress-Blog, bald kommen ja wieder lange Winterabende.)
+verwenden.
+
+Zwischenzeitlich habe ich die Blog-Posts auch alle in Octopress
+integriert, so dass diese Links nur noch historischen Charakter
+haben. 
 
 ## Blog-Beiträge
 
