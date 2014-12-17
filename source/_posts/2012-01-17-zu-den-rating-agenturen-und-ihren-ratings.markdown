@@ -101,7 +101,7 @@ von 0.22.)
 
 [^1]: Ich will nun hier nicht in die Diskussion einsteigen, ob das eine oder das andere System besser ist, dazu gäbe es sicherlich eine Menge zu sagen, aber das soll hier nicht der Punkt sein.
 
-[^2]: Dass man sich nun über die Folgen wundert, ist folglich völlig unverständlich, siehe bspw. mein Blogpost zum Vorhaben der EU, den Rating-Agenturen unter bestimmten Bedingungen die Publikation von Länderratings zu untersagen: <http://www.dbrunner.de/blog/2011/10/20/eu-will-lnderrtings-verbieten.html>
+[^2]: Dass man sich nun über die Folgen wundert, ist folglich völlig unverständlich, siehe bspw. mein Blogpost zum Vorhaben der EU, den Rating-Agenturen unter bestimmten Bedingungen die Publikation von Länderratings zu untersagen: [Link zum Blog-Post](/blog/2011/10/20/eu-will-lnderrtings-verbieten/)
 
 [^3]: Einigen der Schimpftiraden über die deutschen Ökonomen kann ich allerdings nicht so recht folgen. So wurde den Ökonomen in Deutschland über viele Jahre vorgehalten, sie seien international wissenschaftlich nicht "anschlussfähig", publizierten zuwenig in den großen Journalen. Nun sind diese, wie man leicht prüfen kann, in der Regel US-amerikanische oder britische Zeitschriften. Will man dort landen, muss man sich ein Stück weit natürlich auf die Weltsicht des Mainstreams einstellen. Es gibt Ausnahmen, zugegeben. Aber grob skizziert lande ich mit einem Standardthema und einer Mainstream-Methodik eher im American Economic Journal als mit etwas sehr Ausgefallenem und Unüblichen.
 
