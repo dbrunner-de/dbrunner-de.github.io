@@ -7,7 +7,7 @@ categories: Homepage
 ---
 
 Es kamen lange Winterabende und ich habe die alten Blog-Einträge von
-der mittels Org-Mode erstellten Seite hier nach Octorpress
+der mittels Org-Mode erstellten Seite hier nach Octopress
 migriert. Im Archiv sind diese zu finden und die Links etc. sollten
 nun auch passend mit migriert worden sein.
 
