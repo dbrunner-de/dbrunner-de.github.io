@@ -64,6 +64,13 @@ S. 47-62.
 
 ### Arbeitspapiere, Poster und ähnliches 
 
+  - (zusammen mit Marietta Haffner), German cooperatives: property
+    right hybrids with strong tenant security, OTB Working papers
+    2014-07, OTB, TU Delft, Niederlande, 2014, [PDF](/pub/OTB_Working_papers_2014-07_German_cooperatives.pdf),
+    [Link bei der TU Delft](http://www.bk.tudelft.nl/fileadmin/Faculteit/BK/Over_de_faculteit/Afdelingen/OTB/publicaties/Working_papers/OTB_Working_papers_2014-07_German_cooperatives.pdf),
+    dies ist ein überarbeitetes Arbeitspapiers, das Marietta Haffner
+    und ich im Jahr 2012 zur ENHR-Konferenz 2012 vorbereitet haben. 
+
   - (zusammen mit Marietta Haffner), German tenant cooperatives and
     secure occupancy, in: Gulbrandsen, L., Magnusson, T, Nordvik, V.,
     Sandlie H. C. (Hrsg.), ENHR Conference 2012, Housing: Local
