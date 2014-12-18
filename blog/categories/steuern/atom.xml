@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Steuern | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/steuern/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2014-12-18T08:00:32+00:00</updated>
+  <updated>2014-12-18T08:25:46+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Aus der Entscheidung des BVerfG zur Erbschaftsteuer]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer/"/>
+    <updated>2014-12-18T07:41:37+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer</id>
+    <content type="html"><![CDATA[<p>Das Bundesverfassungsgerichts hat in seiner <a href="http://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2014/12/ls20141217_1bvl002112.html">Entscheidung</a>
+vom 17. Dezember 2014 (1 BvL 21/12) Regelungen zur Erbschaftsteuer als
+verfassungwidrig moniert. Ich finde in der Entscheidung eigentlich den
+fünften Leitsatz mit am interessantesten:</p>
+
+<blockquote><p>&ldquo;Ein Steuergesetz ist verfassungswidrig, wenn es Gestaltungen zulässt,
+mit denen Steuerentlastungen erzielt werden können, die es nicht
+bezweckt und die gleichheitsrechtlich nicht zu rechtfertigen sind.&rdquo;</p></blockquote>
+
+<p>Nun bin ich kein Steuer-, Verfassungsrechtsspezialist (genaugenommen
+gar kein Rechtsspezialist) und weiß nicht, ob dieser Satz nicht
+ohnehin schon gilt oder Verfassungs- und Steurrechtsrealität ist. Ich
+habe es allerdings in dieser Klarheit noch nicht gelesen. Und wenn ich
+mir so das eine oder andere Steuergesetz und seine Wirkungen ansehe,
+dann kommt da unter diesem Leitsatz vielleicht in den kommenden Jahren
+einiges auf die Gerichte zu.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Steuerliche Behandlung von Popcorn]]></title>
