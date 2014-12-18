@@ -3,7 +3,9 @@ layout: post
 title: "Migration alter Blog-Einträge"
 date: 2014-12-17 18:11:00 +0000
 comments: true
-categories: Homepage
+categories:
+  - Homepage
+  - Org-Mode
 ---
 
 Es kamen lange Winterabende und ich habe die alten Blog-Einträge von
