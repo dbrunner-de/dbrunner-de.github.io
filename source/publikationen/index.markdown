@@ -65,8 +65,13 @@ S. 47-62.
 ### Arbeitspapiere, Poster und ähnliches 
 
   - (zusammen mit Marietta Haffner), German tenant cooperatives and
-    secure occupancy, Konferenzpapier für die [ENHR Conference 2012](http://www.ccnorway.no/enhr2012/), Housing: Local Welfare
-    and Local Markets in a Globalised World, 24. bis 27. Juni 2012,
+    secure occupancy, in: Gulbrandsen, L., Magnusson, T, Nordvik, V.,
+    Sandlie H. C. (Hrsg.), ENHR Conference 2012, Housing: Local
+    Welfare and Local Markets in a Globalised World, Oslo, NOVA/ENHR,
+    S. 1-19, Konferenzpapier für die
+    [ENHR Conference 2012](http://www.ccnorway.no/enhr2012/), Housing:
+    Local Welfare and Local Markets in a Globalised
+    World, 24. bis 27. Juni 2012,
     Lillehammer, Norwegen.  
 
   - (zusammen mit Tim Voigt, Anne Piper und Axel Freier), Mitgliederstruktur und kooperative Diffusionsprozesse im Agribusiness, Poster für die 50. Jahrestagung der GEWISOLA, Möglichkeiten und Grenzen der wissenschaftlichen Politikanalyse, 29. September bis 1. Oktober 2010, Braunschweig, PDF [auf der Seite des Johann Heinrich von Thünen-Instituts](http://www.ti.bund.de/fileadmin/dam_uploads/Institute/LR/lr_de/lr_de_gewisola2010/lr_de_beitraege/P3_4.pdf) und [hier]({{ root.url }}/pub/poster-gewisola-2010.pdf). 
