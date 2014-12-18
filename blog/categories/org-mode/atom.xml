@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Org-Mode | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/org-mode/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2014-12-18T08:25:46+00:00</updated>
+  <updated>2014-12-18T10:58:02+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,44 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Migration alter Blog-Einträge]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/12/17/migration/"/>
+    <updated>2014-12-17T18:11:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/12/17/migration</id>
+    <content type="html"><![CDATA[<p>Es kamen lange Winterabende und ich habe die alten Blog-Einträge von
+der mittels Org-Mode erstellten Seite hier nach Octopress
+migriert. Im Archiv sind diese zu finden und die Links etc. sollten
+nun auch passend mit migriert worden sein.</p>
+
+<p>Bei der Konvertierung habe ich ein Programm kennengelernt, das mir
+sehr geholfen hat: <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>. Das
+ist ein Konverter, der Text- und Markupdateien hin und her
+konvertieren kann. Dabei beherrscht er eine ganze Reihe von
+Formaten. Insbesondere kann er das Org-Mode-Format (das ich für viele
+Dinge verwende) ebenso wie LaTeX und Markdown (daneben aber auch noch
+eine Legion von Formaten).</p>
+
+<p>Da mein Hauptdateiformat ohnehin &ldquo;Textdateien&rdquo; sind (&ldquo;Never trust a
+file that isn&rsquo;t ASCII&rdquo;) ist das sehr praktisch, um zwischen
+verschiedenen Markup-Formaten hin und her zu springen.</p>
+
+<p>Für die Migration meine Blog-Einträge lief dies wie folgt: Ich hatte
+die in der alten Homepage mit Org-Mode und Org-Jekyll erstellt. Dabei
+hatte das Org-Jekyll-Modul entsprechende HTML-Dateien mit einem
+YAML-Header erzeugt. Mittels Pandoc konnte ich die nun wieder nach
+Markdown konvertieren, habe die YAML-Header ein wenig angepasst,
+Kategorien aktualisiert und noch mal das Markup zwecks Zeilenumbrüche,
+Fußnoten und Links geprüft und leicht angepasst. Insgesamt sehr
+schnell bewältigbar.</p>
+
+<p>Dieser ganze Zoo rund um Markdown und andere ähnliche Formate ist zwar
+manchmal ein bisschen unübersichtlich, aber mir gefällt das sehr gut,
+dass man mit wenig Markup schön Textdateien strukturieren kann und
+dann mit Pandoc auch gut hin und her konvertieren kann.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Programm-Bibliotheken und verschiedene Versionsstände]]></title>
