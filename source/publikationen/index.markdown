@@ -67,8 +67,7 @@ S. 47-62.
   - (zusammen mit Marietta Haffner), German tenant cooperatives and
     secure occupancy, in: Gulbrandsen, L., Magnusson, T, Nordvik, V.,
     Sandlie H. C. (Hrsg.), ENHR Conference 2012, Housing: Local
-    Welfare and Local Markets in a Globalised World, Oslo, NOVA/ENHR,
-    S. 1-19, Konferenzpapier für die
+    Welfare and Local Markets in a Globalised World, Oslo, NOVA/ENHR, S. 1-19, Konferenzpapier für die
     [ENHR Conference 2012](http://www.ccnorway.no/enhr2012/), Housing:
     Local Welfare and Local Markets in a Globalised
     World, 24. bis 27. Juni 2012,
