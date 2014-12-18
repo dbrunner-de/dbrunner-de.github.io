@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2014-12-18T05:25:33+00:00</updated>
+  <updated>2014-12-18T08:00:32+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,30 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Aus der Entscheidung des BVerfG zur Erbschaftsteuer]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer/"/>
+    <updated>2014-12-18T07:41:37+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer</id>
+    <content type="html"><![CDATA[<p>Das Bundesverfassungsgerichts hat in seiner <a href="http://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2014/12/ls20141217_1bvl002112.html">Entscheidung</a>
+vom 17. Dezember 2014 (1 BvL 21/12) Regelungen zur Erbschaftsteuer als
+verfassungwidrig moniert. Ich finde in der Entscheidung eigentlich den
+fünften Leitsatz mit am interessantesten:</p>
+
+<blockquote><p>&ldquo;Ein Steuergesetz ist verfassungswidrig, wenn es Gestaltungen zulässt,
+mit denen Steuerentlastungen erzielt werden können, die es nicht
+bezweckt und die gleichheitsrechtlich nicht zu rechtfertigen sind.&rdquo;</p></blockquote>
+
+<p>Nun bin ich kein Steuer-, Verfassungsrechtsspezialist (genaugenommen
+gar kein Rechtsspezialist) und weiß nicht, ob dieser Satz nicht
+ohnehin schon gilt oder Verfassungs- und Steurrechtsrealität ist. Ich
+habe es allerdings in dieser Klarheit noch nicht gelesen. Und wenn ich
+mir so das eine oder andere Steuergesetz und seine Wirkungen ansehe,
+dann kommt da unter diesem Leitsatz vielleicht in den kommenden Jahren
+einiges auf die Gerichte zu.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Migration alter Blog-Einträge]]></title>
@@ -1022,36 +1046,6 @@ genauer gewusst.</p>
 sind.</p>
 
 <p><a href="http://www.fischerverlage.de/buch/Die_Datenfresser/9783100485182">Constanze Kurz/Frank Rieger, Die Datenfresser, 272 Seiten, S. Fischer Verlag, 16,95 EUR.</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Selbstauskünfte bei Unternehmen]]></title>
-    <link href="http://www.dbrunner.de/blog/2010/12/08/selbstausknfte-bei-unternehmen/"/>
-    <updated>2010-12-08T00:00:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2010/12/08/selbstausknfte-bei-unternehmen</id>
-    <content type="html"><![CDATA[<p>Nach dem geltenden <a href="http://bundesrecht.juris.de/bdsg_1990/__34.html">Paragraphen 34 des
-Bundesdatenschutzgesetztes</a>
-steht einem als &ldquo;Betroffener&rdquo; einmal jährlich eine Auskunft über die bei
-&ldquo;verarbeitenden Stellen&rdquo; gespeicherten Daten und Übermittlungen zu.
-Ebenso muss der Score-Wert für irgendwelche Bonitätseinstufungen
-mitgeteilt werden. So aus dem Kopf fielen mir einige Unternehmen ein und
-ich hatte mir vorgenommen, dort einmal vorstellig zu werden. Jedoch gibt
-es unter <a href="http://www.selbstauskunft.net">http://www.selbstauskunft.net</a> einen kostenlosen
-Internetdienst, der diese Anfragen per Telefax an bekannte Unternehmen
-sendet. Also flugs die Daten eingetragen, einen geschwärzten Scan meines
-Personalausweises hinzugefügt und die Fax-Maschine von
-www.selbstauskunft.net angeworfen. Und siehe da, schon ab dem zweiten
-Tag kommen die ersten Rückmeldungen mit Auskünften. Sehr erhellend, was
-man dort weiß bzw. was man alles nicht weiß. Man kann dort auch die
-Antwortzeit hinterlegen, so dass die Statistiken zum Antwortverhalten
-der Unternehmen befüttert werden. Und man kann abschließend, so die
-Homepage, auch alle Daten wieder löschen.</p>
-
-<p>Wer also einmal diese Selbstauskünfte bei Schufa und anderen einholen
-möchte, der sollte auf die Homepage von <a href="http://www.selbstauskunft.net">http://www.selbstauskunft.net</a>
-einmal einen Blick werden; denn so ist das Stellen der Anfrage sehr
-komfortabel.</p>
 ]]></content>
   </entry>
   

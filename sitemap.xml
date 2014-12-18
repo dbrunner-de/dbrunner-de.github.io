@@ -191,12 +191,18 @@
         <lastmod>2014-12-18T05:25:25+00:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://www.dbrunner.de/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer/
+        </loc>
+        <lastmod>2014-12-18T08:00:22+00:00</lastmod>
+    </url>
+    <url>
         <loc>http://www.dbrunner.de/publikationen/</loc>
         <lastmod>2014-12-18T05:22:40+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.dbrunner.de/blog/archives/</loc>
-        <lastmod>2014-12-18T05:25:25+00:00</lastmod>
+        <lastmod>2014-12-18T08:00:22+00:00</lastmod>
     </url>
     <url>
         <loc>http://www.dbrunner.de/impressum/</loc>
@@ -216,6 +222,6 @@
     </url>
     <url>
         <loc>http://www.dbrunner.de/</loc>
-        <lastmod>2014-12-18T05:25:25+00:00</lastmod>
+        <lastmod>2014-12-18T08:00:22+00:00</lastmod>
     </url>
 </urlset>
