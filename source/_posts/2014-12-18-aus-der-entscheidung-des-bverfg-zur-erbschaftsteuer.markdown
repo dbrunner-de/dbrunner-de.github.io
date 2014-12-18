@@ -3,7 +3,7 @@ layout: post
 title: "Aus der Entscheidung des BVerfG zur Erbschaftsteuer"
 date: 2014-12-18 07:41:37 +0000
 comments: true
-categories: Steuer
+categories: Steuern
 ---
 
 Das Bundesverfassungsgerichts hat in seiner [Entscheidung](http://www.bundesverfassungsgericht.de/SharedDocs/Entscheidungen/DE/2014/12/ls20141217_1bvl002112.html)
