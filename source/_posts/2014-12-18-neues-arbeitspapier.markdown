@@ -5,7 +5,6 @@ date: 2014-12-18 18:24:27 +0000
 comments: true
 categories:
   - Wirtschaft
-  - Ökonomie 
 ---
 
 Zusammen mit
