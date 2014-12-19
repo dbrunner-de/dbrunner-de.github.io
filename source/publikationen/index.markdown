@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Publikationen, Vorträge, Projekte"
-date: 2014-10-05 12:33
+date: 2014-12-18 19:30
 comments: true
 sharing: true
 footer: true
