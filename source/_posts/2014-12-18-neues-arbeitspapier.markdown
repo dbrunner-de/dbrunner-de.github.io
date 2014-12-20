@@ -5,6 +5,8 @@ date: 2014-12-18 18:24:27 +0000
 comments: true
 categories:
   - Wirtschaft
+description: "Überarbeitetes Arbeitspapier von der ENHR 2012 Konferenz in Lillehammer als PDF eingestellt."
+keywords: "Forschung, Wohnungsgenossenschaften, ENHR, 2012, Lillehammer, research, housing cooperatives"
 ---
 
 Zusammen mit
