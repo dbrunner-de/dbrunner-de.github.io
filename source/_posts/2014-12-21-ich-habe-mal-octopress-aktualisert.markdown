@@ -11,8 +11,9 @@ keywords: "Octopress, Update, neue Version, Hinweise"
 Neulich fiel mir auf, dass die Suchfunktion, die auf Google basiert,
 nicht nur auf der eigenen Homepage, sondern im "gesamten" Suchindex
 von Google gesucht hat. Eben flatterte dieser
-[Tweet](https://twitter.com/octopress/status/546528904115404800) an
-mir vorbei und da hat sich wohl die API geändert.
+[Tweet](https://twitter.com/octopress/status/546528904115404800) mit
+[Link](https://github.com/imathis/octopress/commit/514ed5eb9f6bb91a6f3288febf3c2ba892a9b693)
+zu einem Fix an mir vorbei und da hat sich wohl die API geändert. 
 
 ![Octopress-Tweet](/img/2014-12-21-octopress.png)
 
