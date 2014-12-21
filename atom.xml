@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2014-12-21T11:52:23+00:00</updated>
+  <updated>2014-12-21T12:18:24+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ich habe mal Octopress aktualisert]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/12/21/ich-habe-mal-octopress-aktualisert/"/>
+    <updated>2014-12-21T11:58:16+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/12/21/ich-habe-mal-octopress-aktualisert</id>
+    <content type="html"><![CDATA[<p>Neulich fiel mir auf, dass die Suchfunktion, die auf Google basiert,
+nicht nur auf der eigenen Homepage, sondern im &ldquo;gesamten&rdquo; Suchindex
+von Google gesucht hat. Eben flatterte dieser
+<a href="https://twitter.com/octopress/status/546528904115404800">Tweet</a> an
+mir vorbei und da hat sich wohl die API geändert.</p>
+
+<p><img src="http://www.dbrunner.de/img/2014-12-21-octopress.png" alt="Octopress-Tweet" /></p>
+
+<p>Also habe ich mich einmal an den
+<a href="http://octopress.org/docs/updating/">Hinweisen</a> zum Aktualisieren von
+Octopress orientiert. Hierzu werden die folgenden Schritte vorgeschlagen:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git pull octopress master      # Get the latest Octopress
+</span><span class='line'>bundle install                 # Keep gems updated
+</span><span class='line'>rake update_source             # update the template's source
+</span><span class='line'>rake update_style              # update the template's style</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Soweit lief das auch. Es tauchten anschließend zwei Probleme auf:</p>
+
+<ol>
+<li><p>Das <code>execjs</code> jammerte, dass ihm irgendwie eine
+JavaScript-Bibliothek fehlte. Nach kurzer Recherche gab es die
+Empfehlung, die Zeile <code>gem 'therubyracer' in das</code>Gemfile`
+aufzunehmen. Okay, das funktionierte schon einmal.</p></li>
+<li><p>Bei den Feeds für die Kategorien jammerte das Octopress ein
+ungültiges Layout an. In <code>category_feed.xml</code> stand in der Tat
+<code>layout: nil</code>. Ich habe das auf <code>layout: page</code> geändert. Nun tat
+auch dies.</p></li>
+</ol>
+
+
+<p>Mit dem Update funktioniert nun auch das Such-Formular wieder.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA["Neues" Arbeitspapier]]></title>
@@ -975,39 +1020,6 @@ verwendeten Org-Mode-Version war wohl ein Fehler, das ganze Ding über
 die Mailingliste geschickt und innert einem halben Tag war der Fehler
 von anderen Nutzern und von Carsten Dominik auch gleich gefixt.
 Grandiose Antwortzeit!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Umbau der Webseite und des Blogs]]></title>
-    <link href="http://www.dbrunner.de/blog/2011/10/15/umbau-der-webseite-und-des-blogs/"/>
-    <updated>2011-10-15T00:00:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2011/10/15/umbau-der-webseite-und-des-blogs</id>
-    <content type="html"><![CDATA[<p>Manchmal muss man am blutigen Ende ein wenig leiden. Jedenfalls
-funktionierte mein schönes Setup mit Org-Mode und einem kleinen Werkzeug
-für die Blog-Einträge und den Atom-Feed nicht mehr. Ich habe versucht,
-mich in den zehntausenden Zeilen Emacs-Lisp-Code von Org-Mode zurecht zu
-finden, habe es dann aber aufgegeben. Im Nachgang hatte ich dann keine
-große Lust mehr auf Fehlerkorrekturen und Herumgebastel und der
-Blog-Teil blieb eine Weile liegen.</p>
-
-<p>Insbesondere habe ich mich nicht so richtig für eine Variante auf Basis
-von <a href="https://github.com/mojombo/jekyll/wiki">Jekyll</a> begeistern können:
-Neues Stück Software, das kaputt gehen kann und basiert dann auch noch
-auf einem Haufen Bibliotheken und Ruby und damit habe ich es bisher doch
-noch nicht so recht.</p>
-
-<p>Wieder gingen Monate ins Land und dann habe ich im Sommer 2011 mal damit
-ein wenig herumexperimentiert und das funktioniert eigentlich ganz
-brauchbar. Beim Update auf die Version 7.7 von Org-Mode brach dann auch
-wieder einmal alles auseinander. Das Leben am blutigen Ende hat eben
-auch so seine Tücken.</p>
-
-<p>Einzig, den Atom-Feed, den habe ich bisher noch nicht wiederbeleben
-können, dafür gibt es unter <a href="blog/feed.xml">einen RSS-Feed</a>.</p>
-
-<p><strong>Update:</strong> Und die Links zu den Bildern hier im Blog scheinen auch noch
-nicht so richtig zu tun; da muss ich auch noch einmal ran.</p>
 ]]></content>
   </entry>
   

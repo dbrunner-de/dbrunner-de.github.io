@@ -5,15 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Eine verschwurbelte Stellenausschreibung - Textstückchen</title>
+  <title>Ich habe mal Octopress aktualisert - Textstückchen</title>
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="Die Justus-Liebig-Universität Gießen (JLU)
-schreibt auf ihrer
-Stellenmarkt-Homepage
-Stellen für Professoren derzeit mit folgendem Textblock aus (hier &hellip;">
-  
+  <meta name="description" content="Octopress aktualisieren">
+  <meta name="keywords" content="Octopress, Update, neue Version, Hinweise">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -21,7 +18,7 @@ Stellen für Professoren derzeit mit folgendem Textblock aus (hier &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.dbrunner.de/blog/2010/03/21/eine-verschwurbelte-stellenausschreibung">
+  <link rel="canonical" href="http://www.dbrunner.de/blog/2014/12/21/ich-habe-mal-octopress-aktualisert">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Textstückchen" type="application/atom+xml">
@@ -73,7 +70,7 @@ Stellen für Professoren derzeit mit folgendem Textblock aus (hier &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Eine verschwurbelte Stellenausschreibung</h1>
+      <h1 class="entry-title">Ich habe mal Octopress aktualisert</h1>
     
     
       <p class="meta">
@@ -82,58 +79,50 @@ Stellen für Professoren derzeit mit folgendem Textblock aus (hier &hellip;">
 
 
 
-<time class='entry-date' datetime='2010-03-21T22:10:00+00:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2010</span></span> <span class='time'>10:10 pm</span></time>
+<time class='entry-date' datetime='2014-12-21T11:58:16+00:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>11:58 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Die <a href="http://www.uni-giessen.de">Justus-Liebig-Universität Gießen</a> (JLU)
-schreibt auf ihrer
-<a href="http://www.uni-giessen.de/stellenmarkt/angebote2.php?ber=0&amp;kat=2">Stellenmarkt-Homepage</a>
-Stellen für Professoren derzeit mit folgendem Textblock aus (hier am
-Beispiel der Ausschreibung für die W2-Professur für Soziologie mit dem
-Schwerpunkt Methoden der international vergleichenden Sozialforschung im
-Fachbereich Sozial- und Kulturwissenschaften, Einsendeschluss am 20.
-April 2010):</p>
+<div class="entry-content"><p>Neulich fiel mir auf, dass die Suchfunktion, die auf Google basiert,
+nicht nur auf der eigenen Homepage, sondern im &ldquo;gesamten&rdquo; Suchindex
+von Google gesucht hat. Eben flatterte dieser
+<a href="https://twitter.com/octopress/status/546528904115404800">Tweet</a> an
+mir vorbei und da hat sich wohl die API geändert.</p>
 
-<blockquote><p>&ldquo;Die Justus-Liebig-Universität Gießen strebt einen höheren Anteil von
-Frauen im Wissen- schaftsbereich an; deshalb bitten wir qualifizierte
-Wissenschaftlerinnen nachdrücklich, sich zu bewerben. Aufgrund des
-Frauenförderplanes besteht eine Verpflichtung zur Erhöhung des
-Frauenanteils. Die Justus-Liebig-Universität verfolgt auch das Ziel
-einer verstärkten Gewinnung von Führungskräften mit Gender- und
-Familienkompetenz. Die Justus-Liebig-Universität versteht sich als
-familiengerechte Hochschule. Bewerberinnen und Bewerber mit Kindern
-sind willkommen.&rdquo;</p></blockquote>
+<p><img src="/img/2014-12-21-octopress.png" alt="Octopress-Tweet" /></p>
 
-<p>Was genau versteht die JLU unter &ldquo;Gewinnung von Führungskräften mit
-Gender- und Familienkompetenz?&rdquo; Über das Suchformular der JLU zur
-&ldquo;Genderkompetenz&rdquo; (Stand 2010-03-21 So) findet man Hinweise auf
-Forschungsprojekte des FB03, zur &ldquo;Familienkompetenz&rdquo; keinen Treffer.</p>
+<p>Also habe ich mich einmal an den
+<a href="http://octopress.org/docs/updating/">Hinweisen</a> zum Aktualisieren von
+Octopress orientiert. Hierzu werden die folgenden Schritte vorgeschlagen:</p>
 
-<p>Möglicherweise wünscht sich die JLU etwas sehr Sinnvolles, allein es ist
-als nicht so recht möglich über ihre Homepage herauszufinden, worum es
-genau geht.</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git pull octopress master      # Get the latest Octopress
+</span><span class='line'>bundle install                 # Keep gems updated
+</span><span class='line'>rake update_source             # update the template's source
+</span><span class='line'>rake update_style              # update the template's style</span></code></pre></td></tr></table></div></figure>
 
-<p>Eine Suche über as Portal <a href="http://www.hessen.de">http://www.hessen.de</a> brachte auch keine
-Erhellung; also suchte ich über die Seite des <a href="http://www.bmfsfj.de/">Bundesministeriums für
-Familie, Senioren, Frauen und Jugend</a>. Dieses ist
-laut seiner Homepage <a href="http://www.gender-mainstreaming.net">http://www.gender-mainstreaming.net</a> das
-federführende Ressort für die &ldquo;Anwendung des Leitprinzips
-Geschlechtergerechtigkeit innerhalb der Bundesregierung&rdquo;. Mit dem vom
-Ministerium geförderten
-<a href="http://www.genderkompetenz.info">GenderKompetenzZentrum</a>, einem
-Forschungsinstitut an der Humboldt-Universität Berlin, wird diese Arbeit
-begleitet und unterstützt. Dort lese <a href="http://www.genderkompetenz.info/genderkompetenz">ich folgende</a> Definition:</p>
 
-<blockquote><p>&ldquo;Gender-Kompetenz ist die Fähigkeit von Personen, bei ihren Aufgaben
-Gender-Aspekte zu erkennen und gleichstellungsorientiert zu
-bearbeiten. Gender-Kompetenz ist eine Voraussetzung für erfolgreiches
-Gender Mainstreaming. Gleichzeitig wird durch die Umsetzung von Gender
-Mainstreaming neue Gender-Kompetenz erzeugt. Gender-Kompetenz setzt
-sich aus den Elementen Wollen, Wissen und Können zusammen: (&hellip;)&rdquo;</p></blockquote>
+<p>Soweit lief das auch. Es tauchten anschließend zwei Probleme auf:</p>
+
+<ol>
+<li><p>Das <code>execjs</code> jammerte, dass ihm irgendwie eine
+JavaScript-Bibliothek fehlte. Nach kurzer Recherche gab es die
+Empfehlung, die Zeile <code>gem 'therubyracer' in das</code>Gemfile`
+aufzunehmen. Okay, das funktionierte schon einmal.</p></li>
+<li><p>Bei den Feeds für die Kategorien jammerte das Octopress ein
+ungültiges Layout an. In <code>category_feed.xml</code> stand in der Tat
+<code>layout: nil</code>. Ich habe das auf <code>layout: page</code> geändert. Nun tat
+auch dies.</p></li>
+</ol>
+
+
+<p>Mit dem Update funktioniert nun auch das Such-Formular wieder.</p>
 </div>
 
 
@@ -149,12 +138,12 @@ sich aus den Elementen Wollen, Wissen und Können zusammen: (&hellip;)&rdquo;</p
 
 
 
-<time class='entry-date' datetime='2010-03-21T22:10:00+00:00'><span class='date'><span class='date-month'>Mar</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2010</span></span> <span class='time'>10:10 pm</span></time>
+<time class='entry-date' datetime='2014-12-21T11:58:16+00:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>11:58 am</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/allerlei/'>allerlei</a>
+    <a class='category' href='/blog/categories/homepage/'>homepage,</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
   
 </span>
 
@@ -170,10 +159,8 @@ sich aus den Elementen Wollen, Wissen und Können zusammen: (&hellip;)&rdquo;</p
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2010/03/07/kuler-eine-web-anwendung-zum-farben-abmischen-von-adobe/" title="Previous Post: Kuler, eine Web-Anwendung zum Farben abmischen von Adobe">&laquo; Kuler, eine Web-Anwendung zum Farben abmischen von Adobe</a>
+        <a class="basic-alignment left" href="/blog/2014/12/18/neues-arbeitspapier/" title="Previous Post: "Neues" Arbeitspapier">&laquo; &#8220;Neues&#8221; Arbeitspapier</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2010/03/22/das-restaurant-si-an-in-berlin/" title="Next Post: Das Restaurant Si An in Berlin">Das Restaurant Si An in Berlin &raquo;</a>
       
     </p>
   </footer>
