@@ -1,10 +1,85 @@
-<?xml version="1.0" encoding="utf-8"?>
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Category: allerlei - Textstückchen</title>
+  <meta name="author" content="Daniel Brunner">
+
+  
+  <meta name="description" content="Category: allerlei">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.dbrunner.de/blog/categories/allerlei/atom.xml">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Textstückchen" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Textstückchen</a></h1>
+  
+    <h2>Ganz kleine Textstückchen zu Allerlei.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="www.dbrunner.de">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/publikationen/">Publikationen/Vorträge/Projekte</a></li>
+  <li><a href="/blog/archives">Archiv</a></li>
+  <li><a href="/impressum/">Impressum</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article role="article">
+  
+  <header>
+    <h1 class="entry-title">Category: allerlei</h1>
+    
+  </header>
+  
+  <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Allerlei | Textstückchen]]></title>
+  <title><![CDATA[Category: allerlei | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/allerlei/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2014-12-21T11:01:12+00:00</updated>
+  <updated>2014-12-21T11:52:23+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -147,10 +222,10 @@ für Deutsche Sprache wie folgt:</p>
 
 <blockquote><p>Als Ergebnis der Belegsammlung und einiger Umfragen und Preisaufgaben
 lagen uns im geschilderten Fall beide Varianten vor: der Name des
-Gesetzes Steuervergünstigungsabbaugesetz und die &ndash; wohl eher im
+Gesetzes Steuervergünstigungsabbaugesetz und die - wohl eher im
 Alltagsdeutsch übliche Form Steuerbegünstigungsabbaugesetz. Letzteres
 scheint unseren Einsendern näher zu sein, was sprachliche Gründe haben
-kann: jmdn. begünstigen vs. etw. vergünstigen (veraltet)&ndash; (…) Aus
+kann: jmdn. begünstigen vs. etw. vergünstigen (veraltet)- (…) Aus
 diesem Grunde entschied sich die Kommission für diese Variante.</p></blockquote>
 ]]></content>
   </entry>
@@ -222,8 +297,8 @@ war und dieser Missbrauch den Bevollmächtigten der Beschwerdeführerin
 zuzurechnen ist. Die <strong>völlig ausufernde</strong> Verfassungsbeschwerde
 genügt in weiten Teilen offensichtlich nicht den Anforderungen an eine
 substantiierte Begründung. Den <strong>enormen</strong> <strong>Umfang der
-Beschwerdeschrift &ndash; einschließlich ergänzender</strong> <strong>Schriftsätze von
-mehr als 330 Seiten &ndash;</strong> haben die Bevollmächtigten der
+Beschwerdeschrift - einschließlich ergänzender</strong> <strong>Schriftsätze von
+mehr als 330 Seiten -</strong> haben die Bevollmächtigten der
 Beschwerdeführerin unter anderem durch <strong>umfangreiche, sachlich</strong>
 <strong>durch nichts gerechtfertigte Wiederholungen mutwillig</strong>
 herbeigeführt. Das Bundesverfassungsgericht muss es nicht hinnehmen,
@@ -231,13 +306,13 @@ dass es durch eine derart <strong>sinnentleerte</strong> Inanspruchnahme seiner
 Arbeitskapazität bei der Erfüllung seiner Aufgaben behindert wird und
 dadurch anderen Rechtsuchenden den ihnen zukommenden Grundrechtsschutz
 nur verzögert gewähren kann (vgl. BVerfG, Beschluss der 4. Kammer des
-Zweiten Senats vom 8. Oktober 2001 &ndash; 2 BvR 1004/01 &ndash;, juris &lt;Rn. 7>;
-Beschluss der 2. Kammer des Ersten Senats vom 24. November 2009 &ndash; 1
-BvR 3324/08 &ndash;, juris &lt;Rn. 3>).&rdquo; (Hervorhebung von mir, D.B.)</p></blockquote>
+Zweiten Senats vom 8. Oktober 2001 - 2 BvR 1004/01 -, juris \&lt;Rn. 7>;
+Beschluss der 2. Kammer des Ersten Senats vom 24. November 2009 - 1
+BvR 3324/08 -, juris \&lt;Rn. 3>).&rdquo; (Hervorhebung von mir, D.B.)</p></blockquote>
 
 <p>Ich finde, da spricht das Gericht eine deutliche Sprache. Mich würde ja
 die Beschwerdeschrift spaßeshalber interessieren. Vielleicht waren es ja
-&ndash; wie ein Bekannter mutmaßte &ndash; ohnehin nur 300 Seiten Marmeladerezepte.</p>
+- wie ein Bekannter mutmaßte - ohnehin nur 300 Seiten Marmeladerezepte.</p>
 
 <p>Andererseits wies <a href="http://tobiaswestphal.de/2010/07/beguendung-einer-missbrauchsgebuehr/">Tobias Westphal</a>
 darauf hin, dass pro Seite eine Gebühr von knapp 1,50 Euro anfiel. Ging
@@ -246,3 +321,87 @@ also doch noch.</p>
   </entry>
   
 </feed>
+
+  
+    <footer>
+      
+      
+        <div class="sharing">
+  
+  
+  
+</div>
+
+      
+    </footer>
+  
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1><a href="/ueber/">Über mich</a></h1>
+</section>
+<section>
+  <h1>Neueste Einträge</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/12/18/neues-arbeitspapier/">&#8220;Neues&#8221; Arbeitspapier</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer/">Aus der Entscheidung des BVerfG zur Erbschaftsteuer</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/17/migration/">Migration alter Blog-Einträge</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/21/wie-das-haus-von-bundesministerin-nahles-mauert/">Wie das Haus von Bundesministerin Nahles mauert</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/11/13/warten-auf-den-technischen-fortschritt-als-politisches-prinzip/">Warten auf den technischen Fortschritt als politisches Prinzip?</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Kategorien</h1>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (8)</a></li><li><a href='/blog/categories/it/'>it (8)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (2)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - Daniel Brunner -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
