@@ -5,6 +5,8 @@ date: 2014-06-23 22:45
 comments: true
 sharing: true
 footer: true
+description: "Impressum Homepage Daniel Brunner"
+keywords: "Impressum, Daniel Brunner"
 ---
 
 Dies ist mein kleines Blog. Ich zeichne hierfür auch presserechtlich verantwortlich.

@@ -3,6 +3,8 @@ title: "Wir testen Stress"
 layout: post
 date: 2011-12-16 12:13
 categories: Allerlei
+description: "Stresstests und das Wort des Jahres 2011"
+keywords: "Gesellschaft für Deutsche Sprache, 2011, Stresstest"
 ---
 
 Wie heute [bekannt](http://www.gfds.de/presse/pressemitteilungen/161211-wort-des-jahres-2011) wurde, hat die Gesellschaft für Deutsche Sprache in

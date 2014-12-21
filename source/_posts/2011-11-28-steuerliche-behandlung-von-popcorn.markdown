@@ -3,7 +3,10 @@ title: "Steuerliche Behandlung von Popcorn"
 layout: post
 date: 2011-11-28 12:06
 categories: Steuern
+description: "Bundesfinanzhofentscheidung zur Umsatzsteuer von Popvorn"
+keywords: "Bundesfinanzhof, Entscheidung, Umsatzsteuer Popcorn" 
 ---
+
 Laut Bundesfinanzhof macht es für die Umsatzsteuer ja einen Unterschied,
 ob man eine Currywurst im Sitzen oder im Stehen am Kiosk einnimmt (siehe
 zum Beispiel

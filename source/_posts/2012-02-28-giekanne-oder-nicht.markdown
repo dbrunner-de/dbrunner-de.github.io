@@ -3,6 +3,8 @@ layout: post
 title: "Gießkanne oder nicht?"
 date: 2012-02-28 11:06:00 +0000
 categories: Wirtschaft
+description: "Verteilen von Städtebauförderung nach der Gießkanne?"
+keywords: "Gießkann, Städtebauförderung, Mittel, Matthias Machnig, Verwaltungsvereinbarung Städtebauförderung 2011"
 ---
 
 Zu dem wohl bisher nicht veröffentlichten Gutachten einiger

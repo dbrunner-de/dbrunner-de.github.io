@@ -5,6 +5,8 @@ date: 2014-06-10 08:08
 comments: true
 sharing: true
 footer: true
+description: "Über Daniel Brunner"
+keywords: "Über, about"
 ---
 
 ## Kurzer Lebenslauf

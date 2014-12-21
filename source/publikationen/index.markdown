@@ -5,6 +5,8 @@ date: 2014-12-18 19:30
 comments: true
 sharing: true
 footer: true
+description: "Publikationen, Vorträge, Projekte von Daniel Brunner"
+keywords: "Publikationsliste, Publikationen, Vorträge, Projekte"
 ---
 
 Die ist eine Aufstellung meiner Publikationen, Vorträge,

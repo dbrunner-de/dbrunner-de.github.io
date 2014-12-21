@@ -6,6 +6,8 @@ comments: true
 categories:
   - Homepage
   - Org-Mode
+description: "Migration alter Blog-Einträge von Org-Mode"
+keywords: "Org-Mode, Migration, Konvertierung, Pandoc, Markdown" 
 ---
 
 Es kamen lange Winterabende und ich habe die alten Blog-Einträge von

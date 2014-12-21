@@ -3,6 +3,8 @@ title: "Zu den Rating-Agenturen und ihren Ratings"
 layout: post
 date: 2012-01-17 12:24
 categories: Wirtschaft
+description: "Rating-Agenturen und ihre Ratings"
+keywords "Rating, Agenturen, Ökonomie, Marktdynamik, Entwicklung"
 ---
 
 Frankreich verlor die Bestnote und sofort nehmen einige erneut die

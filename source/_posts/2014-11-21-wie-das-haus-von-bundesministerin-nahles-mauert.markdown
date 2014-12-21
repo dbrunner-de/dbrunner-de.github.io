@@ -6,6 +6,8 @@ comments: true
 categories:
   - Politik
   - Behörden
+description: "Wie das Bundesministerium für Arbeit und Soziales nicht reagiert"
+keywords: "Bundesministerium für Arbeit und Soziales, Informationsfreiheitsgesetz, Anfrage, Nichtreagieren, Tarifeinheit"
 ---
 
 Ein Gesetzesvorhaben der großen Koalition ist eine Regelung zur

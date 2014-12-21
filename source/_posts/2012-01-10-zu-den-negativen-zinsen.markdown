@@ -3,6 +3,8 @@ title: "Zu den negativen Zinsen"
 layout: post
 date: 2012-01-10 19:03
 categories: Wirtschaft
+description: "Erläuterungen zu sogenannten negativen Zinsen"
+keywords: "negative Zinsen, negative Rendite, Nullkuponanleihen"
 ---
 
 Verschiedene Zeitungen berichteten, es habe nun bei einer aktuellen

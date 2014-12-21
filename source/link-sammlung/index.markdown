@@ -5,6 +5,8 @@ date: 2014-10-05 12:08
 comments: true
 sharing: true
 footer: true
+description: "Linksammlung der Beiträge der alten Org-Mode Homepage"
+keywords: "Links, Org-Mode, alte Beiträge"
 ---
 
 Nachdem einige der Links zu Beiträgen meiner alten Org-Mode-Seite

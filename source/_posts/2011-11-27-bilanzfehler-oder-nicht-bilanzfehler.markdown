@@ -3,6 +3,8 @@ title: "Bilanzfehler oder nicht Bilanzfehler"
 layout: post
 date: 2011-11-27 10:58
 categories: Wirtschaft
+description: "Zu den Bilanzen der Bad Band, FMS Wertmanagement"
+keywords: "Bilanzierung, FMS Wertmanagement, Bad Bank, Netting"
 ---
 
 Der medialen Aufmerksamkeit (zum Beispiel bei der

@@ -4,6 +4,8 @@ title: "Aktenführung beim Beitragsservice"
 date: 2014-10-05 10:45:13 +0000
 comments: true
 categories: [Allerlei, Behörden]
+description: "Aktenführung beim Beitragsservice, ehemals GEZ"
+keywords: "Aktenführung, Beitragsservice, GEZ"
 ---
 
 Im Jahr 2012 habe ich mich rechtmäßig (was allerdings auch etwas
