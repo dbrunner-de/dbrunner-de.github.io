@@ -6,6 +6,7 @@ comments: true
 categories:
   - Homepage
   - Org-Mode
+  - Octopress
 description: "Migration alter Blog-Einträge von Org-Mode"
 keywords: "Org-Mode, Migration, Konvertierung, Pandoc, Markdown" 
 ---
