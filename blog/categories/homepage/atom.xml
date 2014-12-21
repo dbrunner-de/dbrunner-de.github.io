@@ -79,7 +79,7 @@
   <title><![CDATA[Category: homepage, | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/homepage/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2014-12-21T13:43:36+00:00</updated>
+  <updated>2014-12-21T14:15:09+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -126,6 +126,14 @@ auch dies.</p></li>
 
 
 <p>Mit dem Update funktioniert nun auch das Such-Formular wieder.</p>
+
+<p><strong>Ergänzung:</strong> Ich lasse das Jekyll und Octopress in einem
+   <a href="/blog/2014/06/10/relaunch-fast-fertig/">Docker-Container</a> laufen und irgendwie bekam ich bei <code>rake preview</code>
+   meine Seite nicht mehr zu sehen. Da ich mich mit Ruby und den
+   Komponenten nicht so gut auskenne, weiß ich nicht, ob mein &ldquo;Fix&rdquo; so
+   gut ist: Ich habe im <code>Rakefile</code> den <code>rackup</code>-Aufruf um den
+   Parameter <code>-o 0.0.0.0</code> ergänzt. Dann bekam ich vom Host wieder eine
+   Verbindung zum Webserver im Octopress-Container.</p>
 ]]></content>
   </entry>
   
