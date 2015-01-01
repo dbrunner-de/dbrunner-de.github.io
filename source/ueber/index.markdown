@@ -11,13 +11,15 @@ keywords: "Über, about"
 
 ## Kurzer Lebenslauf
 
+<img class="right" src="/img/daniel.jpg" title="Daniel">
+
 Mein Name ist *Daniel Brunner*, ich habe Ende der 1990er Jahre an der
 *[Philipps-Universität Marburg](http://www.uni-marburg.de)*
 *Volkswirtschaftslehre* studiert. Anschließend habe ich einige Jahre
 am *[Marburger Genossenschaftsinstitut](http://www.ifg-marburg.de)*
 gearbeitet, dem ich auch heute noch verbunden bin. Anschließend habe
-ich im elterlichen
-*[Software-Unternehmen](http://www.systemhaus-brunner.de)* meine
+ich im in den elterlichen
+*Software-Unternehmen ([Link](http://www.systemhaus-brunner.de) und [Link](http://www.brunner-software.de))* meine
 Arbeit aufgenommen.
 
 ## Interessen Ökonomie 
