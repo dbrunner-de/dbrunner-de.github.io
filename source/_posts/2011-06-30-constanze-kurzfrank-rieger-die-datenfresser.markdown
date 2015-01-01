@@ -1,7 +1,7 @@
 ---
 title: "Constanze Kurz/Frank Rieger, Die Datenfresser"
 layout: post
-date: <2011-06-30 13:00
+date: 2011-06-30 13:00
 categories: [Bücher, IT]
 ---
 
