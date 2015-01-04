@@ -132,6 +132,16 @@ auch dies.</p></li>
    gut ist: Ich habe im <code>Rakefile</code> den <code>rackup</code>-Aufruf um den
    Parameter <code>-o 0.0.0.0</code> ergänzt. Dann bekam ich vom Host wieder eine
    Verbindung zum Webserver im Octopress-Container.</p>
+
+<p><strong>Update vom 04. Januar 2014:</strong> Nach einem kurzen
+  <a href="https://twitter.com/Krrrcks/status/546667456128114688">Gespräch</a>
+  via Twitter habe ich mich entschieden, den eingebauten Server doch
+  wieder so zu belassen, wie es im <code>Rakefile</code> ursprünglich
+  stand. Statt dessen habe ich einfach in dem Docker-Container einen
+  <code>nginx</code> hinzuinstalliert, der dann mein <code>public</code>-Verzeichnis an den
+  Port 4000 ausliefert. So funktioniert es wieder prima: Ich starte
+  den <code>nginx</code> und lasse dann das <code>rake watch</code> laufen, um die Seiten
+  immer wieder neu zu erzeugen, wenn sich Dinge geändert haben.</p>
 </div>
 
 
@@ -224,7 +234,7 @@ auch dies.</p></li>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Daniel Brunner -
+  Copyright &copy; 2015 - Daniel Brunner -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

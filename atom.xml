@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2014-12-21T17:15:55+00:00</updated>
+  <updated>2015-01-04T13:55:57+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -64,6 +64,16 @@ auch dies.</p></li>
    gut ist: Ich habe im <code>Rakefile</code> den <code>rackup</code>-Aufruf um den
    Parameter <code>-o 0.0.0.0</code> ergänzt. Dann bekam ich vom Host wieder eine
    Verbindung zum Webserver im Octopress-Container.</p>
+
+<p><strong>Update vom 04. Januar 2014:</strong> Nach einem kurzen
+  <a href="https://twitter.com/Krrrcks/status/546667456128114688">Gespräch</a>
+  via Twitter habe ich mich entschieden, den eingebauten Server doch
+  wieder so zu belassen, wie es im <code>Rakefile</code> ursprünglich
+  stand. Statt dessen habe ich einfach in dem Docker-Container einen
+  <code>nginx</code> hinzuinstalliert, der dann mein <code>public</code>-Verzeichnis an den
+  Port 4000 ausliefert. So funktioniert es wieder prima: Ich starte
+  den <code>nginx</code> und lasse dann das <code>rake watch</code> laufen, um die Seiten
+  immer wieder neu zu erzeugen, wenn sich Dinge geändert haben.</p>
 ]]></content>
   </entry>
   
