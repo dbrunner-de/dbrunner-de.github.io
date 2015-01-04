@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-01-04T16:04:35+00:00</updated>
+  <updated>2015-01-04T16:37:55+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -55,6 +55,20 @@ Vortrag als Video ansehen.</p>
 MorgenGrauen-Stammtisch ausgerufen und siehe da: Drei Spieler und zwei
 Gäste fanden sich ein, so dass man bei einem Bier ein wenig plaudern
 und sich austauschen konnte.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Aus zwei mach eins]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/01/04/aus-zwei-mach-eins/"/>
+    <updated>2015-01-04T16:16:08+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/01/04/aus-zwei-mach-eins</id>
+    <content type="html"><![CDATA[<p>Bisher hatte ich meine Blog-Einträge auf zwei Blogs aufgeteilt,
+<a href="http://blog.krrrcks.net">eines</a> mit mehr technischen (und zum Teil
+englischen Texten) und dieses hier mit deutschen Texten. Ich denke,
+ich werde das auf dieses eine Blog hier konzentrieren. Das reduziert
+doch etwas den Verwaltungsaufwand. Ich habe die Texte vom nun etwas
+still gelegten Blog hier herüber kopiert.</p>
 ]]></content>
   </entry>
   
@@ -500,6 +514,363 @@ Schmerzen verursacht hat, habe ich es dabei bewenden lassen.</p>
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Mind the storage driver for Ubuntu cloud images (on Azure)]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/07/24/mind-the-storage-driver-for-ubuntu-cloud-images-on-azure/"/>
+    <updated>2014-07-24T12:30:43+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/07/24/mind-the-storage-driver-for-ubuntu-cloud-images-on-azure</id>
+    <content type="html"><![CDATA[<p>A few days ago I wanted to build Firefox OS&#8217; newest release for a
+friend. Because I did not wanted these GB of code, binaries etc. on my
+notebook I fired up an Ubuntu image on Microsoft Azure. I feared that
+at a certain point in the build process I may had to download
+everything to my local machine and therefore I installed Docker via a
+simple</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install docker.io</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>Then I started the build process as laid out on Mozilla&rsquo;s Developer
+Network. But, during downloading the source code (that&rsquo;s about 12 GB
+of Git repositories from Mozilla and Android), I got a &ldquo;no more space
+left on device&rdquo;. That was strange: I had a 100 GB volume attached to
+the VM and enough space and inodes left. After some searching I asked
+on the IRC channel and got a good hint: &ldquo;What&rsquo;s your storage driver?&rdquo;</p>
+
+<p>Well, I thought that it&rsquo;s AUFS; I wanted to add &ldquo;as usual&rdquo; because
+AUFS was available on my notebook from the beginning. But a <code>docker.io
+info</code> gave me:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo docker.io info
+</span><span class='line'>Containers: 0
+</span><span class='line'>Images: 0
+</span><span class='line'>Storage Driver: devicemapper
+</span><span class='line'> Pool Name: docker-8:1-131188-pool
+</span><span class='line'> Data file: /var/lib/docker/devicemapper/devicemapper/data
+</span><span class='line'> Metadata file: /var/lib/docker/devicemapper/devicemapper/metadata
+</span><span class='line'> Data Space Used: 291.5 Mb
+</span><span class='line'> Data Space Total: 102400.0 Mb
+</span><span class='line'> Metadata Space Used: 0.7 Mb
+</span><span class='line'> Metadata Space Total: 2048.0 Mb
+</span><span class='line'>Execution Driver: native-0.1
+</span><span class='line'>Kernel Version: 3.13.0-29-generic
+</span><span class='line'>WARNING: No swap limit support</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I then learned that somehow the DeviceMapper driver only allows a
+certain amount of diffs and I reached that amount with my build
+process. (Maybe it&rsquo;s possible to relax that restriction but I do not
+know how.)</p>
+
+<p>I learned as well that the Ubuntu cloud image that is provided by
+Microsoft Azure doesn&rsquo;t have AUFS support. Therefore Docker uses the
+DeviceMapper storage driver instead. After I installed the AUFS
+support I could export the images, change the storage driver and
+import the images again.</p>
+
+<p>It would be nice seeing the Docker documentation being more detailed
+on those storage drivers.</p>
+
+<p><strong>(Update 2014-10-23)</strong> Thanks to
+ <a href="http://blog.iron.io/2014/10/docker-in-production-what-weve-learned.html">this blog post from Iron.io</a>
+ I found some documentation of the devicemapper storage driver. It is
+ located in the
+ <a href="https://github.com/docker/docker/tree/master/daemon/graphdriver/devmapper">Repository</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[DateTime conversion can be tricky]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/07/24/datetime-conversion-can-be-tricky/"/>
+    <updated>2014-07-24T09:41:36+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/07/24/datetime-conversion-can-be-tricky</id>
+    <content type="html"><![CDATA[<p>I wrote a small Lisp application and a JavaScript client gets some
+data from that application. All time stamps are returned as &ldquo;Lisp&rdquo;
+time stamps, i.e. an integer with seconds where zero equals Jan 01
+1900.</p>
+
+<p>In the JS client the time stamp is then converted to JS time stamps,
+i.e. millisconds where zero equals Jan 01 1970.</p>
+
+<p>When testing the application I noticed that sometimes the displayed
+date is one day behind. For example in the data base I have Jan 05
+1980 but in JavaScript I get a Jan 04 1980. But some other dates
+worked: A time stamp Jan 05 1970 was correctly converted to Jan 05
+1970.</p>
+
+<p>I had a look into the JavaScript code and found:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>convA = function(ts) {
+</span><span class='line'>  tmp = new Date(ts*1000);
+</span><span class='line'>  tmp.setFullYear(tmp.getFullYear() - 70);
+</span><span class='line'>  return tmp.getTime();
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It&rsquo;s likely the developer thought: &ldquo;Well, it&rsquo;s millisecond instead of
+second. Therefore I multiply by 1,000. But then I am 70 years in the
+future and I have to substract 70 years and everything will be ok.&rdquo;</p>
+
+<p>After thinking a while I came to the conclusion: Of course not!</p>
+
+<p>The developer made the assumption that there are as many leap years
+between 1900 and 1970 as between <code>ts</code> and <code>ts+70</code>. Obviously that
+assumption does not hold for all time stamps. And therefore sometimes
+the resulting JavaScript date is one day behind.</p>
+
+<p>So a better solution would be to substract all seconds between 1900
+and 1970 from <code>ts</code>, multiply by 1,000 and treat this as a JavaScript
+time stamp. Perhaps best would be to do the conversion in the Lisp
+process and only deliver a JavaScript-like time stamp.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[I learned something about symbols and packages]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/07/06/i-learned-something-about-symbols-and-packages/"/>
+    <updated>2014-07-06T09:02:39+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/07/06/i-learned-something-about-symbols-and-packages</id>
+    <content type="html"><![CDATA[<p>I am using Common Lisp for developing a web application. Several days
+ago a new part of this application didn&rsquo;t worked as supposed and I
+spent a considerable large amount of time in finding the bug. It was a
+very simple problem with symbols where I mixed something up.</p>
+
+<p>In the application the web server somewhen gets some JSON data from
+the browser. It is then converted to Lisp object using the <code>CL-JSON</code>
+package. This package converts JSON objects to a-lists and converts
+the member keys to symbols (see CL-JSON&rsquo;s <a href="http://common-lisp.net/project/cl-json/">documentation</a>. I then wanted to look something up in that a-list and failed.</p>
+
+<p>I wrote a small test case to show the effect and explain what went wrong.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(ql:quickload '("hunchentoot" "cl-who"))
+</span><span class='line'>;; direct loading via ql only for demonstration purposes, normally I
+</span><span class='line'>;; would use a asdf:defsystem for that.
+</span><span class='line'>
+</span><span class='line'>(in-package :cl-user)
+</span><span class='line'>
+</span><span class='line'>(defpackage :my-app (:use :cl))
+</span><span class='line'>
+</span><span class='line'>(in-package :my-app)
+</span><span class='line'>
+</span><span class='line'>(defparameter *my-a-list* 
+</span><span class='line'>  '((foo . 100)
+</span><span class='line'>    (bar . 200)))   ;; in the real application this a-list is
+</span><span class='line'>          ;; generated by a JSON-to-lisp conversion by
+</span><span class='line'>          ;; CL-JSON; in CL-JSON the object member keys are
+</span><span class='line'>          ;; converted to symbols.
+</span><span class='line'>
+</span><span class='line'>(defun get-value (key)
+</span><span class='line'>  "Returns the value with KEY from *MY-A-LIST*."
+</span><span class='line'>  (cdr (assoc (intern (string-upcase key)) *my-a-list*)))
+</span><span class='line'>
+</span><span class='line'>(hunchentoot:define-easy-handler (web-get-value :uri "/get-value") (id)
+</span><span class='line'>  (cl-who:with-html-output-to-string (*standard-output* nil :prologue t)
+</span><span class='line'>    (:p (cl-who:fmt "Value of ~a is: ~a" id (get-value id)))))
+</span><span class='line'>
+</span><span class='line'>(defun start ()
+</span><span class='line'>  (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 4242)))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So on the REPL everything looks fine:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>MY-APP&gt; (get-value "foo")
+</span><span class='line'>100
+</span><span class='line'>MY-APP&gt; (get-value "bar")
+</span><span class='line'>200
+</span><span class='line'>MY-APP&gt; </span></code></pre></td></tr></table></div></figure>
+
+
+<p>But when I used my web browser to give me these results as well I got something strange.
+For example here are some results when using curl:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~&gt; curl http://localhost:4242/get-value?id=foo
+</span><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</span><span class='line'>&lt;p&gt;Value of foo is: NIL&lt;/p&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I was puzzled: The value is <code>NIL</code>?</p>
+
+<p>After some debugging I found out that the easy handler from
+Hunchentoot runs with <code>*package*</code> set to <code>COMMON-LISP-USER</code>
+(and not to <code>MY-APP</code> as I implicitly assumed). That means that <code>assoc</code> looked up <code>COMMON-LISP-USER::FOO</code> in the a-list where
+the keys are <code>MY-APP::FOO</code> and <code>MY-APP::BAR</code>.
+And this test fails. Therefore <code>NIL</code> is returned which is correct.</p>
+
+<p>So I rewrote the <code>get-value</code> function to:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(defun get-value (key)
+</span><span class='line'>  "Returns the value with KEY from *MY-A-LIST*."
+</span><span class='line'>  (cdr (assoc (intern (string-upcase key)
+</span><span class='line'>            (find-package :my-app)) *my-a-list*)))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now the symbols are interned in the same package and everything went well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~&gt; curl http://localhost:4242/get-value?id=foo
+</span><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</span><span class='line'>&lt;p&gt;Value of foo ist: 100&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>~&gt; curl http://localhost:4242/get-value?id=bar
+</span><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</span><span class='line'>&lt;p&gt;Value of bar ist: 200&lt;/p&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Therefore I was reminded to think about packages when interning
+ symbols. A good guide to symbols and packages could be found in this
+ document: <a href="http://www.flownet.com/gat/packages.pdf">The Complete Idiot&rsquo;s Guide to Common Lisp Packages</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Unicode support for Octopress]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/06/10/unicode-support-for-octopress/"/>
+    <updated>2014-06-10T09:26:22+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/06/10/unicode-support-for-octopress</id>
+    <content type="html"><![CDATA[<p>Well, it seems Octopress/Jekyll would like to have a locale set
+for UTF-8 support. I followed <a href="http://www.dominik-gaetjens.de/blog/2012/06/09/utf-8-in-octopress/">this (text in German)</a> hint and now my Dockerfile looks
+like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># dockerfile for octopress
+</span><span class='line'>
+</span><span class='line'>FROM ubuntu:14.04
+</span><span class='line'>MAINTAINER krrrcks &lt;krrrcks@krrrcks.net&gt;
+</span><span class='line'>ENV DEBIAN_FRONTEND noninteractive
+</span><span class='line'>
+</span><span class='line'>RUN apt-get update; \
+</span><span class='line'>  apt-get -q -y upgrade
+</span><span class='line'>RUN /usr/sbin/locale-gen en_US.UTF-8; \
+</span><span class='line'>  update-locale LANG=en_US.UTF-8
+</span><span class='line'>RUN apt-get -q -y install git curl; \
+</span><span class='line'>  apt-get clean
+</span><span class='line'>RUN git clone git://github.com/imathis/octopress.git /opt/octopress
+</span><span class='line'>RUN curl -L https://get.rvm.io | bash -s stable --ruby
+</span><span class='line'>ENV HOME /root
+</span><span class='line'>RUN echo "export LC_ALL=en_US.UTF-8" &gt;&gt; /root/.bashrc
+</span><span class='line'>RUN echo "export LANG=en_US.UTF-8" &gt;&gt; /root/.bashrc
+</span><span class='line'>RUN echo "source /usr/local/rvm/scripts/rvm" &gt;&gt; /root/.bashrc; 
+</span><span class='line'>RUN /bin/bash -l -c "source /usr/local/rvm/scripts/rvm; \
+</span><span class='line'>  rvm install 1.9.3; \
+</span><span class='line'>  rvm use 1.9.3; \
+</span><span class='line'>  rvm rubygems latest; \
+</span><span class='line'>  cd /opt/octopress; \
+</span><span class='line'>  gem install bundler; \
+</span><span class='line'>  bundle install; \
+</span><span class='line'>  rake install" 
+</span><span class='line'>RUN echo "rvm use 1.9.3" &gt;&gt; /root/.bashrc
+</span><span class='line'>
+</span><span class='line'>WORKDIR /opt/octopress
+</span><span class='line'>EXPOSE 4000
+</span><span class='line'>CMD ["/bin/bash"] </span></code></pre></td></tr></table></div></figure>
+
+
+<p>After playing around with Docker and Octopress I put the whole <code>/opt/octopress</code> folder on my host machine and then
+restarted the image with the <code>-v</code> flag. Therefore I can edit the files on my host machine with my favorite editor
+and use the container only for producing the HTML files, for preview and for publishing.</p>
+
+<p>The <code>rake preview</code> is a neat feature because the server always looks for changed files and produces the HTML
+files on the fly. That means I can edit the files in my editor and could see the resulting pages in a
+browser nearly the same time.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Relaunch fast fertig]]></title>
     <link href="http://www.dbrunner.de/blog/2014/06/10/relaunch-fast-fertig/"/>
     <updated>2014-06-10T09:20:03+00:00</updated>
@@ -512,7 +883,7 @@ Kategorien-Liste rechts.</p>
 
 <p>Ansonsten habe ich, um der &ldquo;Gem-Hölle&rdquo; zu entgehen, das Octopress in
 einen Docker-Container gepackt; hier ist ein
-<a href="http://blog.krrrcks.net/blog/2014/06/10/unicode-support-for-octopress/">Link</a>
+<a href="http://www.dbrunner.de/blog/2014/06/10/unicode-support-for-octopress/">Link</a>
 zu dem verwendeten <code>Dockerfile</code>. Ich habe es dann auch so gemacht,
 dass ich das <code>/opt/octopress</code>-Verzeichnis auf den Host-Rechner
 verschoben habe und in den Container als <em>Volume</em> hineinpacke. So kann
@@ -567,6 +938,76 @@ das eigentlich gedacht ist.</p>
 
 <p>Nun also ein Relaunch, aber ohne große Vorsätze. Es wird hier also
 nur selten und nur wenig zu lesen geben.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[My Dockerfile for setting up Octopress]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/05/26/my-dockerfile-for-setting-up-octopress/"/>
+    <updated>2014-05-26T09:24:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/05/26/my-dockerfile-for-setting-up-octopress</id>
+    <content type="html"><![CDATA[<p>After my trouble with installing all the dependencies for Octopress I
+came up with the following Dockerfile for Docker. This follows the
+instructions from the Octopress homepage and uses RVM for managing the
+ruby dependencies.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># dockerfile for octopress
+</span><span class='line'>
+</span><span class='line'>FROM ubuntu:14.04
+</span><span class='line'>MAINTAINER krrrcks &lt;krrrcks@krrrcks.net&gt;
+</span><span class='line'>ENV DEBIAN_FRONTEND noninteractive
+</span><span class='line'>
+</span><span class='line'>RUN apt-get update; \
+</span><span class='line'>  apt-get -q -y upgrade
+</span><span class='line'>RUN apt-get -q -y install git curl; \
+</span><span class='line'>  apt-get clean
+</span><span class='line'>RUN git clone git://github.com/imathis/octopress.git /opt/octopress
+</span><span class='line'>RUN curl -L https://get.rvm.io | bash -s stable --ruby
+</span><span class='line'>ENV HOME /root
+</span><span class='line'>RUN echo "source /usr/local/rvm/scripts/rvm" &gt;&gt; /root/.bashrc; 
+</span><span class='line'>RUN /bin/bash -l -c "source /usr/local/rvm/scripts/rvm; \
+</span><span class='line'>  rvm install 1.9.3; \
+</span><span class='line'>  rvm use 1.9.3; \
+</span><span class='line'>  rvm rubygems latest; \
+</span><span class='line'>  cd /opt/octopress; \
+</span><span class='line'>  gem install bundler; \
+</span><span class='line'>  bundle install; \
+</span><span class='line'>  rake install" 
+</span><span class='line'>RUN echo "rvm use 1.9.3" &gt;&gt; /root/.bashrc
+</span><span class='line'>
+</span><span class='line'>WORKDIR /opt/octopress
+</span><span class='line'>EXPOSE 4000
+</span><span class='line'>CMD ["/bin/bash"] </span></code></pre></td></tr></table></div></figure>
+
+
+
 ]]></content>
   </entry>
   
@@ -806,256 +1247,6 @@ Genaugenommen gab es also gar keine &ldquo;negative Zinsen&rdquo;, sondern eine
 <p>Die aktuellen Informationen zu den Auktionsergebnissen kann man
 <a href="http://www.deutsche-finanzagentur.de/fileadmin/Material_Deutsche_Finanzagentur/PDF/Aktuelle_Informationen/Auktionsergebnisse.pdf">hier</a>
 einsehen.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Wir testen Stress]]></title>
-    <link href="http://www.dbrunner.de/blog/2011/12/16/wir-testen-stress/"/>
-    <updated>2011-12-16T12:13:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2011/12/16/wir-testen-stress</id>
-    <content type="html"><![CDATA[<p>Wie heute <a href="http://www.gfds.de/presse/pressemitteilungen/161211-wort-des-jahres-2011">bekannt</a> wurde, hat die Gesellschaft für Deutsche Sprache in
-diesem Jahr das Wort &ldquo;Stresstest&rdquo; zum Wort des Jahres gewählt.</p>
-
-<p>Bei der Gelegenheit erinnerte ich mich an folgenden kurzen Kontakt mit
-der GfdS aus dem Jahr 2003:</p>
-
-<p>In der Hitliste der Wörter des Jahres 2003 fand sich unter anderem der
-Begriff Steuerbegünstigungsabbaugesetz. Ich wies die Gesellschaft darauf
-hin, dass es ein solches Gesetz nicht gebe, sondern dass es sich wohl um
-das von der Bundesregierung eingebrachte Steuervergünstigungsabbaugesetz
-(StVergAbG) (zugeleitet dem Deutschen Bundestag mit Bundestagsdrucksache
-15/287) handeln müsse. Auf diesen Hinweis antwortete die Gesellschaft
-für Deutsche Sprache wie folgt:</p>
-
-<blockquote><p>Als Ergebnis der Belegsammlung und einiger Umfragen und Preisaufgaben
-lagen uns im geschilderten Fall beide Varianten vor: der Name des
-Gesetzes Steuervergünstigungsabbaugesetz und die - wohl eher im
-Alltagsdeutsch übliche Form Steuerbegünstigungsabbaugesetz. Letzteres
-scheint unseren Einsendern näher zu sein, was sprachliche Gründe haben
-kann: jmdn. begünstigen vs. etw. vergünstigen (veraltet)- (…) Aus
-diesem Grunde entschied sich die Kommission für diese Variante.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Steuerliche Behandlung von Popcorn]]></title>
-    <link href="http://www.dbrunner.de/blog/2011/11/28/steuerliche-behandlung-von-popcorn/"/>
-    <updated>2011-11-28T12:06:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2011/11/28/steuerliche-behandlung-von-popcorn</id>
-    <content type="html"><![CDATA[<p>Laut Bundesfinanzhof macht es für die Umsatzsteuer ja einen Unterschied,
-ob man eine Currywurst im Sitzen oder im Stehen am Kiosk einnimmt (siehe
-zum Beispiel
-<a href="http://www.handelsblatt.com/unternehmen/handel-dienstleister/7-prozent-im-stehen-19-prozent-im-sitzen-/4534688.html">Handelsblatt</a>).</p>
-
-<p>Gerade lese ich im Steuerrundbrief meines Steuerberaters zur Frage,
-welcher Steuersatz für Nachos und Popcorn im Kino anzusetzen ist:</p>
-
-<blockquote><p>&ldquo;Der Bundesfinanzhof hat nun entschieden, dass es sich auch beim
-Verkauf von Popcorn und Nachos in einem Kino um die Abgabe von
-Standardspeisen handelt. Allein der Umstand, dass Tische und Stühle im
-Foyer auch zum Verzehr der Speisen genutzt werden können, führt nicht
-dazu, dass es sich insgesamt um eine Dienstleistung (Umsatzsteuersatz
-19%) handelt. Dies wäre nur der Fall, wenn das Mobiliar ausschließlich
-dazu bestimmt ist, den Verzehr der Lebensmittel zu erleichtern.&rdquo;</p></blockquote>
-
-<p>Mal ganz knapp resümierend: Das ist doch alles völlig grotesk!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Bilanzfehler oder nicht Bilanzfehler]]></title>
-    <link href="http://www.dbrunner.de/blog/2011/11/27/bilanzfehler-oder-nicht-bilanzfehler/"/>
-    <updated>2011-11-27T10:58:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2011/11/27/bilanzfehler-oder-nicht-bilanzfehler</id>
-    <content type="html"><![CDATA[<p>Der medialen Aufmerksamkeit (zum Beispiel bei der
-<a href="http://www.zeit.de/wirtschaft/2011-10/hre-bad-bank-2">ZEIT</a>) um einen
-vermeintlichen Rechen- oder Bilanzierungsfehler bei der Bad Bank der
-Hypo Real Estate mit dem zauberhaften Namen &ldquo;FMS
-Wertmanagement <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> stand ich schon immer etwas skeptisch
-gegenüber.</p>
-
-<p>Nach einem Gespräch mit einem Bekannten mit Branchenkenntnis scheint die
-neuere Darstellung in der
-<a href="http://www.zeit.de/2011/47/HRE-Bilanzfehler">ZEIT</a> der Wirklichkeit am
-nächsten zu kommen (von der dort unterstellten Absicht vielleicht einmal
-abgesehen).</p>
-
-<p>Sehr stark vereinfacht ist wohl Folgendes passiert: Geht eine Bank
-Geschäfte und Gegengeschäfte mit einer anderen Bank ein, so schließen
-die Banken untereinander in der Regel sogenannte
-<a href="http://de.wikipedia.org/wiki/Netting_(Finanzen">Netting-Vereinbarungen</a>).
-Diese stellen sicher, dass im Insolvenzfall des Geschäftspartners nur
-der Saldo bestimmter Geschäfte wirksam wird. Im anderen Fall würden die
-Forderungen in die Insolvenzmasse fließen und die Verbindlichkeiten
-müssten weiter bedient werden. Dies würde ein sehr hohes Risiko
-bedeuten, und um dies zu reduzieren schließen Banken untereinander
-Netting-Vereinbarungen ab. Die Saldierung im Insolvenzfall ist an einen
-Reihe von Bedingungen geknüpft wie gleichartiges Geschäft, gleiche
-Währung, gleicher Geschäftspartner etc. Für die Bilanzierung dieser
-Geschäfte hat die Bank nach dem deutschen Bilanzierungsrecht des
-Handelsgesetzbuches nun zwei Möglichkeiten: (1) Grundsätzlich sind
-Forderungen und Verbindlichkeiten getrennt auszuweisen; (2) die Bank
-<em>darf</em> allerdings bestimmte &ldquo;Pakete&rdquo; saldiert ausweisen.</p>
-
-<p>Folglich war die erste FMS Wertmanagement-Bilanz richtig und die zweite
-wohl ebenso. Denn es bestand ein Bilanzierungswahlrecht hinsichtlich der
-Saldierung der Positionen. <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
-
-<p>Die ganze Aufregung ist nun eigentlich nur dem Umstand geschuldet, dass
-für den deutschen Schuldenstand aus der FMS Wertmanagement-Bilanz nur
-die Passivpositionen an die EU gemeldet werden. Dies ergibt natürlich
-(Netting hin oder Netting her) ein krudes Bild, da in einer Bankbilanz
-den Passivpositionen natürlich auch immer Aktivpositionen
-gegenüberstehen. Das reine Melden von Passivgeschäften wird also bei
-einer Bankbilanz immer ein schiefes Bild auf den Schuldenstand der
-Bundesrepublik Deutschland werfen. Oder anders herum: Die Integration
-von Bankbilanzen in das Rechnungswesen öffentlicher Haushalte ist
-schwierig bis unmöglich.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Beim <a href="http://neusprech.org/fms-wertmanagement/">Neusprech-Blog</a> gibt es zum Namen eine schöne Analyse.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Auf Feinheiten wie Bilanzkontinuität und die Erläuterung der Ansätze im Anhang gehe ich hier aus Vereinfachungsgründen nicht ein.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Schwarz-gelber Subventionsabbau]]></title>
-    <link href="http://www.dbrunner.de/blog/2011/11/07/schwarz-gelber-subventionsabbau/"/>
-    <updated>2011-11-07T00:00:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2011/11/07/schwarz-gelber-subventionsabbau</id>
-    <content type="html"><![CDATA[<p><em>Kleine Vorbemerkung:</em> Im vergangenen Jahr hatte ich mich mehr zufällig
-als absichtlich mit dem Biersteuergesetz
-<a href="http://www.dbrunner.de/blog/2010/07/02/vorsicht-vor-den-marginalien-bei-steuervereinfachung-und-subventionsabbau.html">beschäftigt</a>.
-Es ging hauptsächlich um die Rechtfertigung für die Steuerbefreiung des
-Haustrunks im Rahmen der Subventionsberichterstattung der
-Bundesregierung. Diese findet sich seit 1918 in den Regelungen zur
-Biersteuer und da es sich um eine &ldquo;Marginalie&rdquo; handele, sei keine
-Evaluierung und auch kein Abbau vorgesehen, darüberhinaus bestehen die
-Gründe für die Einführung (welche waren das noch mal?) weiterhin fort.</p>
-
-<p>Zum 1.7. diesen Jahres trat eine Erweiterung der
-Umsatzsteuerschuldnerschaft auf steuerpflichtige Lieferungen von
-Mobilfunkgeräten und integrierten Schaltkreisen ab einer
-Bemessungsgrundlage von 5.000 EUR in Kraft. Dies wollte ich im Original
-nachlesen.</p>
-
-<p>Also greife ich zur <a href="http://dipbt.bundestag.de/dip21/btd/17/051/1705127.pdf">Bundestagsdrucksache 17/5127</a>, in der
-sich der zugehörige Gesetzentwurf befand. Dabei handelt es sich aber um
-einen Gesetzentwurf zur Änderung von Verbrauchssteuergesetzen. Irgendwie
-ging es um sprachliche und sonstige der Rechtsklarheit dienende
-Veränderungen (Umstellung von Steuerentlastungen auf Steuerbefreiungen
-und so etwas, soweit ich das verstanden habe). Also nichts, was
-irgendwie mit Mobilfunk oder integrierten Schaltkreisen zu tun hätte.</p>
-
-<p>Die Veränderung der Umsatzsteuerschuldnerschaft wurde, warum auch immer,
-vom Finanzausschuss des Deutschen Bundestages während der Beratungen
-noch in dieses Gesetz
-<a href="http://dipbt.bundestag.de/dip21/btd/17/055/1705510.pdf">eingeschoben</a>.
-Diese Huckepackgesetzgebund empfinde ich ja schon immer als etwas
-merkwürdig.</p>
-
-<p>Aber, so denke ich, wenn ich das schon mal in der Hand habe, dann schaue
-ich doch einfach einmal nach, ob denn nun wenigstens ein bisschen
-Subventionsabbau um sich gegriffen hat. Das Ergebnis ist wenig
-überraschend: Im <a href="http://www.gesetze-im-internet.de/bierstg_2009/BJNR190800009.html">§ 23 des Biersteuergesetzes</a>
-findet sich nach wie vor die Steuerbefreiung für den Haustrunk. Na, das
-war ja nach Bekunden der Bundesregierung ohnehin nur eine Marginalie,
-woher soll da die Kraft für eine Änderung kommen?</p>
-
-<p><em>Kurzer Nachtrag:</em> Der Gesetzentwurf zur Regelung der Verbrauchsteuern
-war wohl fraktionsübergreifend gewollt. Jedoch sehr fein folgende
-Anmerkung im Bericht (Bt-Dr. 17/5510, Seite 4):</p>
-
-<blockquote><p>&ldquo;Die <strong>Fraktion der SPD</strong> hat angeregt, zu einem späteren Zeitpunkt
-grundsätzlich darüber zu beraten, warum Schnupftabak kein
-Tabakerzeugnis im Sinne des Tabaksteuergesetzes sei.&rdquo;</p></blockquote>
-
-<p>Irgendwie erinnert mich das sehr an <a href="http://www.youtube.com/watch?v=EGAEHoMMJgc">dies</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Referendum in Griechenland]]></title>
-    <link href="http://www.dbrunner.de/blog/2011/11/02/referendum-in-griechenland/"/>
-    <updated>2011-11-02T11:21:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2011/11/02/referendum-in-griechenland</id>
-    <content type="html"><![CDATA[<p>Der griechische Ministerpräsident hat angekündigt, dass er das
-griechische Volk in einem Referendum über die Sparanstrengungen zur
-Bewältigung der griechischen Staatsschuldenkrise abstimmen lassen
-möchte. In der Folge gerät die europäische Politik und die Finanzmärkte
-in helle Aufregung und ein weiterer Krisengipfel jagt den bereits hinter
-uns liegenden.</p>
-
-<p>Warum eigentlich diese Aufregung? Zum Ausgangspunkt der aktuellen Krise
-befand sich Griechenland kurz zusammengefasst in folgender Situation:
-Die Schulden des Landes standen in einem nicht mehr vertretbaren
-Verhältnis zur Leistungsfähigkeit des Landes, der Schuldendienst schien
-auf absehbare Zeit nicht mehr leistbar. Zugleich war das institutionelle
-Gefüge verkrustet und benötigte dringend Reformen.</p>
-
-<p>Nachdem aufgrund der Mitgliedschaft im Euro-Raum eine Anpassung über den
-Wechselkurs nicht in Frage kam, gab es im Grunde zwei Alternativen: (1)
-Sofort und unmittelbar den Schuldendienst einzuschränken und sich mit
-den staatlichen und privaten Gläubigern zu einigen. Dabei wurde
-wahrscheinlich diese Alternative angesichts des Beispiels Argentinien
-als wenig attraktiv angesehen. (2) Gemeinsam mit den europäischen
-Partnern Reformen anzugehen.</p>
-
-<p>Reformen bedeuten dabei, wie auch beobachtbar, einen massiven Sparkurs,
-der sich letztlich bei den Einkommen der Bürger niederschlägt. Dieser
-Kurs würde zu sozialen Spannungen bis hin zu sozialen Verwerfungen
-führen.</p>
-
-<p>Nun mag man sich die Entscheidungssituation wie folgt vorstellen: Mit
-der Einbindung der europäischen Partner über das Vehikel EFSF (soweit
-ich das verstanden habe) kommen diese selbst in einem &ldquo;Insolvenzfall&rdquo;
-Griechenlands nicht mehr so leicht aus ihrer Hilfe heraus, mit den
-eingeleiteten Sparreformen können als sinnvoll erachtete Reformen
-angestoßen werden, für die sich in normalen Situationen ggf. gar keine
-Mehrheit finden ließe. Und falls sämtliche Bemühungen nicht ausreichen
-oder die sozialen und politischen Spannungen zu groß werden, kann man
-immer noch die Hände heben und sagen: &ldquo;Wir haben alles versucht, wir
-können nicht mehr.&rdquo;</p>
-
-<p>Die Variante (2) erscheint für mich aus Sicht der griechischen Regierung
-als die deutlich bessere Alternative und dann ist das Verhalten
-Papandreous meines Erachtens doch nur folgerichtig.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[EU will Länderratings verbieten]]></title>
-    <link href="http://www.dbrunner.de/blog/2011/10/20/eu-will-lnderrtings-verbieten/"/>
-    <updated>2011-10-20T17:56:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2011/10/20/eu-will-lnderrtings-verbieten</id>
-    <content type="html"><![CDATA[<p>Da lese ich gerade <a href="http://www.ftd.de/politik/europa/:umstrittene-bewertungen-eu-will-laenderratings-verbieten/60118331.html">in der FTD</a>,
-dass die EU überlegt, Ratingagenturen zu verbieten, Urteile über
-kriselnde EU-Länder zu veröffentlichen. Ist das überhaupt die richtige
-Fragestellung?</p>
-
-<p>So richtig klar ist mir das nämlich nicht: Haben nicht die gleichen
-Politiker immer auf eine stärkere Kapitalmarktorientierung gedrängt?
-Haben wir mit Basel II und anderen Maßnahmen nicht die
-kapitalmarktorientierten Eigenkapitalunterlegungsvorschriften erhalten?
-Ausgehend vom Rating eines Schulderns sollte doch das notwendige
-Eigenkapital bestimmt und in der Folge der Kredit passend bepreist
-werden. Mit dem Effekt, dass dem kriselnden Häuslebauer die Banken mit
-Verstärkung von Sicherheiten um die Ecke kommen, mit dem Effekt, dass
-dem kriselnden Mittelständler die Banken die Zinsen nach oben anpassen
-und mehr Sicherheiten verlangen. Wenn nun Staaten kriseln, dann soll
-noch nicht mal der von der Politik vorgesehene Mittler, die
-Ratingagenturen, ihre Zweifel an der Rückzahlungsfähigkeit äußern
-dürfen?</p>
-
-<p>Wie kann man die Finanzmärkte in einer bestimmten Weise regulieren und
-dann über das eigentlich gewollte Ergebnis erstaunt sein?</p>
 ]]></content>
   </entry>
   

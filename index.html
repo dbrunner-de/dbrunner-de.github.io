@@ -140,6 +140,40 @@ und sich austauschen konnte.</p>
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2015/01/04/aus-zwei-mach-eins/">Aus zwei mach eins</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-04T16:16:08+00:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:16 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Bisher hatte ich meine Blog-Einträge auf zwei Blogs aufgeteilt,
+<a href="http://blog.krrrcks.net">eines</a> mit mehr technischen (und zum Teil
+englischen Texten) und dieses hier mit deutschen Texten. Ich denke,
+ich werde das auf dieses eine Blog hier konzentrieren. Das reduziert
+doch etwas den Verwaltungsaufwand. Ich habe die Texte vom nun etwas
+still gelegten Blog hier herüber kopiert.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2014/12/21/ich-habe-mal-octopress-aktualisert/">Ich habe mal Octopress aktualisert</a></h1>
     
     
@@ -721,7 +755,7 @@ Schmerzen verursacht hat, habe ich es dabei bewenden lassen.</p>
       
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/06/10/relaunch-fast-fertig/">Relaunch fast fertig</a></h1>
+      <h1 class="entry-title"><a href="/blog/2014/07/24/mind-the-storage-driver-for-ubuntu-cloud-images-on-azure/">Mind the storage driver for Ubuntu cloud images (on Azure)</a></h1>
     
     
       <p class="meta">
@@ -730,71 +764,86 @@ Schmerzen verursacht hat, habe ich es dabei bewenden lassen.</p>
 
 
 
-<time class='entry-date' datetime='2014-06-10T09:20:03+00:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:20 am</span></time>
+<time class='entry-date' datetime='2014-07-24T12:30:43+00:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:30 pm</span></time>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>So, nach einigem Gefummel mit Ruby und Octopress und den
-Weiterleitungsmöglichkeiten meines Hosters ist die Sache wohl bald so
-am laufen, wie ich mir das vorstelle. Es fehlt noch ein wenig das
-Eindeutschen der Octopress-Texte und vielleicht so eine
-Kategorien-Liste rechts.</p>
+  <div class="entry-content"><p>A few days ago I wanted to build Firefox OS&#8217; newest release for a
+friend. Because I did not wanted these GB of code, binaries etc. on my
+notebook I fired up an Ubuntu image on Microsoft Azure. I feared that
+at a certain point in the build process I may had to download
+everything to my local machine and therefore I installed Docker via a
+simple</p>
 
-<p>Ansonsten habe ich, um der &ldquo;Gem-Hölle&rdquo; zu entgehen, das Octopress in
-einen Docker-Container gepackt; hier ist ein
-<a href="http://blog.krrrcks.net/blog/2014/06/10/unicode-support-for-octopress/">Link</a>
-zu dem verwendeten <code>Dockerfile</code>. Ich habe es dann auch so gemacht,
-dass ich das <code>/opt/octopress</code>-Verzeichnis auf den Host-Rechner
-verschoben habe und in den Container als <em>Volume</em> hineinpacke. So kann
-ich auf dem Host-Rechner ganz bequem mit dem Emacs die Files editieren
-und verwende den Container nur noch für die Erstellung, das &ldquo;Preview&rdquo;
-und für das Hochladen.</p>
-
-<p>Die &ldquo;preview&rdquo;-Funktion ist übrigens ein wirklich nettes Features: Die
-kann man derart nutzen, dass ein Webserver den aktuellen Stand lokal
-ausliefert. Dabei beobachtet der Dienst, ob sich Dateien ändern und
-erstellt unmittelbar wieder die HTML-Seiten. So kann man bequem im
-Editor das Markdown bearbeiten und im Browser daneben das fertige
-Ergebnis beurteilen.</p>
-</div>
-  
-  
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install docker.io</span></code></pre></td></tr></table></div></figure>
 
 
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/06/archiv-mit-der-alten-homepage/">Archiv mit der alten Homepage</a></h1>
-    
-    
-      <p class="meta">
-        
+<p></p>
+
+<p>Then I started the build process as laid out on Mozilla&rsquo;s Developer
+Network. But, during downloading the source code (that&rsquo;s about 12 GB
+of Git repositories from Mozilla and Android), I got a &ldquo;no more space
+left on device&rdquo;. That was strange: I had a 100 GB volume attached to
+the VM and enough space and inodes left. After some searching I asked
+on the IRC channel and got a good hint: &ldquo;What&rsquo;s your storage driver?&rdquo;</p>
+
+<p>Well, I thought that it&rsquo;s AUFS; I wanted to add &ldquo;as usual&rdquo; because
+AUFS was available on my notebook from the beginning. But a <code>docker.io
+info</code> gave me:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo docker.io info
+</span><span class='line'>Containers: 0
+</span><span class='line'>Images: 0
+</span><span class='line'>Storage Driver: devicemapper
+</span><span class='line'> Pool Name: docker-8:1-131188-pool
+</span><span class='line'> Data file: /var/lib/docker/devicemapper/devicemapper/data
+</span><span class='line'> Metadata file: /var/lib/docker/devicemapper/devicemapper/metadata
+</span><span class='line'> Data Space Used: 291.5 Mb
+</span><span class='line'> Data Space Total: 102400.0 Mb
+</span><span class='line'> Metadata Space Used: 0.7 Mb
+</span><span class='line'> Metadata Space Total: 2048.0 Mb
+</span><span class='line'>Execution Driver: native-0.1
+</span><span class='line'>Kernel Version: 3.13.0-29-generic
+</span><span class='line'>WARNING: No swap limit support</span></code></pre></td></tr></table></div></figure>
 
 
+<p>I then learned that somehow the DeviceMapper driver only allows a
+certain amount of diffs and I reached that amount with my build
+process. (Maybe it&rsquo;s possible to relax that restriction but I do not
+know how.)</p>
 
+<p>I learned as well that the Ubuntu cloud image that is provided by
+Microsoft Azure doesn&rsquo;t have AUFS support. Therefore Docker uses the
+DeviceMapper storage driver instead. After I installed the AUFS
+support I could export the images, change the storage driver and
+import the images again.</p>
 
-<time class='entry-date' datetime='2014-06-06T17:05:45+00:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>5:05 pm</span></time>
-        
-      </p>
-    
-  </header>
+<p>It would be nice seeing the Docker documentation being more detailed
+on those storage drivers.</p>
 
-
-  <div class="entry-content"><p>Meine alten Homepages kann man immer noch finden:</p>
-
-<ul>
-<li>Meine mit <a href="http://org-mode.org">Org-Mode</a> gestaltete Seite unter <a href="http://archive.dbrunner.de">http://archive.dbrunner.de</a> (2010-2012)</li>
-<li>Meine mit <a href="http://www.tiddlywiki.com">Tiddlywiki</a> gestaltete Seite unter <a href="http://archive.dbrunner.de/old/main.html">http://archive.dbrunner.de/old/main.html</a>
-(2005-2009)</li>
-</ul>
-
+<p><strong>(Update 2014-10-23)</strong> Thanks to
+ <a href="http://blog.iron.io/2014/10/docker-in-production-what-weve-learned.html">this blog post from Iron.io</a>
+ I found some documentation of the devicemapper storage driver. It is
+ located in the
+ <a href="https://github.com/docker/docker/tree/master/daemon/graphdriver/devmapper">Repository</a>.</p>
 </div>
   
   
@@ -815,12 +864,26 @@ Ergebnis beurteilen.</p>
     <section>
   <h1><a href="/ueber/">Über mich</a></h1>
 </section>
+
+<section>
+ <h1>Twitter</h1>
+ <div>
+ <p><br> 
+<a href="http://twitter.com/krrrcks" class="twitter-follow-button" data-show-count="">Follow @krrrcks</a>
+</div>
+</section>
+
+
 <section>
   <h1>Neueste Einträge</h1>
   <ul id="recent_posts">
     
       <li class="post">
         <a href="/blog/2015/01/05/eindrucke-vom-31c3/">Eindrücke vom 31C3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/04/aus-zwei-mach-eins/">Aus zwei mach eins</a>
       </li>
     
       <li class="post">
@@ -835,15 +898,11 @@ Ergebnis beurteilen.</p>
         <a href="/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer/">Aus der Entscheidung des BVerfG zur Erbschaftsteuer</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/12/17/migration/">Migration alter Blog-Einträge</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (6)</a></li><li><a href='/blog/categories/homepage/'>homepage, (3)</a></li><li><a href='/blog/categories/it/'>it (9)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (4)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (1)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (3)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (15)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (1)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
 </section>
 
 
@@ -868,6 +927,16 @@ Ergebnis beurteilen.</p>
 
 
 
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
 
 
 

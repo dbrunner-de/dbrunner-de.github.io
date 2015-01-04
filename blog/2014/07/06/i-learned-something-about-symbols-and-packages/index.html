@@ -1,0 +1,359 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>I learned something about symbols and packages - Textstückchen</title>
+  <meta name="author" content="Daniel Brunner">
+
+  
+  <meta name="description" content="I am using Common Lisp for developing a web application. Several days
+ago a new part of this application didn&rsquo;t worked as supposed and I
+spent &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://www.dbrunner.de/blog/2014/07/06/i-learned-something-about-symbols-and-packages">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Textstückchen" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="//fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Textstückchen</a></h1>
+  
+    <h2>Ganz kleine Textstückchen zu Allerlei.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="sitesearch" value="www.dbrunner.de">
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/publikationen/">Publikationen/Vorträge/Projekte</a></li>
+  <li><a href="/blog/archives">Archiv</a></li>
+  <li><a href="/impressum/">Impressum</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">I learned something about symbols and packages</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-07-06T09:02:39+00:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:02 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I am using Common Lisp for developing a web application. Several days
+ago a new part of this application didn&rsquo;t worked as supposed and I
+spent a considerable large amount of time in finding the bug. It was a
+very simple problem with symbols where I mixed something up.</p>
+
+<p>In the application the web server somewhen gets some JSON data from
+the browser. It is then converted to Lisp object using the <code>CL-JSON</code>
+package. This package converts JSON objects to a-lists and converts
+the member keys to symbols (see CL-JSON&rsquo;s <a href="http://common-lisp.net/project/cl-json/">documentation</a>. I then wanted to look something up in that a-list and failed.</p>
+
+<p>I wrote a small test case to show the effect and explain what went wrong.</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(ql:quickload '("hunchentoot" "cl-who"))
+</span><span class='line'>;; direct loading via ql only for demonstration purposes, normally I
+</span><span class='line'>;; would use a asdf:defsystem for that.
+</span><span class='line'>
+</span><span class='line'>(in-package :cl-user)
+</span><span class='line'>
+</span><span class='line'>(defpackage :my-app (:use :cl))
+</span><span class='line'>
+</span><span class='line'>(in-package :my-app)
+</span><span class='line'>
+</span><span class='line'>(defparameter *my-a-list* 
+</span><span class='line'>  '((foo . 100)
+</span><span class='line'>    (bar . 200)))   ;; in the real application this a-list is
+</span><span class='line'>          ;; generated by a JSON-to-lisp conversion by
+</span><span class='line'>          ;; CL-JSON; in CL-JSON the object member keys are
+</span><span class='line'>          ;; converted to symbols.
+</span><span class='line'>
+</span><span class='line'>(defun get-value (key)
+</span><span class='line'>  "Returns the value with KEY from *MY-A-LIST*."
+</span><span class='line'>  (cdr (assoc (intern (string-upcase key)) *my-a-list*)))
+</span><span class='line'>
+</span><span class='line'>(hunchentoot:define-easy-handler (web-get-value :uri "/get-value") (id)
+</span><span class='line'>  (cl-who:with-html-output-to-string (*standard-output* nil :prologue t)
+</span><span class='line'>    (:p (cl-who:fmt "Value of ~a is: ~a" id (get-value id)))))
+</span><span class='line'>
+</span><span class='line'>(defun start ()
+</span><span class='line'>  (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 4242)))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So on the REPL everything looks fine:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>MY-APP&gt; (get-value "foo")
+</span><span class='line'>100
+</span><span class='line'>MY-APP&gt; (get-value "bar")
+</span><span class='line'>200
+</span><span class='line'>MY-APP&gt; </span></code></pre></td></tr></table></div></figure>
+
+
+<p>But when I used my web browser to give me these results as well I got something strange.
+For example here are some results when using curl:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~&gt; curl http://localhost:4242/get-value?id=foo
+</span><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</span><span class='line'>&lt;p&gt;Value of foo is: NIL&lt;/p&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I was puzzled: The value is <code>NIL</code>?</p>
+
+<p>After some debugging I found out that the easy handler from
+Hunchentoot runs with <code>*package*</code> set to <code>COMMON-LISP-USER</code>
+(and not to <code>MY-APP</code> as I implicitly assumed). That means that <code>assoc</code> looked up <code>COMMON-LISP-USER::FOO</code> in the a-list where
+the keys are <code>MY-APP::FOO</code> and <code>MY-APP::BAR</code>.
+And this test fails. Therefore <code>NIL</code> is returned which is correct.</p>
+
+<p>So I rewrote the <code>get-value</code> function to:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(defun get-value (key)
+</span><span class='line'>  "Returns the value with KEY from *MY-A-LIST*."
+</span><span class='line'>  (cdr (assoc (intern (string-upcase key)
+</span><span class='line'>            (find-package :my-app)) *my-a-list*)))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Now the symbols are interned in the same package and everything went well:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>~&gt; curl http://localhost:4242/get-value?id=foo
+</span><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</span><span class='line'>&lt;p&gt;Value of foo ist: 100&lt;/p&gt;
+</span><span class='line'>
+</span><span class='line'>~&gt; curl http://localhost:4242/get-value?id=bar
+</span><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
+</span><span class='line'>&lt;p&gt;Value of bar ist: 200&lt;/p&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Therefore I was reminded to think about packages when interning
+ symbols. A good guide to symbols and packages could be found in this
+ document: <a href="http://www.flownet.com/gat/packages.pdf">The Complete Idiot&rsquo;s Guide to Common Lisp Packages</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Daniel Brunner</span></span>
+
+      
+
+
+
+
+<time class='entry-date' datetime='2014-07-06T09:02:39+00:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>6</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:02 am</span></time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/common-lisp/'>common lisp</a>, <a class='category' href='/blog/categories/it/'>it</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.dbrunner.de/blog/2014/07/06/i-learned-something-about-symbols-and-packages/" data-via="krrrcks" data-counturl="http://www.dbrunner.de/blog/2014/07/06/i-learned-something-about-symbols-and-packages/" >Tweet</a>
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/06/10/unicode-support-for-octopress/" title="Previous Post: Unicode support for Octopress">&laquo; Unicode support for Octopress</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/07/24/datetime-conversion-can-be-tricky/" title="Next Post: DateTime conversion can be tricky">DateTime conversion can be tricky &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1><a href="/ueber/">Über mich</a></h1>
+</section>
+
+<section>
+ <h1>Twitter</h1>
+ <div>
+ <p><br> 
+<a href="http://twitter.com/krrrcks" class="twitter-follow-button" data-show-count="">Follow @krrrcks</a>
+</div>
+</section>
+
+
+<section>
+  <h1>Neueste Einträge</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2015/01/05/eindrucke-vom-31c3/">Eindrücke vom 31C3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/04/aus-zwei-mach-eins/">Aus zwei mach eins</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/21/ich-habe-mal-octopress-aktualisert/">Ich habe mal Octopress aktualisert</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/18/neues-arbeitspapier/">&#8220;Neues&#8221; Arbeitspapier</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer/">Aus der Entscheidung des BVerfG zur Erbschaftsteuer</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Kategorien</h1>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (3)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (15)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (1)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Daniel Brunner -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

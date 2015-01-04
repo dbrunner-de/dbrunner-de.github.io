@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: homepage, - Textstückchen</title>
+  <title>Category: homepage - Textstückchen</title>
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="Category: homepage,">
+  <meta name="description" content="Category: homepage">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,17 +69,17 @@
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Category: homepage,</h1>
+    <h1 class="entry-title">Category: homepage</h1>
     
   </header>
   
   <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: homepage, | Textstückchen]]></title>
+  <title><![CDATA[Category: homepage | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/homepage/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-01-04T16:04:35+00:00</updated>
+  <updated>2015-01-04T16:37:55+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Aus zwei mach eins]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/01/04/aus-zwei-mach-eins/"/>
+    <updated>2015-01-04T16:16:08+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/01/04/aus-zwei-mach-eins</id>
+    <content type="html"><![CDATA[<p>Bisher hatte ich meine Blog-Einträge auf zwei Blogs aufgeteilt,
+<a href="http://blog.krrrcks.net">eines</a> mit mehr technischen (und zum Teil
+englischen Texten) und dieses hier mit deutschen Texten. Ich denke,
+ich werde das auf dieses eine Blog hier konzentrieren. Das reduziert
+doch etwas den Verwaltungsaufwand. Ich habe die Texte vom nun etwas
+still gelegten Blog hier herüber kopiert.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ich habe mal Octopress aktualisert]]></title>
@@ -149,6 +163,44 @@ auch dies.</p></li>
   </entry>
   
   <entry>
+    <title type="html"><![CDATA[Migration alter Blog-Einträge]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/12/17/migration/"/>
+    <updated>2014-12-17T18:11:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/12/17/migration</id>
+    <content type="html"><![CDATA[<p>Es kamen lange Winterabende und ich habe die alten Blog-Einträge von
+der mittels Org-Mode erstellten Seite hier nach Octopress
+migriert. Im Archiv sind diese zu finden und die Links etc. sollten
+nun auch passend mit migriert worden sein.</p>
+
+<p>Bei der Konvertierung habe ich ein Programm kennengelernt, das mir
+sehr geholfen hat: <a href="http://johnmacfarlane.net/pandoc/">Pandoc</a>. Das
+ist ein Konverter, der Text- und Markupdateien hin und her
+konvertieren kann. Dabei beherrscht er eine ganze Reihe von
+Formaten. Insbesondere kann er das Org-Mode-Format (das ich für viele
+Dinge verwende) ebenso wie LaTeX und Markdown (daneben aber auch noch
+eine Legion von Formaten).</p>
+
+<p>Da mein Hauptdateiformat ohnehin &ldquo;Textdateien&rdquo; sind (&ldquo;Never trust a
+file that isn&rsquo;t ASCII&rdquo;) ist das sehr praktisch, um zwischen
+verschiedenen Markup-Formaten hin und her zu springen.</p>
+
+<p>Für die Migration meine Blog-Einträge lief dies wie folgt: Ich hatte
+die in der alten Homepage mit Org-Mode und Org-Jekyll erstellt. Dabei
+hatte das Org-Jekyll-Modul entsprechende HTML-Dateien mit einem
+YAML-Header erzeugt. Mittels Pandoc konnte ich die nun wieder nach
+Markdown konvertieren, habe die YAML-Header ein wenig angepasst,
+Kategorien aktualisiert und noch mal das Markup zwecks Zeilenumbrüche,
+Fußnoten und Links geprüft und leicht angepasst. Insgesamt sehr
+schnell bewältigbar.</p>
+
+<p>Dieser ganze Zoo rund um Markdown und andere ähnliche Formate ist zwar
+manchmal ein bisschen unübersichtlich, aber mir gefällt das sehr gut,
+dass man mit wenig Markup schön Textdateien strukturieren kann und
+dann mit Pandoc auch gut hin und her konvertieren kann.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Relaunch fast fertig]]></title>
     <link href="http://www.dbrunner.de/blog/2014/06/10/relaunch-fast-fertig/"/>
     <updated>2014-06-10T09:20:03+00:00</updated>
@@ -161,7 +213,7 @@ Kategorien-Liste rechts.</p>
 
 <p>Ansonsten habe ich, um der &ldquo;Gem-Hölle&rdquo; zu entgehen, das Octopress in
 einen Docker-Container gepackt; hier ist ein
-<a href="http://blog.krrrcks.net/blog/2014/06/10/unicode-support-for-octopress/">Link</a>
+<a href="/blog/2014/06/10/unicode-support-for-octopress/">Link</a>
 zu dem verwendeten <code>Dockerfile</code>. Ich habe es dann auch so gemacht,
 dass ich das <code>/opt/octopress</code>-Verzeichnis auf den Host-Rechner
 verschoben habe und in den Container als <em>Volume</em> hineinpacke. So kann
@@ -179,27 +231,18 @@ Ergebnis beurteilen.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Ein Relaunch]]></title>
-    <link href="http://www.dbrunner.de/blog/2014/06/06/ein-relaunch/"/>
-    <updated>2014-06-06T15:48:31+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2014/06/06/ein-relaunch</id>
-    <content type="html"><![CDATA[<p>Ich denke, mir geht es wie vielen: Nach einer gewissen Zeit, in der
-das bisherige Blog, die bisherige Web-Seite nicht gepflegt wird,
-steht irgendwann ein Neubeginn an, dann gleich mit einem &ldquo;Relaunch&rdquo;
-und vielen neuen und guten Vorsätzen.</p>
+    <title type="html"><![CDATA[Archiv mit der alten Homepage]]></title>
+    <link href="http://www.dbrunner.de/blog/2014/06/06/archiv-mit-der-alten-homepage/"/>
+    <updated>2014-06-06T17:05:45+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2014/06/06/archiv-mit-der-alten-homepage</id>
+    <content type="html"><![CDATA[<p>Meine alten Homepages kann man immer noch finden:</p>
 
-<p>Ich bin zwar nach wie vor ein großer Freund und Nutzer von Org-Mode, aber
-für das Führen eines Blogs erschien mir der Ablauf doch immer recht
-umständlich. Ich habe mir daher einmal Octopress angeschaut (vor allem,
-da die Blog-Funktion von Org-Mode, die ich nutzte, auch mit Jekyll
-arbeitete) und finde das eigentlich ganz hübsch. Einzig so ein wenig
-&ldquo;eindeutschen&rdquo; sollte ich es noch. Außerdem ist das Umleiten von der
-bisherigen Domain hierher noch ein wenig kaputt; mein bisheriger
-Hoster lässt mich das nicht so schön mit CNAME-Einträgen gestalten, wie
-das eigentlich gedacht ist.</p>
+<ul>
+<li>Meine mit <a href="http://org-mode.org">Org-Mode</a> gestaltete Seite unter <a href="http://archive.dbrunner.de">http://archive.dbrunner.de</a> (2010-2012)</li>
+<li>Meine mit <a href="http://www.tiddlywiki.com">Tiddlywiki</a> gestaltete Seite unter <a href="http://archive.dbrunner.de/old/main.html">http://archive.dbrunner.de/old/main.html</a>
+(2005-2009)</li>
+</ul>
 
-<p>Nun also ein Relaunch, aber ohne große Vorsätze. Es wird hier also
-nur selten und nur wenig zu lesen geben.</p>
 ]]></content>
   </entry>
   
@@ -210,6 +253,8 @@ nur selten und nur wenig zu lesen geben.</p>
       
       
         <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.dbrunner.de/blog/categories/homepage/atom.xml" data-via="krrrcks" data-counturl="http://www.dbrunner.de/blog/categories/homepage/atom.xml" >Tweet</a>
   
   
   
@@ -227,12 +272,26 @@ nur selten und nur wenig zu lesen geben.</p>
     <section>
   <h1><a href="/ueber/">Über mich</a></h1>
 </section>
+
+<section>
+ <h1>Twitter</h1>
+ <div>
+ <p><br> 
+<a href="http://twitter.com/krrrcks" class="twitter-follow-button" data-show-count="">Follow @krrrcks</a>
+</div>
+</section>
+
+
 <section>
   <h1>Neueste Einträge</h1>
   <ul id="recent_posts">
     
       <li class="post">
         <a href="/blog/2015/01/05/eindrucke-vom-31c3/">Eindrücke vom 31C3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/01/04/aus-zwei-mach-eins/">Aus zwei mach eins</a>
       </li>
     
       <li class="post">
@@ -247,15 +306,11 @@ nur selten und nur wenig zu lesen geben.</p>
         <a href="/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer/">Aus der Entscheidung des BVerfG zur Erbschaftsteuer</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/12/17/migration/">Migration alter Blog-Einträge</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (6)</a></li><li><a href='/blog/categories/homepage/'>homepage, (3)</a></li><li><a href='/blog/categories/it/'>it (9)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (4)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (1)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (3)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (15)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (1)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
 </section>
 
 
@@ -281,6 +336,16 @@ nur selten und nur wenig zu lesen geben.</p>
 
 
 
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
 
 
 
