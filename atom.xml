@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-01-04T14:22:09+00:00</updated>
+  <updated>2015-01-04T16:04:35+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Eindrücke vom 31C3]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/01/05/eindrucke-vom-31c3/"/>
+    <updated>2015-01-05T17:03:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/01/05/eindrucke-vom-31c3</id>
+    <content type="html"><![CDATA[<p>Dieses Jahr habe ich mich einmal aufgerafft und bin das erste mal zum
+Congress des CCC nach Hamburg gefahren. Im Folgenden ein paar
+Eindrücke:</p>
+
+<h2>Drumherum</h2>
+
+<p>Ich fand den <a href="http://events.ccc.de/congress/2014/wiki/Main_Page">31C3</a> ein tolles Ereignis: Sehr professionell und
+umsichtig organisiert. Überall, wo ich hinkam, war man nett und
+freundlich, insgesamt eine sehr willkommende Atmosphäre. Nur der
+Termin, der ist ja doch etwas sperrig.</p>
+
+<h2>Vorträge</h2>
+
+<p>Ich konnte einige Vorträge anhören, von denen haben mir die folgenden
+besonders gut gefallen (ich habe mal die Links zu den Videos und die Links zu den Einträgen im Fahrplan aufgeführt, oft gibt es im Fahrplan auch noch zugehöriges Material und weitere Hinweise):</p>
+
+<ul>
+<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6264_-_de_-_saal_1_-_201412271245_-_wir_beteiligen_uns_aktiv_an_den_diskussionen_-_martin_haase_maha.html">&ldquo;Wir beteiligen uns aktiv an den Dikussionen&rdquo;</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6264.html">(Link im Fahrplan)</a> von Martin Haase, der die <a href="http://www.digitale-agenda.de/">Digitale Agenda</a> der Bundesregierung aus sprachwissenschaftlicher Sicht entlarvt als das, was es ist: Heiße Luft und wenig Konkretes, schon gar nicht für den &ldquo;Bürger&rdquo;. Besonders spannend fand ich den Teil des &ldquo;PDF befreien&rdquo;, denn die Bundesregierung hat nur ein wenig konsistentes PDF bereit gestellt, dass maha erst einmal in einen Text umwandeln musste, mit dem er mit seinen Werkzeugen arbeiten konnte. In der Diskussion wurde er dazu auch noch einmal befragt und meinte, Markdown, das sei eigentlich ein ganz gutes Format.</p></li>
+<li><p>Die beiden SS7-Vorträge von <a href="http://media.ccc.de/browse/congress/2014/31c3_-_6249_-_en_-_saal_1_-_201412271715_-_ss7_locate_track_manipulate_-_tobias_engel.html">Tobias Engel</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6249.html">(Fahrplan)</a> und <a href="http://media.ccc.de/browse/congress/2014/31c3_-_6122_-_en_-_saal_1_-_201412271830_-_mobile_self-defense_-_karsten_nohl.html">Karsten Nohl</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6122.html">(Fahrplan)</a>: Die Talks fand ich incl. der Live-Vorführungen sehr eindrücklich und haben mir vor Augen geführt, dass es mit der Sicherheit im Mobilfunk noch schlechter aussieht, als ich so befürchtet habe.</p></li>
+<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6369_-_en_-_saal_1_-_201412272145_-_ecchacks_-_djb_-_tanja_lange.html">ECCHacks</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6369.html">(Fahrplan)</a> von djb und Tanja Lange: Ein Bekannter empfahl mir den Vortrag und meinte, ich könnte da schon was verstehen, obwohl ich mich mit diesen Ellpitischen Kurven nicht wirklich auskenne. Der Talk war didaktisch sehr gut aufbereitet und ich habe trotz der späten Stunde ein bisschen verstanden (glaube ich), worum es da eigentlich geht.</p></li>
+<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6294_-_de_-_saal_1_-_201412281815_-_vor_windows_8_wird_gewarnt_-_ruedi.html">Vor Windows 8 wird gewarnt</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6294.html">(Fahrplan)</a> von ruedi: Ein kurzweiliger Vortrag über &ldquo;Secure Boot&rdquo; und andere Schwierigkeiten mit &ldquo;Windows 8&rdquo;.</p></li>
+<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6258_-_en_-_saal_1_-_201412282030_-_reconstructing_narratives_-_jacob_-_laura_poitras.html">Reconstructing naraatives</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6258.html">(Fahrplan)</a> von Jacob Appelbaum und Laura Poitras: Das war im voll besetzten Saal 1 ein sehr eindrücklicher Vortrag, der mit Standing Ovations endete.</p></li>
+<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6121_-_en_-_saal_2_-_201412291715_-_what_ever_happened_to_nuclear_weapons_-_michael_buker.html">What Ever Happened to Nuclear Weapons?</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6121.html">(Fahrplan)</a> von Michael Büker: Diesen Vortrag fand ich vom Aufbau und der Didaktik sehr gut vorbereitet. Als wichtige Erkenntnis habe ich für mich den <a href="http://de.wikipedia.org/wiki/Kernwaffenteststopp-Vertrag">Kernwaffenstopp-Vertrag (englisch Comprehensive Nuclear-Test-Ban Treaty)</a> mitgenommen, einen internationalen Vertrag, der sämtliche Kernwaffentests verbietet, der aber noch nicht in Kraft getreten ist; dieser Vertrag geht weiter als der Nuclear Test Ban Treaty aus den 1960er Jahren, der Kernwaffenversuche in der Atmosphäre, im Weltraum und unter Wasser verbietet. Dennoch gibt es hierzu schon eine <a href="http://www.ctbto.org/">Organisation, die Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organisation</a>, der man auch auf Twitter <a href="http://twitter.com/ctbto_alerts">folgen kann</a>. Diese  &ldquo;Preparatory Commission&rdquo; bereitet das Inkraftreten vor und baut ein Überwachungssystem auf.</p></li>
+<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6128_-_en_-_saal_1_-_201412291830_-_thunderstrike_efi_bootkits_for_apple_macbooks_-_trammell_hudson.html">EFI bootkits for Apple MacBooks</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6128.html">(Fahrplan)</a> von Trammell Hudson: Ich fand das sehr spannend vorgetragen (incl. Hexdumps etc.), wie Trammel Hudson durch &ldquo;Reverse Engineering&rdquo; auf ein Sicherheitsproblem bei Apple-Produktion gestoßen ist und dieses dann in einem Proof-of-Concept auch ausnutzen konnte.</p></li>
+</ul>
+
+
+<p>Aufgrund des riesigen Angebots an Vorträgen, Workshops etc. muss ich
+mir in den kommenden Tagen glaube ich noch den einen oder anderen
+Vortrag als Video ansehen.</p>
+
+<h2>MorgenGrauen-Stammtisch</h2>
+
+<p>Etwas spontan und nicht so sonderlich koordiniert haben wir auch einen
+MorgenGrauen-Stammtisch ausgerufen und siehe da: Drei Spieler und zwei
+Gäste fanden sich ein, so dass man bei einem Bier ein wenig plaudern
+und sich austauschen konnte.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ich habe mal Octopress aktualisert]]></title>
@@ -1011,34 +1056,6 @@ dürfen?</p>
 
 <p>Wie kann man die Finanzmärkte in einer bestimmten Weise regulieren und
 dann über das eigentlich gewollte Ergebnis erstaunt sein?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Programm-Bibliotheken und verschiedene Versionsstände]]></title>
-    <link href="http://www.dbrunner.de/blog/2011/10/16/programm-bibliotheken-und-verschiedene-versionsstnde/"/>
-    <updated>2011-10-16T00:00:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2011/10/16/programm-bibliotheken-und-verschiedene-versionsstnde</id>
-    <content type="html"><![CDATA[<p>Ich bin ein sehr intensiver Nutzer von
-<a href="http://www.orgmode.org">Org-Mode</a>, einem speziellen Modul/Modus für den
-Emacs-Editor (ich habe hier auf meiner Homepage auch einmal mit einer
-kleinen <a href="http://archive.dbrunner.de/it/org-mode.html">Seite</a> dazu begonnen). Nun ja, was soll man
-sagen: Bei Emacs wird eine recht alte Version mitgeliefert. Ich wollte
-dann mal auch wegen einiger Funktionen die neueste nutzen. Also via
-<code>git</code> heruntergeladen und eingebunden und Peng, irgendwas funktioniert
-natürlich nicht mehr: Ich benötige pratisch täglich den Export von
-Org-Mode-Dateien nach <code>LaTeX</code>, der wollte aber nicht mehr. Nun kann ich
-zwar Lisp, aber das Emacs Lisp ist doch etwas speziell und die
-Debug-Möglichkeiten sind etwas … nun ja, altbacken. Kurzum: Das macht
-überhaupt keinen Spaß. Im Endeffekt habe ich dann herausgefunden, dass
-unter bestimmten Umständen Teile des alten, bei Emacs mitgelieferten
-Codes nachgeladen wird anstelle der neuen Distribution. Diese
-bescheidene Art von Emacs mit Modulen und Paketen umzugehen ist wirklich
-erschreckend. Was dafür wiederum total toll war: In der von mir
-verwendeten Org-Mode-Version war wohl ein Fehler, das ganze Ding über
-die Mailingliste geschickt und innert einem halben Tag war der Fehler
-von anderen Nutzern und von Carsten Dominik auch gleich gefixt.
-Grandiose Antwortzeit!</p>
 ]]></content>
   </entry>
   
