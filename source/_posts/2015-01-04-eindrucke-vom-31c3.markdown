@@ -49,6 +49,6 @@ Vortrag als Video ansehen.
 ## MorgenGrauen-Stammtisch
 
 Etwas spontan und nicht so sonderlich koordiniert haben wir auch einen
-MorgenGrauen-Stammtisch ausgerufen und siehe da: Drei Spieler und zwei
+[MorgenGrauen](http://mg.mud.de)-Stammtisch ausgerufen und siehe da: Drei Spieler und zwei
 Gäste fanden sich ein, so dass man bei einem Bier ein wenig plaudern
 und sich austauschen konnte.
