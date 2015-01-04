@@ -17,7 +17,7 @@ Kategorien-Liste rechts.
 
 Ansonsten habe ich, um der "Gem-Hölle" zu entgehen, das Octopress in
 einen Docker-Container gepackt; hier ist ein
-[Link](http://blog.krrrcks.net/blog/2014/06/10/unicode-support-for-octopress/)
+[Link](/blog/2014/06/10/unicode-support-for-octopress/)
 zu dem verwendeten `Dockerfile`. Ich habe es dann auch so gemacht,
 dass ich das `/opt/octopress`-Verzeichnis auf den Host-Rechner
 verschoben habe und in den Container als *Volume* hineinpacke. So kann
