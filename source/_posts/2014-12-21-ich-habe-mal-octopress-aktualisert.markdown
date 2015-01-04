@@ -49,3 +49,13 @@ Mit dem Update funktioniert nun auch das Such-Formular wieder.
    gut ist: Ich habe im `Rakefile` den `rackup`-Aufruf um den
    Parameter `-o 0.0.0.0` ergänzt. Dann bekam ich vom Host wieder eine
    Verbindung zum Webserver im Octopress-Container. 
+
+**Update vom 04. Januar 2014:** Nach einem kurzen
+  [Gespräch](https://twitter.com/Krrrcks/status/546667456128114688)
+  via Twitter habe ich mich entschieden, den eingebauten Server doch
+  wieder so zu belassen, wie es im `Rakefile` ursprünglich
+  stand. Statt dessen habe ich einfach in dem Docker-Container einen
+  `nginx` hinzuinstalliert, der dann mein `public`-Verzeichnis an den
+  Port 4000 ausliefert. So funktioniert es wieder prima: Ich starte
+  den `nginx` und lasse dann das `rake watch` laufen, um die Seiten
+  immer wieder neu zu erzeugen, wenn sich Dinge geändert haben. 
