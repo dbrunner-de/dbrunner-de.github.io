@@ -3,7 +3,9 @@ layout: post
 title: "Ich habe mal Octopress aktualisert"
 date: 2014-12-21 11:58:16 +0000
 comments: true
-categories: Homepage, Octopress 
+categories:
+  - Homepage
+  - Octopress 
 description: "Octopress aktualisieren"
 keywords: "Octopress, Update, neue Version, Hinweise"
 ---

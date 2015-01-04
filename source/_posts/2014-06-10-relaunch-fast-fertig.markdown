@@ -3,7 +3,9 @@ layout: post
 title: "Relaunch fast fertig"
 date: 2014-06-10 09:20:03 +0000
 comments: true
-categories: Homepage, Octopress
+categories:
+  - Homepage
+  - Octopress
 description: "Relaunch fast fertig"
 ---
 
