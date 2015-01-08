@@ -79,7 +79,7 @@
   <title><![CDATA[Category: veranstaltungen | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/veranstaltungen/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-01-04T17:09:34+00:00</updated>
+  <updated>2015-01-08T19:37:31+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -130,6 +130,49 @@ Vortrag als Video ansehen.</p>
 <a href="http://mg.mud.de">MorgenGrauen</a>-Stammtisch ausgerufen und siehe da: Drei Spieler und zwei
 Gäste fanden sich ein, so dass man bei einem Bier ein wenig plaudern
 und sich austauschen konnte.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[CeBIT 2010]]></title>
+    <link href="http://www.dbrunner.de/blog/2010/03/04/cebit-/"/>
+    <updated>2010-03-04T21:25:00+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2010/03/04/cebit-</id>
+    <content type="html"><![CDATA[<p>Trotz erneut markigem Auftritt (mit Begriffen wie Webciety oder dem
+Beschwören von &ldquo;Lösungen&rdquo; als Konzept im Gegensatz zu früheren
+Hardware-Schauen) geriet mein diesjähriger CeBIT-Besuch zur
+Enttäuschung. Ich stellte fest, dass einige der Unternehmen, die ich
+besuchen wollte, entweder den Stand massiv reduziert hatten oder
+schlicht zu Hause geblieben sind. Somit sank die Zahl der &ldquo;guten
+Gespräche&rdquo; auf ein historisches Tief. Darüberhinaus schien es zum Teil
+so zu sein, als würde die CeBIT auch nur noch als medialer Punkt in der
+Dramaturgie von Marketing-Spezialisten. Kleine Geschichte am Rande
+hierzu: Microsoft stellte eine Demo-Version des neuen
+Mobiltelefonbetriebsystems Microsoft Windows Phone 7 vor; auf die
+Rückfrage, ob denn die Applikationen auch nur über ein Shop-Konzept wie
+bei Apple auf das Gerät kommen, wich der Präsentator aus: Man müsse mit
+der Antwort auf diese Frage doch noch zwei Wochen warten, bis zur
+nächsten Mix (der Entwickler-Hausmesse von Microsoft).</p>
+
+<p><em>Nachtrag vom 2010-03-07 So:</em> Eine interessante Diskussion zum Design
+von Windows Phone 7 findet sich im <a href="http://www.edwardtufte.com/bboard/q-and-a-fetch-msg?msg_id=0003cy&amp;topic_id=1&amp;topic=Ask+E.T.">Forum von Edward Tufte</a>.</p>
+
+<p><em>Nachtrag vom 2010-03-16 Di:</em> Nun haben wir also fast zwei Wochen
+gewartet und mit Spannung lüftet Microsoft auf seiner
+Entwicklerkonferenz <a href="http://www.microsoft.com/events/mix/">Mix</a> das
+Geheimnis um die ersten Windows-Phone-Anwendungen. Der Heise-Verlag hat
+hierzu eine Mitteilung
+<a href="http://www.heise.de:80/mobil/meldung/Microsoft-zeigt-erste-Windows-Phone-Anwendungen-955528.html">verfasst</a>,
+in der es unter anderem über die neuen Anwendungen für das Windows Phone
+Betriebsystem heisst:</p>
+
+<blockquote><p>&ldquo;Bekommen wird man diese Anwendungen ausschließlich über einen
+runderneuerten Windows Phone Marketplace, der diverse Vertriebsmodelle
+unterstützen wird (kostenlos, Freemium, Trial, Bezahlung über
+Kreditkarte oder Mobilfunkanbieter).&rdquo;</p></blockquote>
+
+<p>Damit schwenkt Microsoft für seine mobilen Anwendungen auf Basis von
+Microsoft Phone auf das Geschäftsmodell von Apple ein.</p>
 ]]></content>
   </entry>
   
@@ -197,7 +240,7 @@ und sich austauschen konnte.</p>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (3)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (15)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (1)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (3)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (15)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (2)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
 </section>
 
 
