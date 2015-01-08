@@ -2,7 +2,9 @@
 title: CeBIT 2010
 layout: post
 date: 2010-03-04 21:25
-categories: IT
+categories:
+  - IT
+  - Veranstaltungen 
 ---
 
 Trotz erneut markigem Auftritt (mit Begriffen wie Webciety oder dem
