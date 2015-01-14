@@ -7,6 +7,7 @@ categories:
   - IT
   - Veranstaltungen
   - Reisen
+  - MorgenGrauen
 description: "Meine Eindrücke vom 31C3, meinem ersten Congress"
 keywords: "31C3, CCC, Hamburg, Congress, Chaos Computer Club"
 published: yes
