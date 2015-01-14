@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Impressum"
-date: 2014-06-23 22:45
+date: 2015-01-14 12:52
 comments: true
 sharing: true
 footer: true
@@ -29,9 +29,18 @@ eine Nachricht.
 [Octopress](http://octopress.org) erstellt, also sind das im
 Wesentlichen nur statische Inhalte. Diese Seite wird von
 [Github](https://github.com) über deren [Github Pages](https://pages.github.com)-Projekt gehostet.  Ich selbst erhebe
-und verarbeite keine Daten über Ihren Besuch auf dieser Seite. Für das
-Archiv der alten Homepage (die weiterhin bei Strato gehostet wird), zu finden über die Domain
-http://archive.dbrunner.de, gilt das dort unter
+und verarbeite keine Daten über Ihren Besuch auf dieser Seite.
+
+*Update vom 14. Januar 2015:* Ich habe den in Octopress eingebauten
+ Twitter-Knopf aktiviert (besteht aus dem Follow-Knopf und den
+ Tweet-Knöpfen an den Artikeln und Seiten), hierzu werden beim
+ Betrachten der Seite Daten an Twitter gesendet. Twitters
+ Datenschutzrichtlinie kann [hier](https://twitter.com/privacy)
+ eingesehen werden. 
+
+Für das Archiv der alten Homepage (die weiterhin bei Strato gehostet
+wird), zu finden über die Domain http://archive.dbrunner.de, gilt das
+dort unter
 [Kontakt/Impressum](http://archive.dbrunner.de/kontakt.html) Gesagte.
 
 Und ein Link zu meinem [Haftungsaussschluss](http://www.disclaimer.de/disclaimer.htm).
