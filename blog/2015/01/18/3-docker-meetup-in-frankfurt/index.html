@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Einmaligkeit und Alternativlosigkeit als politische Kategorien - Textstückchen</title>
+  <title>3. Docker-Meetup in Frankfurt - Textstückchen</title>
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="In die aktuellen politischen Debatten schleichen sich zwei offenkundig
-neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo &hellip;">
-  
+  <meta name="description" content="Kurzer Bericht vom 3. Docker-Meetup in Frankfurt">
+  <meta name="keywords" content="Docker, Meetup, Frankfurt">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -19,7 +18,7 @@ neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo &h
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.dbrunner.de/blog/2010/06/22/einmaligkeit-und-alternativlosigkeit-als-politische-kategorien">
+  <link rel="canonical" href="http://www.dbrunner.de/blog/2015/01/18/3-docker-meetup-in-frankfurt">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Textstückchen" type="application/atom+xml">
@@ -71,7 +70,7 @@ neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo &h
   
   <header>
     
-      <h1 class="entry-title">Einmaligkeit und Alternativlosigkeit als politische Kategorien</h1>
+      <h1 class="entry-title">3. Docker-Meetup in Frankfurt</h1>
     
     
       <p class="meta">
@@ -80,65 +79,81 @@ neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo &h
 
 
 
-<time class='entry-date' datetime='2010-06-22T00:00:00+00:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2010</span></span> <span class='time'>12:00 am</span></time>
+<time class='entry-date' datetime='2015-01-18T20:05:35+00:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:05 pm</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>In die aktuellen politischen Debatten schleichen sich zwei offenkundig
-neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo; von
-Ereignissen und die &ldquo;Alternativlosigkeit&rdquo; ihrer Entscheidungen. Beide
-sollen dem Gegenüber den Wind aus den Segeln nehmen und eine gute
-Begründung für das eigene Handeln darstellen. Seien es
-Bankenrettungsschirme, Euro-Länder-Rettungsschirme oder Sparpakete.
-Immer ist von einmaligen Ereignissen und fehlenden Alternativen die
-Rede.</p>
+<div class="entry-content"><p>Am 13. Januar 2015  fand in Frankfurt das bereits dritte Docker-Meetup
+statt, hier einige Notizen von mir dazu.</p>
 
-<p>So sprach der erste parlamentarische Geschäftsführer der
-Unions-Fraktionen im Bundestag, Peter Altmeier, am <a href="http://www.dradio.de/dlf/sendungen/interview_dlf/1204454/">16. Juni 2010 im Deutschlandfunk</a>:</p>
+<h2>Neues zum Them Orchestrierung</h2>
 
-<blockquote><p>&ldquo;Wir haben mit die größte Sparanstrengung seit über 40 Jahren zu
-bewältigen. Es gab seit der deutschen Einheit keine derartige
-Problemfülle, die von der Politik bewältigt werden musste.&rdquo;</p></blockquote>
+<p><a href="https://www.twitter.com/PRossbach">Peter Rossbach</a> hat in einem
+munteren Vortrag einige Neuerungen aus dem &ldquo;Docker Universum&rdquo; zum
+Thema Orchestrierung vorgestellt. Unter anderem
+<a href="https://github.com/docker/machine">Docker Machine</a>,
+<a href="https://github.com/docker/swarm">Docker Swarm</a>, Docker Compose
+(ehemals <a href="http://fig.sh">fig.sh</a>, das wohl aufgrund von
+Aussprachemehrdeutigkeiten umbenannt wurde) etc. Ein sehr
+interessanter Überblick, insbesondere da Peter auch die ganzen Sachen
+immer mal angefasst und ausprobiert hat. Im Kern scheint es mir jedoch
+so zu sein, als wäre die Frage nach &ldquo;Was nimmt man am besten, um
+Docker auf einer oder mehreren Maschinen im Produktivbetrieb zu
+nutzen?&rdquo; noch recht in Bewegung. Für mich kristallisiert sich für
+meine Anwendungsfälle da bisher noch keine überzeugende Lösung
+heraus. Was ich jedoch einmal testen werde ist das fig.sh bzw. Docker
+Compose, da man damit eigentlich sehr schön in einem YAML-Dokument
+mehrere Container und ihre Abhängigkeiten darstellen kann.</p>
 
-<p>Ähnlich äußerte sich einen Tag früher der Generalsekretär der FDP,
-Christian Lindner, im
-<a href="http://www.dradio.de/dlf/sendungen/interview_dlf/1203633/">Deutschlandfunk</a>:</p>
+<h2>Docker Linking</h2>
 
-<blockquote><p>&ldquo;Wir müssen uns Fragen in der Sache stellen, die nicht gekannte
-Dimensionen haben.&rdquo;</p></blockquote>
+<p><a href="http://linsenraum.de">Erkan Yanar</a> hat in einem Einsteigervortrag die
+Grundlagen von Links zwischen Containern vorgestellt. Hier scheint die
+Entwicklung auch noch in Bewegung zu sein, insbesondere Links über
+mehrere Hosts hinweg scheinen doch noch nicht so ganz einfach
+handzuhaben zu sein (vorgestellt wurden
+<a href="https://github.com/SvenDowideit/dockerfiles/blob/master/ambassador/Dockerfile">Ambassador-Ansätze</a>
+mit <a href="http://www.dest-unreach.org/socat/">socat</a> und anderes).</p>
 
-<p>Mit der oben skizzierten Einmaligkeit und den vermeintlich
-außerordentlich großen Problemen soll dem Höhrer klar gemacht werden,
-dass Lösungen unglaublich schwer zu finden seien und man doch für den
-Umgang der Koalitionäre (&ldquo;Gurkentruppe&rdquo;, &ldquo;Wildsau&rdquo;, &ldquo;Rumpelstilzchen&rdquo;,
-um die Vokabeln des Vorsommer-Sommerlochs zu wiederholen) und den
-Ergebnissen Verständnis haben müsse.</p>
+<p>Besonders erhellend fand ich den Hinweis, dass ab Docker Version 1.3
+nun bei Links zwischen den Containern die <code>/etc/hosts</code> auch nach
+Neustarts von gelinkten Containern immer deren richtige IP-Adresse
+erhält, wohingegen die Umgebungsvariablen nur die
+Ursprungs-IP-Adressen enthalten (also ein klares &ldquo;Verlasst Euch nicht
+auf die Umgebungsvariablen!&rdquo;).</p>
 
-<p>Wenn dann eine Entscheidung gefunden wurde, dann ist es doch wiederum
-eine Nicht-Entscheidung; denn es gab ja angeblich keine Alternativen. Es
-war &ldquo;alternativlos&rdquo;, das Rettungspaket für Euro und Griechenland zu
-schnüren. TINA (there is no alternative) greift um sich; ein Umstand auf
-den Heribert Prantl
-<a href="http://www.sueddeutsche.de/politik/fuehrung-fall-merkel-fuer-angie-kommt-tina-1.944947">in der Süddeutschen Zeitung</a>
-pointiert aufmerksam gemacht hat.</p>
+<h2>Netzwerken mit Docker</h2>
 
-<p>Kurzum, die Herausforderungen sind einmalig, nie gekannt, von nie
-erlebter Komplexität und Schwierigkeit und die Lösungen dann
-schlussendlich auch noch ohne Alternativen. Politik ist doch eigentlich
-die Diskussion und das Ringen um die Wahl aus verschiedenen
-Alternativen. Werden solche Alternativen negiert, wird Politik ihres
-Kerns beraubt. Dies ist um so kritischer, als die alternativlosen
-Lösungen in der Regel nicht aus der Mitte des Parlaments aufs Tapet
-kommen, sondern es ist häufig die Exekutive in Gestalt der
-EU-Regierungen, in Gestalt der Bundesregierung, in Gestalt von
-Ministerkonferenzen der Bundesländer, die es den jeweiligen Parlamenten
-schwer und einfach zugleich macht: Schwer, weil das Parlament nicht mehr
-um die beste Lösung ringen darf und einfach, weil man die Verantwortung
-bei der Regierung belassen kann und Rettungspakete eben wie gewünscht
-durchwinkt. Es gab ja auch keine Alternative.</p>
+<p><a href="https:/www.twitter.com/aschmidt75">Andreas Schmidt</a> stellte eine
+ganze Reihe von Varianten vor, mit denen man die Container im Netzwerk
+auf unterschiedliche Arten und Weisen verknoten kann. Soweit ganz
+interessant, aber nicht meine &ldquo;Liga&rdquo;, wo ich mich gut auskenne.</p>
+
+<h2>Fazit</h2>
+
+<p>Bei Docker in Bezug auf Orchestrierung und Container-Linken gibt es
+recht viel Bewegung und für mich kristallisieren sich die
+überzeugenden Konzepte noch nicht so richtig heraus, um damit in eine
+Produktivumgebung zu gehen. Im Bereich der Entwicklung und der Tests
+nutze ich die Container von Docker schon recht gerne, bei
+Produktiv-Umgebungen schreckt mich die Vielzahl an Werkzeugen und zum
+Teil auch die Komplexität doch noch etwas.</p>
+
+<p>Jedenfalls wieder ein gutes Meetup mit Ideen und Anregungen. Ich finde
+das schon sehr außergewöhnlich (besonders wenn man es mit anderen
+Branchen vergleicht), dass sich Leute zum Austauschen über Technologie
+treffen, Vorträge vorbereiten etc.</p>
+
+<h2>Link zu den Folien</h2>
+
+<ul>
+<li><a href="https://speakerdeck.com/rossbachp/docker-meetup-frankfurt-2015-docker-orchestration">Peter Rossbach, Docker Orchestation</a></li>
+<li><a href="https://speakerdeck.com/aschmidt75/docker-networking">Andreas Schmidt, Docker Networking</a></li>
+</ul>
+
 </div>
 
 
@@ -154,12 +169,12 @@ durchwinkt. Es gab ja auch keine Alternative.</p>
 
 
 
-<time class='entry-date' datetime='2010-06-22T00:00:00+00:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2010</span></span> <span class='time'>12:00 am</span></time>
+<time class='entry-date' datetime='2015-01-18T20:05:35+00:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:05 pm</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/politik/'>politik</a>
+    <a class='category' href='/blog/categories/docker/'>docker</a>, <a class='category' href='/blog/categories/it/'>it</a>, <a class='category' href='/blog/categories/veranstaltungen/'>veranstaltungen</a>
   
 </span>
 
@@ -168,7 +183,7 @@ durchwinkt. Es gab ja auch keine Alternative.</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.dbrunner.de/blog/2010/06/22/einmaligkeit-und-alternativlosigkeit-als-politische-kategorien/" data-via="krrrcks" data-counturl="http://www.dbrunner.de/blog/2010/06/22/einmaligkeit-und-alternativlosigkeit-als-politische-kategorien/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.dbrunner.de/blog/2015/01/18/3-docker-meetup-in-frankfurt/" data-via="krrrcks" data-counturl="http://www.dbrunner.de/blog/2015/01/18/3-docker-meetup-in-frankfurt/" >Tweet</a>
   
   
   
@@ -177,10 +192,8 @@ durchwinkt. Es gab ja auch keine Alternative.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2010/06/13/verrechnen-leicht-gemacht/" title="Previous Post: Verrechnen leicht gemacht">&laquo; Verrechnen leicht gemacht</a>
+        <a class="basic-alignment left" href="/blog/2015/01/05/eindrucke-vom-31c3/" title="Previous Post: Eindrücke vom 31C3">&laquo; Eindrücke vom 31C3</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2010/06/27/die-vatikanischen-museen-und-eine-kleine-berraschung/" title="Next Post: Die vatikanischen Museen und eine kleine Überraschung">Die vatikanischen Museen und eine kleine Überraschung &raquo;</a>
       
     </p>
   </footer>

@@ -9,9 +9,8 @@
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="Dieses Jahr habe ich mich einmal aufgerafft und bin das erste mal zum
-Congress des CCC nach Hamburg gefahren. Im Folgenden ein paar
-Eindrücke: &hellip;">
+  <meta name="description" content="Am 13. Januar 2015 fand in Frankfurt das bereits dritte Docker-Meetup
+statt, hier einige Notizen von mir dazu. Neues zum Them Orchestrierung Peter &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +68,102 @@ Eindrücke: &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/01/18/3-docker-meetup-in-frankfurt/">3. Docker-Meetup in Frankfurt</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-01-18T20:05:35+00:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>18</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>8:05 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Am 13. Januar 2015  fand in Frankfurt das bereits dritte Docker-Meetup
+statt, hier einige Notizen von mir dazu.</p>
+
+<h2>Neues zum Them Orchestrierung</h2>
+
+<p><a href="https://www.twitter.com/PRossbach">Peter Rossbach</a> hat in einem
+munteren Vortrag einige Neuerungen aus dem &ldquo;Docker Universum&rdquo; zum
+Thema Orchestrierung vorgestellt. Unter anderem
+<a href="https://github.com/docker/machine">Docker Machine</a>,
+<a href="https://github.com/docker/swarm">Docker Swarm</a>, Docker Compose
+(ehemals <a href="http://fig.sh">fig.sh</a>, das wohl aufgrund von
+Aussprachemehrdeutigkeiten umbenannt wurde) etc. Ein sehr
+interessanter Überblick, insbesondere da Peter auch die ganzen Sachen
+immer mal angefasst und ausprobiert hat. Im Kern scheint es mir jedoch
+so zu sein, als wäre die Frage nach &ldquo;Was nimmt man am besten, um
+Docker auf einer oder mehreren Maschinen im Produktivbetrieb zu
+nutzen?&rdquo; noch recht in Bewegung. Für mich kristallisiert sich für
+meine Anwendungsfälle da bisher noch keine überzeugende Lösung
+heraus. Was ich jedoch einmal testen werde ist das fig.sh bzw. Docker
+Compose, da man damit eigentlich sehr schön in einem YAML-Dokument
+mehrere Container und ihre Abhängigkeiten darstellen kann.</p>
+
+<h2>Docker Linking</h2>
+
+<p><a href="http://linsenraum.de">Erkan Yanar</a> hat in einem Einsteigervortrag die
+Grundlagen von Links zwischen Containern vorgestellt. Hier scheint die
+Entwicklung auch noch in Bewegung zu sein, insbesondere Links über
+mehrere Hosts hinweg scheinen doch noch nicht so ganz einfach
+handzuhaben zu sein (vorgestellt wurden
+<a href="https://github.com/SvenDowideit/dockerfiles/blob/master/ambassador/Dockerfile">Ambassador-Ansätze</a>
+mit <a href="http://www.dest-unreach.org/socat/">socat</a> und anderes).</p>
+
+<p>Besonders erhellend fand ich den Hinweis, dass ab Docker Version 1.3
+nun bei Links zwischen den Containern die <code>/etc/hosts</code> auch nach
+Neustarts von gelinkten Containern immer deren richtige IP-Adresse
+erhält, wohingegen die Umgebungsvariablen nur die
+Ursprungs-IP-Adressen enthalten (also ein klares &ldquo;Verlasst Euch nicht
+auf die Umgebungsvariablen!&rdquo;).</p>
+
+<h2>Netzwerken mit Docker</h2>
+
+<p><a href="https:/www.twitter.com/aschmidt75">Andreas Schmidt</a> stellte eine
+ganze Reihe von Varianten vor, mit denen man die Container im Netzwerk
+auf unterschiedliche Arten und Weisen verknoten kann. Soweit ganz
+interessant, aber nicht meine &ldquo;Liga&rdquo;, wo ich mich gut auskenne.</p>
+
+<h2>Fazit</h2>
+
+<p>Bei Docker in Bezug auf Orchestrierung und Container-Linken gibt es
+recht viel Bewegung und für mich kristallisieren sich die
+überzeugenden Konzepte noch nicht so richtig heraus, um damit in eine
+Produktivumgebung zu gehen. Im Bereich der Entwicklung und der Tests
+nutze ich die Container von Docker schon recht gerne, bei
+Produktiv-Umgebungen schreckt mich die Vielzahl an Werkzeugen und zum
+Teil auch die Komplexität doch noch etwas.</p>
+
+<p>Jedenfalls wieder ein gutes Meetup mit Ideen und Anregungen. Ich finde
+das schon sehr außergewöhnlich (besonders wenn man es mit anderen
+Branchen vergleicht), dass sich Leute zum Austauschen über Technologie
+treffen, Vorträge vorbereiten etc.</p>
+
+<h2>Link zu den Folien</h2>
+
+<ul>
+<li><a href="https://speakerdeck.com/rossbachp/docker-meetup-frankfurt-2015-docker-orchestration">Peter Rossbach, Docker Orchestation</a></li>
+<li><a href="https://speakerdeck.com/aschmidt75/docker-networking">Andreas Schmidt, Docker Networking</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -750,107 +845,6 @@ Schmerzen verursacht hat, habe ich es dabei bewenden lassen.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/07/24/mind-the-storage-driver-for-ubuntu-cloud-images-on-azure/">Mind the storage driver for Ubuntu cloud images (on Azure)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-07-24T12:30:43+00:00'><span class='date'><span class='date-month'>Jul</span> <span class='date-day'>24</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:30 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A few days ago I wanted to build Firefox OS&#8217; newest release for a
-friend. Because I did not wanted these GB of code, binaries etc. on my
-notebook I fired up an Ubuntu image on Microsoft Azure. I feared that
-at a certain point in the build process I may had to download
-everything to my local machine and therefore I installed Docker via a
-simple</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get install docker.io</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-
-<p>Then I started the build process as laid out on Mozilla&rsquo;s Developer
-Network. But, during downloading the source code (that&rsquo;s about 12 GB
-of Git repositories from Mozilla and Android), I got a &ldquo;no more space
-left on device&rdquo;. That was strange: I had a 100 GB volume attached to
-the VM and enough space and inodes left. After some searching I asked
-on the IRC channel and got a good hint: &ldquo;What&rsquo;s your storage driver?&rdquo;</p>
-
-<p>Well, I thought that it&rsquo;s AUFS; I wanted to add &ldquo;as usual&rdquo; because
-AUFS was available on my notebook from the beginning. But a <code>docker.io
-info</code> gave me:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ sudo docker.io info
-</span><span class='line'>Containers: 0
-</span><span class='line'>Images: 0
-</span><span class='line'>Storage Driver: devicemapper
-</span><span class='line'> Pool Name: docker-8:1-131188-pool
-</span><span class='line'> Data file: /var/lib/docker/devicemapper/devicemapper/data
-</span><span class='line'> Metadata file: /var/lib/docker/devicemapper/devicemapper/metadata
-</span><span class='line'> Data Space Used: 291.5 Mb
-</span><span class='line'> Data Space Total: 102400.0 Mb
-</span><span class='line'> Metadata Space Used: 0.7 Mb
-</span><span class='line'> Metadata Space Total: 2048.0 Mb
-</span><span class='line'>Execution Driver: native-0.1
-</span><span class='line'>Kernel Version: 3.13.0-29-generic
-</span><span class='line'>WARNING: No swap limit support</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I then learned that somehow the DeviceMapper driver only allows a
-certain amount of diffs and I reached that amount with my build
-process. (Maybe it&rsquo;s possible to relax that restriction but I do not
-know how.)</p>
-
-<p>I learned as well that the Ubuntu cloud image that is provided by
-Microsoft Azure doesn&rsquo;t have AUFS support. Therefore Docker uses the
-DeviceMapper storage driver instead. After I installed the AUFS
-support I could export the images, change the storage driver and
-import the images again.</p>
-
-<p>It would be nice seeing the Docker documentation being more detailed
-on those storage drivers.</p>
-
-<p><strong>(Update 2014-10-23)</strong> Thanks to
- <a href="http://blog.iron.io/2014/10/docker-in-production-what-weve-learned.html">this blog post from Iron.io</a>
- I found some documentation of the devicemapper storage driver. It is
- located in the
- <a href="https://github.com/docker/docker/tree/master/daemon/graphdriver/devmapper">Repository</a>.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -879,6 +873,10 @@ on those storage drivers.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/01/18/3-docker-meetup-in-frankfurt/">3. Docker-Meetup in Frankfurt</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/05/eindrucke-vom-31c3/">Eindrücke vom 31C3</a>
       </li>
     
@@ -894,15 +892,11 @@ on those storage drivers.</p>
         <a href="/blog/2014/12/18/neues-arbeitspapier/">&#8220;Neues&#8221; Arbeitspapier</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/12/18/aus-der-entscheidung-des-bverfg-zur-erbschaftsteuer/">Aus der Entscheidung des BVerfG zur Erbschaftsteuer</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (3)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (15)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (2)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (6)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (16)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (1)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
 </section>
 
 

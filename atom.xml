@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-01-14T11:53:10+00:00</updated>
+  <updated>2015-01-18T19:07:18+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,82 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[3. Docker-Meetup in Frankfurt]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/01/18/3-docker-meetup-in-frankfurt/"/>
+    <updated>2015-01-18T20:05:35+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/01/18/3-docker-meetup-in-frankfurt</id>
+    <content type="html"><![CDATA[<p>Am 13. Januar 2015  fand in Frankfurt das bereits dritte Docker-Meetup
+statt, hier einige Notizen von mir dazu.</p>
+
+<h2>Neues zum Them Orchestrierung</h2>
+
+<p><a href="https://www.twitter.com/PRossbach">Peter Rossbach</a> hat in einem
+munteren Vortrag einige Neuerungen aus dem &ldquo;Docker Universum&rdquo; zum
+Thema Orchestrierung vorgestellt. Unter anderem
+<a href="https://github.com/docker/machine">Docker Machine</a>,
+<a href="https://github.com/docker/swarm">Docker Swarm</a>, Docker Compose
+(ehemals <a href="http://fig.sh">fig.sh</a>, das wohl aufgrund von
+Aussprachemehrdeutigkeiten umbenannt wurde) etc. Ein sehr
+interessanter Überblick, insbesondere da Peter auch die ganzen Sachen
+immer mal angefasst und ausprobiert hat. Im Kern scheint es mir jedoch
+so zu sein, als wäre die Frage nach &ldquo;Was nimmt man am besten, um
+Docker auf einer oder mehreren Maschinen im Produktivbetrieb zu
+nutzen?&rdquo; noch recht in Bewegung. Für mich kristallisiert sich für
+meine Anwendungsfälle da bisher noch keine überzeugende Lösung
+heraus. Was ich jedoch einmal testen werde ist das fig.sh bzw. Docker
+Compose, da man damit eigentlich sehr schön in einem YAML-Dokument
+mehrere Container und ihre Abhängigkeiten darstellen kann.</p>
+
+<h2>Docker Linking</h2>
+
+<p><a href="http://linsenraum.de">Erkan Yanar</a> hat in einem Einsteigervortrag die
+Grundlagen von Links zwischen Containern vorgestellt. Hier scheint die
+Entwicklung auch noch in Bewegung zu sein, insbesondere Links über
+mehrere Hosts hinweg scheinen doch noch nicht so ganz einfach
+handzuhaben zu sein (vorgestellt wurden
+<a href="https://github.com/SvenDowideit/dockerfiles/blob/master/ambassador/Dockerfile">Ambassador-Ansätze</a>
+mit <a href="http://www.dest-unreach.org/socat/">socat</a> und anderes).</p>
+
+<p>Besonders erhellend fand ich den Hinweis, dass ab Docker Version 1.3
+nun bei Links zwischen den Containern die <code>/etc/hosts</code> auch nach
+Neustarts von gelinkten Containern immer deren richtige IP-Adresse
+erhält, wohingegen die Umgebungsvariablen nur die
+Ursprungs-IP-Adressen enthalten (also ein klares &ldquo;Verlasst Euch nicht
+auf die Umgebungsvariablen!&rdquo;).</p>
+
+<h2>Netzwerken mit Docker</h2>
+
+<p><a href="https:/www.twitter.com/aschmidt75">Andreas Schmidt</a> stellte eine
+ganze Reihe von Varianten vor, mit denen man die Container im Netzwerk
+auf unterschiedliche Arten und Weisen verknoten kann. Soweit ganz
+interessant, aber nicht meine &ldquo;Liga&rdquo;, wo ich mich gut auskenne.</p>
+
+<h2>Fazit</h2>
+
+<p>Bei Docker in Bezug auf Orchestrierung und Container-Linken gibt es
+recht viel Bewegung und für mich kristallisieren sich die
+überzeugenden Konzepte noch nicht so richtig heraus, um damit in eine
+Produktivumgebung zu gehen. Im Bereich der Entwicklung und der Tests
+nutze ich die Container von Docker schon recht gerne, bei
+Produktiv-Umgebungen schreckt mich die Vielzahl an Werkzeugen und zum
+Teil auch die Komplexität doch noch etwas.</p>
+
+<p>Jedenfalls wieder ein gutes Meetup mit Ideen und Anregungen. Ich finde
+das schon sehr außergewöhnlich (besonders wenn man es mit anderen
+Branchen vergleicht), dass sich Leute zum Austauschen über Technologie
+treffen, Vorträge vorbereiten etc.</p>
+
+<h2>Link zu den Folien</h2>
+
+<ul>
+<li><a href="https://speakerdeck.com/rossbachp/docker-meetup-frankfurt-2015-docker-orchestration">Peter Rossbach, Docker Orchestation</a></li>
+<li><a href="https://speakerdeck.com/aschmidt75/docker-networking">Andreas Schmidt, Docker Networking</a></li>
+</ul>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Eindrücke vom 31C3]]></title>
@@ -1182,71 +1258,6 @@ von 0.22.)</p>
 </ol>
 </div>
 
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Zu den negativen Zinsen]]></title>
-    <link href="http://www.dbrunner.de/blog/2012/01/10/zu-den-negativen-zinsen/"/>
-    <updated>2012-01-10T19:03:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2012/01/10/zu-den-negativen-zinsen</id>
-    <content type="html"><![CDATA[<p>Verschiedene Zeitungen berichteten, es habe nun bei einer aktuellen
-Refinanzierungsrunde Deutschlands negative &ldquo;Zinsen&rdquo; gegeben. Wie kann
-das passieren?</p>
-
-<p>Bei der Ausgabe einer Anleihe überlegt sich der ausgebende Staat einen
-Nominalzins, den er für die Anleihe zahlen würde. Ein Nominalsatz von
-1,00% würde bei einer Anleihe von 100 EUR dem Zeichner oder Inhaber der
-Anleihe eine jährliche Zinszahlung von 1,00 EUR bringen. Diesen Wert
-nennt man auch den Kupon einer Anleihe, da dafür früher tatsächlich
-Stücke eines speziellen Bogens als Kupon abgeschnitten werden mussten
-und gegen diesen Kupon dann die Zahlung erfolgt.</p>
-
-<p>Nun geht der ausgebende Staat an den Markt und schaut für eine solche
-Anleihe, ob die ihm jemand abkaufen würde. Er sagt also: &ldquo;Ich will 100
-EUR und zahle dafür nominal 1,00% im Jahr.&rdquo;</p>
-
-<p>Wenn er nun ein schlechter Schuldner ist, kann es sein, dass er die
-Anleihe dann nur für 90 los wird. Dann ist der Nominalzins immer noch
-1,00%, da der Inhaber der Anleihe aber 1,00 EUR für 90 EUR bekommt,
-steigt die Rendite, zugleich muss die ausgebende Stelle am Ende der
-Laufzeit die 100 EUR zurückzahlen. Umgekehrt kann es auch sein, dass
-Leute 110 EUR für die Anleihe bieten, sie bekommen dann am Ende nur 100
-EUR zurück und erhalten auch nur eine Zinszahlung von 1,00 EUR pro Jahr
-für die angelegten 110 EUR, was dann eine niedrigere Rendite als 1,00%
-ergibt.</p>
-
-<p>Oder um es noch einfacher zu machen, nehmen wir nun noch an, dass die
-Anleihe bereits nach einem Jahr zurückgezahlt wird:</p>
-
-<p>Wird sie zu 100 verkauft, so ist die Rendite einfach 1%, bei Kurs 101
-ist die Rendite 0% (man bekommt am Ende des Jahres ja die 100 plus 1%
-Kupon, also 101 wieder, das ist also genau das, was man bei der Ausgabe
-gezahlt hat), bei Kurs 102 ist die Rendite dann -1%.</p>
-
-<p>Zusammengefasst, die Rendite sinkt, wenn der Kurs ansteigt und
-umgekehrt. Sie kann auch in der Konstellation negativ werden, wenn
-beispielsweise ein kleiner Kupon mit einem hohen Kurs einhergeht.</p>
-
-<p>Bei neuen Anleihen schätzt der ausgebende Staat in der Regel vorher ab,
-wo die Rendite wohl liegen wird und ruft ein Volumen und einen Kupon
-auf. Bei der Schuldenverwaltung in Deutschland liegt man mit dieser
-Abschätzung zumeist recht gut, so dass die Rendite oft sehr nah beim
-Kupon zu liegen kommt. Das ist bei anderen Ländern in jüngster
-Vergangenheit auch schon mal gerne schief gegangen.</p>
-
-<p>Bei den in der Presse dargestellten kurzfristigen Titeln handelte es
-sich um sogenannte unverzinsliche Schatzanweisungen. Diese funktionieren
-nun anders, denn sie haben gar keinen Kupon (sog. Nullkuponanleihen oder
-Zerobonds). Das bedeutet, wenn der Ausgabepreis unter 100 liegt, ergibt
-sich eine positive Rendite (der häufigste Fall), bei der gestrigen
-Auktion lag der Kurs über 100, damit wurde die Rendite negativ.
-Genaugenommen gab es also gar keine &ldquo;negative Zinsen&rdquo;, sondern eine
-&ldquo;negative Rendite&rdquo;</p>
-
-<p>Die aktuellen Informationen zu den Auktionsergebnissen kann man
-<a href="http://www.deutsche-finanzagentur.de/fileadmin/Material_Deutsche_Finanzagentur/PDF/Aktuelle_Informationen/Auktionsergebnisse.pdf">hier</a>
-einsehen.</p>
 ]]></content>
   </entry>
   
