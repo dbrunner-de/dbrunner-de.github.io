@@ -11,7 +11,7 @@ description: "Kurzer Bericht vom 3. Docker-Meetup in Frankfurt"
 keywords: "Docker, Meetup, Frankfurt"
 ---
 
-Am 13. Januar 2015  fand in Frankfurt das bereits dritte Docker-Meetup
+Am 13. Januar 2015  fand in Frankfurt das bereits [dritte Docker-Meetup](http://www.meetup.com/Docker-Frankfurt/events/219160756/)
 statt, hier einige Notizen von mir dazu. 
 
 ## Neues zum Them Orchestrierung
