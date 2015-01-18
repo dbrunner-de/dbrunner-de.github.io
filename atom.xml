@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-01-18T19:08:32+00:00</updated>
+  <updated>2015-01-18T19:14:37+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -18,7 +18,7 @@
     <link href="http://www.dbrunner.de/blog/2015/01/18/3-docker-meetup-in-frankfurt/"/>
     <updated>2015-01-18T20:05:35+00:00</updated>
     <id>http://www.dbrunner.de/blog/2015/01/18/3-docker-meetup-in-frankfurt</id>
-    <content type="html"><![CDATA[<p>Am 13. Januar 2015  fand in Frankfurt das bereits dritte Docker-Meetup
+    <content type="html"><![CDATA[<p>Am 13. Januar 2015  fand in Frankfurt das bereits <a href="http://www.meetup.com/Docker-Frankfurt/events/219160756/">dritte Docker-Meetup</a>
 statt, hier einige Notizen von mir dazu.</p>
 
 <h2>Neues zum Them Orchestrierung</h2>
