@@ -42,3 +42,7 @@ Ich meine, man kann sich ja mal vertun, aber dann auf einen
 Leserhinweis so gar nichts zu unternehmen, ist der Sportschau eigentlich
 nicht würdig.
 
+*Update:* Ich twitterte die Sportschau mit meinem Blog-Post an und
+ unmittelbar danach wurde der Fehler
+ [korrigiert.](https://twitter.com/sportschau/status/561138889776447489)
+ Sehr prompte Reaktion. 
