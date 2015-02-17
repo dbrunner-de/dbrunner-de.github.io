@@ -79,7 +79,7 @@
   <title><![CDATA[Category: allerlei | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/allerlei/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-01-30T13:25:48+00:00</updated>
+  <updated>2015-02-17T11:40:00+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lexmarks Druckerpatronen Lizenz]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/"/>
+    <updated>2015-02-17T11:28:02+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/02/17/lexmarks-druckerpatronen-lizenz</id>
+    <content type="html"><![CDATA[<p>Heute benötigte ich eine Ersatzpatrone für meinen
+Lexmark-Drucker. An der Aufreißlasche prangen Ausrufezeichen und der
+Hinweis: &ldquo;Attention: Updated License Terms&rdquo;.</p>
+
+<p>Lizenzbedingungen? Für eine Druckerpatrone? Also mal ein Blick aufs
+Kleingedruckte:</p>
+
+<blockquote><p>Bitte vor dem Öffnnen lesen. Durch das Öffnen der Verpackung oder
+die Verwendung der mitgelieferten patentierten Kassette erklären Sie
+sich mit der folgenden Lizenz-Vereinbarung einverstanden. Diese
+patentierte Tonerkassette wird zu einem Sonderpreis verkauft und
+unterliegt der Patenteinschränkung, dass sie nur einmal verwendet
+wird. Nach ihrer erstmaligen Verwendung verpflichten Sie sich, sie
+zur Wiederaufbereitung und/oder zum Recylcing nur an Lexmark
+zurückzugeben. Die Tonerkassette funktioniert nach der Abgabe einer
+bestimmten Tonermenge nicht mehr. Wenn sie ersetzt werden muss, kann
+sie noch Resttoner enthalten. Die Kassette ist zusätzlich so
+konzipiert, dass die Informationen zur Kassettenkompatibilität im
+Druckerspeicher automatisch aktualisiert werden. Auf diese Weise
+kann die Verwendung gefälschter Kassetten und/oder bestimmer
+Drittprodukte eingeschränkt werden. Durch die Installation der
+beiliegenden Kassette gestatten Sie Lexmark, diese Änderungen
+vorzunehmen. Wenn Sie mit den vorgenannten Bedingungen nicht
+einverstanden sind, geben Sie die ungeöffnete Verpackung an Ihren
+Händler zurück. Nicht im Rahmen dieser Bestimmungen verkaufte
+Ersatztonerkassetten sind unter www.lexmark.com erhältlich.</p></blockquote>
+
+<p>Irgendwie ja auch ein bisschen putzig, wie um einen Alltagsgegenstand
+wie Toner so ein Bohei gemacht wird. Zwei Gedanken kommen mir da in
+den Sinn: 1. Es verfestigt sich mein Eindruck, dass das Patentsystem
+recht nahe an kaputt ist. 2. Unternehmen, die so etwas machen, sollten
+weniger Geld für Juristen, Patentanwälte ausgeben und das Geld eher in
+coole Produkte investieren.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Spielt ALBA Berlin nun Handball oder Basketball? Der Sportschau ist es egal]]></title>
@@ -303,23 +344,6 @@ komfortabel.</p>
 ]]></content>
   </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Zur Loveparade-Berichterstattung]]></title>
-    <link href="http://www.dbrunner.de/blog/2010/08/04/zur-loveparade-berichterstattung/"/>
-    <updated>2010-08-04T09:11:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2010/08/04/zur-loveparade-berichterstattung</id>
-    <content type="html"><![CDATA[<p>Ich habe im Online-Angebot der <a href="http://www.faz.net">FAZ</a> einen
-interessanten Artikel von <a href="http://www.stefan-niggemeier.de">Stefan
-Niggemeier</a> zum Umgang der Medien mit
-dem Unglück während der Loveparade in Duisburg gefunden: <a href="http://tinyurl.com/38qx8o5">&ldquo;Ein einziger
-Blick in die Zukunft hätte doch gezeigt&hellip;&rdquo;</a>
-Er kritisiert darin, dass viele Medien hinterher mit einer
-Selbstgefälligkeit schrieben, dass es ja für jeden Laien erkennbar zur
-Katastrophe kommen musste, im Vorhinein dieselben Medien diese aber
-nicht erkennen konnten.</p>
-]]></content>
-  </entry>
-  
 </feed>
 
   
@@ -361,6 +385,10 @@ nicht erkennen konnten.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen Lizenz</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/30/sportschau-handball-oder-basketball/">Spielt ALBA Berlin nun Handball oder Basketball? Der Sportschau ist es egal</a>
       </li>
     
@@ -376,15 +404,11 @@ nicht erkennen konnten.</p>
         <a href="/blog/2015/01/04/aus-zwei-mach-eins/">Aus zwei mach eins</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/12/21/ich-habe-mal-octopress-aktualisert/">Ich habe mal Octopress aktualisert</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (7)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (16)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (2)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (17)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (2)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (10)</a></li></ul>
 </section>
 
 

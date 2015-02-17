@@ -79,7 +79,7 @@
   <title><![CDATA[Category: wirtschaft | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/wirtschaft/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-01-30T13:25:48+00:00</updated>
+  <updated>2015-02-17T11:40:00+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lexmarks Druckerpatronen Lizenz]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/"/>
+    <updated>2015-02-17T11:28:02+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/02/17/lexmarks-druckerpatronen-lizenz</id>
+    <content type="html"><![CDATA[<p>Heute benötigte ich eine Ersatzpatrone für meinen
+Lexmark-Drucker. An der Aufreißlasche prangen Ausrufezeichen und der
+Hinweis: &ldquo;Attention: Updated License Terms&rdquo;.</p>
+
+<p>Lizenzbedingungen? Für eine Druckerpatrone? Also mal ein Blick aufs
+Kleingedruckte:</p>
+
+<blockquote><p>Bitte vor dem Öffnnen lesen. Durch das Öffnen der Verpackung oder
+die Verwendung der mitgelieferten patentierten Kassette erklären Sie
+sich mit der folgenden Lizenz-Vereinbarung einverstanden. Diese
+patentierte Tonerkassette wird zu einem Sonderpreis verkauft und
+unterliegt der Patenteinschränkung, dass sie nur einmal verwendet
+wird. Nach ihrer erstmaligen Verwendung verpflichten Sie sich, sie
+zur Wiederaufbereitung und/oder zum Recylcing nur an Lexmark
+zurückzugeben. Die Tonerkassette funktioniert nach der Abgabe einer
+bestimmten Tonermenge nicht mehr. Wenn sie ersetzt werden muss, kann
+sie noch Resttoner enthalten. Die Kassette ist zusätzlich so
+konzipiert, dass die Informationen zur Kassettenkompatibilität im
+Druckerspeicher automatisch aktualisiert werden. Auf diese Weise
+kann die Verwendung gefälschter Kassetten und/oder bestimmer
+Drittprodukte eingeschränkt werden. Durch die Installation der
+beiliegenden Kassette gestatten Sie Lexmark, diese Änderungen
+vorzunehmen. Wenn Sie mit den vorgenannten Bedingungen nicht
+einverstanden sind, geben Sie die ungeöffnete Verpackung an Ihren
+Händler zurück. Nicht im Rahmen dieser Bestimmungen verkaufte
+Ersatztonerkassetten sind unter www.lexmark.com erhältlich.</p></blockquote>
+
+<p>Irgendwie ja auch ein bisschen putzig, wie um einen Alltagsgegenstand
+wie Toner so ein Bohei gemacht wird. Zwei Gedanken kommen mir da in
+den Sinn: 1. Es verfestigt sich mein Eindruck, dass das Patentsystem
+recht nahe an kaputt ist. 2. Unternehmen, die so etwas machen, sollten
+weniger Geld für Juristen, Patentanwälte ausgeben und das Geld eher in
+coole Produkte investieren.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA["Neues" Arbeitspapier]]></title>
@@ -342,68 +383,6 @@ einsehen.</p>
 ]]></content>
   </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Bilanzfehler oder nicht Bilanzfehler]]></title>
-    <link href="http://www.dbrunner.de/blog/2011/11/27/bilanzfehler-oder-nicht-bilanzfehler/"/>
-    <updated>2011-11-27T10:58:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2011/11/27/bilanzfehler-oder-nicht-bilanzfehler</id>
-    <content type="html"><![CDATA[<p>Der medialen Aufmerksamkeit (zum Beispiel bei der
-<a href="http://www.zeit.de/wirtschaft/2011-10/hre-bad-bank-2">ZEIT</a>) um einen
-vermeintlichen Rechen- oder Bilanzierungsfehler bei der Bad Bank der
-Hypo Real Estate mit dem zauberhaften Namen &ldquo;FMS
-Wertmanagement <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> stand ich schon immer etwas skeptisch
-gegenüber.</p>
-
-<p>Nach einem Gespräch mit einem Bekannten mit Branchenkenntnis scheint die
-neuere Darstellung in der
-<a href="http://www.zeit.de/2011/47/HRE-Bilanzfehler">ZEIT</a> der Wirklichkeit am
-nächsten zu kommen (von der dort unterstellten Absicht vielleicht einmal
-abgesehen).</p>
-
-<p>Sehr stark vereinfacht ist wohl Folgendes passiert: Geht eine Bank
-Geschäfte und Gegengeschäfte mit einer anderen Bank ein, so schließen
-die Banken untereinander in der Regel sogenannte
-<a href="http://de.wikipedia.org/wiki/Netting_(Finanzen">Netting-Vereinbarungen</a>).
-Diese stellen sicher, dass im Insolvenzfall des Geschäftspartners nur
-der Saldo bestimmter Geschäfte wirksam wird. Im anderen Fall würden die
-Forderungen in die Insolvenzmasse fließen und die Verbindlichkeiten
-müssten weiter bedient werden. Dies würde ein sehr hohes Risiko
-bedeuten, und um dies zu reduzieren schließen Banken untereinander
-Netting-Vereinbarungen ab. Die Saldierung im Insolvenzfall ist an einen
-Reihe von Bedingungen geknüpft wie gleichartiges Geschäft, gleiche
-Währung, gleicher Geschäftspartner etc. Für die Bilanzierung dieser
-Geschäfte hat die Bank nach dem deutschen Bilanzierungsrecht des
-Handelsgesetzbuches nun zwei Möglichkeiten: (1) Grundsätzlich sind
-Forderungen und Verbindlichkeiten getrennt auszuweisen; (2) die Bank
-<em>darf</em> allerdings bestimmte &ldquo;Pakete&rdquo; saldiert ausweisen.</p>
-
-<p>Folglich war die erste FMS Wertmanagement-Bilanz richtig und die zweite
-wohl ebenso. Denn es bestand ein Bilanzierungswahlrecht hinsichtlich der
-Saldierung der Positionen. <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
-
-<p>Die ganze Aufregung ist nun eigentlich nur dem Umstand geschuldet, dass
-für den deutschen Schuldenstand aus der FMS Wertmanagement-Bilanz nur
-die Passivpositionen an die EU gemeldet werden. Dies ergibt natürlich
-(Netting hin oder Netting her) ein krudes Bild, da in einer Bankbilanz
-den Passivpositionen natürlich auch immer Aktivpositionen
-gegenüberstehen. Das reine Melden von Passivgeschäften wird also bei
-einer Bankbilanz immer ein schiefes Bild auf den Schuldenstand der
-Bundesrepublik Deutschland werfen. Oder anders herum: Die Integration
-von Bankbilanzen in das Rechnungswesen öffentlicher Haushalte ist
-schwierig bis unmöglich.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Beim <a href="http://neusprech.org/fms-wertmanagement/">Neusprech-Blog</a> gibt es zum Namen eine schöne Analyse.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Auf Feinheiten wie Bilanzkontinuität und die Erläuterung der Ansätze im Anhang gehe ich hier aus Vereinfachungsgründen nicht ein.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
 </feed>
 
   
@@ -445,6 +424,10 @@ schwierig bis unmöglich.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen Lizenz</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/30/sportschau-handball-oder-basketball/">Spielt ALBA Berlin nun Handball oder Basketball? Der Sportschau ist es egal</a>
       </li>
     
@@ -460,15 +443,11 @@ schwierig bis unmöglich.</p>
         <a href="/blog/2015/01/04/aus-zwei-mach-eins/">Aus zwei mach eins</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/12/21/ich-habe-mal-octopress-aktualisert/">Ich habe mal Octopress aktualisert</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (7)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (16)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (2)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (17)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (2)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (10)</a></li></ul>
 </section>
 
 

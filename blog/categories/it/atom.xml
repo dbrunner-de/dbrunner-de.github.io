@@ -79,7 +79,7 @@
   <title><![CDATA[Category: it | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/it/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-01-30T13:25:48+00:00</updated>
+  <updated>2015-02-17T11:40:00+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Lexmarks Druckerpatronen Lizenz]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/"/>
+    <updated>2015-02-17T11:28:02+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/02/17/lexmarks-druckerpatronen-lizenz</id>
+    <content type="html"><![CDATA[<p>Heute benötigte ich eine Ersatzpatrone für meinen
+Lexmark-Drucker. An der Aufreißlasche prangen Ausrufezeichen und der
+Hinweis: &ldquo;Attention: Updated License Terms&rdquo;.</p>
+
+<p>Lizenzbedingungen? Für eine Druckerpatrone? Also mal ein Blick aufs
+Kleingedruckte:</p>
+
+<blockquote><p>Bitte vor dem Öffnnen lesen. Durch das Öffnen der Verpackung oder
+die Verwendung der mitgelieferten patentierten Kassette erklären Sie
+sich mit der folgenden Lizenz-Vereinbarung einverstanden. Diese
+patentierte Tonerkassette wird zu einem Sonderpreis verkauft und
+unterliegt der Patenteinschränkung, dass sie nur einmal verwendet
+wird. Nach ihrer erstmaligen Verwendung verpflichten Sie sich, sie
+zur Wiederaufbereitung und/oder zum Recylcing nur an Lexmark
+zurückzugeben. Die Tonerkassette funktioniert nach der Abgabe einer
+bestimmten Tonermenge nicht mehr. Wenn sie ersetzt werden muss, kann
+sie noch Resttoner enthalten. Die Kassette ist zusätzlich so
+konzipiert, dass die Informationen zur Kassettenkompatibilität im
+Druckerspeicher automatisch aktualisiert werden. Auf diese Weise
+kann die Verwendung gefälschter Kassetten und/oder bestimmer
+Drittprodukte eingeschränkt werden. Durch die Installation der
+beiliegenden Kassette gestatten Sie Lexmark, diese Änderungen
+vorzunehmen. Wenn Sie mit den vorgenannten Bedingungen nicht
+einverstanden sind, geben Sie die ungeöffnete Verpackung an Ihren
+Händler zurück. Nicht im Rahmen dieser Bestimmungen verkaufte
+Ersatztonerkassetten sind unter www.lexmark.com erhältlich.</p></blockquote>
+
+<p>Irgendwie ja auch ein bisschen putzig, wie um einen Alltagsgegenstand
+wie Toner so ein Bohei gemacht wird. Zwei Gedanken kommen mir da in
+den Sinn: 1. Es verfestigt sich mein Eindruck, dass das Patentsystem
+recht nahe an kaputt ist. 2. Unternehmen, die so etwas machen, sollten
+weniger Geld für Juristen, Patentanwälte ausgeben und das Geld eher in
+coole Produkte investieren.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[3. Docker-Meetup in Frankfurt]]></title>
@@ -287,52 +328,6 @@ on those storage drivers.</p>
 ]]></content>
   </entry>
   
-  <entry>
-    <title type="html"><![CDATA[DateTime conversion can be tricky]]></title>
-    <link href="http://www.dbrunner.de/blog/2014/07/24/datetime-conversion-can-be-tricky/"/>
-    <updated>2014-07-24T09:41:36+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2014/07/24/datetime-conversion-can-be-tricky</id>
-    <content type="html"><![CDATA[<p>I wrote a small Lisp application and a JavaScript client gets some
-data from that application. All time stamps are returned as &ldquo;Lisp&rdquo;
-time stamps, i.e. an integer with seconds where zero equals Jan 01
-1900.</p>
-
-<p>In the JS client the time stamp is then converted to JS time stamps,
-i.e. millisconds where zero equals Jan 01 1970.</p>
-
-<p>When testing the application I noticed that sometimes the displayed
-date is one day behind. For example in the data base I have Jan 05
-1980 but in JavaScript I get a Jan 04 1980. But some other dates
-worked: A time stamp Jan 05 1970 was correctly converted to Jan 05
-1970.</p>
-
-<p>I had a look into the JavaScript code and found:</p>
-
-<pre><code>convA = function(ts) {
-  tmp = new Date(ts*1000);
-  tmp.setFullYear(tmp.getFullYear() - 70);
-  return tmp.getTime();
-}
-</code></pre>
-
-<p>It&rsquo;s likely the developer thought: &ldquo;Well, it&rsquo;s millisecond instead of
-second. Therefore I multiply by 1,000. But then I am 70 years in the
-future and I have to substract 70 years and everything will be ok.&rdquo;</p>
-
-<p>After thinking a while I came to the conclusion: Of course not!</p>
-
-<p>The developer made the assumption that there are as many leap years
-between 1900 and 1970 as between <code>ts</code> and <code>ts+70</code>. Obviously that
-assumption does not hold for all time stamps. And therefore sometimes
-the resulting JavaScript date is one day behind.</p>
-
-<p>So a better solution would be to substract all seconds between 1900
-and 1970 from <code>ts</code>, multiply by 1,000 and treat this as a JavaScript
-time stamp. Perhaps best would be to do the conversion in the Lisp
-process and only deliver a JavaScript-like time stamp.</p>
-]]></content>
-  </entry>
-  
 </feed>
 
   
@@ -374,6 +369,10 @@ process and only deliver a JavaScript-like time stamp.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen Lizenz</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/01/30/sportschau-handball-oder-basketball/">Spielt ALBA Berlin nun Handball oder Basketball? Der Sportschau ist es egal</a>
       </li>
     
@@ -389,15 +388,11 @@ process and only deliver a JavaScript-like time stamp.</p>
         <a href="/blog/2015/01/04/aus-zwei-mach-eins/">Aus zwei mach eins</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2014/12/21/ich-habe-mal-octopress-aktualisert/">Ich habe mal Octopress aktualisert</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (7)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (16)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (2)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (9)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (17)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (2)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (10)</a></li></ul>
 </section>
 
 
