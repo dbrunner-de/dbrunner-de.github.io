@@ -16,7 +16,7 @@ Am 15. Dezember 2014 hat der
 [Wissenschaftliche Beirat des Bundesministeriums des Finanzen](http://www.bundesfinanzministerium.de/Web/DE/Ministerium/Geschaeftsbereich/Wissenschaftlicher_Beirat/wissenschaftlicher_beirat.html)
 ein Gutachten zu "Öffentlich-rechtliche Medien - Aufgabe und
 Finanzierung"
-[veröffentlicht](http://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/2014-12-15-gutachten-medien.pdf?__blob=publicationFile&v=9) 
+[veröffentlicht](http://www.bundesfinanzministerium.de/Content/DE/Downloads/Broschueren_Bestellservice/2014-12-15-gutachten-medien.pdf?__blob=publicationFile&v=9).
 
 Der Inhalt wollte dem einen oder anderen Vertreter der
 öffentlich-rechtlichen Medien nicht schmecken. So haben sich der Runkfunkrat
@@ -57,7 +57,7 @@ Finanzwissenschaft. In meinem Exemplar von Zimmermann/Henke,
 Finanzwissenschaft, 7. Auflage, 1994 sind einige Ausführungen zu den
 Parafisken auf den Seiten 8 bis 11 zu finden.
 
-Und hierzu gehören aus diesem Blickwinkel auch unstreitig auch die
+Und hierzu gehören aus diesem Blickwinkel unstreitig auch die
 Institutionen des öffentlich-rechtlichen Rundfunks. Eine etwas
 ausführlichere Darstellung zu den Parafisken findet sich in einem
 [Gutachten des DIW Berlin von C. Katharina Spieß](http://www.diw.de/sixcms/detail.php?id=diw_01.c.41304.de)
