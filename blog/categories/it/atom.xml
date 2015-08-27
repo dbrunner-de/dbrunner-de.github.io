@@ -79,7 +79,7 @@
   <title><![CDATA[Category: it | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/it/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-08-27T13:14:16+00:00</updated>
+  <updated>2015-08-27T13:16:11+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -107,7 +107,7 @@ by <a href="https://www.twitter.com/rubenfonseca">Ruben Fonseca</a>. He explaind
 how to run Go code on AWS Lambda.</p>
 
 <p>I tried the same with <a href="http://racket-lang.org">Racket</a> and wrote a
-short Racket programme <code>test.rkt</code>:</p>
+short Racket programm <code>test.rkt</code>:</p>
 
 <pre><code>#lang racket/base
 
