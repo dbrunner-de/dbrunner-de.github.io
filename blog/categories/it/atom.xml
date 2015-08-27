@@ -79,7 +79,7 @@
   <title><![CDATA[Category: it | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/it/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-08-27T13:37:09+00:00</updated>
+  <updated>2015-08-27T13:43:08+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -100,7 +100,7 @@ running on the Raspberry Pi. I downloaded the
 <a href="http://mirror.racket-lang.org/installers/6.2.1/racket-6.2.1-src-builtpkgs.tgz">Unix source + built packages</a>
 tarball from <a href="http://racket-lang.org">Racket&rsquo;s homepage</a> because I
 only wanted to compile the core of Racket. After unpacking the tarball
-I was suprised that the instructions where quite short:</p>
+I was suprised that the instructions were quite short:</p>
 
 <pre><code>From this directory (where the `configure' file is), run the following
 commands:
