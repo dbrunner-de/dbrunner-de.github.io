@@ -10,6 +10,7 @@ geändert. Lotto- und Wettscheine, die man damit bezahlt, kosten nun
 Entgelte wie bei einer Bargeldabhebung; weil es dem Bargeld
 wesensgleich sei. Meint die Postbank."
 keywords: "Kreditkarte, Postbank, Wesen, Bargeld, Lotto, Wettscheine, Casino"
+published: no
 ---
 
 Auf meine Frage hin schreibt mir der Kundenservice:
