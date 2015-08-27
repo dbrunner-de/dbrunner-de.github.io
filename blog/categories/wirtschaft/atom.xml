@@ -79,7 +79,7 @@
   <title><![CDATA[Category: wirtschaft | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/wirtschaft/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-02-17T15:42:07+00:00</updated>
+  <updated>2015-08-27T13:14:16+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,39 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Postbank: Ein Lottoschein entspricht dem Wesen nach Bargeld]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/03/09/postbank-ein-lottoschein-entspricht-dem-wesen-nach-bargeld/"/>
+    <updated>2015-03-09T11:59:34+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/03/09/postbank-ein-lottoschein-entspricht-dem-wesen-nach-bargeld</id>
+    <content type="html"><![CDATA[<p>Auf meine Frage hin schreibt mir der Kundenservice:</p>
+
+<blockquote><p>&ldquo;Bisher galt ein Entgelt in Höhe von 2,50% (mindestens 5,00 Euro)
+nur für Bargeldabhebungen am Geldautomaten. Der Erwerb von Lotto-
+oder Wettscheinen oder Chips im Spielcasino sowie bei entsprechenden
+Online-Anbietern entspricht dem Wesen nach dem Erwerb von
+Bargeld. Ähnlich wie ein Geldschein repräsentieren solche Schiene
+oder Chips einen Wert, der für weitere Zwecke - hier das
+Glücksspiel - eingesetzt wird. Mit dem neuen Entgelt stellt die
+Postbank deshalb diese Kreditkartenumsätze den Bargeldverfügungen
+mit Kreditkarte gleich.</p></blockquote>
+
+<p>Für die Chips in Casinos mag ich das ja noch einsehen, für Lotto- oder
+Wettscheine, die ja</p>
+
+<p>Also nochmal: Ein Lottoschein ist nach Ansicht der Postbank
+wesensgleich mit Bargeld, da ich den Schein mit meinen Kreuzchen
+drauf für einen weiteren Zweck einsetzen möchte?</p>
+
+<p>Insgesamt erscheint die Änderung des Entgelte reichlich willkürlich
+und die Begründung etwas bemüht. Vielleicht muss man aber auch in die
+Geheimnisse des Bankwesens tiefer eintauchen, um das Bargeld in einem
+Lotto-Schein &ldquo;6aus49&rdquo; erkennen zu können. Vielleicht manifestiert sich
+in diesem Verständnis vom Wesen des (Bar-)geldes aber auch ein Problem
+der deutschen Kreditwirtschaft.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Der Rundfunkrat des hr übt den Diskurs]]></title>
@@ -349,122 +382,6 @@ von 0.32.)</p>
 ]]></content>
   </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Zu den Rating-Agenturen und ihren Ratings]]></title>
-    <link href="http://www.dbrunner.de/blog/2012/01/17/zu-den-rating-agenturen-und-ihren-ratings/"/>
-    <updated>2012-01-17T12:24:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2012/01/17/zu-den-rating-agenturen-und-ihren-ratings</id>
-    <content type="html"><![CDATA[<p>Frankreich verlor die Bestnote und sofort nehmen einige erneut die
-Rating-Agenturen in das Blickfeld (siehe bspw. den Bericht in der
-<a href="http://www.sueddeutsche.de/wirtschaft/abwertung-von-efsf-und-euro-laendern-koalition-will-europaeischen-rivalen-fuer-us-rating-agenturen-1.1259582">Süddeutschen</a>).
-Hierzu ist auch der kleine Blick von <a href="http://krugman.blogs.nytimes.com/2012/01/14/sp-on-europe/">Paul Krugman</a> auf
-die Begründung von Standard &amp; Poor&rsquo;s sehr interessant.</p>
-
-<p>Zur gleichen Zeit, in der in den Medien und auf der Straße die Schulden-
-und Euro-Krise diskutiert wird, nimmt ein weiterer Diskussionsstrang an
-Fahrt auf: Nutzen Volkswirte eigentlich die richtigen Ansätze und
-Modelle für ihre Theorien? So beispielsweise in den
-<a href="http://www.vdi-nachrichten.com/Technik-Gesellschaft/Monokultur-Denkens-hemmt-Fortschritt">VDI-Nachrichten</a> oder auch mit Hinblick auf die Fragen von Studierenden nach alternativen Modellen beim
-<a href="http://www.spiegel.de/unispiegel/studium/0,1518,803953,00.html">Spiegel</a>.</p>
-
-<p>Beide Entwicklungen hängen meines Erachtens an einer Stelle zusammen,
-dazu möchte ich allerdings ein wenig ausholen:</p>
-
-<ol>
-<li>Seit einiger Zeit (bestimmt gut 10-15 Jahre) hat sich in der Sicht
-auf die Unternehmensfinanzierung ein Wandel vollzogen. War gerade in
-Deutschland in früherer Zeit das Hausbankenprinzip vorherrschend,
-also Kreditbeziehungen zwischen Kreditnehmer und Bank, so hat sich
-dies in den letzten Jahren (auch regulatorisch erkennbar bspw. an
-Basel II) gewandelt zu einer stärker kapitalmarktorientierten Sicht
-auf die Finanzierung. In der soll gleichsam der Kapitalmarkt für die
-rechte Allokation des Finanzkapitals sorgen und sich die Unternehmen
-gemäß ihren Aussichten und Ideen um dieses Kapital bewerben. Damit
-verändert sich allerdings der Aufgabenbereich der Bank. War die
-Hausbank als Gläubiger früher selbst daran interessiert, dass sie
-mit Informationen über ihre Kreditnehmer versorgt wird, so schwindet
-dies Interesse, wenn sie lediglich für das Platzieren einer Anleihe
-oder den Zugang zum Kapitalmarkt benötigt wird. Eine solchermaßen
-tätige Bank wird ja nicht selbst zum Gläubiger, sondern verdient ihr
-Geld am Zusammenbringen von Investoren und kapitalsuchenden
-Unternehmen. Damit die Investoren jedoch eine Möglichkeit erhalten,
-die Unternehmen zu beurteilen, müssen sie sich, da ihnen die
-Einsichtsmöglichkeiten wie bei einer Hausbank früher verwehrt sind,
-auf den Ratschlag eines externen Dritten verlassen, dem externen
-Rating durch eine Rating-Agentur. <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup></li>
-<li>Wären alle Randbedingungen (wie Nachfrage, Produktionsbedingen etc.)
-eines Marktes oder einer Volkswirtschaft bekannt, so verbliebe im
-Prinzip ein reines Allokationsproblem zwischen Anbietern und
-Nachfragern. Dies könnte im Extremfall auch ein Computerprogramm
-erledigen. Nun ist es in der Realität aber so, dass viele Dinge
-völlig unklar und unbekannt sind und darüberhinaus auch die Zukunft
-für die Akteure reichlich ungewiss ist. Tätigwerden an einem Markt
-bedeutet dann, die eigenen Schlüsse aus dem für einen selbst
-verfügbaren Datenmaterial zu ziehen und etwas auszuprobieren. In der
-Folge lässt sich erkennen, ob diese Initiative von Erfolg gekrönt
-wurde oder nicht und entsprechend neue Ideen und Initiativen daraus
-ableiten. Zugleich lassen sich Vorstöße von Wettbewerbern beobachten
-und ggf. nachmachen, also imitieren. Der Wettbewerb ist also nicht
-statisch, sondern besteht aus einer Vielzahl von vorstoßenden und
-nachstoßenden Akten. Damit wird unmittelbar klar, dass der Wettbwerb
-in einem solchen Markt von einer gewissen Heterogenität geprägt sein
-wird: Es wird initiative Unternehmen geben, die mit neuen Produkten
-oder Produktionsverfahren experimentieren, es wird eher reagierende
-Unternehmer geben, die beobachten und abwarten, sich eher auf bisher
-Bewährtes konzentrieren und ggf. einfach etwas imitieren.</li>
-<li>Wendet man diese Überlegung nun auf die Finanzierung von Unternehmen
-an, so kann man die Frage aufwerfen, warum man in Europa die eigenen
-Strukturen des Hausbankenprinzips auf Kosten der
-Kapitalmarktorientierung zurückgedrängt hat. Wäre es nicht im Sinne
-der Heterogenität sinnvoll, ein alternatives Konzept am Markt zu
-testen? Hier deutet sich schon ein erster Zusammenhang zur
-Theoriebildung in der Volkswirtschaftslehre an. Im Zuge der
-Verhandlungen über Basel II ist es schlicht nicht gelungen, sich mit
-eigenen theoretischen Vorstellungen gegenüber einem stärker am
-Kapitalmarkt orientierten Modell durchzusetzen. <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></li>
-<li>Wer sind nun diese Rating-Agenturen? Es fällt auf, dass es in Bezug
-auf die großen Schuldner nur einige wenige Agenturen gibt. In Bezug
-auf die Staatsschuldenkrise werden hier häufig Standard &amp; Poor&rsquo;s,
-Fitch, Moody&rsquo;s genannt. Deren Ratings haben mit Sicherheit einen
-sehr großen Einfluss. Klar jedoch ist, dass diese Agenturen
-natürlich nur mit dem Blick durch ihre eigene theoretische Brille zu
-ihren Einschätzungen kommen können. Und diese ist wahrscheinlich
-(man mag mich da gerne korrigieren, ich habe es nicht geprüft) von
-der US-amerikanischem Mainstream-Ökonomie beeinflusst. <sup id="fnref:3"><a href="#fn:3" rel="footnote">3</a></sup>
-Es wundert daher nicht, dass die Einschätzungen der Rating-Agenturen
-sich in einer gewissen Weise gleichen oder gleichen Ansätzen folgen.
-Auch hier die Frage: Fördert Gleichförmigkeit im Denken und in den
-Ansätzen den Wettbewerb? Sollten nicht alternative Rating-Konzepte
-am Markt getestet werden?</li>
-<li>Und hier schließt sich der Kreis von den Rating-Agenturen hin zur
-Frage, wie Volkswirtschaftslehre überhaupt gelehrt wird. Märkte,
-aber auch Wissenschaftssysteme, die von Gleichförmigkeit geprägt
-sind, können alternative und unterschiedliche Hypothesen nicht
-prüfen. Der Wettbewerb auf Märkten, der Wettbewerb um die besten
-Theorien der Wirtschaftswissenschaften, benötigt eine gewisse
-Heterogenität. Es wird daher spannend zu sehen sein, ob sich aus der
-momentanen Krise alternative Konzepte entwickeln und ob sie sich an
-ihren jeweiligen Märkten bewähren können.</li>
-</ol>
-
-
-<p>(Dieser Artikel hat einen <a href="http://www.blablameter.de">Blablameter-Wert</a>
-von 0.22.)</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Ich will nun hier nicht in die Diskussion einsteigen, ob das eine oder das andere System besser ist, dazu gäbe es sicherlich eine Menge zu sagen, aber das soll hier nicht der Punkt sein.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Dass man sich nun über die Folgen wundert, ist folglich völlig unverständlich, siehe bspw. mein Blogpost zum Vorhaben der EU, den Rating-Agenturen unter bestimmten Bedingungen die Publikation von Länderratings zu untersagen: <a href="/blog/2011/10/20/eu-will-lnderrtings-verbieten/">Link zum Blog-Post</a><a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-<li id="fn:3">
-<p>Einigen der Schimpftiraden über die deutschen Ökonomen kann ich allerdings nicht so recht folgen. So wurde den Ökonomen in Deutschland über viele Jahre vorgehalten, sie seien international wissenschaftlich nicht &ldquo;anschlussfähig&rdquo;, publizierten zuwenig in den großen Journalen. Nun sind diese, wie man leicht prüfen kann, in der Regel US-amerikanische oder britische Zeitschriften. Will man dort landen, muss man sich ein Stück weit natürlich auf die Weltsicht des Mainstreams einstellen. Es gibt Ausnahmen, zugegeben. Aber grob skizziert lande ich mit einem Standardthema und einer Mainstream-Methodik eher im American Economic Journal als mit etwas sehr Ausgefallenem und Unüblichen.<a href="#fnref:3" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-]]></content>
-  </entry>
-  
 </feed>
 
   
@@ -506,6 +423,18 @@ von 0.22.)</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/08/27/running-racket-on-aws-lambda/">Running Racket on AWS Lambda</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/27/lisp-und-ich/">Lisp und ich</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/09/postbank-ein-lottoschein-entspricht-dem-wesen-nach-bargeld/">Postbank: Ein Lottoschein entspricht dem Wesen nach Bargeld</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/02/17/der-rundfunkrat-des-hr-ubt-den-diskurs/">Der Rundfunkrat des hr übt den Diskurs</a>
       </li>
     
@@ -513,23 +442,11 @@ von 0.22.)</p>
         <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen-Lizenz</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/01/30/sportschau-handball-oder-basketball/">Spielt ALBA Berlin nun Handball oder Basketball? Der Sportschau ist es egal</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/18/3-docker-meetup-in-frankfurt/">3. Docker-Meetup in Frankfurt</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/05/eindrucke-vom-31c3/">Eindrücke vom 31C3</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (17)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (19)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (2)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (12)</a></li></ul>
 </section>
 
 

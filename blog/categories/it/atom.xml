@@ -79,7 +79,7 @@
   <title><![CDATA[Category: it | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/it/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-02-17T15:42:07+00:00</updated>
+  <updated>2015-08-27T13:14:16+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,85 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Running Racket on AWS Lambda]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/08/27/running-racket-on-aws-lambda/"/>
+    <updated>2015-08-27T12:46:57+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/08/27/running-racket-on-aws-lambda</id>
+    <content type="html"><![CDATA[<p>I started to use AWS for some projects recently. But I only use few of
+their services. From time to time I look into some of there services
+and wonder if they are useful for my tasks. I looked into
+<a href="http://aws.amazon.com/lambda">AWS Lambda</a>, &ldquo;&hellip; a compute service
+that runs your code in response to events and automatically manages
+the compute resources for you, making it easy to build applications
+that respond quickly to new information.&rdquo; Nowadays these &ldquo;lambda
+functions&rdquo; could be written in NodeJS or Java. When I was looking for
+a roadmap of the supported languages I found an interesting
+<a href="http://blog.0x82.com/2014/11/24/aws-lambda-functions-in-go/">blog post</a>
+by <a href="https://www.twitter.com/rubenfonseca">Ruben Fonseca</a>. He explaind
+how to run Go code on AWS Lambda.</p>
+
+<p>I tried the same with <a href="http://racket-lang.org">Racket</a> and wrote a
+short Racket programme <code>test.rkt</code>:</p>
+
+<pre><code>#lang racket/base
+
+(display (format "Hello from Racket, args: ~a~%" (current-command-line-arguments)))
+</code></pre>
+
+<p>Then I used <code>raco</code> to create a binary <code>test</code>:</p>
+
+<pre><code>raco exe --orig-exe test.rkt
+</code></pre>
+
+<p>I took the NodeJS wrapper from Ruben&rsquo;s blog post and put it in a file
+<code>main.js</code>:</p>
+
+<pre><code>var child_process = require('child_process');
+
+exports.handler = function(event, context) {
+  var proc = child_process.spawn('./test', [ JSON.stringify(event) ], { stdio: 'inherit' });
+
+  proc.on('close', function(code) {
+    if(code !== 0) {
+      return context.done(new Error("Process exited with non-zero status code"));
+    }
+
+    context.done(null);
+  });
+}
+</code></pre>
+
+<p>Then I put both files in a zip archive, created a new AWS Lambda
+function, uploaded the zip file and invoked the function:</p>
+
+<p><img src="/img/2015-08-27-racket-aws-lambda.png" alt="Invocation of AWS Lambda function" /></p>
+
+<p>Fine!</p>
+
+<p>PS: Only question is: When is AWS Lambda coming to the region
+<code>eu-central-1</code>, located in Frankfurt?</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Lisp und ich]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/08/27/lisp-und-ich/"/>
+    <updated>2015-08-27T10:57:45+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/08/27/lisp-und-ich</id>
+    <content type="html"><![CDATA[<p>Dieser Beitrag ist kurzer Hintergrund für meine bisherigen und
+zukünftigen Beiträge zur Programmierung und
+Software-Entiwcklung. Eigentlich ist es eher ein <em>Disclaimer</em>, denn
+ich habe das gar nicht professionell gelernt. Ich habe ein
+sozialwissenschaftliches Fach studiert und meine Kenntnisse aus dem
+Bereich der Programmierung entstammen im Wesentlichen meiner Schul-
+und Studienzeit und sehr viel autodidaktes Lernen. Insofern ist aller
+Code von mir mit einer gewissen Vorsicht zu genießen; möglicherweise
+ist das nicht immer die beste und schönste Variante ein Problem zu
+lösen.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Lexmarks Druckerpatronen-Lizenz]]></title>
@@ -250,84 +329,6 @@ und sich austauschen konnte.</p>
 ]]></content>
   </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Aus zwei mach eins]]></title>
-    <link href="http://www.dbrunner.de/blog/2015/01/04/aus-zwei-mach-eins/"/>
-    <updated>2015-01-04T16:16:08+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2015/01/04/aus-zwei-mach-eins</id>
-    <content type="html"><![CDATA[<p>Bisher hatte ich meine Blog-Einträge auf zwei Blogs aufgeteilt,
-<a href="http://blog.krrrcks.net">eines</a> mit mehr technischen (und zum Teil
-englischen Texten) und dieses hier mit deutschen Texten. Ich denke,
-ich werde das auf dieses eine Blog hier konzentrieren. Das reduziert
-doch etwas den Verwaltungsaufwand. Ich habe die Texte vom nun etwas
-still gelegten Blog hier herüber kopiert.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Mind the storage driver for Ubuntu cloud images (on Azure)]]></title>
-    <link href="http://www.dbrunner.de/blog/2014/07/24/mind-the-storage-driver-for-ubuntu-cloud-images-on-azure/"/>
-    <updated>2014-07-24T12:30:43+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2014/07/24/mind-the-storage-driver-for-ubuntu-cloud-images-on-azure</id>
-    <content type="html"><![CDATA[<p>A few days ago I wanted to build Firefox OS&#8217; newest release for a
-friend. Because I did not wanted these GB of code, binaries etc. on my
-notebook I fired up an Ubuntu image on Microsoft Azure. I feared that
-at a certain point in the build process I may had to download
-everything to my local machine and therefore I installed Docker via a
-simple</p>
-
-<pre><code>sudo apt-get install docker.io
-</code></pre>
-
-<p>Then I started the build process as laid out on Mozilla&rsquo;s Developer
-Network. But, during downloading the source code (that&rsquo;s about 12 GB
-of Git repositories from Mozilla and Android), I got a &ldquo;no more space
-left on device&rdquo;. That was strange: I had a 100 GB volume attached to
-the VM and enough space and inodes left. After some searching I asked
-on the IRC channel and got a good hint: &ldquo;What&rsquo;s your storage driver?&rdquo;</p>
-
-<p>Well, I thought that it&rsquo;s AUFS; I wanted to add &ldquo;as usual&rdquo; because
-AUFS was available on my notebook from the beginning. But a <code>docker.io
-info</code> gave me:</p>
-
-<pre><code>$ sudo docker.io info
-Containers: 0
-Images: 0
-Storage Driver: devicemapper
- Pool Name: docker-8:1-131188-pool
- Data file: /var/lib/docker/devicemapper/devicemapper/data
- Metadata file: /var/lib/docker/devicemapper/devicemapper/metadata
- Data Space Used: 291.5 Mb
- Data Space Total: 102400.0 Mb
- Metadata Space Used: 0.7 Mb
- Metadata Space Total: 2048.0 Mb
-Execution Driver: native-0.1
-Kernel Version: 3.13.0-29-generic
-WARNING: No swap limit support
-</code></pre>
-
-<p>I then learned that somehow the DeviceMapper driver only allows a
-certain amount of diffs and I reached that amount with my build
-process. (Maybe it&rsquo;s possible to relax that restriction but I do not
-know how.)</p>
-
-<p>I learned as well that the Ubuntu cloud image that is provided by
-Microsoft Azure doesn&rsquo;t have AUFS support. Therefore Docker uses the
-DeviceMapper storage driver instead. After I installed the AUFS
-support I could export the images, change the storage driver and
-import the images again.</p>
-
-<p>It would be nice seeing the Docker documentation being more detailed
-on those storage drivers.</p>
-
-<p><strong>(Update 2014-10-23)</strong> Thanks to
- <a href="http://blog.iron.io/2014/10/docker-in-production-what-weve-learned.html">this blog post from Iron.io</a>
- I found some documentation of the devicemapper storage driver. It is
- located in the
- <a href="https://github.com/docker/docker/tree/master/daemon/graphdriver/devmapper">Repository</a>.</p>
-]]></content>
-  </entry>
-  
 </feed>
 
   
@@ -369,6 +370,18 @@ on those storage drivers.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/08/27/running-racket-on-aws-lambda/">Running Racket on AWS Lambda</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/08/27/lisp-und-ich/">Lisp und ich</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/09/postbank-ein-lottoschein-entspricht-dem-wesen-nach-bargeld/">Postbank: Ein Lottoschein entspricht dem Wesen nach Bargeld</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/02/17/der-rundfunkrat-des-hr-ubt-den-diskurs/">Der Rundfunkrat des hr übt den Diskurs</a>
       </li>
     
@@ -376,23 +389,11 @@ on those storage drivers.</p>
         <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen-Lizenz</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/01/30/sportschau-handball-oder-basketball/">Spielt ALBA Berlin nun Handball oder Basketball? Der Sportschau ist es egal</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/18/3-docker-meetup-in-frankfurt/">3. Docker-Meetup in Frankfurt</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/01/05/eindrucke-vom-31c3/">Eindrücke vom 31C3</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (17)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (19)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (2)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (12)</a></li></ul>
 </section>
 
 

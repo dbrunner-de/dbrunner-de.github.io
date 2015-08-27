@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.dbrunner.de/blog/2015/08/27/running-racket-on-aws-lambda/</loc>
+    <lastmod>2015-08-27T12:46:57+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://www.dbrunner.de/blog/2015/08/27/lisp-und-ich/</loc>
+    <lastmod>2015-08-27T10:57:45+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>http://www.dbrunner.de/blog/2015/03/09/postbank-ein-lottoschein-entspricht-dem-wesen-nach-bargeld/</loc>
+    <lastmod>2015-03-09T11:59:34+00:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>http://www.dbrunner.de/blog/2015/02/17/der-rundfunkrat-des-hr-ubt-den-diskurs/</loc>
     <lastmod>2015-02-17T11:44:35+00:00</lastmod>
     <priority>0.8</priority>
@@ -272,43 +287,43 @@
   </url>
   <url>
     <loc>http://www.dbrunner.de/404.html</loc>
-    <lastmod>2015-02-17T15:42:07+00:00</lastmod>
+    <lastmod>2015-08-27T13:14:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://www.dbrunner.de/blog/archives/</loc>
-    <lastmod>2015-02-17T15:42:07+00:00</lastmod>
+    <lastmod>2015-08-27T13:14:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://www.dbrunner.de/</loc>
-    <lastmod>2015-02-17T15:42:07+00:00</lastmod>
+    <lastmod>2015-08-27T13:14:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://www.dbrunner.de/publikationen/</loc>
-    <lastmod>2015-02-17T15:42:07+00:00</lastmod>
+    <lastmod>2015-08-27T13:14:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://www.dbrunner.de/link-sammlung/</loc>
-    <lastmod>2015-02-17T15:42:07+00:00</lastmod>
+    <lastmod>2015-08-27T13:14:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://www.dbrunner.de/ueber/</loc>
-    <lastmod>2015-02-17T15:42:07+00:00</lastmod>
+    <lastmod>2015-08-27T13:14:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>http://www.dbrunner.de/impressum/</loc>
-    <lastmod>2015-02-17T15:42:07+00:00</lastmod>
+    <lastmod>2015-08-27T13:14:16+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
