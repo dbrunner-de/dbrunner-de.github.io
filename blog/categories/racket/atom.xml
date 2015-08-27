@@ -79,7 +79,7 @@
   <title><![CDATA[Category: racket | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/racket/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-08-27T13:22:17+00:00</updated>
+  <updated>2015-08-27T13:37:09+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to run Racket on the Raspberry Pi 2]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/"/>
+    <updated>2015-08-27T13:25:45+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2</id>
+    <content type="html"><![CDATA[<p>I got a
+<a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi 2 Model B</a>
+to play with. I was wondering how difficult it is to get Racket
+running on the Raspberry Pi. I downloaded the
+<a href="http://mirror.racket-lang.org/installers/6.2.1/racket-6.2.1-src-builtpkgs.tgz">Unix source + built packages</a>
+tarball from <a href="http://racket-lang.org">Racket&rsquo;s homepage</a> because I
+only wanted to compile the core of Racket. After unpacking the tarball
+I was suprised that the instructions where quite short:</p>
+
+<pre><code>From this directory (where the `configure' file is), run the following
+commands:
+
+  mkdir build
+  cd build
+  ../configure
+  make
+  make install
+</code></pre>
+
+<p>Between <code>make</code> and <code>make install</code> I had to wait for about 40 minutes
+but then everything was fine and I could even use DrRacket on the
+Raspberry Pi:</p>
+
+<p><img src="/img/2015-08-27-racket-pi.png" alt="DrRacket on Raspberry Pi" /></p>
+
+<p>Very nice and easy to get Racket running on ARM.</p>
+
+<p>PS: Because the Raspberry Pi 2 Model B has an ARMv7 processor the
+binary runs on my Jolla smart phone as well.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Running Racket on AWS Lambda]]></title>
@@ -190,6 +227,10 @@ function, uploaded the zip file and invoked the function:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/">How to run Racket on the Raspberry Pi 2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/08/27/running-racket-on-aws-lambda/">Running Racket on AWS Lambda</a>
       </li>
     
@@ -205,15 +246,11 @@ function, uploaded the zip file and invoked the function:</p>
         <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen-Lizenz</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/01/30/sportschau-handball-oder-basketball/">Spielt ALBA Berlin nun Handball oder Basketball? Der Sportschau ist es egal</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (19)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (2)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (20)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (3)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (2)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
 </section>
 
 

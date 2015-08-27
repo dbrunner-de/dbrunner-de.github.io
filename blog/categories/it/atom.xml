@@ -79,7 +79,7 @@
   <title><![CDATA[Category: it | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/it/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-08-27T13:22:17+00:00</updated>
+  <updated>2015-08-27T13:37:09+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,43 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to run Racket on the Raspberry Pi 2]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/"/>
+    <updated>2015-08-27T13:25:45+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2</id>
+    <content type="html"><![CDATA[<p>I got a
+<a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi 2 Model B</a>
+to play with. I was wondering how difficult it is to get Racket
+running on the Raspberry Pi. I downloaded the
+<a href="http://mirror.racket-lang.org/installers/6.2.1/racket-6.2.1-src-builtpkgs.tgz">Unix source + built packages</a>
+tarball from <a href="http://racket-lang.org">Racket&rsquo;s homepage</a> because I
+only wanted to compile the core of Racket. After unpacking the tarball
+I was suprised that the instructions where quite short:</p>
+
+<pre><code>From this directory (where the `configure' file is), run the following
+commands:
+
+  mkdir build
+  cd build
+  ../configure
+  make
+  make install
+</code></pre>
+
+<p>Between <code>make</code> and <code>make install</code> I had to wait for about 40 minutes
+but then everything was fine and I could even use DrRacket on the
+Raspberry Pi:</p>
+
+<p><img src="/img/2015-08-27-racket-pi.png" alt="DrRacket on Raspberry Pi" /></p>
+
+<p>Very nice and easy to get Racket running on ARM.</p>
+
+<p>PS: Because the Raspberry Pi 2 Model B has an ARMv7 processor the
+binary runs on my Jolla smart phone as well.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Running Racket on AWS Lambda]]></title>
@@ -284,51 +321,6 @@ treffen, Vorträge vorbereiten etc.</p>
 ]]></content>
   </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Eindrücke vom 31C3]]></title>
-    <link href="http://www.dbrunner.de/blog/2015/01/05/eindrucke-vom-31c3/"/>
-    <updated>2015-01-05T17:03:00+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2015/01/05/eindrucke-vom-31c3</id>
-    <content type="html"><![CDATA[<p>Dieses Jahr habe ich mich einmal aufgerafft und bin das erste mal zum
-Congress des CCC nach Hamburg gefahren. Im Folgenden ein paar
-Eindrücke:</p>
-
-<h2>Drumherum</h2>
-
-<p>Ich fand den <a href="http://events.ccc.de/congress/2014/wiki/Main_Page">31C3</a> ein tolles Ereignis: Sehr professionell und
-umsichtig organisiert. Überall, wo ich hinkam, war man nett und
-freundlich, insgesamt eine sehr willkommende Atmosphäre. Nur der
-Termin, der ist ja doch etwas sperrig.</p>
-
-<h2>Vorträge</h2>
-
-<p>Ich konnte einige Vorträge anhören, von denen haben mir die folgenden
-besonders gut gefallen (ich habe mal die Links zu den Videos und die Links zu den Einträgen im Fahrplan aufgeführt, oft gibt es im Fahrplan auch noch zugehöriges Material und weitere Hinweise):</p>
-
-<ul>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6264_-_de_-_saal_1_-_201412271245_-_wir_beteiligen_uns_aktiv_an_den_diskussionen_-_martin_haase_maha.html">&ldquo;Wir beteiligen uns aktiv an den Dikussionen&rdquo;</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6264.html">(Link im Fahrplan)</a> von Martin Haase, der die <a href="http://www.digitale-agenda.de/">Digitale Agenda</a> der Bundesregierung aus sprachwissenschaftlicher Sicht entlarvt als das, was es ist: Heiße Luft und wenig Konkretes, schon gar nicht für den &ldquo;Bürger&rdquo;. Besonders spannend fand ich den Teil des &ldquo;PDF befreien&rdquo;, denn die Bundesregierung hat nur ein wenig konsistentes PDF bereit gestellt, dass maha erst einmal in einen Text umwandeln musste, mit dem er mit seinen Werkzeugen arbeiten konnte. In der Diskussion wurde er dazu auch noch einmal befragt und meinte, Markdown, das sei eigentlich ein ganz gutes Format.</p></li>
-<li><p>Die beiden SS7-Vorträge von <a href="http://media.ccc.de/browse/congress/2014/31c3_-_6249_-_en_-_saal_1_-_201412271715_-_ss7_locate_track_manipulate_-_tobias_engel.html">Tobias Engel</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6249.html">(Fahrplan)</a> und <a href="http://media.ccc.de/browse/congress/2014/31c3_-_6122_-_en_-_saal_1_-_201412271830_-_mobile_self-defense_-_karsten_nohl.html">Karsten Nohl</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6122.html">(Fahrplan)</a>: Die Talks fand ich incl. der Live-Vorführungen sehr eindrücklich und haben mir vor Augen geführt, dass es mit der Sicherheit im Mobilfunk noch schlechter aussieht, als ich so befürchtet habe.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6369_-_en_-_saal_1_-_201412272145_-_ecchacks_-_djb_-_tanja_lange.html">ECCHacks</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6369.html">(Fahrplan)</a> von djb und Tanja Lange: Ein Bekannter empfahl mir den Vortrag und meinte, ich könnte da schon was verstehen, obwohl ich mich mit diesen Ellpitischen Kurven nicht wirklich auskenne. Der Talk war didaktisch sehr gut aufbereitet und ich habe trotz der späten Stunde ein bisschen verstanden (glaube ich), worum es da eigentlich geht.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6294_-_de_-_saal_1_-_201412281815_-_vor_windows_8_wird_gewarnt_-_ruedi.html">Vor Windows 8 wird gewarnt</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6294.html">(Fahrplan)</a> von ruedi: Ein kurzweiliger Vortrag über &ldquo;Secure Boot&rdquo; und andere Schwierigkeiten mit &ldquo;Windows 8&rdquo;.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6258_-_en_-_saal_1_-_201412282030_-_reconstructing_narratives_-_jacob_-_laura_poitras.html">Reconstructing naraatives</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6258.html">(Fahrplan)</a> von Jacob Appelbaum und Laura Poitras: Das war im voll besetzten Saal 1 ein sehr eindrücklicher Vortrag, der mit Standing Ovations endete.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6121_-_en_-_saal_2_-_201412291715_-_what_ever_happened_to_nuclear_weapons_-_michael_buker.html">What Ever Happened to Nuclear Weapons?</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6121.html">(Fahrplan)</a> von Michael Büker: Diesen Vortrag fand ich vom Aufbau und der Didaktik sehr gut vorbereitet. Als wichtige Erkenntnis habe ich für mich den <a href="http://de.wikipedia.org/wiki/Kernwaffenteststopp-Vertrag">Kernwaffenstopp-Vertrag (englisch Comprehensive Nuclear-Test-Ban Treaty)</a> mitgenommen, einen internationalen Vertrag, der sämtliche Kernwaffentests verbietet, der aber noch nicht in Kraft getreten ist; dieser Vertrag geht weiter als der Nuclear Test Ban Treaty aus den 1960er Jahren, der Kernwaffenversuche in der Atmosphäre, im Weltraum und unter Wasser verbietet. Dennoch gibt es hierzu schon eine <a href="http://www.ctbto.org/">Organisation, die Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organisation</a>, der man auch auf Twitter <a href="http://twitter.com/ctbto_alerts">folgen kann</a>. Diese  &ldquo;Preparatory Commission&rdquo; bereitet das Inkraftreten vor und baut ein Überwachungssystem auf.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6128_-_en_-_saal_1_-_201412291830_-_thunderstrike_efi_bootkits_for_apple_macbooks_-_trammell_hudson.html">EFI bootkits for Apple MacBooks</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6128.html">(Fahrplan)</a> von Trammell Hudson: Ich fand das sehr spannend vorgetragen (incl. Hexdumps etc.), wie Trammel Hudson durch &ldquo;Reverse Engineering&rdquo; auf ein Sicherheitsproblem bei Apple-Produktion gestoßen ist und dieses dann in einem Proof-of-Concept auch ausnutzen konnte.</p></li>
-</ul>
-
-
-<p>Aufgrund des riesigen Angebots an Vorträgen, Workshops etc. muss ich
-mir in den kommenden Tagen glaube ich noch den einen oder anderen
-Vortrag als Video ansehen.</p>
-
-<h2>MorgenGrauen-Stammtisch</h2>
-
-<p>Etwas spontan und nicht so sonderlich koordiniert haben wir auch einen
-<a href="http://mg.mud.de">MorgenGrauen</a>-Stammtisch ausgerufen und siehe da: Drei Spieler und zwei
-Gäste fanden sich ein, so dass man bei einem Bier ein wenig plaudern
-und sich austauschen konnte.</p>
-]]></content>
-  </entry>
-  
 </feed>
 
   
@@ -370,6 +362,10 @@ und sich austauschen konnte.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/">How to run Racket on the Raspberry Pi 2</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/08/27/running-racket-on-aws-lambda/">Running Racket on AWS Lambda</a>
       </li>
     
@@ -385,15 +381,11 @@ und sich austauschen konnte.</p>
         <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen-Lizenz</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/01/30/sportschau-handball-oder-basketball/">Spielt ALBA Berlin nun Handball oder Basketball? Der Sportschau ist es egal</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (19)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (2)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (1)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (20)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (3)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (2)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
 </section>
 
 

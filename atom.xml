@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-08-27T13:22:17+00:00</updated>
+  <updated>2015-08-27T13:37:09+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,51 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to run Racket on the Raspberry Pi 2]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/"/>
+    <updated>2015-08-27T13:25:45+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2</id>
+    <content type="html"><![CDATA[<p>I got a
+<a href="https://www.raspberrypi.org/products/raspberry-pi-2-model-b/">Raspberry Pi 2 Model B</a>
+to play with. I was wondering how difficult it is to get Racket
+running on the Raspberry Pi. I downloaded the
+<a href="http://mirror.racket-lang.org/installers/6.2.1/racket-6.2.1-src-builtpkgs.tgz">Unix source + built packages</a>
+tarball from <a href="http://racket-lang.org">Racket&rsquo;s homepage</a> because I
+only wanted to compile the core of Racket. After unpacking the tarball
+I was suprised that the instructions where quite short:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>From this directory (where the `configure' file is), run the following
+</span><span class='line'>commands:
+</span><span class='line'>
+</span><span class='line'>  mkdir build
+</span><span class='line'>  cd build
+</span><span class='line'>  ../configure
+</span><span class='line'>  make
+</span><span class='line'>  make install</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Between <code>make</code> and <code>make install</code> I had to wait for about 40 minutes
+but then everything was fine and I could even use DrRacket on the
+Raspberry Pi:</p>
+
+<p><img src="http://www.dbrunner.de/img/2015-08-27-racket-pi.png" alt="DrRacket on Raspberry Pi" /></p>
+
+<p>Very nice and easy to get Racket running on ARM.</p>
+
+<p>PS: Because the Raspberry Pi 2 Model B has an ARMv7 processor the
+binary runs on my Jolla smart phone as well.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Running Racket on AWS Lambda]]></title>
@@ -1270,36 +1315,6 @@ and use the container only for producing the HTML files, for preview and for pub
 <p>The <code>rake preview</code> is a neat feature because the server always looks for changed files and produces the HTML
 files on the fly. That means I can edit the files in my editor and could see the resulting pages in a
 browser nearly the same time.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Relaunch fast fertig]]></title>
-    <link href="http://www.dbrunner.de/blog/2014/06/10/relaunch-fast-fertig/"/>
-    <updated>2014-06-10T09:20:03+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2014/06/10/relaunch-fast-fertig</id>
-    <content type="html"><![CDATA[<p>So, nach einigem Gefummel mit Ruby und Octopress und den
-Weiterleitungsmöglichkeiten meines Hosters ist die Sache wohl bald so
-am laufen, wie ich mir das vorstelle. Es fehlt noch ein wenig das
-Eindeutschen der Octopress-Texte und vielleicht so eine
-Kategorien-Liste rechts.</p>
-
-<p>Ansonsten habe ich, um der &ldquo;Gem-Hölle&rdquo; zu entgehen, das Octopress in
-einen Docker-Container gepackt; hier ist ein
-<a href="http://www.dbrunner.de/blog/2014/06/10/unicode-support-for-octopress/">Link</a>
-zu dem verwendeten <code>Dockerfile</code>. Ich habe es dann auch so gemacht,
-dass ich das <code>/opt/octopress</code>-Verzeichnis auf den Host-Rechner
-verschoben habe und in den Container als <em>Volume</em> hineinpacke. So kann
-ich auf dem Host-Rechner ganz bequem mit dem Emacs die Files editieren
-und verwende den Container nur noch für die Erstellung, das &ldquo;Preview&rdquo;
-und für das Hochladen.</p>
-
-<p>Die &ldquo;preview&rdquo;-Funktion ist übrigens ein wirklich nettes Features: Die
-kann man derart nutzen, dass ein Webserver den aktuellen Stand lokal
-ausliefert. Dabei beobachtet der Dienst, ob sich Dateien ändern und
-erstellt unmittelbar wieder die HTML-Seiten. So kann man bequem im
-Editor das Markdown bearbeiten und im Browser daneben das fertige
-Ergebnis beurteilen.</p>
 ]]></content>
   </entry>
   
