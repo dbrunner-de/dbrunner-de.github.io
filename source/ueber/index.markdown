@@ -34,7 +34,7 @@ Arbeit aufgenommen.
 
 * Linux, Container-Virtualisierung mit OpenVZ, Docker
 * TeX/LaTeX 
-* Common Lisp 
+* Common Lisp, Racket, Scheme 
 * Gnu Emacs, Org-mode
 * R, ggplot2 
 
