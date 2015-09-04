@@ -13,12 +13,13 @@ keywords: "Racket, Lisp, Raspberry Pi"
 
 I got a
 [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)
-to play with. I was wondering how difficult it is to get Racket
-running on the Raspberry Pi. I downloaded the
+to play with. I used Raspbian image as operating system.  I was
+wondering how difficult it is to get Racket running on the Raspberry
+Pi. I downloaded the
 [Unix source + built packages](http://mirror.racket-lang.org/installers/6.2.1/racket-6.2.1-src-builtpkgs.tgz)
 tarball from [Racket's homepage](http://racket-lang.org) because I
 only wanted to compile the core of Racket. After unpacking the tarball
-I was suprised that the instructions where quite short:
+I was suprised that the instructions were quite short:
 
 ```
 From this directory (where the `configure' file is), run the following
