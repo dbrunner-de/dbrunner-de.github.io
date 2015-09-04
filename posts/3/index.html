@@ -9,9 +9,8 @@
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="So, nach einigem Gefummel mit Ruby und Octopress und den
-Weiterleitungsmöglichkeiten meines Hosters ist die Sache wohl bald so
-am laufen, wie ich mir &hellip;">
+  <meta name="description" content="Well, it seems Octopress/Jekyll would like to have a locale set
+for UTF-8 support. I followed this (text in German) hint and now my Dockerfile looks &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +68,109 @@ am laufen, wie ich mir &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/06/10/unicode-support-for-octopress/">Unicode support for Octopress</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2014-06-10T09:26:22+00:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>9:26 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Well, it seems Octopress/Jekyll would like to have a locale set
+for UTF-8 support. I followed <a href="http://www.dominik-gaetjens.de/blog/2012/06/09/utf-8-in-octopress/">this (text in German)</a> hint and now my Dockerfile looks
+like this:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'># dockerfile for octopress
+</span><span class='line'>
+</span><span class='line'>FROM ubuntu:14.04
+</span><span class='line'>MAINTAINER krrrcks &lt;krrrcks@krrrcks.net&gt;
+</span><span class='line'>ENV DEBIAN_FRONTEND noninteractive
+</span><span class='line'>
+</span><span class='line'>RUN apt-get update; \
+</span><span class='line'>  apt-get -q -y upgrade
+</span><span class='line'>RUN /usr/sbin/locale-gen en_US.UTF-8; \
+</span><span class='line'>  update-locale LANG=en_US.UTF-8
+</span><span class='line'>RUN apt-get -q -y install git curl; \
+</span><span class='line'>  apt-get clean
+</span><span class='line'>RUN git clone git://github.com/imathis/octopress.git /opt/octopress
+</span><span class='line'>RUN curl -L https://get.rvm.io | bash -s stable --ruby
+</span><span class='line'>ENV HOME /root
+</span><span class='line'>RUN echo "export LC_ALL=en_US.UTF-8" &gt;&gt; /root/.bashrc
+</span><span class='line'>RUN echo "export LANG=en_US.UTF-8" &gt;&gt; /root/.bashrc
+</span><span class='line'>RUN echo "source /usr/local/rvm/scripts/rvm" &gt;&gt; /root/.bashrc; 
+</span><span class='line'>RUN /bin/bash -l -c "source /usr/local/rvm/scripts/rvm; \
+</span><span class='line'>  rvm install 1.9.3; \
+</span><span class='line'>  rvm use 1.9.3; \
+</span><span class='line'>  rvm rubygems latest; \
+</span><span class='line'>  cd /opt/octopress; \
+</span><span class='line'>  gem install bundler; \
+</span><span class='line'>  bundle install; \
+</span><span class='line'>  rake install" 
+</span><span class='line'>RUN echo "rvm use 1.9.3" &gt;&gt; /root/.bashrc
+</span><span class='line'>
+</span><span class='line'>WORKDIR /opt/octopress
+</span><span class='line'>EXPOSE 4000
+</span><span class='line'>CMD ["/bin/bash"] </span></code></pre></td></tr></table></div></figure>
+
+
+<p>After playing around with Docker and Octopress I put the whole <code>/opt/octopress</code> folder on my host machine and then
+restarted the image with the <code>-v</code> flag. Therefore I can edit the files on my host machine with my favorite editor
+and use the container only for producing the HTML files, for preview and for publishing.</p>
+
+<p>The <code>rake preview</code> is a neat feature because the server always looks for changed files and produces the HTML
+files on the fly. That means I can edit the files in my editor and could see the resulting pages in a
+browser nearly the same time.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -684,88 +786,6 @@ dazu bestimmt ist, den Verzehr der Lebensmittel zu erleichtern.&rdquo;</p></bloc
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/11/27/bilanzfehler-oder-nicht-bilanzfehler/">Bilanzfehler oder nicht Bilanzfehler</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2011-11-27T10:58:00+00:00'><span class='date'><span class='date-month'>Nov</span> <span class='date-day'>27</span><span class='date-suffix'>th</span>, <span class='date-year'>2011</span></span> <span class='time'>10:58 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Der medialen Aufmerksamkeit (zum Beispiel bei der
-<a href="http://www.zeit.de/wirtschaft/2011-10/hre-bad-bank-2">ZEIT</a>) um einen
-vermeintlichen Rechen- oder Bilanzierungsfehler bei der Bad Bank der
-Hypo Real Estate mit dem zauberhaften Namen &ldquo;FMS
-Wertmanagement <sup id="fnref:1"><a href="#fn:1" rel="footnote">1</a></sup> stand ich schon immer etwas skeptisch
-gegenüber.</p>
-
-<p>Nach einem Gespräch mit einem Bekannten mit Branchenkenntnis scheint die
-neuere Darstellung in der
-<a href="http://www.zeit.de/2011/47/HRE-Bilanzfehler">ZEIT</a> der Wirklichkeit am
-nächsten zu kommen (von der dort unterstellten Absicht vielleicht einmal
-abgesehen).</p>
-
-<p>Sehr stark vereinfacht ist wohl Folgendes passiert: Geht eine Bank
-Geschäfte und Gegengeschäfte mit einer anderen Bank ein, so schließen
-die Banken untereinander in der Regel sogenannte
-<a href="http://de.wikipedia.org/wiki/Netting_(Finanzen">Netting-Vereinbarungen</a>).
-Diese stellen sicher, dass im Insolvenzfall des Geschäftspartners nur
-der Saldo bestimmter Geschäfte wirksam wird. Im anderen Fall würden die
-Forderungen in die Insolvenzmasse fließen und die Verbindlichkeiten
-müssten weiter bedient werden. Dies würde ein sehr hohes Risiko
-bedeuten, und um dies zu reduzieren schließen Banken untereinander
-Netting-Vereinbarungen ab. Die Saldierung im Insolvenzfall ist an einen
-Reihe von Bedingungen geknüpft wie gleichartiges Geschäft, gleiche
-Währung, gleicher Geschäftspartner etc. Für die Bilanzierung dieser
-Geschäfte hat die Bank nach dem deutschen Bilanzierungsrecht des
-Handelsgesetzbuches nun zwei Möglichkeiten: (1) Grundsätzlich sind
-Forderungen und Verbindlichkeiten getrennt auszuweisen; (2) die Bank
-<em>darf</em> allerdings bestimmte &ldquo;Pakete&rdquo; saldiert ausweisen.</p>
-
-<p>Folglich war die erste FMS Wertmanagement-Bilanz richtig und die zweite
-wohl ebenso. Denn es bestand ein Bilanzierungswahlrecht hinsichtlich der
-Saldierung der Positionen. <sup id="fnref:2"><a href="#fn:2" rel="footnote">2</a></sup></p>
-
-<p>Die ganze Aufregung ist nun eigentlich nur dem Umstand geschuldet, dass
-für den deutschen Schuldenstand aus der FMS Wertmanagement-Bilanz nur
-die Passivpositionen an die EU gemeldet werden. Dies ergibt natürlich
-(Netting hin oder Netting her) ein krudes Bild, da in einer Bankbilanz
-den Passivpositionen natürlich auch immer Aktivpositionen
-gegenüberstehen. Das reine Melden von Passivgeschäften wird also bei
-einer Bankbilanz immer ein schiefes Bild auf den Schuldenstand der
-Bundesrepublik Deutschland werfen. Oder anders herum: Die Integration
-von Bankbilanzen in das Rechnungswesen öffentlicher Haushalte ist
-schwierig bis unmöglich.</p>
-<div class="footnotes">
-<hr/>
-<ol>
-<li id="fn:1">
-<p>Beim <a href="http://neusprech.org/fms-wertmanagement/">Neusprech-Blog</a> gibt es zum Namen eine schöne Analyse.<a href="#fnref:1" rev="footnote">&#8617;</a></p></li>
-<li id="fn:2">
-<p>Auf Feinheiten wie Bilanzkontinuität und die Erläuterung der Ansätze im Anhang gehe ich hier aus Vereinfachungsgründen nicht ein.<a href="#fnref:2" rev="footnote">&#8617;</a></p></li>
-</ol>
-</div>
-
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/4">&larr; Older</a>
@@ -796,6 +816,10 @@ schwierig bis unmöglich.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket/">How to use GET Bucket location on Amazon S3 with Racket</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/">How to run Racket on the Raspberry Pi 2</a>
       </li>
     
@@ -811,15 +835,11 @@ schwierig bis unmöglich.</p>
         <a href="/blog/2015/02/17/der-rundfunkrat-des-hr-ubt-den-diskurs/">Der Rundfunkrat des hr übt den Diskurs</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen-Lizenz</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (20)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (3)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (2)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (21)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (4)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (3)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/s3/'>s3 (1)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
 </section>
 
 

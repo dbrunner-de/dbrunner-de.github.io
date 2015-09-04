@@ -9,10 +9,9 @@
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="I got a
-Raspberry Pi 2 Model B
-to play with. I used Raspbian image as operating system. I was
-wondering how difficult it is to get Racket running on &hellip;">
+  <meta name="description" content="In Racket I want to iterate over my
+buckets in Amazon S3. They are located in different regions. So how do
+I get my bucket&rsquo;s location/region? &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +69,102 @@ wondering how difficult it is to get Racket running on &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket/">How to use GET Bucket location on Amazon S3 with Racket</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-09-04T07:23:43+00:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>7:23 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In <a href="http://www.racket-lang.org">Racket</a> I want to iterate over my
+buckets in Amazon S3. They are located in different regions. So how do
+I get my bucket&rsquo;s location/region? In the API Reference there is a
+call
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETlocation.html">GET Bucket location</a>. I
+use
+<a href="https://github.com/greghendershott/aws">Greg&rsquo;s AWS library for Racket</a>
+and this library authenticates its calls with
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">signature version V4</a>. But
+V4 requires the user to know the <em>region</em> to correctly sign the
+request. So I need to know the region to ask Amazon S3 for the region
+where the bucket is located. Otherwise Amazon S3 responds with an
+error:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>&lt;Error&gt;
+</span><span class='line'> &lt;Code&gt;AuthorizationHeaderMalformed&lt;/Code&gt;
+</span><span class='line'> &lt;Message&gt;The authorization header is malformed; the region 'us-east-1'
+</span><span class='line'>is wrong; expecting 'eu-central-1'&lt;/Message&gt;
+</span><span class='line'> &lt;Region&gt;eu-central-1&lt;/Region&gt;
+</span><span class='line'> &lt;RequestId&gt;XXXX&lt;/RequestId&gt;
+</span><span class='line'> &lt;HostId&gt;XXXX&gt;
+</span><span class='line'>&lt;/Error&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>After some search on the net I found a
+<a href="http://stackoverflow.com/questions/27091816/retrieve-buckets-objects-without-knowing-buckets-region-with-aws-s3-rest-api">post on Stackoverflow</a>
+that helped to solve that issue: If I use the URL format (instead of
+the normally used virtual host format) I could get the location of
+any bucket. Every region responds with a <em>LocationConstraint</em> answer.</p>
+
+<p>Therefore a code snippet for Racket could be:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(define (get-bucket-location bucket)
+</span><span class='line'>  (parameterize
+</span><span class='line'>      ([s3-path-requests? #t])
+</span><span class='line'>    (define xpr (get/proc (string-append bucket "/?location") read-entity/xexpr))
+</span><span class='line'>    (and (list? xpr)
+</span><span class='line'>         (= (length xpr) 3)
+</span><span class='line'>         (third xpr))))</span></code></pre></td></tr></table></div></figure>
+
+
+<p>For example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; (get-bucket-location "my-bucket-somewhere")
+</span><span class='line'>"eu-central-1"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>PS: I think official Amazon S3 documentation could be a bit more verbose on
+the isssues with GetBucketLocation and signature V4.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -759,90 +854,6 @@ still gelegten Blog hier herüber kopiert.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/12/21/ich-habe-mal-octopress-aktualisert/">Ich habe mal Octopress aktualisert</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2014-12-21T11:58:16+00:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>21</span><span class='date-suffix'>st</span>, <span class='date-year'>2014</span></span> <span class='time'>11:58 am</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Neulich fiel mir auf, dass die Suchfunktion, die auf Google basiert,
-nicht nur auf der eigenen Homepage, sondern im &ldquo;gesamten&rdquo; Suchindex
-von Google gesucht hat. Eben flatterte dieser
-<a href="https://twitter.com/octopress/status/546528904115404800">Tweet</a> mit
-<a href="https://github.com/imathis/octopress/commit/514ed5eb9f6bb91a6f3288febf3c2ba892a9b693">Link</a>
-zu einem Fix an mir vorbei und da hat sich wohl die API geändert.</p>
-
-<p><img src="/img/2014-12-21-octopress.png" alt="Octopress-Tweet" /></p>
-
-<p>Also habe ich mich einmal an den
-<a href="http://octopress.org/docs/updating/">Hinweisen</a> zum Aktualisieren von
-Octopress orientiert. Hierzu werden die folgenden Schritte vorgeschlagen:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git pull octopress master      # Get the latest Octopress
-</span><span class='line'>bundle install                 # Keep gems updated
-</span><span class='line'>rake update_source             # update the template's source
-</span><span class='line'>rake update_style              # update the template's style</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Soweit lief das auch. Es tauchten anschließend zwei Probleme auf:</p>
-
-<ol>
-<li><p>Das <code>execjs</code> jammerte, dass ihm irgendwie eine
-JavaScript-Bibliothek fehlte. Nach kurzer Recherche gab es die
-Empfehlung, die Zeile <code>gem 'therubyracer'</code> in das <code>Gemfile</code>
-aufzunehmen. Okay, das funktionierte schon einmal.</p></li>
-<li><p>Bei den Feeds für die Kategorien jammerte das Octopress ein
-ungültiges Layout an. In <code>category_feed.xml</code> stand in der Tat
-<code>layout: nil</code>. Ich habe das auf <code>layout: page</code> geändert. Nun tat
-auch dies.</p></li>
-</ol>
-
-
-<p>Mit dem Update funktioniert nun auch das Such-Formular wieder.</p>
-
-<p><strong>Ergänzung:</strong> Ich lasse das Jekyll und Octopress in einem
-   <a href="/blog/2014/06/10/relaunch-fast-fertig/">Docker-Container</a> laufen und irgendwie bekam ich bei <code>rake preview</code>
-   meine Seite nicht mehr zu sehen. Da ich mich mit Ruby und den
-   Komponenten nicht so gut auskenne, weiß ich nicht, ob mein &ldquo;Fix&rdquo; so
-   gut ist: Ich habe im <code>Rakefile</code> den <code>rackup</code>-Aufruf um den
-   Parameter <code>-o 0.0.0.0</code> ergänzt. Dann bekam ich vom Host wieder eine
-   Verbindung zum Webserver im Octopress-Container.</p>
-
-<p><strong>Update vom 04. Januar 2014:</strong> Nach einem kurzen
-  <a href="https://twitter.com/Krrrcks/status/546667456128114688">Gespräch</a>
-  via Twitter habe ich mich entschieden, den eingebauten Server doch
-  wieder so zu belassen, wie es im <code>Rakefile</code> ursprünglich
-  stand. Statt dessen habe ich einfach in dem Docker-Container einen
-  <code>nginx</code> hinzuinstalliert, der dann mein <code>public</code>-Verzeichnis an den
-  Port 4000 ausliefert. So funktioniert es wieder prima: Ich starte
-  den <code>nginx</code> und lasse dann das <code>rake watch</code> laufen, um die Seiten
-  immer wieder neu zu erzeugen, wenn sich Dinge geändert haben.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -871,6 +882,10 @@ auch dies.</p></li>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket/">How to use GET Bucket location on Amazon S3 with Racket</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/">How to run Racket on the Raspberry Pi 2</a>
       </li>
     
@@ -886,15 +901,11 @@ auch dies.</p></li>
         <a href="/blog/2015/02/17/der-rundfunkrat-des-hr-ubt-den-diskurs/">Der Rundfunkrat des hr übt den Diskurs</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen-Lizenz</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (20)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (3)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (2)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (21)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (4)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (3)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/s3/'>s3 (1)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
 </section>
 
 

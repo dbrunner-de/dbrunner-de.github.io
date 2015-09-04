@@ -79,7 +79,7 @@
   <title><![CDATA[Category: it | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/it/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-08-29T09:02:57+00:00</updated>
+  <updated>2015-09-04T08:00:18+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[How to use GET Bucket location on Amazon S3 with Racket]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket/"/>
+    <updated>2015-09-04T07:23:43+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket</id>
+    <content type="html"><![CDATA[<p>In <a href="http://www.racket-lang.org">Racket</a> I want to iterate over my
+buckets in Amazon S3. They are located in different regions. So how do
+I get my bucket&rsquo;s location/region? In the API Reference there is a
+call
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETlocation.html">GET Bucket location</a>. I
+use
+<a href="https://github.com/greghendershott/aws">Greg&rsquo;s AWS library for Racket</a>
+and this library authenticates its calls with
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">signature version V4</a>. But
+V4 requires the user to know the <em>region</em> to correctly sign the
+request. So I need to know the region to ask Amazon S3 for the region
+where the bucket is located. Otherwise Amazon S3 responds with an
+error:</p>
+
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;Error&gt;
+ &lt;Code&gt;AuthorizationHeaderMalformed&lt;/Code&gt;
+ &lt;Message&gt;The authorization header is malformed; the region 'us-east-1'
+is wrong; expecting 'eu-central-1'&lt;/Message&gt;
+ &lt;Region&gt;eu-central-1&lt;/Region&gt;
+ &lt;RequestId&gt;XXXX&lt;/RequestId&gt;
+ &lt;HostId&gt;XXXX&gt;
+&lt;/Error&gt;
+</code></pre>
+
+<p>After some search on the net I found a
+<a href="http://stackoverflow.com/questions/27091816/retrieve-buckets-objects-without-knowing-buckets-region-with-aws-s3-rest-api">post on Stackoverflow</a>
+that helped to solve that issue: If I use the URL format (instead of
+the normally used virtual host format) I could get the location of
+any bucket. Every region responds with a <em>LocationConstraint</em> answer.</p>
+
+<p>Therefore a code snippet for Racket could be:</p>
+
+<pre><code>(define (get-bucket-location bucket)
+  (parameterize
+      ([s3-path-requests? #t])
+    (define xpr (get/proc (string-append bucket "/?location") read-entity/xexpr))
+    (and (list? xpr)
+         (= (length xpr) 3)
+         (third xpr))))
+</code></pre>
+
+<p>For example:</p>
+
+<pre><code>&gt; (get-bucket-location "my-bucket-somewhere")
+"eu-central-1"
+</code></pre>
+
+<p>PS: I think official Amazon S3 documentation could be a bit more verbose on
+the isssues with GetBucketLocation and signature V4.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to run Racket on the Raspberry Pi 2]]></title>
@@ -246,82 +304,6 @@ coole Produkte investieren.</p>
 ]]></content>
   </entry>
   
-  <entry>
-    <title type="html"><![CDATA[3. Docker-Meetup in Frankfurt]]></title>
-    <link href="http://www.dbrunner.de/blog/2015/01/18/3-docker-meetup-in-frankfurt/"/>
-    <updated>2015-01-18T20:05:35+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2015/01/18/3-docker-meetup-in-frankfurt</id>
-    <content type="html"><![CDATA[<p>Am 13. Januar 2015  fand in Frankfurt das bereits <a href="http://www.meetup.com/Docker-Frankfurt/events/219160756/">dritte Docker-Meetup</a>
-statt, hier einige Notizen von mir dazu.</p>
-
-<h2>Neues zum Them Orchestrierung</h2>
-
-<p><a href="https://www.twitter.com/PRossbach">Peter Rossbach</a> hat in einem
-munteren Vortrag einige Neuerungen aus dem &ldquo;Docker Universum&rdquo; zum
-Thema Orchestrierung vorgestellt. Unter anderem
-<a href="https://github.com/docker/machine">Docker Machine</a>,
-<a href="https://github.com/docker/swarm">Docker Swarm</a>, Docker Compose
-(ehemals <a href="http://fig.sh">fig.sh</a>, das wohl aufgrund von
-Aussprachemehrdeutigkeiten umbenannt wurde) etc. Ein sehr
-interessanter Überblick, insbesondere da Peter auch die ganzen Sachen
-immer mal angefasst und ausprobiert hat. Im Kern scheint es mir jedoch
-so zu sein, als wäre die Frage nach &ldquo;Was nimmt man am besten, um
-Docker auf einer oder mehreren Maschinen im Produktivbetrieb zu
-nutzen?&rdquo; noch recht in Bewegung. Für mich kristallisiert sich für
-meine Anwendungsfälle da bisher noch keine überzeugende Lösung
-heraus. Was ich jedoch einmal testen werde ist das fig.sh bzw. Docker
-Compose, da man damit eigentlich sehr schön in einem YAML-Dokument
-mehrere Container und ihre Abhängigkeiten darstellen kann.</p>
-
-<h2>Docker Linking</h2>
-
-<p><a href="http://linsenraum.de">Erkan Yanar</a> hat in einem Einsteigervortrag die
-Grundlagen von Links zwischen Containern vorgestellt. Hier scheint die
-Entwicklung auch noch in Bewegung zu sein, insbesondere Links über
-mehrere Hosts hinweg scheinen doch noch nicht so ganz einfach
-handzuhaben zu sein (vorgestellt wurden
-<a href="https://github.com/SvenDowideit/dockerfiles/blob/master/ambassador/Dockerfile">Ambassador-Ansätze</a>
-mit <a href="http://www.dest-unreach.org/socat/">socat</a> und anderes).</p>
-
-<p>Besonders erhellend fand ich den Hinweis, dass ab Docker Version 1.3
-nun bei Links zwischen den Containern die <code>/etc/hosts</code> auch nach
-Neustarts von gelinkten Containern immer deren richtige IP-Adresse
-erhält, wohingegen die Umgebungsvariablen nur die
-Ursprungs-IP-Adressen enthalten (also ein klares &ldquo;Verlasst Euch nicht
-auf die Umgebungsvariablen!&rdquo;).</p>
-
-<h2>Netzwerken mit Docker</h2>
-
-<p><a href="https:/www.twitter.com/aschmidt75">Andreas Schmidt</a> stellte eine
-ganze Reihe von Varianten vor, mit denen man die Container im Netzwerk
-auf unterschiedliche Arten und Weisen verknoten kann. Soweit ganz
-interessant, aber nicht meine &ldquo;Liga&rdquo;, wo ich mich gut auskenne.</p>
-
-<h2>Fazit</h2>
-
-<p>Bei Docker in Bezug auf Orchestrierung und Container-Linken gibt es
-recht viel Bewegung und für mich kristallisieren sich die
-überzeugenden Konzepte noch nicht so richtig heraus, um damit in eine
-Produktivumgebung zu gehen. Im Bereich der Entwicklung und der Tests
-nutze ich die Container von Docker schon recht gerne, bei
-Produktiv-Umgebungen schreckt mich die Vielzahl an Werkzeugen und zum
-Teil auch die Komplexität doch noch etwas.</p>
-
-<p>Jedenfalls wieder ein gutes Meetup mit Ideen und Anregungen. Ich finde
-das schon sehr außergewöhnlich (besonders wenn man es mit anderen
-Branchen vergleicht), dass sich Leute zum Austauschen über Technologie
-treffen, Vorträge vorbereiten etc.</p>
-
-<h2>Links zu den Folien</h2>
-
-<ul>
-<li><a href="https://speakerdeck.com/rossbachp/docker-meetup-frankfurt-2015-docker-orchestration">Peter Rossbach, Docker Orchestation</a></li>
-<li><a href="https://speakerdeck.com/aschmidt75/docker-networking">Andreas Schmidt, Docker Networking</a></li>
-</ul>
-
-]]></content>
-  </entry>
-  
 </feed>
 
   
@@ -363,6 +345,10 @@ treffen, Vorträge vorbereiten etc.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket/">How to use GET Bucket location on Amazon S3 with Racket</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/">How to run Racket on the Raspberry Pi 2</a>
       </li>
     
@@ -378,15 +364,11 @@ treffen, Vorträge vorbereiten etc.</p>
         <a href="/blog/2015/02/17/der-rundfunkrat-des-hr-ubt-den-diskurs/">Der Rundfunkrat des hr übt den Diskurs</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/02/17/lexmarks-druckerpatronen-lizenz/">Lexmarks Druckerpatronen-Lizenz</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (1)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (20)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (3)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (2)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (21)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (4)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (3)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/s3/'>s3 (1)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
 </section>
 
 

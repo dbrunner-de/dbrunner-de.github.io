@@ -5,14 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Beschleunigung als soziales Phänomen - Textstückchen</title>
+  <title>How to use GET Bucket location on Amazon S3 with Racket - Textstückchen</title>
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="Wozu späte Autofahrten gut sein können: Im September 2009 habe ich in
-den Funkhausgesprächen bei WDR5 eine interessante Gesprächsrunde zum
-Thema & &hellip;">
-  
+  <meta name="description" content="A short code snippet that shows how to use GetBucketLocation with Racket and signature version v4">
+  <meta name="keywords" content="AWS, Amazon S3, Racket">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -20,7 +18,7 @@ Thema & &hellip;">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.dbrunner.de/blog/2010/02/15/beschleunigung-als-soziales-phnomen">
+  <link rel="canonical" href="http://www.dbrunner.de/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Textstückchen" type="application/atom+xml">
@@ -72,7 +70,7 @@ Thema & &hellip;">
   
   <header>
     
-      <h1 class="entry-title">Beschleunigung als soziales Phänomen</h1>
+      <h1 class="entry-title">How to use GET Bucket location on Amazon S3 with Racket</h1>
     
     
       <p class="meta">
@@ -81,64 +79,81 @@ Thema & &hellip;">
 
 
 
-<time class='entry-date' datetime='2010-02-15T22:10:00+00:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>10:10 pm</span></time>
+<time class='entry-date' datetime='2015-09-04T07:23:43+00:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>7:23 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Wozu späte Autofahrten gut sein können: Im September 2009 habe ich in
-den Funkhausgesprächen bei WDR5 eine interessante Gesprächsrunde zum
-<a href="http://medien.wdr.de/m/1255182131/radio/philosophischesradio/wdr5_das_philosophische_radio_20091009_2100.mp3">Thema &ldquo;Beschleunigung&rdquo;</a>
-gehört.</p>
+<div class="entry-content"><p>In <a href="http://www.racket-lang.org">Racket</a> I want to iterate over my
+buckets in Amazon S3. They are located in different regions. So how do
+I get my bucket&rsquo;s location/region? In the API Reference there is a
+call
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETlocation.html">GET Bucket location</a>. I
+use
+<a href="https://github.com/greghendershott/aws">Greg&rsquo;s AWS library for Racket</a>
+and this library authenticates its calls with
+<a href="http://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-auth-using-authorization-header.html">signature version V4</a>. But
+V4 requires the user to know the <em>region</em> to correctly sign the
+request. So I need to know the region to ask Amazon S3 for the region
+where the bucket is located. Otherwise Amazon S3 responds with an
+error:</p>
 
-<p>Die Thesen eines der Diskutanten, des Soziologen Hartmut Rosa von der
-Universität Jena, haben mich recht lange noch beschäftigt (so habe ich
-unter anderem auch einmal Einblick in seine Habilitationsschrift
-<a href="http://www.amazon.de/Beschleunigung-Die-Ver%C3%A4nderung-Zeitstrukturen-Moderne/dp/3518293605/ref=sr_1_1?ie=UTF8&amp;s=books&amp;qid=1266258599&amp;sr=8-1">&ldquo;Beschleunigung - Die Veränderung der Zeitstrukturen in der Moderne&rdquo;</a>
-genommen); ein Punkt daraus, soweit ich das richtig verstanden habe:</p>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</span><span class='line'>&lt;Error&gt;
+</span><span class='line'> &lt;Code&gt;AuthorizationHeaderMalformed&lt;/Code&gt;
+</span><span class='line'> &lt;Message&gt;The authorization header is malformed; the region 'us-east-1'
+</span><span class='line'>is wrong; expecting 'eu-central-1'&lt;/Message&gt;
+</span><span class='line'> &lt;Region&gt;eu-central-1&lt;/Region&gt;
+</span><span class='line'> &lt;RequestId&gt;XXXX&lt;/RequestId&gt;
+</span><span class='line'> &lt;HostId&gt;XXXX&gt;
+</span><span class='line'>&lt;/Error&gt;</span></code></pre></td></tr></table></div></figure>
 
-<p>Wir nehmen den Fortschritt in der Moderne als sich ständig höhere
-drehende Anforderungen an unsere geistige Verarbeitungskapazität wahr.
-Wenn wir nicht innert Stunden auf eine E-Mail reagieren, werden Absender
-nervös. Ständig kommen von überall Nachrichten und Mitteilungen auf uns
-zu. Wir leben in einem ständigen Gefühl des Überfordertseins aufgrund
-einer wahrgenommenen <em>Beschleunigung</em> in unserer Welt. Dabei ist jedoch
-zu sehen, dass es zwar technologischer Fortschritt sein kann, der
-bestimmte Handlungsweisen erst möglich macht: So erreiche ich viele Orte
-erst mit dem Flugzeug in akzeptabler Zeit. E-Mails sind schneller
-zugestellt als die Schneckenpost. Aber, so eine wichtige These, das
-Gefühl der Beschleunigung ist zu einem großen Teil ein <em>soziales
-Phänomen</em>. Mit der schnellen E-Mail, um bei diesem Beispiel zu bleiben,
-verändert sich das Kommunikationsverhalten und die -konventionen: Dass
-man eben schnell auf eine E-Mail antwortet und sich nicht wie früher bei
-einem Brief mehr Zeit lässt. Oder anders gewendet: Die Technik erlaubt
-uns, heute mehr E-Mails zu schreiben als früher Briefe und schneller zu
-kommunizieren. Statt nun diesen Produktivitätsfortschritt zu nutzen und
-die gewonnene Zeit mit Müßiggang zu verbringen, schreiben wir deutlich
-mehr E-Mails, müssen mehr Nachrichten verarbeiten, werden ggf. sogar wie
-Push-Diensten auf dem Mobiltelefon mit der elektronischen Post versorgt
-und fühlen uns zunehmen gehetzt und überfordert. Und Ausbrechen wird
-nicht so einfach, da uns irgendwann sonst die sozialen Brücken zu
-unserem Umfeld verloren gehen.</p>
 
-<p>Insgesamt ein spannendes Thema und ich habe aus den von mir gelesenen
-Arbeiten von Hartmut Rosa sehr viel gelernt, insbesondere öfter nach den
-sozialen Ursachen bestimmte Entwicklungen zu fragen und diese zu
-analysieren. Eine reine Technikzentriertheit führt hier (wie auch an
-anderen Stellen bspw. des Internets) nicht zum Ziel.</p>
+<p>After some search on the net I found a
+<a href="http://stackoverflow.com/questions/27091816/retrieve-buckets-objects-without-knowing-buckets-region-with-aws-s3-rest-api">post on Stackoverflow</a>
+that helped to solve that issue: If I use the URL format (instead of
+the normally used virtual host format) I could get the location of
+any bucket. Every region responds with a <em>LocationConstraint</em> answer.</p>
 
-<p>Weitere Links zu einem Interview mit der Zeit (sowie einem
-Schwerpunktthema zur Wiederentdeckung des Nichtstuns) und zu Harmuts
-Rosas Homepage bei der Universität Jena:</p>
+<p>Therefore a code snippet for Racket could be:</p>
 
-<ul>
-<li><a href="http://www.zeit.de/2010/01/Interview-Rosa">http://www.zeit.de/2010/01/Interview-Rosa</a></li>
-<li><a href="http://www.zeit.de/2010/01/Die-Wiederentdeckung-des-Nichtstuns">http://www.zeit.de/2010/01/Die-Wiederentdeckung-des-Nichtstuns</a></li>
-<li><a href="http://www.soziologie.uni-jena.de/HartmutRosa.html">http://www.soziologie.uni-jena.de/HartmutRosa.html</a></li>
-</ul>
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(define (get-bucket-location bucket)
+</span><span class='line'>  (parameterize
+</span><span class='line'>      ([s3-path-requests? #t])
+</span><span class='line'>    (define xpr (get/proc (string-append bucket "/?location") read-entity/xexpr))
+</span><span class='line'>    (and (list? xpr)
+</span><span class='line'>         (= (length xpr) 3)
+</span><span class='line'>         (third xpr))))</span></code></pre></td></tr></table></div></figure>
 
+
+<p>For example:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&gt; (get-bucket-location "my-bucket-somewhere")
+</span><span class='line'>"eu-central-1"</span></code></pre></td></tr></table></div></figure>
+
+
+<p>PS: I think official Amazon S3 documentation could be a bit more verbose on
+the isssues with GetBucketLocation and signature V4.</p>
 </div>
 
 
@@ -154,12 +169,12 @@ Rosas Homepage bei der Universität Jena:</p>
 
 
 
-<time class='entry-date' datetime='2010-02-15T22:10:00+00:00'><span class='date'><span class='date-month'>Feb</span> <span class='date-day'>15</span><span class='date-suffix'>th</span>, <span class='date-year'>2010</span></span> <span class='time'>10:10 pm</span></time>
+<time class='entry-date' datetime='2015-09-04T07:23:43+00:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>7:23 am</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/gesellschaft/'>gesellschaft</a>
+    <a class='category' href='/blog/categories/aws/'>aws</a>, <a class='category' href='/blog/categories/it/'>it</a>, <a class='category' href='/blog/categories/lisp/'>lisp</a>, <a class='category' href='/blog/categories/racket/'>racket</a>, <a class='category' href='/blog/categories/s3/'>s3</a>
   
 </span>
 
@@ -168,7 +183,7 @@ Rosas Homepage bei der Universität Jena:</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.dbrunner.de/blog/2010/02/15/beschleunigung-als-soziales-phnomen/" data-via="krrrcks" data-counturl="http://www.dbrunner.de/blog/2010/02/15/beschleunigung-als-soziales-phnomen/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.dbrunner.de/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket/" data-via="krrrcks" data-counturl="http://www.dbrunner.de/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket/" >Tweet</a>
   
   
   
@@ -177,10 +192,8 @@ Rosas Homepage bei der Universität Jena:</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2009/03/05/bankbilanz/" title="Previous Post: Für wen bilanzieren unsere Banken eigentlich?">&laquo; Für wen bilanzieren unsere Banken eigentlich?</a>
+        <a class="basic-alignment left" href="/blog/2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/" title="Previous Post: How to run Racket on the Raspberry Pi 2">&laquo; How to run Racket on the Raspberry Pi 2</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2010/03/04/cebit-/" title="Next Post: CeBIT 2010">CeBIT 2010 &raquo;</a>
       
     </p>
   </footer>
