@@ -39,7 +39,7 @@ und verarbeite keine Daten über Ihren Besuch auf dieser Seite.
  eingesehen werden. 
 
 Für das Archiv der alten Homepage (die weiterhin bei Strato gehostet
-wird), zu finden über die Domain http://archive.dbrunner.de, gilt das
+wird), zu finden über die Domain [http://archive.dbrunner.de](http://archive.dbrunner.de), gilt das
 dort unter
 [Kontakt/Impressum](http://archive.dbrunner.de/kontakt.html) Gesagte.
 
