@@ -9,9 +9,9 @@
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="In Racket I want to iterate over my
-buckets in Amazon S3. They are located in different regions. So how do
-I get my bucket&rsquo;s location/region? &hellip;">
+  <meta name="description" content="I am looking forward to meet LISP people at the
+32c3&rsquo;s LISP assembly. The last days I played a bit with different Scheme
+implementations &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +69,152 @@ I get my bucket&rsquo;s location/region? &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2015/12/19/i-played-with-chicken-scheme/">I played with CHICKEN Scheme, Docker and Alpine Linux</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2015-12-19T17:54:50+00:00'><span class='date'><span class='date-month'>Dec</span> <span class='date-day'>19</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:54 pm</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I am looking forward to meet LISP people at the
+<a href="https://events.ccc.de/congress/2015/wiki/Main_Page">32c3&rsquo;s</a> <a href="https://events.ccc.de/congress/2015/wiki/Assembly:The_%28un%29employed_schemers_%26_lispers_guild">LISP assembly</a>. The last days I played a bit with different Scheme
+implementations including
+<a href="http://call-cc.org">CHICKEN scheme</a>. The main feature of CHICKEN is
+that it compiles the Scheme code to C and then creates dynamic
+libraries and binaries with the C compiler. I thought that combining
+these binaries with a minimal Docker container could give me a very
+small deployment. So here are my steps:</p>
+
+<h2>Choosing Alpine Linux as a &ldquo;small&rdquo; Linux</h2>
+
+<p>The smallest Linux image for Docker is undoubtly busybox with a size
+of about 2.489 MB. But busybox lacks a package manager which makes
+installing software painful. Therefore I have chosen
+<a href="http://alpinelinux.org">Alpine Linux</a> which comes with package
+manager and it&rsquo;s image&rsquo;s size is about 5.234 MB. That&rsquo;s double the
+size of the busybox image but still quite small compared to the Ubuntu
+image which is about 266 MB.</p>
+
+<h2>Creating a Docker container with CHICKEN</h2>
+
+<p>Alpine Linux comes with the <a href="http://www.muscl-libc.org">musl libc</a> and
+I thought it would be best to compile all the CHICKEN stuff with that
+libc. Therefore I created a Docker container with gcc and all the
+other stuff with this Dockerfile
+(<a href="https://github.com/krrrcks/chicken-docker-alpine">Github repository</a>):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FROM alpine:3.2
+</span><span class='line'>
+</span><span class='line'>RUN apk update && apk add make gcc musl-dev 
+</span><span class='line'>RUN wget -O - http://code.call-cc.org/releases/4.10.0/chicken-4.10.0.tar.gz | tar xz
+</span><span class='line'>
+</span><span class='line'>WORKDIR /chicken-4.10.0
+</span><span class='line'>
+</span><span class='line'>RUN make PLATFORM=linux && make PLATFORM=linux install
+</span><span class='line'>
+</span><span class='line'>RUN rm -fr /chicken-4.10.0 
+</span><span class='line'>
+</span><span class='line'>WORKDIR /
+</span><span class='line'>
+</span><span class='line'>CMD ["csi"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This image is quite big (about 161.7 MB) and is available for download
+at the <a href="https://hub.docker.com/r/krrrcks/chicken-alpine/">Docker Hub</a>.</p>
+
+<h2>Compiling some CHICKEN code</h2>
+
+<p>For testing purposes I wanted a minimal web server running in the Alpine
+Linux image. Therefore I looked through the
+<a href="http://wiki.call-cc.org/chicken-projects/egg-index-4.html">egg index</a>
+and found <a href="http://wiki.call-cc.org/eggref/4/spiffy">spiffy</a>. I fired
+up the <code>chicken-alpine</code> container (but I used <code>ash</code> as command instead
+of the <code>csi</code> Scheme interpreter) and created a small web server that
+serves some static pages. I wrote a <code>main.scm</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(use spiffy)
+</span><span class='line'>(start-server)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and added some static pages to a <code>./web</code> sub-directory. Then
+everything had to be compiled and prepared for deployment:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chicken-install spiffy
+</span><span class='line'>csc -deploy main.scm
+</span><span class='line'>chicken-install -deploy -p $PWD/main spiffy</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Deploy in a fresh Alpine Linux image</h2>
+
+<p>After the compilation I copied the <code>main</code> and <code>web</code> directories on my
+host machine using <code>docker cp</code> and created the following Dockerfile:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FROM alpine:3.2
+</span><span class='line'>
+</span><span class='line'>ADD main /main
+</span><span class='line'>ADD web main/web
+</span><span class='line'>WORKDIR main
+</span><span class='line'>
+</span><span class='line'>CMD /main/main</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>and let <code>docker build -t krrrcks/spiffy-test .</code> do the job. The size
+of the resulting image is about 12.37 MB and that&rsquo;s pretty small. I
+uploaded that image to the
+<a href="https://hub.docker.com/r/krrrcks/spiffy-test/">Docker Hub</a> as well.</p>
+
+<p>To serve the pages I did a <code>docker run -d -p 8080:8080 krrrcks/spiffy-test</code>
+(spiffy listens on port 8080 in the default install) and browsed my
+static pages.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -158,7 +304,7 @@ any bucket. Every region responds with a <em>LocationConstraint</em> answer.</p>
 
 
 <p>PS: I think official Amazon S3 documentation could be a bit more verbose on
-the isssues with GetBucketLocation and signature V4.</p>
+the issues with GetBucketLocation and signature V4.</p>
 </div>
   
   
@@ -820,40 +966,6 @@ und sich austauschen konnte.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/01/04/aus-zwei-mach-eins/">Aus zwei mach eins</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-01-04T16:16:08+00:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>4</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>4:16 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Bisher hatte ich meine Blog-Einträge auf zwei Blogs aufgeteilt,
-<a href="http://blog.krrrcks.net">eines</a> mit mehr technischen (und zum Teil
-englischen Texten) und dieses hier mit deutschen Texten. Ich denke,
-ich werde das auf dieses eine Blog hier konzentrieren. Das reduziert
-doch etwas den Verwaltungsaufwand. Ich habe die Texte vom nun etwas
-still gelegten Blog hier herüber kopiert.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -882,6 +994,10 @@ still gelegten Blog hier herüber kopiert.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2015/12/19/i-played-with-chicken-scheme/">I played with CHICKEN Scheme, Docker and Alpine Linux</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/09/04/how-to-use-getbucketlocation-on-amazon-s3-with-racket/">How to use GET Bucket location on Amazon S3 with Racket</a>
       </li>
     
@@ -897,15 +1013,11 @@ still gelegten Blog hier herüber kopiert.</p>
         <a href="/blog/2015/08/27/lisp-und-ich/">Lisp und ich</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/02/17/der-rundfunkrat-des-hr-ubt-den-diskurs/">Der Rundfunkrat des hr übt den Diskurs</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (4)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (21)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (4)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (3)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/s3/'>s3 (1)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/chicken/'>chicken (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (5)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (22)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/linux/'>linux (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (5)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (3)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/s3/'>s3 (1)</a></li><li><a href='/blog/categories/scheme/'>scheme (1)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
 </section>
 
 

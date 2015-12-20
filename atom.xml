@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-09-04T09:02:35+00:00</updated>
+  <updated>2015-12-20T12:26:18+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,132 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[I played with CHICKEN Scheme, Docker and Alpine Linux]]></title>
+    <link href="http://www.dbrunner.de/blog/2015/12/19/i-played-with-chicken-scheme/"/>
+    <updated>2015-12-19T17:54:50+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2015/12/19/i-played-with-chicken-scheme</id>
+    <content type="html"><![CDATA[<p>I am looking forward to meet LISP people at the
+<a href="https://events.ccc.de/congress/2015/wiki/Main_Page">32c3&rsquo;s</a> <a href="https://events.ccc.de/congress/2015/wiki/Assembly:The_%28un%29employed_schemers_%26_lispers_guild">LISP assembly</a>. The last days I played a bit with different Scheme
+implementations including
+<a href="http://call-cc.org">CHICKEN scheme</a>. The main feature of CHICKEN is
+that it compiles the Scheme code to C and then creates dynamic
+libraries and binaries with the C compiler. I thought that combining
+these binaries with a minimal Docker container could give me a very
+small deployment. So here are my steps:</p>
+
+<h2>Choosing Alpine Linux as a &ldquo;small&rdquo; Linux</h2>
+
+<p>The smallest Linux image for Docker is undoubtly busybox with a size
+of about 2.489 MB. But busybox lacks a package manager which makes
+installing software painful. Therefore I have chosen
+<a href="http://alpinelinux.org">Alpine Linux</a> which comes with package
+manager and it&rsquo;s image&rsquo;s size is about 5.234 MB. That&rsquo;s double the
+size of the busybox image but still quite small compared to the Ubuntu
+image which is about 266 MB.</p>
+
+<h2>Creating a Docker container with CHICKEN</h2>
+
+<p>Alpine Linux comes with the <a href="http://www.muscl-libc.org">musl libc</a> and
+I thought it would be best to compile all the CHICKEN stuff with that
+libc. Therefore I created a Docker container with gcc and all the
+other stuff with this Dockerfile
+(<a href="https://github.com/krrrcks/chicken-docker-alpine">Github repository</a>):</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FROM alpine:3.2
+</span><span class='line'>
+</span><span class='line'>RUN apk update && apk add make gcc musl-dev 
+</span><span class='line'>RUN wget -O - http://code.call-cc.org/releases/4.10.0/chicken-4.10.0.tar.gz | tar xz
+</span><span class='line'>
+</span><span class='line'>WORKDIR /chicken-4.10.0
+</span><span class='line'>
+</span><span class='line'>RUN make PLATFORM=linux && make PLATFORM=linux install
+</span><span class='line'>
+</span><span class='line'>RUN rm -fr /chicken-4.10.0 
+</span><span class='line'>
+</span><span class='line'>WORKDIR /
+</span><span class='line'>
+</span><span class='line'>CMD ["csi"]</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This image is quite big (about 161.7 MB) and is available for download
+at the <a href="https://hub.docker.com/r/krrrcks/chicken-alpine/">Docker Hub</a>.</p>
+
+<h2>Compiling some CHICKEN code</h2>
+
+<p>For testing purposes I wanted a minimal web server running in the Alpine
+Linux image. Therefore I looked through the
+<a href="http://wiki.call-cc.org/chicken-projects/egg-index-4.html">egg index</a>
+and found <a href="http://wiki.call-cc.org/eggref/4/spiffy">spiffy</a>. I fired
+up the <code>chicken-alpine</code> container (but I used <code>ash</code> as command instead
+of the <code>csi</code> Scheme interpreter) and created a small web server that
+serves some static pages. I wrote a <code>main.scm</code>:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>(use spiffy)
+</span><span class='line'>(start-server)</span></code></pre></td></tr></table></div></figure>
+
+
+<p>and added some static pages to a <code>./web</code> sub-directory. Then
+everything had to be compiled and prepared for deployment:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>chicken-install spiffy
+</span><span class='line'>csc -deploy main.scm
+</span><span class='line'>chicken-install -deploy -p $PWD/main spiffy</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Deploy in a fresh Alpine Linux image</h2>
+
+<p>After the compilation I copied the <code>main</code> and <code>web</code> directories on my
+host machine using <code>docker cp</code> and created the following Dockerfile:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>FROM alpine:3.2
+</span><span class='line'>
+</span><span class='line'>ADD main /main
+</span><span class='line'>ADD web main/web
+</span><span class='line'>WORKDIR main
+</span><span class='line'>
+</span><span class='line'>CMD /main/main</span></code></pre></td></tr></table></div></figure>
+
+
+<p></p>
+
+<p>and let <code>docker build -t krrrcks/spiffy-test .</code> do the job. The size
+of the resulting image is about 12.37 MB and that&rsquo;s pretty small. I
+uploaded that image to the
+<a href="https://hub.docker.com/r/krrrcks/spiffy-test/">Docker Hub</a> as well.</p>
+
+<p>To serve the pages I did a <code>docker run -d -p 8080:8080 krrrcks/spiffy-test</code>
+(spiffy listens on port 8080 in the default install) and browsed my
+static pages.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[How to use GET Bucket location on Amazon S3 with Racket]]></title>
@@ -85,7 +211,7 @@ any bucket. Every region responds with a <em>LocationConstraint</em> answer.</p>
 
 
 <p>PS: I think official Amazon S3 documentation could be a bit more verbose on
-the isssues with GetBucketLocation and signature V4.</p>
+the issues with GetBucketLocation and signature V4.</p>
 ]]></content>
   </entry>
   
@@ -1167,148 +1293,6 @@ the resulting JavaScript date is one day behind.</p>
 and 1970 from <code>ts</code>, multiply by 1,000 and treat this as a JavaScript
 time stamp. Perhaps best would be to do the conversion in the Lisp
 process and only deliver a JavaScript-like time stamp.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[I learned something about symbols and packages]]></title>
-    <link href="http://www.dbrunner.de/blog/2014/07/06/i-learned-something-about-symbols-and-packages/"/>
-    <updated>2014-07-06T09:02:39+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2014/07/06/i-learned-something-about-symbols-and-packages</id>
-    <content type="html"><![CDATA[<p>I am using Common Lisp for developing a web application. Several days
-ago a new part of this application didn&rsquo;t worked as supposed and I
-spent a considerable large amount of time in finding the bug. It was a
-very simple problem with symbols where I mixed something up.</p>
-
-<p>In the application the web server somewhen gets some JSON data from
-the browser. It is then converted to Lisp object using the <code>CL-JSON</code>
-package. This package converts JSON objects to a-lists and converts
-the member keys to symbols (see CL-JSON&rsquo;s <a href="http://common-lisp.net/project/cl-json/">documentation</a>. I then wanted to look something up in that a-list and failed.</p>
-
-<p>I wrote a small test case to show the effect and explain what went wrong.</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(ql:quickload '("hunchentoot" "cl-who"))
-</span><span class='line'>;; direct loading via ql only for demonstration purposes, normally I
-</span><span class='line'>;; would use a asdf:defsystem for that.
-</span><span class='line'>
-</span><span class='line'>(in-package :cl-user)
-</span><span class='line'>
-</span><span class='line'>(defpackage :my-app (:use :cl))
-</span><span class='line'>
-</span><span class='line'>(in-package :my-app)
-</span><span class='line'>
-</span><span class='line'>(defparameter *my-a-list* 
-</span><span class='line'>  '((foo . 100)
-</span><span class='line'>    (bar . 200)))   ;; in the real application this a-list is
-</span><span class='line'>          ;; generated by a JSON-to-lisp conversion by
-</span><span class='line'>          ;; CL-JSON; in CL-JSON the object member keys are
-</span><span class='line'>          ;; converted to symbols.
-</span><span class='line'>
-</span><span class='line'>(defun get-value (key)
-</span><span class='line'>  "Returns the value with KEY from *MY-A-LIST*."
-</span><span class='line'>  (cdr (assoc (intern (string-upcase key)) *my-a-list*)))
-</span><span class='line'>
-</span><span class='line'>(hunchentoot:define-easy-handler (web-get-value :uri "/get-value") (id)
-</span><span class='line'>  (cl-who:with-html-output-to-string (*standard-output* nil :prologue t)
-</span><span class='line'>    (:p (cl-who:fmt "Value of ~a is: ~a" id (get-value id)))))
-</span><span class='line'>
-</span><span class='line'>(defun start ()
-</span><span class='line'>  (hunchentoot:start (make-instance 'hunchentoot:easy-acceptor :port 4242)))</span></code></pre></td></tr></table></div></figure>
-
-
-<p>So on the REPL everything looks fine:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>MY-APP&gt; (get-value "foo")
-</span><span class='line'>100
-</span><span class='line'>MY-APP&gt; (get-value "bar")
-</span><span class='line'>200
-</span><span class='line'>MY-APP&gt; </span></code></pre></td></tr></table></div></figure>
-
-
-<p>But when I used my web browser to give me these results as well I got something strange.
-For example here are some results when using curl:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>~&gt; curl http://localhost:4242/get-value?id=foo
-</span><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
-</span><span class='line'>&lt;p&gt;Value of foo is: NIL&lt;/p&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I was puzzled: The value is <code>NIL</code>?</p>
-
-<p>After some debugging I found out that the easy handler from
-Hunchentoot runs with <code>*package*</code> set to <code>COMMON-LISP-USER</code>
-(and not to <code>MY-APP</code> as I implicitly assumed). That means that <code>assoc</code> looked up <code>COMMON-LISP-USER::FOO</code> in the a-list where
-the keys are <code>MY-APP::FOO</code> and <code>MY-APP::BAR</code>.
-And this test fails. Therefore <code>NIL</code> is returned which is correct.</p>
-
-<p>So I rewrote the <code>get-value</code> function to:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>(defun get-value (key)
-</span><span class='line'>  "Returns the value with KEY from *MY-A-LIST*."
-</span><span class='line'>  (cdr (assoc (intern (string-upcase key)
-</span><span class='line'>            (find-package :my-app)) *my-a-list*)))</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now the symbols are interned in the same package and everything went well:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>~&gt; curl http://localhost:4242/get-value?id=foo
-</span><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
-</span><span class='line'>&lt;p&gt;Value of foo ist: 100&lt;/p&gt;
-</span><span class='line'>
-</span><span class='line'>~&gt; curl http://localhost:4242/get-value?id=bar
-</span><span class='line'>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;
-</span><span class='line'>&lt;p&gt;Value of bar ist: 200&lt;/p&gt;</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Therefore I was reminded to think about packages when interning
- symbols. A good guide to symbols and packages could be found in this
- document: <a href="http://www.flownet.com/gat/packages.pdf">The Complete Idiot&rsquo;s Guide to Common Lisp Packages</a>.</p>
 ]]></content>
   </entry>
   
