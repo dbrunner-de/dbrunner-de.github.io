@@ -66,4 +66,4 @@ For example:
 ```
 
 PS: I think official Amazon S3 documentation could be a bit more verbose on
-the isssues with GetBucketLocation and signature V4.
+the issues with GetBucketLocation and signature V4.
