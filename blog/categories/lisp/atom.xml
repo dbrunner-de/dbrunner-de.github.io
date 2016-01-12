@@ -79,7 +79,7 @@
   <title><![CDATA[Category: lisp | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/lisp/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-12-20T12:39:12+00:00</updated>
+  <updated>2016-01-12T11:32:10+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -87,6 +87,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using Racket Minimal and raco]]></title>
+    <link href="http://www.dbrunner.de/blog/2016/01/12/using-racket-minimal-and-raco/"/>
+    <updated>2016-01-12T10:55:43+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2016/01/12/using-racket-minimal-and-raco</id>
+    <content type="html"><![CDATA[<p>I use Racket Minimal on my smart phone (<a href="../2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/">this</a>
+describes how to compile the run time for an ARM based
+system). It&rsquo;s is a very small installation of Racket (about 36 MB
+after installation). After installation one only needs to install the
+packages that are really neded. But this can be a bit tricky because a
+lot of packages want to install their documentation and other
+stuff and bring a whole bunch of files on your drive as
+dependencies.</p>
+
+<p>Some of the packages are divided up into a &ldquo;-lib&rdquo;, &ldquo;-doc&rdquo; (and
+sometimes &ldquo;-test&rdquo;) as laid out in the
+<a href="https://docs.racket-lang.org/pkg/getting-started.html#%28part._.Naming_and_.Designing_.Packages%29">documentation</a>. With
+these packages it&rsquo;s easier to only install the implementation.</p>
+
+<p>A small script of mine used only basic modules and relied on
+<code>rackunit</code> for the tests. On a mobile device the start up time of such a program can be
+critical. Therefore it is wise to only
+require the needed packages and to have the source code being compiled to
+byte code. One could do this with <code>raco setup</code> (which is included in
+Minimal Racket) but I wanted to have
+<code>raco make</code> (which is not part of Minimal Racket) available.</p>
+
+<p>The commands of <code>raco</code> are added via a <code>raco-commands</code> variable in
+packages&#8217; <code>info.rkt</code> file. I looked through the packages of my &ldquo;full
+install&rdquo; and found the package <code>compiler-lib</code> which adds some commands
+(<code>make</code>, <code>exe</code>, <code>pack</code>, <code>unpack</code>, <code>decompile</code>, <code>test</code>, <code>expand</code>,
+<code>read</code>, <code>distribute</code>, <code>demodularize</code>) to
+<a href="https://mirror.racket-lang.org/releases/6.3/doc/raco/index.html"><code>raco</code></a>
+and relies on only a few other packages. As a result the source and
+binary files need about 3.8 MB on my phone which is okay for me.</p>
+
+<p>To sum up: After a simple <code>raco pkg install compiler-lib</code> I could easily use
+<code>raco make</code> and <code>raco test</code> to play with my program on my phone.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[I played with CHICKEN Scheme, Docker and Alpine Linux]]></title>
@@ -343,24 +384,6 @@ function, uploaded the zip file and invoked the function:</p>
 ]]></content>
   </entry>
   
-  <entry>
-    <title type="html"><![CDATA[Lisp und ich]]></title>
-    <link href="http://www.dbrunner.de/blog/2015/08/27/lisp-und-ich/"/>
-    <updated>2015-08-27T10:57:45+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2015/08/27/lisp-und-ich</id>
-    <content type="html"><![CDATA[<p>Dieser Beitrag ist kurzer Hintergrund für meine bisherigen und
-zukünftigen Beiträge zur Programmierung und
-Software-Entiwcklung. Eigentlich ist es eher ein <em>Disclaimer</em>, denn
-ich habe das gar nicht professionell gelernt. Ich habe ein
-sozialwissenschaftliches Fach studiert und meine Kenntnisse aus dem
-Bereich der Programmierung entstammen im Wesentlichen meiner Schul-
-und Studienzeit und sehr viel autodidaktes Lernen. Insofern ist aller
-Code von mir mit einer gewissen Vorsicht zu genießen; möglicherweise
-ist das nicht immer die beste und schönste Variante ein Problem zu
-lösen.</p>
-]]></content>
-  </entry>
-  
 </feed>
 
   
@@ -402,6 +425,10 @@ lösen.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/12/using-racket-minimal-and-raco/">Using Racket Minimal and raco</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/12/19/i-played-with-chicken-scheme/">I played with CHICKEN Scheme, Docker and Alpine Linux</a>
       </li>
     
@@ -417,15 +444,11 @@ lösen.</p>
         <a href="/blog/2015/08/27/running-racket-on-aws-lambda/">Running Racket on AWS Lambda</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/08/27/lisp-und-ich/">Lisp und ich</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/chicken/'>chicken (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (5)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (22)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/linux/'>linux (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (5)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (3)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/s3/'>s3 (1)</a></li><li><a href='/blog/categories/scheme/'>scheme (1)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/chicken/'>chicken (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (5)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (23)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/linux/'>linux (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (6)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (4)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/s3/'>s3 (1)</a></li><li><a href='/blog/categories/scheme/'>scheme (1)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
 </section>
 
 
@@ -439,7 +462,7 @@ lösen.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Daniel Brunner -
+  Copyright &copy; 2016 - Daniel Brunner -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

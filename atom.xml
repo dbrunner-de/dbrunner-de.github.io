@@ -4,7 +4,7 @@
   <title><![CDATA[Textstückchen]]></title>
   <link href="http://www.dbrunner.de/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2015-12-20T12:39:12+00:00</updated>
+  <updated>2016-01-12T11:32:10+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -12,6 +12,47 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Using Racket Minimal and raco]]></title>
+    <link href="http://www.dbrunner.de/blog/2016/01/12/using-racket-minimal-and-raco/"/>
+    <updated>2016-01-12T10:55:43+00:00</updated>
+    <id>http://www.dbrunner.de/blog/2016/01/12/using-racket-minimal-and-raco</id>
+    <content type="html"><![CDATA[<p>I use Racket Minimal on my smart phone (<a href="../2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/">this</a>
+describes how to compile the run time for an ARM based
+system). It&rsquo;s is a very small installation of Racket (about 36 MB
+after installation). After installation one only needs to install the
+packages that are really neded. But this can be a bit tricky because a
+lot of packages want to install their documentation and other
+stuff and bring a whole bunch of files on your drive as
+dependencies.</p>
+
+<p>Some of the packages are divided up into a &ldquo;-lib&rdquo;, &ldquo;-doc&rdquo; (and
+sometimes &ldquo;-test&rdquo;) as laid out in the
+<a href="https://docs.racket-lang.org/pkg/getting-started.html#%28part._.Naming_and_.Designing_.Packages%29">documentation</a>. With
+these packages it&rsquo;s easier to only install the implementation.</p>
+
+<p>A small script of mine used only basic modules and relied on
+<code>rackunit</code> for the tests. On a mobile device the start up time of such a program can be
+critical. Therefore it is wise to only
+require the needed packages and to have the source code being compiled to
+byte code. One could do this with <code>raco setup</code> (which is included in
+Minimal Racket) but I wanted to have
+<code>raco make</code> (which is not part of Minimal Racket) available.</p>
+
+<p>The commands of <code>raco</code> are added via a <code>raco-commands</code> variable in
+packages&#8217; <code>info.rkt</code> file. I looked through the packages of my &ldquo;full
+install&rdquo; and found the package <code>compiler-lib</code> which adds some commands
+(<code>make</code>, <code>exe</code>, <code>pack</code>, <code>unpack</code>, <code>decompile</code>, <code>test</code>, <code>expand</code>,
+<code>read</code>, <code>distribute</code>, <code>demodularize</code>) to
+<a href="https://mirror.racket-lang.org/releases/6.3/doc/raco/index.html"><code>raco</code></a>
+and relies on only a few other packages. As a result the source and
+binary files need about 3.8 MB on my phone which is okay for me.</p>
+
+<p>To sum up: After a simple <code>raco pkg install compiler-lib</code> I could easily use
+<code>raco make</code> and <code>raco test</code> to play with my program on my phone.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[I played with CHICKEN Scheme, Docker and Alpine Linux]]></title>
@@ -1242,57 +1283,6 @@ on those storage drivers.</p>
  I found some documentation of the devicemapper storage driver. It is
  located in the
  <a href="https://github.com/docker/docker/tree/master/daemon/graphdriver/devmapper">Repository</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[DateTime conversion can be tricky]]></title>
-    <link href="http://www.dbrunner.de/blog/2014/07/24/datetime-conversion-can-be-tricky/"/>
-    <updated>2014-07-24T09:41:36+00:00</updated>
-    <id>http://www.dbrunner.de/blog/2014/07/24/datetime-conversion-can-be-tricky</id>
-    <content type="html"><![CDATA[<p>I wrote a small Lisp application and a JavaScript client gets some
-data from that application. All time stamps are returned as &ldquo;Lisp&rdquo;
-time stamps, i.e. an integer with seconds where zero equals Jan 01
-1900.</p>
-
-<p>In the JS client the time stamp is then converted to JS time stamps,
-i.e. millisconds where zero equals Jan 01 1970.</p>
-
-<p>When testing the application I noticed that sometimes the displayed
-date is one day behind. For example in the data base I have Jan 05
-1980 but in JavaScript I get a Jan 04 1980. But some other dates
-worked: A time stamp Jan 05 1970 was correctly converted to Jan 05
-1970.</p>
-
-<p>I had a look into the JavaScript code and found:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>convA = function(ts) {
-</span><span class='line'>  tmp = new Date(ts*1000);
-</span><span class='line'>  tmp.setFullYear(tmp.getFullYear() - 70);
-</span><span class='line'>  return tmp.getTime();
-</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
-
-
-<p>It&rsquo;s likely the developer thought: &ldquo;Well, it&rsquo;s millisecond instead of
-second. Therefore I multiply by 1,000. But then I am 70 years in the
-future and I have to substract 70 years and everything will be ok.&rdquo;</p>
-
-<p>After thinking a while I came to the conclusion: Of course not!</p>
-
-<p>The developer made the assumption that there are as many leap years
-between 1900 and 1970 as between <code>ts</code> and <code>ts+70</code>. Obviously that
-assumption does not hold for all time stamps. And therefore sometimes
-the resulting JavaScript date is one day behind.</p>
-
-<p>So a better solution would be to substract all seconds between 1900
-and 1970 from <code>ts</code>, multiply by 1,000 and treat this as a JavaScript
-time stamp. Perhaps best would be to do the conversion in the Lisp
-process and only deliver a JavaScript-like time stamp.</p>
 ]]></content>
   </entry>
   

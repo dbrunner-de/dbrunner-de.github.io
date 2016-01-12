@@ -5,13 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Einmaligkeit und Alternativlosigkeit als politische Kategorien - Textstückchen</title>
+  <title>Using Racket Minimal and raco - Textstückchen</title>
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="In die aktuellen politischen Debatten schleichen sich zwei offenkundig
-neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo &hellip;">
-  
+  <meta name="description" content="I use Racket Minimal on my smart phone and here I describe what to install in order to get 'raco make' and 'raco test'.">
+  <meta name="keywords" content="Racket">
 
   <!-- http://t.co/dKP3o1e -->
   <meta name="HandheldFriendly" content="True">
@@ -19,7 +18,7 @@ neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo &h
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://www.dbrunner.de/blog/2010/06/22/einmaligkeit-und-alternativlosigkeit-als-politische-kategorien">
+  <link rel="canonical" href="http://www.dbrunner.de/blog/2016/01/12/using-racket-minimal-and-raco">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Textstückchen" type="application/atom+xml">
@@ -71,7 +70,7 @@ neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo &h
   
   <header>
     
-      <h1 class="entry-title">Einmaligkeit und Alternativlosigkeit als politische Kategorien</h1>
+      <h1 class="entry-title">Using Racket Minimal and raco</h1>
     
     
       <p class="meta">
@@ -80,65 +79,46 @@ neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo &h
 
 
 
-<time class='entry-date' datetime='2010-06-22T00:00:00+00:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2010</span></span> <span class='time'>12:00 am</span></time>
+<time class='entry-date' datetime='2016-01-12T10:55:43+00:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:55 am</span></time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>In die aktuellen politischen Debatten schleichen sich zwei offenkundig
-neue Lieblingsvokabeln der politischen Akteure: Die &ldquo;Einmaligkeit&rdquo; von
-Ereignissen und die &ldquo;Alternativlosigkeit&rdquo; ihrer Entscheidungen. Beide
-sollen dem Gegenüber den Wind aus den Segeln nehmen und eine gute
-Begründung für das eigene Handeln darstellen. Seien es
-Bankenrettungsschirme, Euro-Länder-Rettungsschirme oder Sparpakete.
-Immer ist von einmaligen Ereignissen und fehlenden Alternativen die
-Rede.</p>
+<div class="entry-content"><p>I use Racket Minimal on my smart phone (<a href="../2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/">this</a>
+describes how to compile the run time for an ARM based
+system). It&rsquo;s is a very small installation of Racket (about 36 MB
+after installation). After installation one only needs to install the
+packages that are really neded. But this can be a bit tricky because a
+lot of packages want to install their documentation and other
+stuff and bring a whole bunch of files on your drive as
+dependencies.</p>
 
-<p>So sprach der erste parlamentarische Geschäftsführer der
-Unions-Fraktionen im Bundestag, Peter Altmeier, am <a href="http://www.dradio.de/dlf/sendungen/interview_dlf/1204454/">16. Juni 2010 im Deutschlandfunk</a>:</p>
+<p>Some of the packages are divided up into a &ldquo;-lib&rdquo;, &ldquo;-doc&rdquo; (and
+sometimes &ldquo;-test&rdquo;) as laid out in the
+<a href="https://docs.racket-lang.org/pkg/getting-started.html#%28part._.Naming_and_.Designing_.Packages%29">documentation</a>. With
+these packages it&rsquo;s easier to only install the implementation.</p>
 
-<blockquote><p>&ldquo;Wir haben mit die größte Sparanstrengung seit über 40 Jahren zu
-bewältigen. Es gab seit der deutschen Einheit keine derartige
-Problemfülle, die von der Politik bewältigt werden musste.&rdquo;</p></blockquote>
+<p>A small script of mine used only basic modules and relied on
+<code>rackunit</code> for the tests. On a mobile device the start up time of such a program can be
+critical. Therefore it is wise to only
+require the needed packages and to have the source code being compiled to
+byte code. One could do this with <code>raco setup</code> (which is included in
+Minimal Racket) but I wanted to have
+<code>raco make</code> (which is not part of Minimal Racket) available.</p>
 
-<p>Ähnlich äußerte sich einen Tag früher der Generalsekretär der FDP,
-Christian Lindner, im
-<a href="http://www.dradio.de/dlf/sendungen/interview_dlf/1203633/">Deutschlandfunk</a>:</p>
+<p>The commands of <code>raco</code> are added via a <code>raco-commands</code> variable in
+packages&#8217; <code>info.rkt</code> file. I looked through the packages of my &ldquo;full
+install&rdquo; and found the package <code>compiler-lib</code> which adds some commands
+(<code>make</code>, <code>exe</code>, <code>pack</code>, <code>unpack</code>, <code>decompile</code>, <code>test</code>, <code>expand</code>,
+<code>read</code>, <code>distribute</code>, <code>demodularize</code>) to
+<a href="https://mirror.racket-lang.org/releases/6.3/doc/raco/index.html"><code>raco</code></a>
+and relies on only a few other packages. As a result the source and
+binary files need about 3.8 MB on my phone which is okay for me.</p>
 
-<blockquote><p>&ldquo;Wir müssen uns Fragen in der Sache stellen, die nicht gekannte
-Dimensionen haben.&rdquo;</p></blockquote>
-
-<p>Mit der oben skizzierten Einmaligkeit und den vermeintlich
-außerordentlich großen Problemen soll dem Höhrer klar gemacht werden,
-dass Lösungen unglaublich schwer zu finden seien und man doch für den
-Umgang der Koalitionäre (&ldquo;Gurkentruppe&rdquo;, &ldquo;Wildsau&rdquo;, &ldquo;Rumpelstilzchen&rdquo;,
-um die Vokabeln des Vorsommer-Sommerlochs zu wiederholen) und den
-Ergebnissen Verständnis haben müsse.</p>
-
-<p>Wenn dann eine Entscheidung gefunden wurde, dann ist es doch wiederum
-eine Nicht-Entscheidung; denn es gab ja angeblich keine Alternativen. Es
-war &ldquo;alternativlos&rdquo;, das Rettungspaket für Euro und Griechenland zu
-schnüren. TINA (there is no alternative) greift um sich; ein Umstand auf
-den Heribert Prantl
-<a href="http://www.sueddeutsche.de/politik/fuehrung-fall-merkel-fuer-angie-kommt-tina-1.944947">in der Süddeutschen Zeitung</a>
-pointiert aufmerksam gemacht hat.</p>
-
-<p>Kurzum, die Herausforderungen sind einmalig, nie gekannt, von nie
-erlebter Komplexität und Schwierigkeit und die Lösungen dann
-schlussendlich auch noch ohne Alternativen. Politik ist doch eigentlich
-die Diskussion und das Ringen um die Wahl aus verschiedenen
-Alternativen. Werden solche Alternativen negiert, wird Politik ihres
-Kerns beraubt. Dies ist um so kritischer, als die alternativlosen
-Lösungen in der Regel nicht aus der Mitte des Parlaments aufs Tapet
-kommen, sondern es ist häufig die Exekutive in Gestalt der
-EU-Regierungen, in Gestalt der Bundesregierung, in Gestalt von
-Ministerkonferenzen der Bundesländer, die es den jeweiligen Parlamenten
-schwer und einfach zugleich macht: Schwer, weil das Parlament nicht mehr
-um die beste Lösung ringen darf und einfach, weil man die Verantwortung
-bei der Regierung belassen kann und Rettungspakete eben wie gewünscht
-durchwinkt. Es gab ja auch keine Alternative.</p>
+<p>To sum up: After a simple <code>raco pkg install compiler-lib</code> I could easily use
+<code>raco make</code> and <code>raco test</code> to play with my program on my phone.</p>
 </div>
 
 
@@ -154,12 +134,12 @@ durchwinkt. Es gab ja auch keine Alternative.</p>
 
 
 
-<time class='entry-date' datetime='2010-06-22T00:00:00+00:00'><span class='date'><span class='date-month'>Jun</span> <span class='date-day'>22</span><span class='date-suffix'>nd</span>, <span class='date-year'>2010</span></span> <span class='time'>12:00 am</span></time>
+<time class='entry-date' datetime='2016-01-12T10:55:43+00:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:55 am</span></time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/politik/'>politik</a>
+    <a class='category' href='/blog/categories/it/'>it</a>, <a class='category' href='/blog/categories/lisp/'>lisp</a>, <a class='category' href='/blog/categories/racket/'>racket</a>
   
 </span>
 
@@ -168,7 +148,7 @@ durchwinkt. Es gab ja auch keine Alternative.</p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.dbrunner.de/blog/2010/06/22/einmaligkeit-und-alternativlosigkeit-als-politische-kategorien/" data-via="krrrcks" data-counturl="http://www.dbrunner.de/blog/2010/06/22/einmaligkeit-und-alternativlosigkeit-als-politische-kategorien/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://www.dbrunner.de/blog/2016/01/12/using-racket-minimal-and-raco/" data-via="krrrcks" data-counturl="http://www.dbrunner.de/blog/2016/01/12/using-racket-minimal-and-raco/" >Tweet</a>
   
   
   
@@ -177,10 +157,8 @@ durchwinkt. Es gab ja auch keine Alternative.</p>
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2010/06/13/verrechnen-leicht-gemacht/" title="Previous Post: Verrechnen leicht gemacht">&laquo; Verrechnen leicht gemacht</a>
+        <a class="basic-alignment left" href="/blog/2015/12/19/i-played-with-chicken-scheme/" title="Previous Post: I played with CHICKEN Scheme, Docker and Alpine Linux">&laquo; I played with CHICKEN Scheme, Docker and Alpine Linux</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2010/06/27/die-vatikanischen-museen-und-eine-kleine-berraschung/" title="Next Post: Die vatikanischen Museen und eine kleine Überraschung">Die vatikanischen Museen und eine kleine Überraschung &raquo;</a>
       
     </p>
   </footer>

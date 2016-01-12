@@ -9,9 +9,9 @@
   <meta name="author" content="Daniel Brunner">
 
   
-  <meta name="description" content="I am looking forward to meet LISP people at the
-32c3&rsquo;s LISP assembly. The last days I played a bit with different Scheme
-implementations &hellip;">
+  <meta name="description" content="I use Racket Minimal on my smart phone (this
+describes how to compile the run time for an ARM based
+system). It&rsquo;s is a very small installation &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -69,6 +69,67 @@ implementations &hellip;">
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2016/01/12/using-racket-minimal-and-raco/">Using Racket Minimal and raco</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+<time class='entry-date' datetime='2016-01-12T10:55:43+00:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>12</span><span class='date-suffix'>th</span>, <span class='date-year'>2016</span></span> <span class='time'>10:55 am</span></time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I use Racket Minimal on my smart phone (<a href="../2015/08/27/how-to-run-racket-on-the-raspberry-pi-2/">this</a>
+describes how to compile the run time for an ARM based
+system). It&rsquo;s is a very small installation of Racket (about 36 MB
+after installation). After installation one only needs to install the
+packages that are really neded. But this can be a bit tricky because a
+lot of packages want to install their documentation and other
+stuff and bring a whole bunch of files on your drive as
+dependencies.</p>
+
+<p>Some of the packages are divided up into a &ldquo;-lib&rdquo;, &ldquo;-doc&rdquo; (and
+sometimes &ldquo;-test&rdquo;) as laid out in the
+<a href="https://docs.racket-lang.org/pkg/getting-started.html#%28part._.Naming_and_.Designing_.Packages%29">documentation</a>. With
+these packages it&rsquo;s easier to only install the implementation.</p>
+
+<p>A small script of mine used only basic modules and relied on
+<code>rackunit</code> for the tests. On a mobile device the start up time of such a program can be
+critical. Therefore it is wise to only
+require the needed packages and to have the source code being compiled to
+byte code. One could do this with <code>raco setup</code> (which is included in
+Minimal Racket) but I wanted to have
+<code>raco make</code> (which is not part of Minimal Racket) available.</p>
+
+<p>The commands of <code>raco</code> are added via a <code>raco-commands</code> variable in
+packages&#8217; <code>info.rkt</code> file. I looked through the packages of my &ldquo;full
+install&rdquo; and found the package <code>compiler-lib</code> which adds some commands
+(<code>make</code>, <code>exe</code>, <code>pack</code>, <code>unpack</code>, <code>decompile</code>, <code>test</code>, <code>expand</code>,
+<code>read</code>, <code>distribute</code>, <code>demodularize</code>) to
+<a href="https://mirror.racket-lang.org/releases/6.3/doc/raco/index.html"><code>raco</code></a>
+and relies on only a few other packages. As a result the source and
+binary files need about 3.8 MB on my phone which is okay for me.</p>
+
+<p>To sum up: After a simple <code>raco pkg install compiler-lib</code> I could easily use
+<code>raco make</code> and <code>raco test</code> to play with my program on my phone.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -901,71 +962,6 @@ treffen, Vorträge vorbereiten etc.</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/01/05/eindrucke-vom-31c3/">Eindrücke vom 31C3</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-<time class='entry-date' datetime='2015-01-05T17:03:00+00:00'><span class='date'><span class='date-month'>Jan</span> <span class='date-day'>5</span><span class='date-suffix'>th</span>, <span class='date-year'>2015</span></span> <span class='time'>5:03 pm</span></time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Dieses Jahr habe ich mich einmal aufgerafft und bin das erste mal zum
-Congress des CCC nach Hamburg gefahren. Im Folgenden ein paar
-Eindrücke:</p>
-
-<h2>Drumherum</h2>
-
-<p>Ich fand den <a href="http://events.ccc.de/congress/2014/wiki/Main_Page">31C3</a> ein tolles Ereignis: Sehr professionell und
-umsichtig organisiert. Überall, wo ich hinkam, war man nett und
-freundlich, insgesamt eine sehr willkommende Atmosphäre. Nur der
-Termin, der ist ja doch etwas sperrig.</p>
-
-<h2>Vorträge</h2>
-
-<p>Ich konnte einige Vorträge anhören, von denen haben mir die folgenden
-besonders gut gefallen (ich habe mal die Links zu den Videos und die Links zu den Einträgen im Fahrplan aufgeführt, oft gibt es im Fahrplan auch noch zugehöriges Material und weitere Hinweise):</p>
-
-<ul>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6264_-_de_-_saal_1_-_201412271245_-_wir_beteiligen_uns_aktiv_an_den_diskussionen_-_martin_haase_maha.html">&ldquo;Wir beteiligen uns aktiv an den Dikussionen&rdquo;</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6264.html">(Link im Fahrplan)</a> von Martin Haase, der die <a href="http://www.digitale-agenda.de/">Digitale Agenda</a> der Bundesregierung aus sprachwissenschaftlicher Sicht entlarvt als das, was es ist: Heiße Luft und wenig Konkretes, schon gar nicht für den &ldquo;Bürger&rdquo;. Besonders spannend fand ich den Teil des &ldquo;PDF befreien&rdquo;, denn die Bundesregierung hat nur ein wenig konsistentes PDF bereit gestellt, dass maha erst einmal in einen Text umwandeln musste, mit dem er mit seinen Werkzeugen arbeiten konnte. In der Diskussion wurde er dazu auch noch einmal befragt und meinte, Markdown, das sei eigentlich ein ganz gutes Format.</p></li>
-<li><p>Die beiden SS7-Vorträge von <a href="http://media.ccc.de/browse/congress/2014/31c3_-_6249_-_en_-_saal_1_-_201412271715_-_ss7_locate_track_manipulate_-_tobias_engel.html">Tobias Engel</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6249.html">(Fahrplan)</a> und <a href="http://media.ccc.de/browse/congress/2014/31c3_-_6122_-_en_-_saal_1_-_201412271830_-_mobile_self-defense_-_karsten_nohl.html">Karsten Nohl</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6122.html">(Fahrplan)</a>: Die Talks fand ich incl. der Live-Vorführungen sehr eindrücklich und haben mir vor Augen geführt, dass es mit der Sicherheit im Mobilfunk noch schlechter aussieht, als ich so befürchtet habe.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6369_-_en_-_saal_1_-_201412272145_-_ecchacks_-_djb_-_tanja_lange.html">ECCHacks</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6369.html">(Fahrplan)</a> von djb und Tanja Lange: Ein Bekannter empfahl mir den Vortrag und meinte, ich könnte da schon was verstehen, obwohl ich mich mit diesen Ellpitischen Kurven nicht wirklich auskenne. Der Talk war didaktisch sehr gut aufbereitet und ich habe trotz der späten Stunde ein bisschen verstanden (glaube ich), worum es da eigentlich geht.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6294_-_de_-_saal_1_-_201412281815_-_vor_windows_8_wird_gewarnt_-_ruedi.html">Vor Windows 8 wird gewarnt</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6294.html">(Fahrplan)</a> von ruedi: Ein kurzweiliger Vortrag über &ldquo;Secure Boot&rdquo; und andere Schwierigkeiten mit &ldquo;Windows 8&rdquo;.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6258_-_en_-_saal_1_-_201412282030_-_reconstructing_narratives_-_jacob_-_laura_poitras.html">Reconstructing naraatives</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6258.html">(Fahrplan)</a> von Jacob Appelbaum und Laura Poitras: Das war im voll besetzten Saal 1 ein sehr eindrücklicher Vortrag, der mit Standing Ovations endete.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6121_-_en_-_saal_2_-_201412291715_-_what_ever_happened_to_nuclear_weapons_-_michael_buker.html">What Ever Happened to Nuclear Weapons?</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6121.html">(Fahrplan)</a> von Michael Büker: Diesen Vortrag fand ich vom Aufbau und der Didaktik sehr gut vorbereitet. Als wichtige Erkenntnis habe ich für mich den <a href="http://de.wikipedia.org/wiki/Kernwaffenteststopp-Vertrag">Kernwaffenstopp-Vertrag (englisch Comprehensive Nuclear-Test-Ban Treaty)</a> mitgenommen, einen internationalen Vertrag, der sämtliche Kernwaffentests verbietet, der aber noch nicht in Kraft getreten ist; dieser Vertrag geht weiter als der Nuclear Test Ban Treaty aus den 1960er Jahren, der Kernwaffenversuche in der Atmosphäre, im Weltraum und unter Wasser verbietet. Dennoch gibt es hierzu schon eine <a href="http://www.ctbto.org/">Organisation, die Preparatory Commission for the Comprehensive Nuclear-Test-Ban Treaty Organisation</a>, der man auch auf Twitter <a href="http://twitter.com/ctbto_alerts">folgen kann</a>. Diese  &ldquo;Preparatory Commission&rdquo; bereitet das Inkraftreten vor und baut ein Überwachungssystem auf.</p></li>
-<li><p><a href="http://media.ccc.de/browse/congress/2014/31c3_-_6128_-_en_-_saal_1_-_201412291830_-_thunderstrike_efi_bootkits_for_apple_macbooks_-_trammell_hudson.html">EFI bootkits for Apple MacBooks</a> <a href="http://events.ccc.de/congress/2014/Fahrplan/events/6128.html">(Fahrplan)</a> von Trammell Hudson: Ich fand das sehr spannend vorgetragen (incl. Hexdumps etc.), wie Trammel Hudson durch &ldquo;Reverse Engineering&rdquo; auf ein Sicherheitsproblem bei Apple-Produktion gestoßen ist und dieses dann in einem Proof-of-Concept auch ausnutzen konnte.</p></li>
-</ul>
-
-
-<p>Aufgrund des riesigen Angebots an Vorträgen, Workshops etc. muss ich
-mir in den kommenden Tagen glaube ich noch den einen oder anderen
-Vortrag als Video ansehen.</p>
-
-<h2>MorgenGrauen-Stammtisch</h2>
-
-<p>Etwas spontan und nicht so sonderlich koordiniert haben wir auch einen
-<a href="http://mg.mud.de">MorgenGrauen</a>-Stammtisch ausgerufen und siehe da: Drei Spieler und zwei
-Gäste fanden sich ein, so dass man bei einem Bier ein wenig plaudern
-und sich austauschen konnte.</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/posts/2">&larr; Older</a>
@@ -994,6 +990,10 @@ und sich austauschen konnte.</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2016/01/12/using-racket-minimal-and-raco/">Using Racket Minimal and raco</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2015/12/19/i-played-with-chicken-scheme/">I played with CHICKEN Scheme, Docker and Alpine Linux</a>
       </li>
     
@@ -1009,15 +1009,11 @@ und sich austauschen konnte.</p>
         <a href="/blog/2015/08/27/running-racket-on-aws-lambda/">Running Racket on AWS Lambda</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2015/08/27/lisp-und-ich/">Lisp und ich</a>
-      </li>
-    
   </ul>
 </section>
 <section>
   <h1>Kategorien</h1>
-    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/chicken/'>chicken (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (5)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (22)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/linux/'>linux (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (5)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (3)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/s3/'>s3 (1)</a></li><li><a href='/blog/categories/scheme/'>scheme (1)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
+    <ul id="category-list"><li><a href='/blog/categories/allerlei/'>allerlei (8)</a></li><li><a href='/blog/categories/ausgehen/'>ausgehen (1)</a></li><li><a href='/blog/categories/aws/'>aws (2)</a></li><li><a href='/blog/categories/azure/'>azure (1)</a></li><li><a href='/blog/categories/behorden/'>behörden (2)</a></li><li><a href='/blog/categories/bucher/'>bücher (1)</a></li><li><a href='/blog/categories/chicken/'>chicken (1)</a></li><li><a href='/blog/categories/common-lisp/'>common lisp (2)</a></li><li><a href='/blog/categories/docker/'>docker (5)</a></li><li><a href='/blog/categories/gesellschaft/'>gesellschaft (1)</a></li><li><a href='/blog/categories/homepage/'>homepage (10)</a></li><li><a href='/blog/categories/it/'>it (23)</a></li><li><a href='/blog/categories/javascript/'>javascript (1)</a></li><li><a href='/blog/categories/linux/'>linux (1)</a></li><li><a href='/blog/categories/lisp/'>lisp (6)</a></li><li><a href='/blog/categories/medien/'>medien (3)</a></li><li><a href='/blog/categories/morgengrauen/'>morgengrauen (1)</a></li><li><a href='/blog/categories/octopress/'>octopress (6)</a></li><li><a href='/blog/categories/org-mode/'>org-mode (2)</a></li><li><a href='/blog/categories/politik/'>politik (8)</a></li><li><a href='/blog/categories/r/'>r (1)</a></li><li><a href='/blog/categories/racket/'>racket (4)</a></li><li><a href='/blog/categories/reisen/'>reisen (3)</a></li><li><a href='/blog/categories/s3/'>s3 (1)</a></li><li><a href='/blog/categories/scheme/'>scheme (1)</a></li><li><a href='/blog/categories/statistik/'>statistik (1)</a></li><li><a href='/blog/categories/steuern/'>steuern (3)</a></li><li><a href='/blog/categories/veranstaltungen/'>veranstaltungen (3)</a></li><li><a href='/blog/categories/wirtschaft/'>wirtschaft (11)</a></li></ul>
 </section>
 
 
@@ -1030,7 +1026,7 @@ und sich austauschen konnte.</p>
     </div>
   </div>
   <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Daniel Brunner -
+  Copyright &copy; 2016 - Daniel Brunner -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
