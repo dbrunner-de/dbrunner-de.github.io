@@ -79,7 +79,7 @@
   <title><![CDATA[Category: it | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/it/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2016-03-15T10:57:53+00:00</updated>
+  <updated>2016-03-15T11:03:05+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -282,6 +282,8 @@ any bucket. Every region responds with a <em>LocationConstraint</em> answer.</p>
 
 <p>PS: I think official Amazon S3 documentation could be a bit more verbose on
 the issues with GetBucketLocation and signature V4.</p>
+
+<p><em>Update:</em> Greg added a <code>bucket-location</code> function to his great <a href="http://docs.racket-lang.org/aws/S3__Storage_.html#%28def._%28%28lib._aws%2Fs3..rkt%29._bucket-location%29%29">library</a></p>
 ]]></content>
   </entry>
   
@@ -382,7 +384,7 @@ function, uploaded the zip file and invoked the function:</p>
 <p>PS: Only question is: When is AWS Lambda coming to the region
 <code>eu-central-1</code>, located in Frankfurt?</p>
 
-<p><em>Upate (2016-03-15)</em> AWS Lambda is <a href="https://aws.amazon.com/de/about-aws/whats-new/2016/03/aws-lambda-available-in-eu-frankfurt/">now available</a> in the EU (Frankfurt)
+<p><em>Upate (2016-03-15):</em> AWS Lambda is <a href="https://aws.amazon.com/de/about-aws/whats-new/2016/03/aws-lambda-available-in-eu-frankfurt/">now available</a> in the EU (Frankfurt)
  region!</p>
 ]]></content>
   </entry>
