@@ -67,3 +67,5 @@ For example:
 
 PS: I think official Amazon S3 documentation could be a bit more verbose on
 the issues with GetBucketLocation and signature V4.
+
+*Update:* Greg added a `bucket-location` function to his great [library](http://docs.racket-lang.org/aws/S3__Storage_.html#%28def._%28%28lib._aws%2Fs3..rkt%29._bucket-location%29%29)

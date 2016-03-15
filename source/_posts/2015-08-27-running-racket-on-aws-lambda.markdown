@@ -68,3 +68,6 @@ Fine!
 
 PS: Only question is: When is AWS Lambda coming to the region
 `eu-central-1`, located in Frankfurt?
+
+*Upate (2016-03-15):* AWS Lambda is [now available](https://aws.amazon.com/de/about-aws/whats-new/2016/03/aws-lambda-available-in-eu-frankfurt/) in the EU (Frankfurt)
+ region! 
