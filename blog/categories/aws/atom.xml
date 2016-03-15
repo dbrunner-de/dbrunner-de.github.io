@@ -79,7 +79,7 @@
   <title><![CDATA[Category: aws | Textstückchen]]></title>
   <link href="http://www.dbrunner.de/blog/categories/aws/atom.xml" rel="self"/>
   <link href="http://www.dbrunner.de/"/>
-  <updated>2016-01-12T11:32:10+00:00</updated>
+  <updated>2016-03-15T10:57:53+00:00</updated>
   <id>http://www.dbrunner.de/</id>
   <author>
     <name><![CDATA[Daniel Brunner]]></name>
@@ -204,6 +204,9 @@ function, uploaded the zip file and invoked the function:</p>
 
 <p>PS: Only question is: When is AWS Lambda coming to the region
 <code>eu-central-1</code>, located in Frankfurt?</p>
+
+<p><em>Upate (2016-03-15)</em> AWS Lambda is <a href="https://aws.amazon.com/de/about-aws/whats-new/2016/03/aws-lambda-available-in-eu-frankfurt/">now available</a> in the EU (Frankfurt)
+ region!</p>
 ]]></content>
   </entry>
   
